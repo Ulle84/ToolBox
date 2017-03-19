@@ -1,0 +1,39 @@
+//
+// ONT file resource definitions
+//
+
+// input values
+#define ONT_PRODUCTVERSION     "V@OMICRON_MAJOR@.@OMICRON_MINOR@.@OMICRON_MAINT@@OMICRON_TAINT@"
+#define ONT_SPECIALBUILD       "@OMICRON_BUILD_FLAVOUR@_v@OMICRON_YY@@OMICRON_WW@-@SVN_BRANCH@-@SVN_LAST_CHANGED@"
+#define ONT_PRIVATEBUILD       "v@OMICRON_YY@@OMICRON_WW@@SVN_LAST_CHANGED@"
+#define ONT_CATALOGUENAME      "CatalogName"
+#define ONT_CATALOGUEACCESS    "CatalogName"
+#define ONT_EXPELEMVERSION     "v054301"
+#define ONT_TEXTDEFINITIONS    "None"
+#define ONT_LMF                "No"
+
+// constants
+#define ONT_PRODUCTNAME        "@OMICRON_PRODUCT@"
+#define ONT_FILEDESCRIPTION    "CatalogCatalogName - ExperimentElementTemplate"
+#define ONT_INTERNALNAME       "CatalogCatalogName - ExperimentElementTemplate"
+#define ONT_ORIGINALFILENAME   "CatalogName_ExperimentElementTemplate.dll"
+#define ONT_COMMENTS           ""
+#define ONT_COMPANYNAME        "@OMICRON_COMPANY_NAME@"
+#define ONT_TRADEMARKS         ""
+
+// computed values
+#define ONT_YY                 @OMICRON_YY@
+#define ONT_WW                 @OMICRON_WW@
+#define ONT_NN                 @SVN_REVISION@
+#define ONT_BUILDNUM           @SVN_LAST_CHANGED@
+#define ONT_BUILDNUML          @SVN_LAST_CHANGED@
+#define ONT_MAJOR_VERSION      @OMICRON_MAJOR@
+#define ONT_MINOR_VERSION      @OMICRON_MINOR@
+#define ONT_MAINT_VERSION      @OMICRON_MAINT@
+#define ONT_HOSTPLATFORM       "@OMICRON_HOST_PLATFORM@"
+#define ONT_TARGETPLATFORM     "@OMICRON_TARGET_PLATFORM@"
+#define ONT_FILEVERSION        "@OMICRON_YY@.@OMICRON_WW@.@SVN_REVISION@.@SVN_LAST_CHANGED@"
+#define ONT_COPYRIGHT          "Copyright (c) 2008-@OMICRON_CURRENT_YEAR@ by @OMICRON_COMPANY_NAME_FULL@"
+#define ONT_CATALOGUENAMEHEX    0x4641, 0x004d, 
+#define ONT_CATALOGUEACCESSHEX  0x4641, 0x004d, 
+#define ONT_EXPELEMVERSIONHEX   0x3076, 0x3435, 0x3033, 0x0031, 

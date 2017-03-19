@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/files">
+    <file>Signals.txt</file>
+  </qresource>
+  <qresource prefix="/images">
+    <file>logo.png</file>
+  </qresource>
+</RCC>

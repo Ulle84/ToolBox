@@ -1,0 +1,22 @@
+# options for AStyle
+--add-brackets
+--align-pointer=type
+--align-reference=type
+--break-blocks
+--close-templates
+--convert-tabs
+--indent-classes
+--indent-col1-comments
+--indent-namespaces
+--indent-preproc-block
+--indent-preproc-cond
+--indent-switches
+--indent=spaces=2
+--pad-header
+--pad-oper
+--style=allman
+--suffix=none
+--unpad-paren
+
+# dont's
+#--indent-preproc-define

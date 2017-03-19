@@ -1,0 +1,48 @@
+cmake_minimum_required (VERSION 3.3.2)
+
+set(CMAKE_CONFIGURATION_TYPES "RelWithDebInfo" CACHE STRING "" FORCE)
+
+project(OwnTools)
+
+set(OutputDir ${CMAKE_BINARY_DIR}/../bin_build)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELWITHDEBINFO ${OutputDir})
+
+set(QtBuilderWorkingDir ${OutputDir})
+
+#file(INSTALL ${OutputDir}/../bin/AStyle.exe DESTINATION ${OutputDir}) 
+
+include(CMake/Qt.cmake)
+
+add_subdirectory(AutoHotKeyHelper)
+add_subdirectory(Base64Converter)
+add_subdirectory(CMakeHelper)
+add_subdirectory(CallStackCleaner)
+add_subdirectory(CodeCleaner)
+add_subdirectory(CodeCreator)
+add_subdirectory(CodeEdit)
+add_subdirectory(DevelopmentHelper)
+add_subdirectory(DirectorySwitcher)
+add_subdirectory(ExperimentEditor)
+add_subdirectory(FileToImageLink)
+add_subdirectory(GuiStyleTester)
+add_subdirectory(IncludeFinder)
+add_subdirectory(LinkCreator)
+add_subdirectory(PhoneBook)
+add_subdirectory(PlainClipboard)
+add_subdirectory(ProcessStarter)
+add_subdirectory(QtBuildHelper)
+add_subdirectory(QtConnectionHelper)
+add_subdirectory(QtHelper)
+add_subdirectory(Shared)
+add_subdirectory(SharedTest)
+add_subdirectory(SimpleHtmlEdit)
+add_subdirectory(SimpleHtmlEditor)
+add_subdirectory(SitAndStandTimer)
+add_subdirectory(SvnUpdateFilter)
+add_subdirectory(TestCaseEditor)
+add_subdirectory(TextConverter)
+add_subdirectory(VisualStudioOutputSorter)
+add_subdirectory(VisualStudioSearchResultFilter)
+add_subdirectory(TreeEdit)
+add_subdirectory(Timer)
