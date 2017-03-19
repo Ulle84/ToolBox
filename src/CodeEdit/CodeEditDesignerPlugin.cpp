@@ -38,7 +38,7 @@ QString CodeEditDesignerPlugin::name() const
 
 QString CodeEditDesignerPlugin::group() const
 {
-  return "Ulle";
+  return "Ulles Widgets";
 }
 
 QIcon CodeEditDesignerPlugin::icon() const

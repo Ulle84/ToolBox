@@ -38,7 +38,7 @@ QString TreeEditDesignerPlugin::name() const
 
 QString TreeEditDesignerPlugin::group() const
 {
-  return "Ulle";
+  return "Ulles Widgets";
 }
 
 QIcon TreeEditDesignerPlugin::icon() const

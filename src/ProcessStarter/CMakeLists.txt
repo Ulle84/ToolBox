@@ -4,8 +4,6 @@ set (PROJECT_NAME ProcessStarter)
 
 project(${PROJECT_NAME})
 
-find_package(Qt5Core 5.7)
-
 file(GLOB Sources ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 source_group("Sources" FILES ${Sources})
 

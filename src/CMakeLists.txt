@@ -1,16 +1,18 @@
 cmake_minimum_required (VERSION 3.3.2)
 
-set(CMAKE_CONFIGURATION_TYPES "RelWithDebInfo" CACHE STRING "" FORCE)
+set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "" FORCE)
 
-project(OwnTools)
+project(ToolBox)
 
-set(OutputDir ${CMAKE_BINARY_DIR}/../bin_build)
+set(OutputDirRelease ${CMAKE_BINARY_DIR}/../bin_build_release)
+set(OutputDirDebug ${CMAKE_BINARY_DIR}/../bin_build_debug)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELWITHDEBINFO ${OutputDir})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${OutputDirRelease})
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${OutputDirDebug})
 
-set(QtBuilderWorkingDir ${OutputDir})
+set(QtBuilderWorkingDir ${OutputDirDebug})
 
-#file(INSTALL ${OutputDir}/../bin/AStyle.exe DESTINATION ${OutputDir}) 
+#file(INSTALL ${OutputDir}/../bin/AStyle.exe DESTINATION ${OutputDir})
 
 include(CMake/Qt.cmake)
 

@@ -38,7 +38,7 @@ QString SimpleHtmlEditDesignerPlugin::name() const
 
 QString SimpleHtmlEditDesignerPlugin::group() const
 {
-  return "Ulle";
+  return "Ulles Widgets";
 }
 
 QIcon SimpleHtmlEditDesignerPlugin::icon() const

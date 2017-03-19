@@ -1,4 +1,9 @@
 # Next Steps
+* activate debug/release setting again
+* test debugging of qt containers
+* test release config
+* activate AStyle
+* activate CodeCleaner
 * finish SvnIdRemover -> implemented in CppHelper
 * duplicate file and ask for new file name - working like the LinkCreator
 * CodeCleaner: make wait for enter at end optional

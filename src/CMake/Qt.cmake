@@ -6,14 +6,18 @@
 ################################################################################
 # Checking prerequisites
 ################################################################################
-if (NOT DEFINED OutputDir)
-  message(FATAL_ERROR "OutputDir not defined")
+if (NOT DEFINED OutputDirDebug)
+  message(FATAL_ERROR "OutputDirDebug not defined")
+endif()
+
+if (NOT DEFINED OutputDirRelease)
+  message(FATAL_ERROR "OutputDirRelease not defined")
 endif()
 
 ################################################################################
 # Setting Qt Version
 ################################################################################
-set(QtVersion 5.8.0)
+set(QtVersion 5.5.1)
 message(STATUS "using Qt version: ${QtVersion}")
 
 ################################################################################
@@ -71,7 +75,9 @@ set(QtDlls
 )
 
 foreach(QtDll ${QtDlls})
-  file(INSTALL ${QtBinDir}${QtDll}.dll DESTINATION ${OutputDir})  
+  file(INSTALL ${QtBinDir}${QtDll}.dll DESTINATION ${OutputDirRelease})  
+  file(INSTALL ${QtBinDir}${QtDll}d.dll DESTINATION ${OutputDirDebug})  
+  file(INSTALL ${QtBinDir}${QtDll}d.pdb DESTINATION ${OutputDirDebug})  
 endforeach()
 
 ################################################################################
@@ -103,15 +109,22 @@ set(QtPlugins
 )
 
 foreach(QtPlugin ${QtPlugins})
-  get_filename_component(QtPluginReleaseDir "${OutputDir}/../plugins/${QtPlugin}.dll" PATH)
-  file(INSTALL ${QtPluginsPath}${QtPlugin}.dll DESTINATION ${QtPluginReleaseDir})  
+  get_filename_component(QtPluginDir "${OutputDirRelease}/../plugins/${QtPlugin}.dll" PATH)
+  file(INSTALL ${QtPluginsPath}${QtPlugin}.dll DESTINATION ${QtPluginDir})  
+  file(INSTALL ${QtPluginsPath}${QtPlugin}d.dll DESTINATION ${QtPluginDir})  
+  file(INSTALL ${QtPluginsPath}${QtPlugin}d.pdb DESTINATION ${QtPluginDir})  
 endforeach()
 
 ################################################################################
-# Write config file
+# Write config files
 ################################################################################
-set(QtConfFile ${OutputDir}/qt.conf)
+set(QtConfFiles
+  ${OutputDirDebug}/qt.conf
+  ${OutputDirRelease}/qt.conf
+)
 
-if(NOT EXISTS ${QtConfFile})
-  file(WRITE ${QtConfFile} "[Paths]\nPrefix=..")
-endif()
+foreach(QtConfFile ${QtConfFiles})
+  if(NOT EXISTS ${QtConfFile})
+    file(WRITE ${QtConfFile} "[Paths]\nPrefix=..")
+  endif()
+endforeach()

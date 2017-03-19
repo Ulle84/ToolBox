@@ -36,7 +36,7 @@ QString QtWidgetDllDesignerPlugin::name() const
 
 QString QtWidgetDllDesignerPlugin::group() const
 {
-  return "Ulle";
+  return "Ulles Widgets";
 }
 
 QIcon QtWidgetDllDesignerPlugin::icon() const

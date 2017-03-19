@@ -4,8 +4,6 @@ set (PROJECT_NAME PlainClipboard)
 
 project(${PROJECT_NAME})
 
-find_package(Qt5Widgets 5.7)
-
 file(GLOB Sources ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 source_group("Sources" FILES ${Sources})
 
