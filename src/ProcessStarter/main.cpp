@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
     QString fileName = argv[1];
     int pointPos = fileName.lastIndexOf('.');
 
-    QString program = "D:\\Programs\\Portable\\Notepad++\\Notepad++Portable.exe";
+    QString program = "D:\\Programs\\Portable\\Notepad++\\Notepad++.exe";
 
     if (pointPos > -1)
     {

@@ -1,10 +1,11 @@
 # Next Steps
-* activate debug/release setting again
+* install qt addin
 * test debugging of qt containers
-* test release config
+* widget list editor of codecreator -> own widget?
 * activate AStyle
 * activate CodeCleaner
 * finish SvnIdRemover -> implemented in CppHelper
+* Qt 5.8 mit Web-Zeugs selbst compilieren
 * duplicate file and ask for new file name - working like the LinkCreator
 * CodeCleaner: make wait for enter at end optional
 * new tool CppRenamer -> renames all files and all occurences in files
