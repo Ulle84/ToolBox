@@ -3,6 +3,10 @@
 #ifndef FILE_H
 #define FILE_H
 
+#include <QMap>
+#include <QString>
+#include <QStringList>
+
 #include "SharedAPI.h"
 
 // TODO move some functions to Converter
