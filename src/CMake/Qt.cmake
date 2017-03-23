@@ -17,14 +17,19 @@ endif()
 ################################################################################
 # Setting Qt Version
 ################################################################################
-set(QtVersion 5.8.0)
+set(QtVersion 5.5.1)
 message(STATUS "using Qt version: ${QtVersion}")
 
 ################################################################################
 # Test if Qt5Core can be found - raise fatal error if not found
 ################################################################################
 string(SUBSTRING ${QtVersion} 0 3 QtVersionShort)
-set(QtDir "C:/Qt/Qt${QtVersion}/${QtVersionShort}/msvc2013_64")
+set(QtDir "C:/Qt/Qt${QtVersion}/${QtVersionShort}/msvc2013")
+
+if(CMAKE_SIZEOF_VOID_P EQUAL 8)
+  set(QtDir "${QtDir}_64")
+endif()
+
 set (CMAKE_PREFIX_PATH ${QtDir})
 
 find_package(Qt5Core ${QT_VERSION})
