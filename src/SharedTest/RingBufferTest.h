@@ -13,6 +13,7 @@ class RingBufferTest : public QObject
     void singleAccess();
     void vectorAccess();
     void directAccess();
+    void reset();
 };
 
 #endif

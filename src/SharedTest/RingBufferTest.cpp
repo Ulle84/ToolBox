@@ -126,3 +126,51 @@ void RingBufferTest::directAccess()
     ringBuffer.readDone(size);
   }
 }
+
+void RingBufferTest::reset()
+{
+  int size = 20;
+
+  RingBuffer<int> ringBuffer(size);
+  ringBuffer.setTimeout(10);
+
+  QCOMPARE(ringBuffer.size(), size);
+
+  // fill the ring buffer
+  for (int i = 0; i < size; ++i)
+  {
+    QVERIFY(ringBuffer.write(i));
+  }
+
+  // ring buffer is already filled
+  QVERIFY(!ringBuffer.write(0));
+
+  ringBuffer.reset();
+
+  // try to read
+  int readData = 0;
+  QVERIFY(!ringBuffer.read(readData));
+
+  // run twice to see if "index-overflow" is handled properly
+  for (int j = 0; j < 2; ++j)
+  {
+    // fill the ring buffer
+    for (int i = 0; i < size; ++i)
+    {
+      QVERIFY(ringBuffer.write(i));
+    }
+
+    // ring buffer is already filled
+    QVERIFY(!ringBuffer.write(0));
+
+    //read the ring buffer    
+    for (int i = 0; i < size; ++i)
+    {
+      QVERIFY(ringBuffer.read(readData));
+      QCOMPARE(readData, i);
+    }
+
+    // no more to read
+    QVERIFY(!ringBuffer.read(readData));
+  }
+}
