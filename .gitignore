@@ -1,0 +1,4 @@
+bin_build_debug/*
+bin_build_release/*
+build/*
+plugins/*

@@ -10,6 +10,7 @@
 
 # ToDo
 ## General
+* copy name to clipboard after pressing button "generate"
 * remove Template for QtDesignerWidget if not needed anymore
 * put generated file links in clipboard so the new generatd files can be easily added to a open visual studio project
 * button - open output-folder in explorer / DoubleCommander

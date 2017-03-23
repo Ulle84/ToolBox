@@ -3,9 +3,6 @@
 #ifndef FILE_H
 #define FILE_H
 
-#include <QString>
-#include <QStringList>
-
 #include "SharedAPI.h"
 
 // TODO move some functions to Converter
@@ -22,8 +19,10 @@ namespace File
   QStringList SHARED_API fileToStringList(const QString& fileName);
   QMap<QString, QString> SHARED_API fileToStringMap(const QString& fileName);
 
+  // misc
   QString SHARED_API directory(const QString& fileName);
   QString SHARED_API checkSum(const QString& fileName);
+  QStringList SHARED_API merge(const QStringList& fileNames);
 };
 
 #endif

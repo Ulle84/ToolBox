@@ -10,27 +10,27 @@ namespace Console
     std::getchar();
   }
 
-  void showMessage(std::string message)
+  void showMessage(const std::string& message)
   {
     std::cout << message << std::endl;
   }
 
-  void showWarning(std::string warning)
+  void showWarning(const std::string& warning)
   {
     std::cout << "WARNING: " << warning << std::endl;
   }
 
-  void showInfo(std::string information)
+  void showInfo(const std::string& information)
   {
     std::cout << "INFO:    " << information << std::endl;
   }
 
-  void showSuccess(std::string information)
+  void showSuccess(const std::string& information)
   {
     std::cout << "SUCCESS: " << information << std::endl;
   }
 
-  void showError(std::string error)
+  void showError(const std::string& error)
   {
     std::cout << "ERROR:   " << error << std::endl;
   }

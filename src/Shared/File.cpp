@@ -1,6 +1,7 @@
 #include <QDebug>
 #include <QFile>
 #include <QTextStream>
+#include <QString>
 #include <QStringList>
 #include <QCryptographicHash>
 
@@ -124,4 +125,17 @@ namespace File
 
     return QString();
   }
+
+  QStringList SHARED_API merge(const QStringList& fileNames)
+  {
+    QStringList combined;
+
+    for (auto& it : fileNames)
+    {
+      combined.append(fileToStringList(it));
+    }
+
+    return combined;
+  }
+
 }
