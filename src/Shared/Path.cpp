@@ -40,4 +40,11 @@ namespace Path
     return stringList.join('/');
   }
 
+  QString SHARED_API portableProgram(const QString& programName)
+  {
+    QString program = Path::application();
+    program.append(QString("/../../PortablePrograms/%1/%1.exe").arg(programName));
+    return program;
+  }
+
 }

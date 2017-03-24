@@ -1,26 +1,26 @@
+#include <QCoreApplication>
 #include <QProcess>
+
+#include "Path.h"
 
 int main(int argc, char *argv[])
 {
+  QCoreApplication a(argc, argv);
+
   if (argc > 1)
   {
-    QString fileName = argv[1];
-    int pointPos = fileName.lastIndexOf('.');
+    QString program = Path::portableProgram("Notepad++");
 
-    QString program = "D:\\Programs\\Portable\\Notepad++\\Notepad++.exe";
+    QString fileName = argv[1];
+    int pointPos = fileName.lastIndexOf('.');    
 
     if (pointPos > -1)
     {
       QString fileExtension = fileName.mid(pointPos + 1);
 
-
       if (fileExtension == "png")
       {
-        program = "c:\\Program Files\\Greenshot\\Greenshot.exe";
-      }
-      else if (fileExtension == "xls")
-      {
-        program = "c:\\Program Files (x86)\\Microsoft Office\\Office12\\EXCEL.EXE";
+        program = Path::portableProgram("Greenshot");
       }
     }
 

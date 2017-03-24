@@ -14,6 +14,7 @@ namespace Path
   QString SHARED_API configuration();
   QString SHARED_API configurationFile(const QString& programName, const QString& fileName);
   QString SHARED_API testFile(const QString& moduleName, const QString& category, const QString& testName, const QString& fileName);
+  QString SHARED_API portableProgram(const QString& programName);
 }
 
 #endif
