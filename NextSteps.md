@@ -1,4 +1,6 @@
 # Next Steps
+* clean bat script
+* openProject bat script
 * install qt addin
 * test debugging of qt containers
 * widget list editor of codecreator -> own widget?

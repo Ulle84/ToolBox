@@ -3,9 +3,11 @@
 #include <QProcess>
 #include <QString>
 #include <QStringList>
+#include <QCoreApplication>
 
 #include "File.h"
 #include "Console.h"
+#include "Path.h"
 
 const int dateTimeLength = 23;
 
@@ -16,6 +18,8 @@ bool lessThan(const QString& s1, const QString& s2)
 
 int main(int argc, char* argv[])
 {
+  QCoreApplication a(argc, argv);
+
   if (argc < 2)
   {
     return 1;
@@ -53,9 +57,7 @@ int main(int argc, char* argv[])
 
   File::stringListToFile(merged, fileName);
 
-  QString program = "D:\\Programs\\Portable\\Notepad++\\Notepad++.exe";
-
-  QProcess::startDetached(program, QStringList() << fileName);
+  QProcess::startDetached(Path::portableProgram("Notepad++"), QStringList() << fileName);
 
   return 0;
 }

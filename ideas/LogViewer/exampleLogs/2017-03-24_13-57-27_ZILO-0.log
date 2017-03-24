@@ -1,0 +1,5 @@
+2017-03-24 13:58:09.272 I 2948 ZILO-0: constructor
+2017-03-24 13:58:36.021 I 3012 ZILO-0: created SampleAnalyzer thread with id 8068
+2017-03-24 13:58:36.023 I 3012 ZILO-0: created SampleRecorder thread with id 4516
+2017-03-24 13:58:44.172 I 3012 ZILO-0: created SampleAnalyzer thread with id 8068
+2017-03-24 13:58:44.173 I 3012 ZILO-0: created SampleRecorder thread with id 4516
