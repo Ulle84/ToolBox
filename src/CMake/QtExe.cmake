@@ -1,10 +1,6 @@
 ################################################################################
 # Template QtExe
 # Created by Ulrich Belitz in Februrary 2017
-# Usage:
-# cmake_minimum_required(VERSION 3.3.2)
-# set(PROJECT_NAME ToDo)
-# include(../CMake/QtExe.cmake)
 ################################################################################
 
 project(${PROJECT_NAME})
@@ -27,8 +23,8 @@ set(Resources
 
 source_group("Resources" FILES ${Resources})
 
-file(GLOB UiFiles ${CMAKE_CURRENT_SOURCE_DIR}/*.ui)
-source_group("UI Files" FILES ${UiFiles})
+file(GLOB Forms ${CMAKE_CURRENT_SOURCE_DIR}/*.ui)
+source_group("Forms" FILES ${Forms})
 
 file(GLOB Information ${CMAKE_CURRENT_SOURCE_DIR}/*.md)
 source_group("Information" FILES ${Information})
@@ -45,7 +41,7 @@ set(AllSources
   ${Headers}
   ${Sources}
   ${Resources}
-  ${UiFiles}
+  ${Forms}
   ${Information}
 )
 
@@ -57,10 +53,8 @@ endif()
 
 target_link_libraries(${PROJECT_NAME}
   Shared
-  CodeEdit
-  TreeEdit
-  SimpleHtmlEdit
   ${QtLinkLibraries}
+  ${RequiredLibraries}
 )
 
 add_dependencies(${PROJECT_NAME} QtBuildHelper)

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Settings>
-  <SelectedType>AbstractFactory</SelectedType>
-  <RecentFolders/>
-  <SelectedFolder></SelectedFolder>
+  <SelectedType>QtWidgetDll</SelectedType>
+  <RecentFolders>
+    <Folder>C:/ube/ToolBox/src/Shared</Folder>
+    <Folder>C:/ube/ToolBox/src</Folder>
+  </RecentFolders>
+  <SelectedFolder>C:/ube/ToolBox/src/Shared</SelectedFolder>
   <AbstractFactory>
     <AbstractFactory></AbstractFactory>
     <ConcreteFactories>
@@ -11,10 +14,10 @@
     <Products/>
   </AbstractFactory>
   <Class>
-    <Name></Name>
+    <Name>CodeDuplicator</Name>
     <BaseClass></BaseClass>
     <ConstructorDeclaration>1</ConstructorDeclaration>
-    <DestructorDeclaration>1</DestructorDeclaration>
+    <DestructorDeclaration>0</DestructorDeclaration>
     <CopyConstructorDeclaration>0</CopyConstructorDeclaration>
     <CopyOperatorDeclaration>0</CopyOperatorDeclaration>
     <MoveConstructorDeclaration>0</MoveConstructorDeclaration>
@@ -72,7 +75,7 @@
     </Interface>
   </Interface>
   <Namespace>
-    <Name></Name>
+    <Name>CodeDuplicator</Name>
   </Namespace>
   <Observer>
     <Subject></Subject>
@@ -102,7 +105,7 @@
     <Name></Name>
   </QtWidgetDll>
   <QtWidgetsApplication>
-    <Name></Name>
+    <Name>CodeDuplicator</Name>
     <CreateBuildDir>false</CreateBuildDir>
   </QtWidgetsApplication>
   <State>

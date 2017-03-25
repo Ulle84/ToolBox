@@ -47,4 +47,83 @@ namespace Path
     return program;
   }
 
+  QString directory(const QString& filePath)
+  {
+	  QStringList splitted = split(filePath);
+
+	  if (splitted.isEmpty())
+		  return QString();
+
+
+	  splitted.removeLast();
+
+	  return join(splitted);
+	
+  }
+
+  QString fileName(const QString& filePath)
+  {
+	  QStringList splitted = split(filePath);
+
+	  if (splitted.isEmpty())
+		  return QString();
+
+	  return splitted.last();
+  }
+
+  QString fileNameWithoutExtension(const QString& filePath)
+  {
+	  QString fileName = Path::fileName(filePath);
+
+	  int index = fileName.lastIndexOf('.');
+
+	  if (index < 0)
+		  return QString();
+
+	  return fileName.left(index);
+
+
+	  
+  }
+
+  QString fileNameExtension(const QString& filePath)
+  {
+	  QString fileName = Path::fileName(filePath);
+
+	  int index = fileName.lastIndexOf('.');
+
+	  if (index < 0)
+		  return QString();
+
+	  return fileName.mid(index + 1);
+  }
+
+  QString unifySlahes(const QString& path)
+  {
+	  QString string = path;
+	  string.replace('\\', '/');
+	  return string;
+  }
+
+
+  /*bool isDirectory(const QString& path)
+  {
+	  return false; // TODO
+  }
+
+  bool isFile(const QString& path)
+  {
+	  return false; // TODO
+  }*/
+
+  QStringList SHARED_API split(const QString& path)
+  {
+	  return unifySlahes(path).split('/', QString::SkipEmptyParts);
+  }
+
+  QString SHARED_API join(const QStringList& splittedPath)
+  {
+	  return splittedPath.join('/');
+  }
+
 }

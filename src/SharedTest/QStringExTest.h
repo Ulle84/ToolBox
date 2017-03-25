@@ -20,6 +20,7 @@ class QStringExTest : public QObject
     void peekNextNonWhitespaceWithDistance();
     void peekPreviousNonWhitespaceWithDistance();
     void lowercaseFirstLetter();
+	void replace();
 };
 
 #endif

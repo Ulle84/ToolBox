@@ -21,8 +21,8 @@ set(Resources
 
 source_group("Resources" FILES ${Resources})
 
-file(GLOB UiFiles ${CMAKE_CURRENT_SOURCE_DIR}/*.ui)
-source_group("UI Files" FILES ${UiFiles})
+file(GLOB Forms ${CMAKE_CURRENT_SOURCE_DIR}/*.ui)
+source_group("Forms" FILES ${Forms})
 
 file(GLOB JSON ${CMAKE_CURRENT_SOURCE_DIR}/*.json)
 file(GLOB MarkDown ${CMAKE_CURRENT_SOURCE_DIR}/*.md)
@@ -45,7 +45,7 @@ set(AllSources
   ${Headers}
   ${Sources}
   ${Resources}
-  ${UiFiles}
+  ${Forms}
   ${Information}
 )
 
@@ -54,7 +54,7 @@ add_library(${PROJECT_NAME} SHARED ${AllSources})
 target_link_libraries(${PROJECT_NAME}
   Shared
   ${QtLinkLibraries}
-  ${AdditionalLibraries}
+  ${RequiredLibraries}
 )
 
 add_dependencies(${PROJECT_NAME} QtBuildHelper)

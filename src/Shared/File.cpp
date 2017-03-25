@@ -8,16 +8,17 @@
 #include "QStringEx.h"
 
 #include "File.h"
-
-static const QString mapSeperator = " --> ";
+#include "Path.h"
 
 namespace File
 {
-  QString fileToString(const QString& fileName)
+	static const QString mapSeperator = " --> ";
+
+  QString fileToString(const QString& filePath)
   {
     QString fileContent;
 
-    QFile file(fileName);
+    QFile file(filePath);
 
     if (file.exists())
     {
@@ -33,16 +34,16 @@ namespace File
     return fileContent;
   }
 
-  QStringList fileToStringList(const QString& fileName)
+  QStringList fileToStringList(const QString& filePath)
   {
-    return fileToString(fileName).split("\n");
+	  return fileToString(filePath).split("\n");
   }
 
-  QMap<QString, QString> fileToStringMap(const QString& fileName)
+  QMap<QString, QString> fileToStringMap(const QString& filePath)
   {
     QMap<QString, QString> map;
 
-    QStringList stringList = fileToStringList(fileName);
+    QStringList stringList = fileToStringList(filePath);
 
     for (auto it : stringList)
     {
@@ -59,9 +60,9 @@ namespace File
     return map;
   }
 
-  bool stringToFile(const QString& fileContent, const QString& fileName)
+  bool stringToFile(const QString& fileContent, const QString& filePath)
   {
-    QFile file(fileName);
+    QFile file(filePath);
 
     if (file.open(QIODevice::WriteOnly | QFile::Text))
     {
@@ -78,24 +79,24 @@ namespace File
     }
   }
 
-  bool stringListToFile(const QStringList& fileContent, const QString& fileName)
+  bool stringListToFile(const QStringList& fileContent, const QString& filePath)
   {
-    return stringToFile(fileContent.join("\n"), fileName);
+    return stringToFile(fileContent.join("\n"), filePath);
   }
 
-  QString directory(const QString& fileName)
+  QString directory(const QString& filePath)
   {
-    int max = std::max(fileName.lastIndexOf('/'), fileName.lastIndexOf('\\'));
+    int max = std::max(filePath.lastIndexOf('/'), filePath.lastIndexOf('\\'));
 
     if (max == -1)
     {
       return QString();
     }
 
-    return fileName.left(max);
+    return filePath.left(max);
   }
 
-  bool stringMapToFile(const QMap<QString, QString>& map, const QString& fileName)
+  bool stringMapToFile(const QMap<QString, QString>& map, const QString& filePath)
   {
     QStringList stringList;
 
@@ -104,7 +105,7 @@ namespace File
       stringList.append(QString("%1%2%3").arg(it.key()).arg(mapSeperator).arg(it.value()));
     }
 
-    return stringListToFile(stringList, fileName);
+    return stringListToFile(stringList, filePath);
   }
 
   QString checkSum(const QString& fileName)
@@ -126,16 +127,25 @@ namespace File
     return QString();
   }
 
-  QStringList SHARED_API merge(const QStringList& fileNames)
+  QStringList SHARED_API merge(const QStringList& filePaths)
   {
     QStringList combined;
 
-    for (auto& it : fileNames)
+    for (auto& it : filePaths)
     {
       combined.append(fileToStringList(it));
     }
 
     return combined;
+  }
+
+  QString name(const QString& filePath)
+  {
+	  QStringList splitted = Path::split(filePath);
+	  if (splitted.isEmpty())
+		  return QString();
+	  
+	  return splitted.last();
   }
 
 }

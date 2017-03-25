@@ -236,7 +236,7 @@ void CppHelper::removeSvnId(QString& code)
 
             if (startIndexSvnId > -1)
             {
-              endIndexSvnId = code.indexOf('$', startIndexSvnId);
+              endIndexSvnId = code.indexOf('$', startIndexSvnId + 1);
             }
 
             if (startIndexSvnId > -1 && endIndexSvnId > -1)

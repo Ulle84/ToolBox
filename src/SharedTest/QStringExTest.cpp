@@ -117,3 +117,10 @@ void QStringExTest::lowercaseFirstLetter()
 
   QCOMPARE(firstLetterLowercased, QString("hello"));
 }
+
+void QStringExTest::replace()
+{
+	QString input = "hellohello";
+	QCOMPARE(QStringEx::replace(input, "hello", "da"), QString("dada"));
+	QCOMPARE(QStringEx::replace(input, "hello", "da", 5), QString("helloda"));
+}

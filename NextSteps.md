@@ -1,11 +1,28 @@
 # Next Steps
+* create namespace Path and unifiy functions from Directory and File
+* SharedTest: PathTest
+* Shortcut Visual Studio delete current line
+* find old bat-scripts folder
+* activate ProcessStarter
+* create repository PortableProgramms
+* Consolas 16
+* DoubleCommander Links - activate and configure LinkCreator
+* ClassRenamer
+* LogFileViewer
+* SimpleHtmlEditor
+* icons for tools which are linked in DoubleCommander
+* create git-repository archive and delete UllesSourceCode
+* CodeCreator: QtWidgetsApplication Template - add Widget, which has the same name of Creator-Input and is used in MainWindow
+* CodeCreator: change combob box on top to list widget on side
 * clean bat script
 * openProject bat script
 * install qt addin
 * test debugging of qt containers
+* ProcessStarter -> config file with ext and program
 * widget list editor of codecreator -> own widget?
 * activate AStyle
 * activate CodeCleaner
+* ToolBox/Standalonde Generators for CodeCreator
 * finish SvnIdRemover -> implemented in CppHelper
 * Qt 5.8 mit Web-Zeugs selbst compilieren
 * duplicate file and ask for new file name - working like the LinkCreator
@@ -31,3 +48,5 @@
 * TestCaseEditor abschließen
 * Tools: About-Fenster mit Infos und einem EditField für die Notes.md/shtml
 * LogViewer
+* QSettings -> JSON
+* CodeCreator: Apps - preview area of log -> drag and drop ico-file on preview area of logo

@@ -59,7 +59,6 @@
     <file>Templates/QtWidgetsApplication/MainWindow.ui</file>
     <file>Templates/QtWidgetsApplication/Notes.md</file>
     <file>Templates/QtWidgetsApplication/Resources/Resources.qrc</file>
-    <file>Templates/QtWidgetsApplication/Resources/logo.png</file>
     <file>Templates/QtWidgetsApplication/Resources/logo.ico</file>
     <file>Templates/QtWidgetsApplication/Resources/Resources.rc</file>
     

@@ -12,6 +12,7 @@
 #include "QStringExTest.h"
 #include "CustomTypesTest.h"
 #include "FileTest.h"
+#include "PathTest.h"
 #include "RingBufferTest.h"
 
 #include "Converter.h"
@@ -25,6 +26,7 @@ int main(int argc, char* argv[])
   testObjects << new QStringExTest;
   testObjects << new CustomTypesTest;
   testObjects << new FileTest;
+  testObjects << new PathTest;
   testObjects << new RingBufferTest;
 
   uint32 failedTests = 0;

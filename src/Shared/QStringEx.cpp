@@ -153,4 +153,23 @@ namespace QStringEx
     copy[0] = copy[0].toLower();
     return copy;
   }
+
+  QString replace(const QString& input, const QString& before, const QString& after, uint startPos)
+  {
+	  if (startPos == 0)
+	  {
+		  QString copy = input;
+		  copy.replace(before, after);
+		  return copy;
+	  }
+	  else
+	  {
+		  QString copy = input;
+		  QString unchanged = input.left(startPos);
+		  QString changed = input.mid(startPos);
+		  changed.replace(before, after);
+		  return unchanged + changed;
+	  } 
+  }
+
 }

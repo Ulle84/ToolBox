@@ -9,7 +9,6 @@ MainWindow::MainWindow(QWidget* parent) :
 {
   ui->setupUi(this);
   setWindowTitle("QtWidgetsApplication");
-  setWindowIcon(QIcon(":/images/logo.png"));
 
   m_settings = new QSettings("Ulle", "QtWidgetsApplication", this);
 
