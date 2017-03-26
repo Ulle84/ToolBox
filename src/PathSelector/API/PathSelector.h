@@ -56,6 +56,8 @@ signals:
 
 private slots:
   void on_pushButton_clicked();
+  void on_comboBox_currentIndexChanged(const QString& text);
+
 
 private:
   Ui::PathSelector *ui;

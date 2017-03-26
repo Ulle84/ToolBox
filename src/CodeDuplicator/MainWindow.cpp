@@ -63,9 +63,18 @@ void MainWindow::on_pushButtonDuplicate_clicked()
 	QFileInfo fileInfo(destinationPath);
 
 	if (fileInfo.exists())
+	{
+		ui->statusBar->showMessage(tr("directory %1 already exists").arg(destinationName));
 		return;
+	}
+		
 	
 	bool success = process(sourcePath, destinationPath, sourceName, destinationName, destinationPath.length());
+
+	if (success)
+		ui->statusBar->showMessage(tr("succesfully duplicated %1 to %2").arg(sourceName).arg(destinationName));
+	else
+		ui->statusBar->showMessage(tr("duplication failed"));
 }
 
 void MainWindow::onPathChanged(const QString& path)
@@ -105,12 +114,20 @@ bool MainWindow::process(const QString& source, const QString& destination, cons
 			return false;
 		else
 		{
-			// change content inside file
-			QString fileContent = File::fileToString(destination);
-			fileContent.replace(sourceName, destinationName);
-			fileContent.replace(sourceName.toUpper(), destinationName.toUpper());
-			fileContent.replace(QStringEx::lowercaseFirstLetter(sourceName), QStringEx::lowercaseFirstLetter(destinationName));
-			File::stringToFile(fileContent, destination);
+			QStringList fileExtensionsToChange;
+			fileExtensionsToChange << "h" << "hpp" << "cpp" << "ui" << "qrc" << "txt" << "md";
+
+			if (fileExtensionsToChange.contains(Path::fileNameExtension(destination)))
+			{
+				QString fileContent = File::fileToString(destination);
+				fileContent.replace(sourceName, destinationName);
+				fileContent.replace(sourceName.toUpper(), destinationName.toUpper());
+				fileContent.replace(QStringEx::lowercaseFirstLetter(sourceName), QStringEx::lowercaseFirstLetter(destinationName));
+				File::stringToFile(fileContent, destination);
+			}
+
+			
+			
 		}
 	}
 	return true;

@@ -79,3 +79,8 @@ void PathSelector::on_pushButton_clicked()
     setPath(path);
   }
 }
+
+void PathSelector::on_comboBox_currentIndexChanged(const QString& text)
+{
+	emit pathChanged(text);
+}

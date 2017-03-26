@@ -50,3 +50,4 @@
 * LogViewer
 * QSettings -> JSON
 * CodeCreator: Apps - preview area of log -> drag and drop ico-file on preview area of logo
+* CodeDuplicator: change first line with creational comment
