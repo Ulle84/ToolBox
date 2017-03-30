@@ -1,12 +1,12 @@
 # Next Steps
 * Code-Duplicator - duplicate files - needs a editable file list
+* GridLayouter -> QtDesignerWidget
 * create namespace Path and unifiy functions from Directory and File
 * Shortcut Visual Studio delete current line
 * find old bat-scripts folder
 * activate ProcessStarter
 * create repository PortableProgramms
 * DoubleCommander Links - activate and configure LinkCreator
-* ClassRenamer
 * SimpleHtmlEditor
 * icons for tools which are linked in DoubleCommander
 * create git-repository archive and delete UllesSourceCode
@@ -39,3 +39,4 @@
 * QSettings -> JSON
 * CodeCreator: Apps - preview area of log -> drag and drop ico-file on preview area of logo
 * CodeDuplicator: change first line with creational comment
+* WorkManager

@@ -14,6 +14,7 @@
 #include "FileTest.h"
 #include "PathTest.h"
 #include "RingBufferTest.h"
+#include "TextTest.h"
 
 #include "Converter.h"
 
@@ -28,6 +29,7 @@ int main(int argc, char* argv[])
   testObjects << new FileTest;
   testObjects << new PathTest;
   testObjects << new RingBufferTest;
+  testObjects << new TextTest;
 
   uint32 failedTests = 0;
 
