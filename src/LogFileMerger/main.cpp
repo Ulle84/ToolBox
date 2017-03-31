@@ -8,6 +8,7 @@
 #include "File.h"
 #include "Console.h"
 #include "Path.h"
+#include "Text.h"
 
 const int dateTimeLength = 23;
 
@@ -47,6 +48,8 @@ int main(int argc, char* argv[])
       break;
     }
   }
+
+  Text::indentColumns(merged, "<<><");
 
   QString firstFileName = fileNames.first();
 

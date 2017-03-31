@@ -10,7 +10,8 @@ class TextTest : public QObject
     Q_OBJECT
 
   private slots:
-    void indentColumns1();
+	void indentColumns1();
+	void indentColumns2();
 
 private:
   QString testFile(const QString& testName, const QString& fileName);

@@ -78,6 +78,14 @@ namespace Text
 					}
 					
 				}
+				else if (alignments[i] == '>')
+				{
+					
+						for (int j = 0; j < nSpacesToInsert; ++j)
+							it->insert(startIndex, ' ');
+					
+
+				}
 
 
 				
