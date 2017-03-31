@@ -1,5 +1,5 @@
 # Next Steps
-* Code-Duplicator - duplicate files - needs a editable file list
+* Code-Duplicator - duplicate files - needs a editable file/direcotry list
 * GridLayouter -> QtDesignerWidget
 * create namespace Path and unifiy functions from Directory and File
 * Shortcut Visual Studio delete current line

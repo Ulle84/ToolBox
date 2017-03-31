@@ -4,8 +4,8 @@ set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "" FORCE)
 
 project(ToolBox)
 
-set(OutputDirRelease ${CMAKE_BINARY_DIR}/../bin_build_release)
-set(OutputDirDebug ${CMAKE_BINARY_DIR}/../bin_build_debug)
+set(OutputDirRelease ${CMAKE_BINARY_DIR}/../bin)
+set(OutputDirDebug ${CMAKE_BINARY_DIR}/../debug)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${OutputDirRelease})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${OutputDirDebug})

@@ -49,7 +49,7 @@ int main(int argc, char* argv[])
     }
   }
 
-  Text::indentColumns(merged, "<<><");
+  Text::indentColumns(merged, "<<<><><");
 
   QString firstFileName = fileNames.first();
 
