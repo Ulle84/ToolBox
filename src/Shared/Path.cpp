@@ -106,6 +106,27 @@ namespace Path
   }
 
 
+  QString SHARED_API exchangeFileName(const QString& filePath, const QString& before, const QString& after)
+  {
+	  int startIndex = filePath.lastIndexOf('/');
+	  int endIndex = filePath.lastIndexOf('.');
+
+	  if (startIndex < 0 || endIndex < 0 || endIndex < startIndex)
+		  return QString();
+
+	  ++startIndex;
+
+	  int length = endIndex - startIndex;
+
+	  QString fileName = filePath.mid(startIndex, length);
+	  fileName.replace(before, after);
+
+	  QString changedFilePath(filePath);
+	  changedFilePath.replace(startIndex, length, fileName);
+
+	  return changedFilePath;
+  }
+
   /*bool isDirectory(const QString& path)
   {
 	  return false; // TODO

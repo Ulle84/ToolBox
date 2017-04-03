@@ -22,7 +22,10 @@ namespace Path
   QString SHARED_API fileNameWithoutExtension(const QString& filePath);
   QString SHARED_API fileNameExtension(const QString& filePath);
   QString SHARED_API unifySlahes(const QString& path);
-  
+
+  // TODO 
+  QString SHARED_API exchangeFileName(const QString& filePath, const QString& before, const QString& after);
+
   // TODO
   //bool SHARED_API isDirectory(const QString& path);
   //bool SHARED_API isFile(const QString& path);

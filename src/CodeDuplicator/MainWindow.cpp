@@ -6,8 +6,6 @@
 #include "Path.h"
 #include "QStringEx.h"
 
-#include "CodeDuplicator.h"
-
 #include "MainWindow.h"
 #include "ui_MainWindow.h"
 
@@ -16,7 +14,6 @@ MainWindow::MainWindow(QWidget* parent) :
   ui(new Ui::MainWindow)
 {
   ui->setupUi(this);
-  connect(ui->pathSelector, &PathSelector::pathChanged, this, &MainWindow::onPathChanged);
 
   setWindowTitle("CodeDuplicator");
 
@@ -27,7 +24,6 @@ MainWindow::MainWindow(QWidget* parent) :
     setGeometry(m_settings->value("geometry").toRect());
   }
 
-  ui->pathSelector->setPath(m_settings->value("path").toString());
   ui->lineEditDuplicate->setText(m_settings->value("duplicate").toString());
 
   
@@ -36,7 +32,6 @@ MainWindow::MainWindow(QWidget* parent) :
 MainWindow::~MainWindow()
 {
 	m_settings->setValue("geometry", geometry());
-	m_settings->setValue("path", ui->pathSelector->path());
 	m_settings->setValue("duplicate", ui->lineEditDuplicate->text());
 
   delete ui;
@@ -44,13 +39,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButtonDuplicate_clicked()
 {
-	QString sourcePath = ui->pathSelector->path();
 
-	if (sourcePath.isEmpty())
-		return;
-
-	if (!Directory::exists(sourcePath))
-		return;
+	QStringList directories = ui->pathList->directories();
+	QStringList files = ui->pathList->files();
 
 	QString sourceName = ui->lineEditOriginal->text();
 	QString destinationName = ui->lineEditDuplicate->text();
@@ -58,18 +49,52 @@ void MainWindow::on_pushButtonDuplicate_clicked()
 	if (sourceName.isEmpty() || destinationName.isEmpty())
 		return;
 
-	QString destinationPath = Directory::moveDown(Directory::moveUp(sourcePath), destinationName);
+	bool success = true;
 
-	QFileInfo fileInfo(destinationPath);
-
-	if (fileInfo.exists())
+	for (auto it : directories)
 	{
-		ui->statusBar->showMessage(tr("directory %1 already exists").arg(destinationName));
-		return;
-	}
+		QString sourcePath = it;		
+
 		
-	
-	bool success = process(sourcePath, destinationPath, sourceName, destinationName, destinationPath.length());
+
+		QString destinationPath = Directory::moveDown(Directory::moveUp(sourcePath), destinationName);
+
+		QFileInfo fileInfo(destinationPath);
+
+		if (fileInfo.exists())
+		{
+			ui->statusBar->showMessage(tr("directory %1 already exists").arg(destinationName));
+			return;
+		}
+
+
+		success &= process(sourcePath, destinationPath, sourceName, destinationName, destinationPath.length());
+	}
+
+	for (auto it : files)
+	{
+		QString sourcePath = it;
+
+
+
+		QString destinationPath = Path::exchangeFileName(sourcePath, sourceName, destinationName);
+
+		if (destinationPath.isEmpty())
+		{
+			continue;
+		}
+
+		QFileInfo fileInfo(destinationPath);
+
+		if (fileInfo.exists())
+		{
+			ui->statusBar->showMessage(tr("file %1 already exists").arg(destinationName));
+			return;
+		}
+
+
+		success &= process(sourcePath, destinationPath, sourceName, destinationName, destinationPath.length());
+	}
 
 	if (success)
 		ui->statusBar->showMessage(tr("succesfully duplicated %1 to %2").arg(sourceName).arg(destinationName));

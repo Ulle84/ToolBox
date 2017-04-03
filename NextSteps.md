@@ -1,13 +1,18 @@
 # Next Steps
-* Code-Duplicator - duplicate files - needs a editable file/direcotry list
+* generrated.cpp in sources folder - no seperate folder required!
+* QtWidget: Log - logs success/error messages with date & time errors in red
+* call Tortoise git with commit ToolBox?
 * GridLayouter -> QtDesignerWidget
 * create namespace Path and unifiy functions from Directory and File
 * Shortcut Visual Studio delete current line
 * find old bat-scripts folder
+* script for updating Shared.dll in qt/bin and updating QtDesignerWidgets in plugin directory
 * activate ProcessStarter
 * create repository PortableProgramms
 * DoubleCommander Links - activate and configure LinkCreator
 * SimpleHtmlEditor
+* FileCreator
+* File/DirectoryDuplicator
 * icons for tools which are linked in DoubleCommander
 * create git-repository archive and delete UllesSourceCode
 * CodeCreator: QtWidgetsApplication Template - add Widget, which has the same name of Creator-Input and is used in MainWindow
