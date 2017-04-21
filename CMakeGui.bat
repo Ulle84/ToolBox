@@ -1,15 +1,15 @@
 @echo off
 set BASE_DIR=%~dp0
 
-echo Checking prerequisites...
-
-where cmake-gui >NUL 2>&1
-if NOT %errorlevel% EQU 0 (
-  echo cmake-gui not found, please install cmake and add it to the default path
-  pause
-  exit 1
-)
-echo   cmake-gui found
+rem echo Checking prerequisites...
+rem 
+rem where cmake-gui >NUL 2>&1
+rem if NOT %errorlevel% EQU 0 (
+rem   echo cmake-gui not found, please install cmake and add it to the default path
+rem   pause
+rem   exit 1
+rem )
+rem echo   cmake-gui found
 
 set BUILD_DIR=%BASE_DIR%build
 
@@ -20,4 +20,4 @@ if not exist %BUILD_DIR% (
 )
 
 cd %BUILD_DIR%
-start cmake-gui %BASE_DIR%/src
+start ..\..\PortablePrograms\cmake\bin\cmake-gui.exe %BASE_DIR%/src
