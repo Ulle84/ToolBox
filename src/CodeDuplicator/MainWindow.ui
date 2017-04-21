@@ -53,6 +53,9 @@
       </property>
      </widget>
     </item>
+    <item>
+     <widget class="LogConsole" name="logConsole"/>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
@@ -77,6 +80,11 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
+  <customwidget>
+   <class>LogConsole</class>
+   <extends>QWidget</extends>
+   <header>LogConsole.h</header>
+  </customwidget>
   <customwidget>
    <class>PathList</class>
    <extends>QWidget</extends>

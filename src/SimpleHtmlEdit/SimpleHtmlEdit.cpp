@@ -48,5 +48,5 @@ void SimpleHtmlEdit::on_codeEditSimpleHtml_textChanged()
   QString html = converter.toHtml(ui->codeEditSimpleHtml->toPlainText());
 
   ui->codeEditHtml->setPlainText(html);
-  ui->textBrowser->setText(html);
+  ui->webView->setHtml(html);
 }

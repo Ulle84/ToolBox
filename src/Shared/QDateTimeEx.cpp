@@ -5,7 +5,12 @@
 namespace QDateTimeEx
 {
 
-  QString toString(const QDateTime& dateTime)
+	QString SHARED_API currentDateTime()
+	{
+		return QDateTime::currentDateTime().toString(dateTimeFormat);
+	}
+
+	QString toString(const QDateTime& dateTime)
   {
     return dateTime.toString(dateTimeFormat);
   }

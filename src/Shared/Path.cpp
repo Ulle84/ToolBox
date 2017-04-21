@@ -34,6 +34,8 @@ namespace Path
 
   QString SHARED_API configurationFile(const QString& programName, const QString& fileName)
   {
+	  
+
     QStringList stringList;
     stringList << configuration() << programName << fileName;
 

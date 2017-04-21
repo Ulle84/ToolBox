@@ -10,6 +10,8 @@
 
 namespace QDateTimeEx
 {
+	QString SHARED_API currentDateTime();
+
   QString SHARED_API toString(const QDateTime& dateTime);
   QDateTime SHARED_API fromString(const QString& dateTime);
 

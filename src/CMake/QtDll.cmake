@@ -10,8 +10,14 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 file(GLOB_RECURSE Headers ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 source_group("Headers" FILES ${Headers})
 
+if(NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/generated.cpp)
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/generated.cpp "/* file is generated automatically - changes will be overwritten */")
+endif()
+
 file(GLOB Sources ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+list(APPEND Sources ${CMAKE_CURRENT_BINARY_DIR}/generated.cpp)
 source_group("Sources" FILES ${Sources})
+
 
 file(GLOB WinResources ${CMAKE_CURRENT_SOURCE_DIR}/*.rc)
 
@@ -33,15 +39,7 @@ set(Information
 )
 source_group("Information" FILES ${Information})
 
-if(NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/generated.cpp)
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/generated.cpp "/* file is generated automatically - changes will be overwritten */")
-endif()
-
-file(GLOB Generated ${CMAKE_CURRENT_BINARY_DIR}/generated.cpp)
-source_group("Generated" FILES ${Generated})
-
 set(AllSources
-  ${Generated}
   ${Headers}
   ${Sources}
   ${Resources}

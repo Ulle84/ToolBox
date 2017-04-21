@@ -63,7 +63,8 @@ void MainWindow::on_pushButtonDuplicate_clicked()
 
 		if (fileInfo.exists())
 		{
-			ui->statusBar->showMessage(tr("directory %1 already exists").arg(destinationName));
+			ui->logConsole->error(tr("directory \"%1\" already exists").arg(destinationName));
+			//ui->statusBar->showMessage(tr("directory %1 already exists").arg(destinationName));
 			return;
 		}
 
@@ -88,7 +89,8 @@ void MainWindow::on_pushButtonDuplicate_clicked()
 
 		if (fileInfo.exists())
 		{
-			ui->statusBar->showMessage(tr("file %1 already exists").arg(destinationName));
+			ui->logConsole->error(tr("file \"%1\" already exists").arg(destinationName));
+			//ui->statusBar->showMessage(tr("file %1 already exists").arg(destinationName));
 			return;
 		}
 
@@ -97,9 +99,17 @@ void MainWindow::on_pushButtonDuplicate_clicked()
 	}
 
 	if (success)
-		ui->statusBar->showMessage(tr("succesfully duplicated %1 to %2").arg(sourceName).arg(destinationName));
+	{
+		ui->logConsole->success(tr("duplicated \"%1\" to \"%2\"").arg(sourceName).arg(destinationName));
+		//ui->statusBar->showMessage(tr("succesfully duplicated %1 to %2").arg(sourceName).arg(destinationName));
+	}
+		
 	else
-		ui->statusBar->showMessage(tr("duplication failed"));
+	{
+		ui->logConsole->error(tr("duplication failed"));
+			//ui->statusBar->showMessage(tr("duplication failed"));
+	}
+	
 }
 
 void MainWindow::onPathChanged(const QString& path)

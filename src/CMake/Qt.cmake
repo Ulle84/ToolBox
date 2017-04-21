@@ -42,6 +42,8 @@ set(QtBinDir "${Qt5Core_DIR}/../../../bin/")
 set(QtIncludeDir "${QtDir}/include/")
 set(QtDesignerPluginsDir "${QtDir}/plugins/designer/")
 
+# ToDo prepare one list of packages and generate package and link names automatically
+
 ################################################################################
 # Find Qt packages
 ################################################################################
@@ -51,6 +53,17 @@ set(QtPackages
   Qt5UiTools
   Qt5Widgets
   Qt5Test
+  Qt5WebKitWidgets
+  Qt5Sensors
+  Qt5Positioning
+  Qt5Quick
+  Qt5Qml
+  Qt5Network
+  Qt5Multimedia
+  Qt5MultimediaWidgets
+  Qt5WebChannel
+  Qt5Sql
+  Qt5PrintSupport
 )
 
 foreach(QtPackage ${QtPackages})
@@ -66,6 +79,17 @@ set(QtLinkLibraries
   Qt5::UiTools
   Qt5::Widgets
   Qt5::Test
+  Qt5::WebKitWidgets
+  Qt5::Sensors
+  Qt5::Positioning
+  Qt5::Quick
+  Qt5::Qml
+  Qt5::Network
+  Qt5::Multimedia
+  Qt5::MultimediaWidgets
+  Qt5::WebChannel
+  Qt5::Sql
+  Qt5::PrintSupport
 )
 
 ################################################################################
@@ -77,12 +101,25 @@ set(QtDlls
   ${QtPackages}
   Qt5Designer
   Qt5DesignerComponents
+  Qt5WebKit
+  Qt5OpenGl
 )
 
 foreach(QtDll ${QtDlls})
   file(INSTALL ${QtBinDir}${QtDll}.dll DESTINATION ${OutputDirRelease})  
   file(INSTALL ${QtBinDir}${QtDll}d.dll DESTINATION ${OutputDirDebug})  
   file(INSTALL ${QtBinDir}${QtDll}d.pdb DESTINATION ${OutputDirDebug})  
+endforeach()
+
+set(AdditionalDlls
+  icudt54
+  icuin54
+  icuuc54
+)
+
+foreach(AdditionalDll ${AdditionalDlls})
+  file(INSTALL ${QtBinDir}${AdditionalDll}.dll DESTINATION ${OutputDirRelease})  
+  file(INSTALL ${QtBinDir}${AdditionalDll}.dll DESTINATION ${OutputDirDebug})
 endforeach()
 
 ################################################################################

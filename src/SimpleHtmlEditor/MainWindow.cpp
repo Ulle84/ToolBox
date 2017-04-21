@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget* parent) :
   setWindowIcon(QIcon(":/images/logo.png"));
 
   QString fileContent = File::fileToString(Path::configurationFile("SimpleHtmlEditor", "content.json"));
-  QJsonObject object = Converter::toJson(fileContent);
+  QJsonObject object = Converter::toJsonObject(fileContent);
 
   setContent(object["content"].toArray());
   ui->treeEdit->setTree(object["tree"].toObject());

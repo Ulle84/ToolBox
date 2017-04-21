@@ -10,7 +10,12 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 file(GLOB Headers ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 source_group("Headers" FILES ${Headers})
 
+if(NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/generated.cpp)
+  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/generated.cpp "/* file is generated automatically - changes will be overwritten */")
+endif()
+
 file(GLOB Sources ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+list(APPEND Sources ${CMAKE_CURRENT_BINARY_DIR}/generated.cpp)
 source_group("Sources" FILES ${Sources})
 
 file(GLOB QtResources ${CMAKE_CURRENT_SOURCE_DIR}/Resources/*.qrc)
@@ -28,13 +33,6 @@ source_group("Forms" FILES ${Forms})
 
 file(GLOB Information ${CMAKE_CURRENT_SOURCE_DIR}/*.md)
 source_group("Information" FILES ${Information})
-
-if(NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/generated.cpp)
-  file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/generated.cpp "/* file is generated automatically - changes will be overwritten */")
-endif()
-
-file(GLOB Generated ${CMAKE_CURRENT_BINARY_DIR}/generated.cpp)
-source_group("Generated" FILES ${Generated})
 
 set(AllSources
   ${Generated}

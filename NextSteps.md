@@ -1,10 +1,10 @@
 # Next Steps
-* generrated.cpp in sources folder - no seperate folder required!
-* QtWidget: Log - logs success/error messages with date & time errors in red
-* call Tortoise git with commit ToolBox?
+* PathSelector: make label-text and button-text configurable via Designer -> use Qt mechanism
 * GridLayouter -> QtDesignerWidget
+* Class/Namespace Renamer
 * create namespace Path and unifiy functions from Directory and File
 * Shortcut Visual Studio delete current line
+* TimeTracker
 * find old bat-scripts folder
 * script for updating Shared.dll in qt/bin and updating QtDesignerWidgets in plugin directory
 * activate ProcessStarter
@@ -45,3 +45,5 @@
 * CodeCreator: Apps - preview area of log -> drag and drop ico-file on preview area of logo
 * CodeDuplicator: change first line with creational comment
 * WorkManager
+* call Tortoise git with commit ToolBox?
+* check marked Mails if there are more ToDos
