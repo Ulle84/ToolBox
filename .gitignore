@@ -2,3 +2,4 @@ build/*
 configuration/CodeCreator/*
 configuration/SimpleHtmlEditor/*
 debug/*
+/configuration/PhoneBook/entries.txt
