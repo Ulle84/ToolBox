@@ -50,7 +50,6 @@ QList<QPair<QString, QString>> GeneratorQtConsoleApplication::generatedCode()
   QStringList files;
   files.append(":/files/Templates/QtConsoleApplication/CMakeLists.txt");
   files.append(":/files/Templates/QtConsoleApplication/main.cpp");
-  files.append(":/files/Templates/QtConsoleApplication/Notes.md");
 
   for (auto it = files.begin(); it != files.end(); it++)
   {

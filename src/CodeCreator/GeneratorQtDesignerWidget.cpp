@@ -50,8 +50,7 @@ QList<QPair<QString, QString>> GeneratorQtDesignerWidget::generatedCode()
   QString newName = ui->lineEditName->text();
 
   QStringList files;
-  files.append(":/files/Templates/QtDesignerWidget/CMakeLists.txt");
-  files.append(":/files/Templates/QtDesignerWidget/Notes.md");
+  files.append(":/files/Templates/QtDesignerWidget/CMakeLists.txt");  
   files.append(":/files/Templates/QtDesignerWidget/QtDesignerWidget.cpp");
   files.append(":/files/Templates/QtDesignerWidget/API/QtDesignerWidget.h");
   files.append(":/files/Templates/QtDesignerWidget/QtDesignerWidget.ui");

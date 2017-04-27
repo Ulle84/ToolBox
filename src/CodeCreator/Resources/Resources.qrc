@@ -12,7 +12,6 @@
     <!-- ConsoleApplication -->
     <file>Templates/ConsoleApplication/CMakeLists.txt</file>
     <file>Templates/ConsoleApplication/main.cpp</file>
-    <file>Templates/ConsoleApplication/Notes.md</file>
     
     <!-- Dll -->
     <file>Templates/Dll/CMakeLists.txt</file>
@@ -28,7 +27,6 @@
     <!-- QtConsoleApplication -->
     <file>Templates/QtConsoleApplication/CMakeLists.txt</file>
     <file>Templates/QtConsoleApplication/main.cpp</file>
-    <file>Templates/QtConsoleApplication/Notes.md</file>
     
     <!-- QtWidget -->
     <file>Templates/QtWidget/Form.cpp</file>
@@ -57,7 +55,6 @@
     <file>Templates/QtWidgetsApplication/MainWindow.cpp</file>
     <file>Templates/QtWidgetsApplication/MainWindow.h</file>
     <file>Templates/QtWidgetsApplication/MainWindow.ui</file>
-    <file>Templates/QtWidgetsApplication/Notes.md</file>
     <file>Templates/QtWidgetsApplication/Resources/Resources.qrc</file>
     <file>Templates/QtWidgetsApplication/Resources/logo.ico</file>
     <file>Templates/QtWidgetsApplication/Resources/Resources.rc</file>

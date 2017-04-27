@@ -30,13 +30,7 @@ source_group("Resources" FILES ${Resources})
 file(GLOB Forms ${CMAKE_CURRENT_SOURCE_DIR}/*.ui)
 source_group("Forms" FILES ${Forms})
 
-file(GLOB JSON ${CMAKE_CURRENT_SOURCE_DIR}/*.json)
-file(GLOB MarkDown ${CMAKE_CURRENT_SOURCE_DIR}/*.md)
-
-set(Information
-  ${JSON}
-  ${MarkDown}
-)
+file(GLOB Information ${CMAKE_CURRENT_SOURCE_DIR}/*.json)
 source_group("Information" FILES ${Information})
 
 set(AllSources

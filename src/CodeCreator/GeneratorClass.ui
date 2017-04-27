@@ -56,7 +56,14 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEditName"/>
+      <widget class="QLineEdit" name="lineEditName">
+       <property name="font">
+        <font>
+         <family>Courier New</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+      </widget>
      </item>
      <item row="7" column="0">
       <widget class="QLabel" name="label_9">
@@ -66,7 +73,14 @@
       </widget>
      </item>
      <item row="12" column="1">
-      <widget class="QPlainTextEdit" name="plainTextEditNamespaces"/>
+      <widget class="QPlainTextEdit" name="plainTextEditNamespaces">
+       <property name="font">
+        <font>
+         <family>Courier New</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+      </widget>
      </item>
      <item row="7" column="1">
       <widget class="SelectorDeclarationType" name="moveConstructor"/>
@@ -184,7 +198,14 @@
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="lineEditBaseClass"/>
+      <widget class="QLineEdit" name="lineEditBaseClass">
+       <property name="font">
+        <font>
+         <family>Courier New</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+      </widget>
      </item>
      <item row="8" column="0">
       <widget class="QLabel" name="label_10">

@@ -31,9 +31,6 @@ source_group("Resources" FILES ${Resources})
 file(GLOB Forms ${CMAKE_CURRENT_SOURCE_DIR}/*.ui)
 source_group("Forms" FILES ${Forms})
 
-file(GLOB Information ${CMAKE_CURRENT_SOURCE_DIR}/*.md)
-source_group("Information" FILES ${Information})
-
 set(AllSources
   ${Generated}
   ${Headers}
