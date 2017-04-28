@@ -1,5 +1,10 @@
+#include <string>
+
 #include <QFile>
 #include <QTextStream>
+
+#include <QMetaObject>
+#include <QMetaMethod>
 
 #include "ui_GeneratorQtWidgetsApplication.h"
 
@@ -13,7 +18,18 @@ GeneratorQtWidgetsApplication::GeneratorQtWidgetsApplication(QWidget* parent) :
 {
   ui->setupUi(this);
 
-  connect(ui->lineEditName, SIGNAL(textEdited(QString)), this, SIGNAL(optionsChanged()));
+  QMap<QString, QObject*> map;
+  map["lineEditName"] = ui->lineEditName;
+  map["destination"] = this;
+
+  std::string source = "textEdited(QString)";
+  std::string destination = "optionsChanged()";
+
+  int s = ui->lineEditName->metaObject()->indexOfSignal(source.c_str());
+  int d = this->metaObject()->indexOfSignal(destination.c_str());
+
+  //bool success = connect(ui->lineEditName, &QLineEdit::textEdited, this, &GeneratorQtWidgetsApplication::optionsChanged);
+  bool success = connect(map["lineEditName"], ui->lineEditName->metaObject()->method(s), map["destination"], this->metaObject()->method(d));
 }
 
 GeneratorQtWidgetsApplication::~GeneratorQtWidgetsApplication()
