@@ -18,18 +18,7 @@ GeneratorQtWidgetsApplication::GeneratorQtWidgetsApplication(QWidget* parent) :
 {
   ui->setupUi(this);
 
-  QMap<QString, QObject*> map;
-  map["lineEditName"] = ui->lineEditName;
-  map["destination"] = this;
-
-  std::string source = "textEdited(QString)";
-  std::string destination = "optionsChanged()";
-
-  int s = ui->lineEditName->metaObject()->indexOfSignal(source.c_str());
-  int d = this->metaObject()->indexOfSignal(destination.c_str());
-
-  //bool success = connect(ui->lineEditName, &QLineEdit::textEdited, this, &GeneratorQtWidgetsApplication::optionsChanged);
-  bool success = connect(map["lineEditName"], ui->lineEditName->metaObject()->method(s), map["destination"], this->metaObject()->method(d));
+  connect(ui->lineEditName, &QLineEdit::textEdited, this, &GeneratorQtWidgetsApplication::optionsChanged);
 }
 
 GeneratorQtWidgetsApplication::~GeneratorQtWidgetsApplication()
@@ -118,7 +107,6 @@ QList<QPair<QString, QString>> GeneratorQtWidgetsApplication::additionalResource
   QString newName = ui->lineEditName->text();
 
   QStringList fileNameList;
-  fileNameList.append(":/files/Templates/QtWidgetsApplication/Resources/logo.png");
   fileNameList.append(":/files/Templates/QtWidgetsApplication/Resources/logo.ico");
   fileNameList.append(":/files/Templates/QtWidgetsApplication/Resources/Resources.rc");
   fileNameList.append(":/files/Templates/QtWidgetsApplication/Resources/Resources.qrc");
