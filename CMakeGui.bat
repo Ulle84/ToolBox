@@ -1,7 +1,7 @@
 @echo off
 set BASE_DIR=%~dp0
 
-set CMakeGuiPath=%BASE_DIR%..\PortablePrograms\cmake\bin\cmake-gui.exe
+set CMakeGuiPath=%BASE_DIR%..\Programs\Portable\cmake\bin\cmake-gui.exe
 
 if not exist %CMakeGuiPath% (
   echo cmake-gui not found - please make available in:

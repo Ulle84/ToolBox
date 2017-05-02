@@ -54,4 +54,10 @@ target_link_libraries(${PROJECT_NAME}
 
 add_dependencies(${PROJECT_NAME} QtBuildHelper)
 
+if ("${EXE_TYPE}" STREQUAL  "Console")
+  set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ConsoleApplications)
+else()
+  set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER WidgetApplications)
+endif()
+
 add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD COMMAND QtBuildHelper.exe ARGS -id ${CMAKE_CURRENT_SOURCE_DIR} -ed ${CMAKE_CURRENT_SOURCE_DIR}/Resources/Templates -od ${CMAKE_CURRENT_BINARY_DIR} -qbd ${QtBinDir} -qid ${QtIncludeDir} WORKING_DIRECTORY ${QtBuilderWorkingDir})

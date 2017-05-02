@@ -28,4 +28,6 @@ target_link_libraries(${PROJECT_NAME}
   Qt5::Core
 )
 
+set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ConsoleApplications)
+
 set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

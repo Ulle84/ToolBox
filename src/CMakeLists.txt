@@ -14,14 +14,17 @@ set(QtBuilderWorkingDir ${OutputDirDebug})
 
 #file(INSTALL ${OutputDir}/../bin/AStyle.exe DESTINATION ${OutputDir})
 
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
 include(CMake/Qt.cmake)
 
 add_subdirectory(ArgumentPrinter)
 add_subdirectory(AutoHotKeyHelper)
-add_subdirectory(Bazar)
 add_subdirectory(Base64Converter)
+add_subdirectory(Bazar)
 add_subdirectory(CMakeHelper)
 add_subdirectory(CallStackCleaner)
+add_subdirectory(Chuck)
 add_subdirectory(CodeCleaner)
 add_subdirectory(CodeCreator)
 add_subdirectory(CodeDuplicator)
@@ -58,4 +61,3 @@ add_subdirectory(Timer)
 add_subdirectory(TreeEdit)
 add_subdirectory(VisualStudioOutputSorter)
 add_subdirectory(VisualStudioSearchResultFilter)
-add_subdirectory(Chuck)
