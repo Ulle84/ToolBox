@@ -1,0 +1,50 @@
+{
+    "connections": [
+        {
+            "destination": "widget0 setNewGeneratedNumber(int)",
+            "source": "randomNumberGenerator newNumberGenerated(int)"
+        },
+        {
+            "destination": "widget1 setNewGeneratedNumber(int)",
+            "source": "randomNumberGenerator newNumberGenerated(int)"
+        },
+        {
+            "destination": "widget2 setNewGeneratedNumber(int)",
+            "source": "randomNumberGenerator newNumberGenerated(int)"
+        },
+        {
+            "destination": "widget2 setNewGeneratedNumber(int)",
+            "source": "randomNumberGenerator2 newNumberGenerated(int)"
+        },
+        {
+            "destination": "widget1 setNewParameter(QString,QString)",
+            "source": "widget0 parameterChanged(QString,QString)"
+        },
+        {
+            "destination": "widget0 setNewParameter(QString,QString)",
+            "source": "widget1 parameterChanged(QString,QString)"
+        }
+    ],
+    "instances": [
+        {
+            "class": "RandomNumberGenerator",
+            "id": "randomNumberGenerator"
+        },
+        {
+            "class": "RandomNumberGenerator",
+            "id": "randomNumberGenerator2"
+        },
+        {
+            "class": "Widget",
+            "id": "widget0"
+        },
+        {
+            "class": "Widget",
+            "id": "widget1"
+        },
+        {
+            "class": "Widget",
+            "id": "widget2"
+        }
+    ]
+}
