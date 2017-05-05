@@ -43,8 +43,6 @@ void CommentHandler::parseAndReplaceComments(QString& code, const Comment& comme
       indexEnd = code.length() - 1;
     }
 
-
-
     int length = indexEnd - indexBegin + (comment.endTagBelongsToComment() ? comment.endTag().length() : 0);
 
     QString commentContent = code.mid(indexBegin, length);
@@ -74,7 +72,6 @@ void CommentHandler::parseAndReplaceComments(QString& code, const Comment& comme
       searchOffset = comment.beginTag().length();
     }
 
-
     indexBegin = code.indexOf(comment.beginTag(), indexBegin + searchOffset);
   }
 }
@@ -84,8 +81,6 @@ void CommentHandler::revertComments(QString& code)
   revertComments(code, m_lineComment2, m_lineComments2);
   revertComments(code, m_blockComment, m_blockComments);
   revertComments(code, m_lineComment1, m_lineComments1);
-
-
 }
 
 void CommentHandler::revertComments(QString& code, const Comment& comment, const QStringList& comments)

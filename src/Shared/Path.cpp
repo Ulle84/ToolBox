@@ -8,7 +8,6 @@
 
 namespace Path
 {
-
   QString Path::testFile(const QString& moduleName, const QString& category, const QString& testName, const QString& fileName)
   {
     QStringList stringList;
@@ -43,8 +42,6 @@ namespace Path
 
   QString SHARED_API configurationFile(const QString& programName, const QString& fileName)
   {
-	  
-
     QStringList stringList;
     stringList << configuration() << programName << fileName;
 
@@ -60,102 +57,105 @@ namespace Path
 
   QString directory(const QString& filePath)
   {
-	  QStringList splitted = split(filePath);
+    QStringList splitted = split(filePath);
 
-	  if (splitted.isEmpty())
-		  return QString();
+    if (splitted.isEmpty())
+    {
+      return QString();
+    }
 
+    splitted.removeLast();
 
-	  splitted.removeLast();
-
-	  return join(splitted);
-	
+    return join(splitted);
   }
 
   QString fileName(const QString& filePath)
   {
-	  QStringList splitted = split(filePath);
+    QStringList splitted = split(filePath);
 
-	  if (splitted.isEmpty())
-		  return QString();
+    if (splitted.isEmpty())
+    {
+      return QString();
+    }
 
-	  return splitted.last();
+    return splitted.last();
   }
 
   QString fileNameWithoutExtension(const QString& filePath)
   {
-	  QString fileName = Path::fileName(filePath);
+    QString fileName = Path::fileName(filePath);
 
-	  int index = fileName.lastIndexOf('.');
+    int index = fileName.lastIndexOf('.');
 
-	  if (index < 0)
-		  return QString();
+    if (index < 0)
+    {
+      return QString();
+    }
 
-	  return fileName.left(index);
-
-
-	  
+    return fileName.left(index);
   }
 
   QString fileNameExtension(const QString& filePath)
   {
-	  QString fileName = Path::fileName(filePath);
+    QString fileName = Path::fileName(filePath);
 
-	  int index = fileName.lastIndexOf('.');
+    int index = fileName.lastIndexOf('.');
 
-	  if (index < 0)
-		  return QString();
+    if (index < 0)
+    {
+      return QString();
+    }
 
-	  return fileName.mid(index + 1);
+    return fileName.mid(index + 1);
   }
 
   QString unifySlahes(const QString& path)
   {
-	  QString string = path;
-	  string.replace('\\', '/');
-	  return string;
+    QString string = path;
+    string.replace('\\', '/');
+    return string;
   }
-
 
   QString SHARED_API exchangeFileName(const QString& filePath, const QString& before, const QString& after)
   {
-	  int startIndex = filePath.lastIndexOf('/');
-	  int endIndex = filePath.lastIndexOf('.');
+    int startIndex = filePath.lastIndexOf('/');
+    int endIndex = filePath.lastIndexOf('.');
 
-	  if (startIndex < 0 || endIndex < 0 || endIndex < startIndex)
-		  return QString();
+    if (startIndex < 0 || endIndex < 0 || endIndex < startIndex)
+    {
+      return QString();
+    }
 
-	  ++startIndex;
+    ++startIndex;
 
-	  int length = endIndex - startIndex;
+    int length = endIndex - startIndex;
 
-	  QString fileName = filePath.mid(startIndex, length);
-	  fileName.replace(before, after);
+    QString fileName = filePath.mid(startIndex, length);
+    fileName.replace(before, after);
 
-	  QString changedFilePath(filePath);
-	  changedFilePath.replace(startIndex, length, fileName);
+    QString changedFilePath(filePath);
+    changedFilePath.replace(startIndex, length, fileName);
 
-	  return changedFilePath;
+    return changedFilePath;
   }
 
   /*bool isDirectory(const QString& path)
   {
-	  return false; // TODO
+    return false; // TODO
   }
 
   bool isFile(const QString& path)
   {
-	  return false; // TODO
+    return false; // TODO
   }*/
 
   QStringList SHARED_API split(const QString& path)
   {
-	  return unifySlahes(path).split('/', QString::SkipEmptyParts);
+    return unifySlahes(path).split('/', QString::SkipEmptyParts);
   }
 
   QString SHARED_API join(const QStringList& splittedPath)
   {
-	  return splittedPath.join('/');
+    return splittedPath.join('/');
   }
-
 }

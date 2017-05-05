@@ -12,7 +12,7 @@
 
 namespace File
 {
-	static const QString mapSeperator = " --> ";
+  static const QString mapSeperator = " --> ";
 
   QString fileToString(const QString& filePath)
   {
@@ -36,7 +36,7 @@ namespace File
 
   QStringList fileToStringList(const QString& filePath)
   {
-	  return fileToString(filePath).split("\n");
+    return fileToString(filePath).split("\n");
   }
 
   QMap<QString, QString> fileToStringMap(const QString& filePath)
@@ -141,11 +141,13 @@ namespace File
 
   QString name(const QString& filePath)
   {
-	  QStringList splitted = Path::split(filePath);
-	  if (splitted.isEmpty())
-		  return QString();
-	  
-	  return splitted.last();
-  }
+    QStringList splitted = Path::split(filePath);
 
+    if (splitted.isEmpty())
+    {
+      return QString();
+    }
+
+    return splitted.last();
+  }
 }

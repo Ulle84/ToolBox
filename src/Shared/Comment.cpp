@@ -4,7 +4,6 @@
 
 Comment::Comment()
 {
-
 }
 
 Comment::Comment(const QString& beginTag, const QString& endTag, const QString& replacementMap, bool endTagBelongsToComment) :
@@ -13,12 +12,10 @@ Comment::Comment(const QString& beginTag, const QString& endTag, const QString& 
   m_replacementMap(replacementMap),
   m_endTagBelongsToComment(endTagBelongsToComment)
 {
-
 }
 
 Comment::~Comment()
 {
-
 }
 
 QString Comment::beginTag() const

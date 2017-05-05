@@ -68,7 +68,7 @@ QString SimpleHtmlConverter::toHtml(const QString& simpleHtml)
             string.append(QString("</%1>").arg(tag));
           }
         }
-      }      
+      }
     }
     else
     {
