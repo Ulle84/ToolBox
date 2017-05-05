@@ -11,7 +11,7 @@
 // TODO create Test for Converter!!!
 namespace Converter
 {
-  // TODO unifiy interface
+  // TODO unifiy interface only toBlub methods - if arguments are not unique -> introduce enum to indiciate type of argument
   // TODO check all other helpers, if some functions can be moved here
 
   std::string SHARED_API toString(int number);
@@ -24,6 +24,8 @@ namespace Converter
 
   QJsonObject SHARED_API configFileToJsonObject(const QString& programName, const QString& fileName);
   void SHARED_API jsonObjectToConfigFile(const QJsonObject& jsonObject, const QString& programName, const QString& fileName);
+
+  QString SHARED_API toPath(const QStringList& pathParts);
 }
 
 #endif

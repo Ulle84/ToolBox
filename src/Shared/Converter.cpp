@@ -16,6 +16,11 @@ namespace Converter
     return std::to_string(number);
   }
 
+  QString toPath(const QStringList& pathParts)
+  {
+    return pathParts.join('/');
+  }
+
   QJsonObject toJsonObject(const QString& string)
   {
     QJsonDocument sd = QJsonDocument::fromJson(string.toUtf8());

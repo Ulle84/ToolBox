@@ -1,5 +1,6 @@
-build/*
-configuration/CodeCreator/*
-configuration/SimpleHtmlEditor/*
-debug/*
+/build/*
+/configuration/CodeCreator/*
 /configuration/PhoneBook/entries.txt
+/configuration/SimpleHtmlEditor/*
+/content/DailyNotes/*
+/debug/*
