@@ -9,6 +9,8 @@
 #include <QDir>
 #include <QTextStream>
 #include <QDate>
+#include <QLineEdit>
+#include <QPlainTextEdit>
 
 #include "ui_CodeCreator.h"
 
@@ -32,6 +34,7 @@
 #include "GeneratorQtWidgetDll.h"
 #include "OptionsDialog.h"
 #include "Path.h"
+#include "QFontEx.h"
 
 CodeCreator::CodeCreator(QWidget* parent) :
   QWidget(parent),
@@ -56,6 +59,18 @@ CodeCreator::CodeCreator(QWidget* parent) :
   initGenerators();
   readXml();
   updatePreview();
+
+  QList<QLineEdit*> lineEdits = findChildren<QLineEdit*>();
+  for (auto it = lineEdits.begin(); it != lineEdits.end(); ++it)
+  {
+    (*it)->setFont(QFontEx::monospace());
+  }
+
+  QList<QPlainTextEdit*> plainTextEdits = findChildren<QPlainTextEdit*>();
+  for (auto it = plainTextEdits.begin(); it != plainTextEdits.end(); ++it)
+  {
+    (*it)->setFont(QFontEx::monospace());
+  }
 }
 
 CodeCreator::~CodeCreator()
