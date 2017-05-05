@@ -63,6 +63,9 @@ QList<QPair<QString, QString>> GeneratorQtWidgetsApplication::generatedCode()
   textFiles.append(":/files/Templates/QtWidgetsApplication/MainWindow.cpp");
   textFiles.append(":/files/Templates/QtWidgetsApplication/MainWindow.h");
   textFiles.append(":/files/Templates/QtWidgetsApplication/MainWindow.ui");
+  textFiles.append(":/files/Templates/QtWidgetsApplication/QtWidgetsApplication.cpp");
+  textFiles.append(":/files/Templates/QtWidgetsApplication/QtWidgetsApplication.h");
+  textFiles.append(":/files/Templates/QtWidgetsApplication/QtWidgetsApplication.ui");
 
   for (auto it = textFiles.begin(); it != textFiles.end(); it++)
   {

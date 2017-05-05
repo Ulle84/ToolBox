@@ -11,8 +11,8 @@ class QWidget;
 
 namespace WidgetGeometry
 {
-	void SHARED_API save(const QWidget* widget, QJsonObject& jsonObject);
-	void SHARED_API load(QWidget* widget, const QJsonObject& jsonObject);
+  void SHARED_API save(const QWidget* widget, QJsonObject& jsonObject);
+  void SHARED_API load(QWidget* widget, const QJsonObject& jsonObject);
 }
 
 #endif

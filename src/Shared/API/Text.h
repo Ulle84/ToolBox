@@ -10,8 +10,8 @@
 
 namespace Text
 {
-	// TODO method with string
-	//bool SHARED_API indentColumns(QString& input, const QString& alignments, QChar seperator = ' ');
+  // TODO method with string
+  //bool SHARED_API indentColumns(QString& input, const QString& alignments, QChar seperator = ' ');
   bool SHARED_API indentColumns(QStringList& input, const QString& alignments, QChar seperator = ' ');
 };
 

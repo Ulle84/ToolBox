@@ -8,12 +8,11 @@
 
 #include "SharedAPI.h"
 
-
 // TODO create Test for Converter!!!
 namespace Converter
 {
-	// TODO unifiy interface
-	// TODO check all other helpers, if some functions can be moved here
+  // TODO unifiy interface
+  // TODO check all other helpers, if some functions can be moved here
 
   std::string SHARED_API toString(int number);
   QJsonObject SHARED_API toJsonObject(const QString& string);

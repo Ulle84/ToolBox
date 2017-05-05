@@ -37,6 +37,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
+  createLink();
+}
+
+void MainWindow::on_lineEditName_returnPressed()
+{
+  createLink();
+}
+
+void MainWindow::createLink()
+{
   QString linkPath = QString("%1\\%2.lnk").arg(ui->lineEditDirectory->text()).arg(ui->lineEditName->text());
 
   bool linked = m_input.link(linkPath);

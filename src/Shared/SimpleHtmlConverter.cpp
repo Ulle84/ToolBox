@@ -11,7 +11,7 @@ QString SimpleHtmlConverter::toHtml(const QString& simpleHtml)
 {
   QString input = removeComments(simpleHtml);
 
-  QString string = "<html>\n<head>\n</head>\n<body>";
+  QString string = "<html>\n<head>\n</head>\n<body>\n";
 
   QList<QString> tags;
 
@@ -52,20 +52,23 @@ QString SimpleHtmlConverter::toHtml(const QString& simpleHtml)
     }
     else if (c == ')')
     {
-      QString tag = tags.last();
-      tags.removeLast();
-
-      if (!tag.isEmpty())
+      if (!tags.empty())
       {
-        if (lastCharWasOpeningBracket)
+        QString tag = tags.last();
+        tags.removeLast();
+
+        if (!tag.isEmpty())
         {
-          string.insert(string.length() - 1, '/');
+          if (lastCharWasOpeningBracket)
+          {
+            string.insert(string.length() - 1, '/');
+          }
+          else
+          {
+            string.append(QString("</%1>").arg(tag));
+          }
         }
-        else
-        {
-          string.append(QString("</%1>").arg(tag));
-        }
-      }
+      }      
     }
     else
     {

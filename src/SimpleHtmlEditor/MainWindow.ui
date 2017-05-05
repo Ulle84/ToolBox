@@ -32,8 +32,11 @@
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="TreeEdit" name="treeEdit"/>
-      <widget class="SimpleHtmlEdit" name="simpleHtmlEdit"/>
+      <property name="childrenCollapsible">
+       <bool>false</bool>
+      </property>
+      <widget class="TreeEdit" name="treeEdit" native="true"/>
+      <widget class="SimpleHtmlEdit" name="simpleHtmlEdit" native="true"/>
      </widget>
     </item>
    </layout>

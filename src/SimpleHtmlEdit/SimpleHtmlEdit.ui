@@ -31,6 +31,9 @@
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
+     <property name="childrenCollapsible">
+      <bool>false</bool>
+     </property>
      <widget class="CodeEdit" name="codeEditSimpleHtml"/>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
@@ -73,14 +76,14 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>CodeEdit</class>
-   <extends>QTextEdit</extends>
-   <header>CodeEdit.h</header>
-  </customwidget>
-  <customwidget>
    <class>QWebView</class>
    <extends>QWidget</extends>
    <header>QtWebKitWidgets/QWebView</header>
+  </customwidget>
+  <customwidget>
+   <class>CodeEdit</class>
+   <extends>QTextEdit</extends>
+   <header>CodeEdit.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

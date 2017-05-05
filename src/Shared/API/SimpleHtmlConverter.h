@@ -4,8 +4,9 @@
 #include <QString>
 
 #include "Attribute.h"
+#include "SharedAPI.h"
 
-class SimpleHtmlConverter
+class SHARED_API SimpleHtmlConverter
 {
   public:
     SimpleHtmlConverter();

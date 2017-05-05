@@ -55,6 +55,9 @@
     <file>Templates/QtWidgetsApplication/MainWindow.cpp</file>
     <file>Templates/QtWidgetsApplication/MainWindow.h</file>
     <file>Templates/QtWidgetsApplication/MainWindow.ui</file>
+    <file>Templates/QtWidgetsApplication/QtWidgetsApplication.cpp</file>
+    <file>Templates/QtWidgetsApplication/QtWidgetsApplication.h</file>
+    <file>Templates/QtWidgetsApplication/QtWidgetsApplication.ui</file>
     <file>Templates/QtWidgetsApplication/Resources/Resources.qrc</file>
     <file>Templates/QtWidgetsApplication/Resources/logo.ico</file>
     <file>Templates/QtWidgetsApplication/Resources/Resources.rc</file>

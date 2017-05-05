@@ -32,6 +32,15 @@ namespace Path
     return stringList.join('/');
   }
 
+  QString SHARED_API content()
+  {
+    QStringList stringList;
+    stringList << QCoreApplication::applicationDirPath();
+    stringList << ".." << "content";
+
+    return stringList.join('/');
+  }
+
   QString SHARED_API configurationFile(const QString& programName, const QString& fileName)
   {
 	  

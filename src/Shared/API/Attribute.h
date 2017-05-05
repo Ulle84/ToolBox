@@ -3,7 +3,9 @@
 
 #include <QString>
 
-class Attribute
+#include "SharedAPI.h"
+
+class SHARED_API Attribute
 {
   public:
     Attribute();

@@ -23,8 +23,11 @@ class MainWindow : public QMainWindow
 
   private slots:
     void on_pushButton_clicked();
+    void on_lineEditName_returnPressed();
 
   private:
+    void createLink();
+
     Ui::MainWindow* ui;
 
     QSettings* m_settings;
