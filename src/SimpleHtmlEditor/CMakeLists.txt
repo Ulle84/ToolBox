@@ -5,7 +5,6 @@ set(ProjectName SimpleHtmlEditor)
 set(RequiredLibraries
   SimpleHtmlEdit
   TreeEdit
-  SharedResources
 )
 
 include(../CMake/QtApplication.cmake)

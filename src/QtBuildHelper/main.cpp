@@ -1,7 +1,8 @@
 // created on 2017-01-24 by Ulrich Belitz
 
-#include <iostream>
+//#include <iostream>
 
+// TODO check if all includes are really required
 #include <QFile>
 #include <QFileInfo>
 #include <QDirIterator>
@@ -10,35 +11,8 @@
 #include <QStringList>
 
 #include "Arguments.h"
-#include "Console.h"
-#include "File.h"
-#include "QDateTimeEx.h"
+#include "Helper.h"
 #include "Tool.h"
-
-QString fileName(const QString& filePath)
-{
-  QStringList stringList = filePath.split("/");
-
-  return stringList.isEmpty() ? QString() : stringList.last();  
-}
-
-void removeExcludedTools(QList<Tool>& tools, const QStringList& excludedTools)
-{
-  if (!excludedTools.isEmpty())
-  {
-    for (auto& excludedTool : excludedTools)
-    {
-      for (int i = 0; i < tools.length(); ++i)
-      {
-        if (tools[i].m_toolName.toLower() == excludedTool.toLower())
-        {
-          tools.removeAt(i);
-          break;
-        }
-      }
-    }    
-  }
-}
 
 int main(int argc, char* argv[])
 {
@@ -52,14 +26,14 @@ int main(int argc, char* argv[])
   QStringList excludedTools = arguments.arguments("-et");
 
   QString timeStampSrcPath = outputDirectory + "/QtBuildHelperSrc.txt";
-  QMap<QString, QString> timeStampsSrc = File::fileToStringMap(timeStampSrcPath);
+  QMap<QString, QString> timeStampsSrc = Helper::fileToStringMap(timeStampSrcPath);
 
   QList<Tool> tools;  
   tools.append(Tool("rcc", ".qrc", ".cpp", "qrc_"));
   tools.append(Tool("moc", ".h", ".cpp", "moc_"));
   tools.append(Tool("uic", ".ui", ".h", "ui_"));
 
-  removeExcludedTools(tools, excludedTools);
+  Helper::removeExcludedTools(tools, excludedTools);
 
   // TODO rcc: parse qrc file, and check, if a file inside the resource file has changed -> if yes - recompile  
 
@@ -92,7 +66,7 @@ int main(int argc, char* argv[])
         }
 
         QFileInfo fileInfo(input);
-        QString lastModfied = QDateTimeEx::toString(fileInfo.lastModified());
+        QString lastModfied = Helper::toString(fileInfo.lastModified());
 
         if (timeStampsSrc[input] != lastModfied)
         {
@@ -100,18 +74,18 @@ int main(int argc, char* argv[])
 
           if (it.m_toolName == "moc")
           {
-            if (!File::fileToString(input).contains("Q_OBJECT"))
+            if (!Helper::fileToString(input).contains("Q_OBJECT"))
             {
               continue;
             }
           }
 
-          QString output =  fileName(input).replace(it.m_inputFileExtension, it.m_outputFileExtension).prepend(it.m_outputFilePrefix);
+          QString output =  Helper::fileName(input).replace(it.m_inputFileExtension, it.m_outputFileExtension).prepend(it.m_outputFilePrefix);
 
           output.prepend(QDir::separator());
           output.prepend(outputDirectory);
 
-          Console::showMessage(QString("QtBuildHelper: %1'ing %2").arg(it.m_toolName).arg(input).toStdString());
+          Helper::showMessage(QString("QtBuildHelper: %1'ing %2").arg(it.m_toolName).arg(input).toStdString());
 
           QStringList parameters;
           parameters << "-o" << output;
@@ -129,15 +103,15 @@ int main(int argc, char* argv[])
     }
     else
     {
-      Console::showError(it.m_toolName.toStdString() + ".exe not found");
+      Helper::showError(it.m_toolName.toStdString() + ".exe not found");
     }
   }
 
-  File::stringMapToFile(timeStampsSrc, timeStampSrcPath);
+  Helper::stringMapToFile(timeStampsSrc, timeStampSrcPath);
 
   
   QString timeStampGeneratedPath = outputDirectory + "/QtBuildHelperGenerated.txt";
-  QMap<QString, QString> timeStampsGenerated = File::fileToStringMap(timeStampGeneratedPath);
+  QMap<QString, QString> timeStampsGenerated = Helper::fileToStringMap(timeStampGeneratedPath);
 
   QDirIterator dirIterator(outputDirectory, QStringList() << "*.cpp");
   QStringList generatedFiles;
@@ -147,7 +121,7 @@ int main(int argc, char* argv[])
   {
     QString generatedFile = dirIterator.next();
 
-    if (!(fileName(generatedFile).startsWith("moc_") || fileName(generatedFile).startsWith("qrc_")))
+    if (!(Helper::fileName(generatedFile).startsWith("moc_") || Helper::fileName(generatedFile).startsWith("qrc_")))
     {
       continue;
     }
@@ -155,7 +129,7 @@ int main(int argc, char* argv[])
     generatedFiles.prepend(generatedFile);
 
     QFileInfo fileInfo(generatedFile);
-    QString lastModfied = QDateTimeEx::toString(fileInfo.lastModified());
+    QString lastModfied = Helper::toString(fileInfo.lastModified());
 
     if (timeStampsGenerated[generatedFile] != lastModfied)
     {
@@ -168,18 +142,18 @@ int main(int argc, char* argv[])
   {
     QString fileNameOfGeneratedFile = "generated.cpp";
 
-    Console::showMessage(QString("QtBuildHelper: updating file %1").arg(fileNameOfGeneratedFile).toStdString());
+    Helper::showMessage(QString("QtBuildHelper: updating file %1").arg(fileNameOfGeneratedFile).toStdString());
 
     QStringList fileContent;
     fileContent.append("/* file is generated automatically - changes will be overwritten */");
 
     for (auto& it : generatedFiles)
     {
-      fileContent.append(QString("#include \"%1\"").arg(fileName(it)));
+      fileContent.append(QString("#include \"%1\"").arg(Helper::fileName(it)));
     }
 
-    File::stringListToFile(fileContent, outputDirectory + "/" + fileNameOfGeneratedFile);
-    File::stringMapToFile(timeStampsGenerated, timeStampGeneratedPath);
+    Helper::stringListToFile(fileContent, outputDirectory + "/" + fileNameOfGeneratedFile);
+    Helper::stringMapToFile(timeStampsGenerated, timeStampGeneratedPath);
   }
 
   return 0;

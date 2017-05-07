@@ -2,6 +2,7 @@
 #include <QDebug>
 
 #include "SimpleHtmlConverter.h"
+#include "SharedResources.h"
 
 SimpleHtmlConverter::SimpleHtmlConverter()
 {
@@ -11,7 +12,10 @@ QString SimpleHtmlConverter::toHtml(const QString& simpleHtml)
 {
   QString input = removeComments(simpleHtml);
 
-  QString string = "<html>\n<head>\n</head>\n<body>\n";
+  QString string = "<html>\n<head>\n<style>";// ";
+  //string.append("html, body{background-color: red}"); // TODO load css file content
+  string.append(SharedResources::defaultStyleSheet());
+  string.append("\n</style>\n</head>\n<body>\n");
 
   QList<QString> tags;
 

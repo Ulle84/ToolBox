@@ -29,18 +29,22 @@ set(Resources
 
 source_group("Resources" FILES ${Resources})
 
-file(GLOB Forms ${CMAKE_CURRENT_SOURCE_DIR}/*.ui)
+file(GLOB_RECURSE Forms ${CMAKE_CURRENT_SOURCE_DIR}/*.ui)
 source_group("Forms" FILES ${Forms})
 
-file(GLOB Information ${CMAKE_CURRENT_SOURCE_DIR}/*.json)
-source_group("Information" FILES ${Information})
+file(GLOB_RECURSE Configuration ${CMAKE_CURRENT_SOURCE_DIR}/*.xml)
+source_group("Configuration" FILES ${Configuration})
+
+file(GLOB_RECURSE StyleSheets ${CMAKE_CURRENT_SOURCE_DIR}/*.css)
+source_group("StyleSheets" FILES ${StyleSheets})
 
 set(AllSources
   ${Headers}
   ${Sources}
   ${Resources}
   ${Forms}
-  ${Information}
+  ${Configuration}
+  ${StyleSheets}
 )
 
 add_library(${ProjectName} SHARED ${AllSources})

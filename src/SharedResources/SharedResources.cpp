@@ -3,27 +3,30 @@
 #include <QTextStream>
 #include <QFile>
 
-
-
 namespace SharedResources
 {
-QString toString(const QString& resource)
-{
-  QString fileContent;
-
-  QFile file(resource);
-
-  if (file.exists())
+  QString toString(const QString& resource)
   {
-    if (file.open(QFile::ReadOnly | QFile::Text))
+    QString fileContent;
+
+    QFile file(resource);
+
+    if (file.exists())
     {
-      QTextStream textStream(&file);
-      textStream.setCodec("UTF-8");
-      fileContent = textStream.readAll();
-      file.close();
+      if (file.open(QFile::ReadOnly | QFile::Text))
+      {
+        QTextStream textStream(&file);
+        textStream.setCodec("UTF-8");
+        fileContent = textStream.readAll();
+        file.close();
+      }
     }
+
+    return fileContent;
   }
 
-  return fileContent;
-}
+  QString defaultStyleSheet()
+  {
+    return toString(":/files/style.css");
+  }
 }

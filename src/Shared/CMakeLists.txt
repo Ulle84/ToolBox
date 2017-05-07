@@ -4,6 +4,10 @@ set(ProjectName Shared)
 
 set(FolderName Miscellaneous)
 
+set(RequiredLibraries
+  SharedResources
+)
+
 include(../CMake/QtLibrary.cmake)
 
 #string(TOUPPER ${ProjectName} ProjectName_UPPERCASED)

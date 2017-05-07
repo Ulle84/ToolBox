@@ -31,6 +31,9 @@ source_group("Resources" FILES ${Resources})
 file(GLOB Forms ${CMAKE_CURRENT_SOURCE_DIR}/*.ui)
 source_group("Forms" FILES ${Forms})
 
+file(GLOB_RECURSE StyleSheets ${CMAKE_CURRENT_SOURCE_DIR}/*.css)
+source_group("StyleSheets" FILES ${StyleSheets})
+
 set(AllSources
   ${Generated}
   ${Headers}
@@ -38,6 +41,7 @@ set(AllSources
   ${Resources}
   ${Forms}
   ${Information}
+  ${StyleSheets}
 )
 
 if ("${ExecutableType}" STREQUAL  "Console")

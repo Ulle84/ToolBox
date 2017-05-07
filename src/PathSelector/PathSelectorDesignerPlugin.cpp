@@ -1,9 +1,10 @@
 // created on 2017-03-25 by Ulrich Belitz
 
+#include <QtCore/QtPlugin>
+
 #include "PathSelector.h"
 #include "PathSelectorDesignerPlugin.h"
-
-#include <QtCore/QtPlugin>
+#include "File.h"
 
 PathSelectorDesignerPlugin::PathSelectorDesignerPlugin(QObject* parent) :
   QObject(parent)
@@ -63,16 +64,7 @@ bool PathSelectorDesignerPlugin::isContainer() const
 
 QString PathSelectorDesignerPlugin::domXml() const
 {
-  return "<widget class=\"PathSelector\" name=\"pathSelector\">\n"
-         " <property name=\"geometry\">\n"
-         "  <rect>\n"
-         "   <x>0</x>\n"
-         "   <y>0</y>\n"
-         "   <width>100</width>\n"
-         "   <height>100</height>\n"
-         "  </rect>\n"
-         " </property>\n"
-         "</widget>\n";
+  return File::fileToString(":/files/PathSelector.xml");
 }
 
 QString PathSelectorDesignerPlugin::includeFile() const

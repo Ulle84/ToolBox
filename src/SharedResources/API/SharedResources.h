@@ -5,11 +5,10 @@
 
 #include "SharedResourcesAPI.h"
 
-
-
 namespace SharedResources
 {
   QString SHAREDRESOURCES_API toString(const QString& resource);
+  QString SHAREDRESOURCES_API defaultStyleSheet();
 }
 
 #endif
