@@ -4,7 +4,6 @@
 
 XmlParser::XmlParser()
 {
-
 }
 
 void XmlParser::parse(const QString& xml)
@@ -71,9 +70,6 @@ void XmlParser::parse(const QString& xml)
         continue;
       }
     }
-
-
-
   }
 }
 

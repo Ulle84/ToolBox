@@ -3,6 +3,7 @@
 #include <QFont>
 #include <QDebug>
 #include <QKeyEvent>
+#include <QDebug>
 
 #include "CodeEdit.h"
 
@@ -10,7 +11,7 @@
 #include "SimpleHtmlHighlighter.h"
 #include "CppHighlighter.h"
 #include "QFontEx.h"
-
+#include "QStringEx.h"
 
 CodeEdit::CodeEdit(QWidget* parent) :
   QTextEdit(parent)
@@ -21,7 +22,33 @@ CodeEdit::CodeEdit(QWidget* parent) :
 
 void CodeEdit::keyPressEvent(QKeyEvent* e)
 {
-  // TODO if a user presses ( and gets () and presses delete right afterwards the second added parenthesis should also be deleted
+  // TOOD refactor: split this method!
+
+  // Ctrl Combinations
+  if (e->modifiers() & Qt::ControlModifier)
+  {
+    if (e->key() == Qt::Key_D)
+    {
+      QTextCursor cursor = textCursor();
+
+      QString currentLine = cursor.block().text();
+
+      cursor.insertText("\n");
+      cursor.insertText(currentLine);
+
+      setTextCursor(cursor);
+      return;
+    }
+    else if (e->key() == Qt::Key_R)
+    {
+      QTextCursor cursor = textCursor();
+
+      cursor.select(QTextCursor::BlockUnderCursor);
+      cursor.removeSelectedText();
+
+      setTextCursor(cursor);
+    }
+  }
 
   if (e->key() == Qt::Key_Tab)
   {
@@ -33,9 +60,20 @@ void CodeEdit::keyPressEvent(QKeyEvent* e)
 
   if (e->key() == Qt::Key_Return)
   {
-    // TODO check indentation of current line and prepend on next line
     QTextCursor cursor = textCursor();
+
+    QString currentLine = cursor.block().text();
+    QString leadingSpaces = QStringEx::leadingSpaces(currentLine);
+
     cursor.insertText("\n");
+    cursor.insertText(leadingSpaces);
+
+    if (QStringEx::startsWith(currentLine, "li(", true))
+    {
+      cursor.insertText("li()");
+      cursor.movePosition(QTextCursor::PreviousCharacter);
+    }
+
     setTextCursor(cursor);
     return;
   }

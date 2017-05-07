@@ -77,7 +77,7 @@ namespace QStringEx
     return string[position];
   }
 
-  QChar SHARED_API peekPreviousNonWhitespace(const QString& string, int position, unsigned int distance)
+  QChar peekPreviousNonWhitespace(const QString& string, int position, unsigned int distance)
   {
     QChar ch = '\0';
 
@@ -99,7 +99,7 @@ namespace QStringEx
     return ch;
   }
 
-  QChar SHARED_API peekNextNonWhitespace(const QString& string, int position, unsigned int distance)
+  QChar peekNextNonWhitespace(const QString& string, int position, unsigned int distance)
   {
     QChar ch = '\0';
 
@@ -126,12 +126,12 @@ namespace QStringEx
     return (peekNext(string, position) == surroundingChar && peekPrevious(string, position) == surroundingChar);
   }
 
-  bool SHARED_API positionValid(const QString& string, int position)
+  bool positionValid(const QString& string, int position)
   {
     return (position >= 0 && position < string.size());
   }
 
-  bool SHARED_API isSpace(const QString& string, int position)
+  bool isSpace(const QString& string, int position)
   {
     if (!positionValid(string, position))
     {
@@ -141,7 +141,7 @@ namespace QStringEx
     return (string[position] == ' ' || string[position] == '\t' || string[position] == '\n' || string[position] == '\r' || string[position] == '\v');
   }
 
-  QString SHARED_API lowercaseFirstLetter(const QString& string)
+  QString lowercaseFirstLetter(const QString& string)
   {
     QString copy = string;
 
@@ -170,5 +170,38 @@ namespace QStringEx
       changed.replace(before, after);
       return unchanged + changed;
     }
+  }
+
+  QString leadingSpaces(const QString& input)
+  {
+    QString string;
+    for (int i = 0; i < input.size(); ++i)
+    { 
+      if (input[i] == ' ')
+        string.append(' ');
+      else
+        break;
+    }
+
+    return string;
+  }
+
+  bool startsWith(const QString& input, const QString& begin, bool ignoreWhitespacesAtBegin)
+  {
+    QString copy = input;
+
+    if (ignoreWhitespacesAtBegin)
+    {
+      for (int i = 0; i < input.size(); ++i)
+      {
+        if (input[i] == ' ')
+          copy.remove(0, 1);
+        else
+          break;
+      }
+      return copy.startsWith(begin);
+    }
+    else
+      return input.startsWith(begin);
   }
 }

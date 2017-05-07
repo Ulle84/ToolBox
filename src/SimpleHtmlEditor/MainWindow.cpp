@@ -21,6 +21,9 @@ MainWindow::MainWindow(QWidget* parent) :
   setWindowTitle("SimpleHtmlEditor");
   setWindowIcon(QIcon(":/images/logo.png"));
 
+  connect(ui->treeEdit, &TreeEdit::idChanged, this, &MainWindow::onTreeEditIdChanged);
+  connect(ui->treeEdit, &TreeEdit::itemRemoved, this, &MainWindow::onTreeEditItemRemoved);
+
   QString fileContent = File::fileToString(Path::configurationFile("SimpleHtmlEditor", "content.json"));
   QJsonObject object = Converter::toJsonObject(fileContent);
 
@@ -43,9 +46,6 @@ MainWindow::MainWindow(QWidget* parent) :
   {
     ui->simpleHtmlEdit->setSplitterState(m_settings->value("splitterSimpleHtmlEdit").toByteArray());
   }
-
-  connect(ui->treeEdit, &TreeEdit::idChanged, this, &MainWindow::onTreeEditIdChanged);
-  connect(ui->treeEdit, &TreeEdit::itemRemoved, this, &MainWindow::onTreeEditItemRemoved);
 }
 
 MainWindow::~MainWindow()

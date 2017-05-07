@@ -172,10 +172,9 @@ void TreeEdit::setMaxIndentation(unsigned int maxIndentation)
 
 void TreeEdit::setTree(const QJsonObject& tree)
 {
-  // TODO readout returns wrong random values - why?
-  //m_lastSelectedId = tree["selectedId"].toInt();
+  m_lastSelectedId = tree["selectedId"].toInt();
   setupModel(tree);
-  //selectId(m_lastSelectedId);
+  selectId(m_lastSelectedId);
 }
 
 QJsonObject TreeEdit::toJson()

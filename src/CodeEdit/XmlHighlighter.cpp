@@ -20,10 +20,8 @@ XmlHighlighter::~XmlHighlighter()
   delete m_xmlParser;
 }
 
-
 void XmlHighlighter::init()
 {
-
 }
 
 void XmlHighlighter::highlightBlock(const QString& text)

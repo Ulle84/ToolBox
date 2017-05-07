@@ -33,6 +33,10 @@ namespace QStringEx
   QString SHARED_API lowercaseFirstLetter(const QString& string);
 
   QString SHARED_API replace(const QString& input, const QString& before, const QString& after, uint startPos = 0);
+
+  QString SHARED_API leadingSpaces(const QString& input);
+
+  bool SHARED_API startsWith(const QString& input, const QString& begin, bool ignoreWhitespacesAtBegin);
 }
 
 #endif

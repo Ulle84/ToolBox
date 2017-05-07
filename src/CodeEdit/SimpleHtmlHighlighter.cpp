@@ -11,7 +11,6 @@ SimpleHtmlHighlighter::SimpleHtmlHighlighter(QTextDocument* parent) :
   init();
 }
 
-
 void SimpleHtmlHighlighter::init()
 {
   HighlightingRule rule;
