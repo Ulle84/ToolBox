@@ -20,6 +20,7 @@ TreeEdit::TreeEdit(QWidget* parent) :
   setupActions();
 
   ui->setupUi(this);
+  ui->treeView->installEventFilter(this);
 }
 
 TreeEdit::~TreeEdit()
@@ -184,25 +185,70 @@ QJsonObject TreeEdit::toJson()
   return json;
 }
 
-//void TreeEdit::keyPressEvent(QKeyEvent* e)
-//{
-//  if (e->key() == Qt::Key_U)
-//  {
-//    int test = rand();
-//  }
-//
-//  if (e->modifiers() & Qt::ControlModifier)
-//  {
-//    if (e->key() == Qt::Key_U)
-//    {
-//      moveUp();
-//    }
-//  }
-//  else
-//  {
-//    QWidget::keyPressEvent(e);
-//  }
-//}
+bool TreeEdit::eventFilter(QObject* obj, QEvent* event)
+{
+  if (event->type() == QEvent::KeyPress)
+  {
+    QKeyEvent* e = static_cast<QKeyEvent*>(event);
+
+    if (e->modifiers() & Qt::ControlModifier)
+    {
+      if (e->key() == Qt::Key_Up)
+      {
+        moveUp();
+      }
+      else if (e->key() == Qt::Key_Down)
+      {
+        moveDown();
+      }
+      else if (e->key() == Qt::Key_Left)
+      {
+        moveLeft();
+      }
+      else if (e->key() == Qt::Key_Right)
+      {
+        moveRight();
+      }
+      else
+      {
+        return QObject::eventFilter(obj, event);
+      }
+    }
+    else
+    {
+      return QObject::eventFilter(obj, event);
+    }
+
+    return true;
+  }
+  else
+  {
+    return QObject::eventFilter(obj, event);
+  }
+}
+
+void TreeEdit::keyPressEvent(QKeyEvent* e)
+{
+  if (e->modifiers() & Qt::ControlModifier)
+  {
+    if (e->key() == Qt::Key_N)
+    {
+      if (e->modifiers() & Qt::ShiftModifier)
+        addChildNode();
+      else
+        addNode();
+    }
+  }
+  else
+  {
+    if (e->key() == Qt::Key_Delete)
+    {
+      removeNode();
+    }
+    else
+      QWidget::keyPressEvent(e);
+  }
+}
 
 void TreeEdit::contextMenuEvent(QContextMenuEvent* event)
 {

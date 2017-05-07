@@ -38,8 +38,9 @@ class TREEEDIT_API TreeEdit : public QWidget
     void setTree(const QJsonObject& tree);
     QJsonObject toJson();
 
-  //protected:
-  //  void keyPressEvent(QKeyEvent* e) override;
+  protected:
+    void keyPressEvent(QKeyEvent* e) override;
+    bool eventFilter(QObject* obj, QEvent* event) override;
 
   public slots:
     bool addNode();
