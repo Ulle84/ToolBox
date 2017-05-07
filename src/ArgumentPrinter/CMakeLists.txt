@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.3.2)
 
-set(PROJECT_NAME ArgumentPrinter)
-set(EXE_TYPE Console)
+set(ProjectName ArgumentPrinter)
+set(ExecutableType Console)
 
-include(../CMake/QtExe.cmake)
+set(RequiredLibraries
+  Shared
+)
+
+include(../CMake/QtApplication.cmake)

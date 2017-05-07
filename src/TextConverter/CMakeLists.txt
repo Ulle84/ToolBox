@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.3.2)
 
-set(PROJECT_NAME TextConverter)
+set(ProjectName TextConverter)
 
-include(../CMake/QtExe.cmake)
+include(../CMake/QtApplication.cmake)

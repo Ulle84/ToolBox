@@ -39,6 +39,21 @@ void PathSelector::setLabelText(const QString &text)
   ui->label->setText(text);
 }
 
+QString PathSelector::labelText() const
+{
+  return ui->label->text();
+}
+
+QString PathSelector::buttonText() const
+{
+  return ui->pushButton->text();
+}
+
+PathSelector::PathType PathSelector::pathType() const
+{
+  return m_pathType;
+}
+
 void PathSelector::setButtonText(const QString &text)
 {
   ui->pushButton->setText(text);

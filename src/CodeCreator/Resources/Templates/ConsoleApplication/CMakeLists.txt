@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 2.8.11)
 
-set (PROJECT_NAME ConsoleApplication)
+set (ProjectName ConsoleApplication)
 
-project(${PROJECT_NAME})
+project(${ProjectName})
 
 file(GLOB Sources ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 source_group("Sources" FILES ${Sources})
@@ -19,6 +19,6 @@ set(AllSources
   ${Sources}
 )
 
-add_executable(${PROJECT_NAME} ${AllSources})
+add_executable(${ProjectName} ${AllSources})
 
-set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set_target_properties(${ProjectName} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

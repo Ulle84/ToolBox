@@ -32,36 +32,46 @@ class PATHSELECTOR_API PathSelector : public QWidget
 {
     Q_OBJECT
 
+    Q_PROPERTY(QString path READ path WRITE setPath NOTIFY pathChanged)
+    Q_PROPERTY(PathType pathType READ pathType WRITE setPathType)
+    Q_PROPERTY(QString labelText READ labelText WRITE setLabelText)
+    Q_PROPERTY(QString buttonText READ buttonText WRITE setButtonText)
+
   public:
     explicit PathSelector(QWidget* parent = 0);
     ~PathSelector();
 
-  void setPath(const QString& path);
-  QString path();
+    QString path();
+    void setPath(const QString& path);
 
-  enum class PathType
-  {
-    Directory,
-    File
-  };
-  void setPathType(PathType pathType);
+    enum class PathType
+    {
+      Directory,
+      File
+    };
+    Q_ENUM(PathType)
 
-  void setLabelText(const QString& text);
-  void setButtonText(const QString& text);
+    PathType pathType() const;
+    void setPathType(PathType pathType);
 
-  void clearHistory(int leftItems = 0);
+    QString labelText() const;
+    void setLabelText(const QString& text);
 
-signals:
-  void pathChanged(const QString& path);
+    QString buttonText() const;
+    void setButtonText(const QString& text);
 
-private slots:
-  void on_pushButton_clicked();
-  void on_comboBox_currentIndexChanged(const QString& text);
+    void clearHistory(int leftItems = 0);
 
+  signals:
+    void pathChanged(const QString& path);
 
-private:
-  Ui::PathSelector *ui;
-  PathType m_pathType = PathType::Directory;
+  private slots:
+    void on_pushButton_clicked();
+    void on_comboBox_currentIndexChanged(const QString& text);
+
+  private:
+    Ui::PathSelector* ui;
+    PathType m_pathType = PathType::Directory;
 };
 
 #endif

@@ -41,6 +41,6 @@ if(MSVC)
   set_property(TARGET ${DLL_NAME} APPEND PROPERTY COMPILE_FLAGS /MP)
 endif(MSVC)
 
-target_link_libraries(${PROJECT_NAME} Qt5::Core)
+target_link_libraries(${ProjectName} Qt5::Core)
 
-set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set_target_properties(${ProjectName} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

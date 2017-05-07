@@ -1,10 +1,8 @@
 cmake_minimum_required(VERSION 2.8.11)
 
-set(PROJECT_NAME QtBuildHelper)
+set(ProjectName QtBuildHelper)
 
-project(${PROJECT_NAME})
-
-set(CMAKE_AUTOMOC ON)
+project(${ProjectName})
 
 file(GLOB Sources ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 source_group("Sources" FILES ${Sources})
@@ -12,22 +10,15 @@ source_group("Sources" FILES ${Sources})
 file(GLOB Headers ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
 source_group("Headers" FILES ${Headers})
 
-file(GLOB Information ${CMAKE_CURRENT_SOURCE_DIR}/*.md)
-source_group("Information" FILES ${Information})
-
 set(AllSources
   ${Headers}
-  ${Information}
   ${Sources}
 )
 
-add_executable(${PROJECT_NAME} ${AllSources})
+add_executable(${ProjectName} ${AllSources})
 
-target_link_libraries(${PROJECT_NAME}
-  Shared
-  Qt5::Core
-)
+target_link_libraries(${ProjectName} ${QtLinkLibraries})
 
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ConsoleApplications)
+set_target_properties(${ProjectName} PROPERTIES FOLDER ConsoleApplications)
 
-set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+#set_target_properties(${ProjectName} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

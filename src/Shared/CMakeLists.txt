@@ -1,47 +1,52 @@
 cmake_minimum_required(VERSION 3.3.2)
 
-set(PROJECT_NAME Shared)
+set(ProjectName Shared)
 
-string(TOUPPER ${PROJECT_NAME} PROJECT_NAME_UPPERCASED)
+set(FolderName Miscellaneous)
 
-project(${PROJECT_NAME})
+include(../CMake/QtLibrary.cmake)
 
-file(GLOB_RECURSE Headers ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
-source_group("Headers" FILES ${Headers})
-
-file(GLOB Sources ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
-source_group("Sources" FILES ${Sources})
-
-set(Resources ${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}.rc)
-source_group("Resources" FILES ${Resources})
-
-set(AllSources
-  ${Sources}
-  ${Headers}
-  ${Resources}
-)
-
-include_directories(
-  ${CMAKE_CURRENT_SOURCE_DIR}
-  ${CMAKE_CURRENT_SOURCE_DIR}/API
-)
-
-add_library(${PROJECT_NAME} SHARED ${AllSources})
-
-target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/API")
-
-set_property(TARGET ${PROJECT_NAME} APPEND PROPERTY COMPILE_DEFINITIONS
-  ${PROJECT_NAME_UPPERCASED}_EXPORT
-  _USRDLL
-  _WINDOWS
-)
-
-if(MSVC)
-  set_property(TARGET ${PROJECT_NAME} APPEND PROPERTY COMPILE_FLAGS /MP)
-endif(MSVC)
-
-target_link_libraries(${PROJECT_NAME}
-  Qt5::Core
-  Qt5::Gui
-  Qt5::Widgets
-)
+#string(TOUPPER ${ProjectName} ProjectName_UPPERCASED)
+#
+#project(${ProjectName})
+#
+#file(GLOB_RECURSE Headers ${CMAKE_CURRENT_SOURCE_DIR}/*.h)
+#source_group("Headers" FILES ${Headers})
+#
+#file(GLOB Sources ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+#source_group("Sources" FILES ${Sources})
+#
+#set(Resources ${CMAKE_CURRENT_SOURCE_DIR}/${ProjectName}.rc)
+#source_group("Resources" FILES ${Resources})
+#
+#set(AllSources
+#  ${Sources}
+#  ${Headers}
+#  ${Resources}
+#)
+#
+#include_directories(
+#  ${CMAKE_CURRENT_SOURCE_DIR}
+#  ${CMAKE_CURRENT_SOURCE_DIR}/API
+#)
+#
+#add_library(${ProjectName} SHARED ${AllSources})
+#
+#target_include_directories(${ProjectName} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/API")
+#
+#set_property(TARGET ${ProjectName} APPEND PROPERTY COMPILE_DEFINITIONS
+#  ${ProjectName_UPPERCASED}_EXPORT
+#  _USRDLL
+#  _WINDOWS
+#)
+#
+#if(MSVC)
+#  set_property(TARGET ${ProjectName} APPEND PROPERTY COMPILE_FLAGS /MP)
+#endif(MSVC)
+#
+#target_link_libraries(${ProjectName}
+#  SharedResources
+#  ${QtLinkLibraries}
+#)
+#
+#set_target_properties(${ProjectName} PROPERTIES FOLDER Miscellaneous)

@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 2.8.11)
 
-set (PROJECT_NAME FileToImageLink)
+set (ProjectName FileToImageLink)
 
-set(EXE_TYPE Console)
+set(ExecutableType Console)
 
-include(../CMake/QtExe.cmake)
+include(../CMake/QtApplication.cmake)
 
-#project(${PROJECT_NAME})
+#project(${ProjectName})
 #
 #file(GLOB Sources ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 #source_group("Sources" FILES ${Sources})
@@ -23,8 +23,8 @@ include(../CMake/QtExe.cmake)
 #  ${Sources}
 #)
 #
-#add_executable(${PROJECT_NAME} ${AllSources})
+#add_executable(${ProjectName} ${AllSources})
 #
-#target_link_libraries(${PROJECT_NAME} Qt5::Widgets)
+#target_link_libraries(${ProjectName} Qt5::Widgets)
 #
-#set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+#set_target_properties(${ProjectName} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

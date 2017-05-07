@@ -1,15 +1,19 @@
 cmake_minimum_required(VERSION 3.3.2)
 
-set(PROJECT_NAME CodeCleaner)
-set(EXE_TYPE Console)
+set(ProjectName CodeCleaner)
+set(ExecutableType Console)
 
-include(../CMake/QtExe.cmake)
+set(RequiredLibraries
+  Shared
+)
+
+include(../CMake/QtApplication.cmake)
 
 #cmake_minimum_required(VERSION 2.8.11)
 #
-#set (PROJECT_NAME CodeCleaner)
+#set (ProjectName CodeCleaner)
 #
-#project(${PROJECT_NAME})
+#project(${ProjectName})
 #
 #find_package(Qt5Core 5.7)
 #
@@ -30,11 +34,11 @@ include(../CMake/QtExe.cmake)
 #  ${Sources}
 #)
 #
-#add_executable(${PROJECT_NAME} ${AllSources})
+#add_executable(${ProjectName} ${AllSources})
 #
-#target_link_libraries(${PROJECT_NAME}
+#target_link_libraries(${ProjectName}
 #  Qt5::Core
 #  Shared
 #)
 #
-#set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+#set_target_properties(${ProjectName} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

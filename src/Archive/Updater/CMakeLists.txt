@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 2.8.11)
 
-set (PROJECT_NAME Updater)
+set (ProjectName Updater)
 
-project(${PROJECT_NAME})
+project(${ProjectName})
 
 find_package(Qt5Core 5.7)
 set(CMAKE_AUTOMOC ON)
@@ -22,8 +22,8 @@ set(AllSources
   ${Sources}
 )
 
-add_executable(${PROJECT_NAME} ${AllSources})
+add_executable(${ProjectName} ${AllSources})
 
-target_link_libraries(${PROJECT_NAME} Qt5::Core)
+target_link_libraries(${ProjectName} Qt5::Core)
 
-set_target_properties(${PROJECT_NAME} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set_target_properties(${ProjectName} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

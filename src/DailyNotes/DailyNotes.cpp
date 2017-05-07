@@ -1,4 +1,5 @@
 #include <QDebug>
+#include <QFile>
 
 #include "DailyNotes.h"
 #include "ui_DailyNotes.h"
@@ -53,7 +54,6 @@ QString DailyNotes::path(const QDate& date)
   return Converter::toPath(stringList);
 }
 
-
 void DailyNotes::update(const QDate& date)
 {
   saveCurrent();
@@ -63,11 +63,60 @@ void DailyNotes::update(const QDate& date)
   m_selectedDate = date;
 }
 
+void DailyNotes::setDate(const QDate& date)
+{
+  ui->calendarWidget->setSelectedDate(date);
+  update(date);
+}
+
+void DailyNotes::on_pushButtonToday_clicked()
+{
+  setDate(QDate::currentDate());
+}
+
+void DailyNotes::on_pushButtonOneDayForward_clicked()
+{
+  setDate(m_selectedDate.addDays(1));
+}
+
+void DailyNotes::on_pushButtonOneDayBackward_clicked()
+{
+  setDate(m_selectedDate.addDays(-1));
+}
+
+void DailyNotes::on_pushButtonOneMonthForward_clicked()
+{
+  setDate(m_selectedDate.addMonths(1));
+}
+
+void DailyNotes::on_pushButtonOneMonthBackward_clicked()
+{
+  setDate(m_selectedDate.addMonths(-1));
+}
+
+void DailyNotes::on_pushButtonOneYearForward_clicked()
+{
+  setDate(m_selectedDate.addYears(1));
+}
+
+void DailyNotes::on_pushButtonOneYearBackward_clicked()
+{
+  setDate(m_selectedDate.addYears(-1));
+}
+
 void DailyNotes::saveCurrent()
 {
   if (m_selectedDate.isValid())
   {
-    // TODO if text is empty a emtpy file is written
-    File::stringToFile(ui->codeEdit->toPlainText(), path(m_selectedDate));
+    QString content = ui->codeEdit->toPlainText();
+
+    if (content.isEmpty())
+    {
+      QFile::remove(path(m_selectedDate));
+    }
+    else
+    {
+      File::stringToFile(content, path(m_selectedDate));
+    }
   }
 }

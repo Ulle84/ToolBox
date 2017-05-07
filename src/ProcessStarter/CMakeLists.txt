@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 2.8.11)
 
-set(PROJECT_NAME ProcessStarter)
-set(EXE_TYPE Console)
+set(ProjectName ProcessStarter)
+set(ExecutableType Console)
 
-include(../CMake/QtExe.cmake)
+set(RequiredLibraries
+  Shared
+)
+
+include(../CMake/QtApplication.cmake)

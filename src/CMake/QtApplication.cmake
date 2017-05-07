@@ -3,7 +3,7 @@
 # Created by Ulrich Belitz in Februrary 2017
 ################################################################################
 
-project(${PROJECT_NAME})
+project(${ProjectName})
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -40,24 +40,23 @@ set(AllSources
   ${Information}
 )
 
-if ("${EXE_TYPE}" STREQUAL  "Console")
-  add_executable(${PROJECT_NAME} ${AllSources})
+if ("${ExecutableType}" STREQUAL  "Console")
+  add_executable(${ProjectName} ${AllSources})
 else()
-  add_executable(${PROJECT_NAME} WIN32 ${AllSources})
+  add_executable(${ProjectName} WIN32 ${AllSources})
 endif()
 
-target_link_libraries(${PROJECT_NAME}
-  Shared
+target_link_libraries(${ProjectName}
   ${QtLinkLibraries}
   ${RequiredLibraries}
 )
 
-add_dependencies(${PROJECT_NAME} QtBuildHelper)
+add_dependencies(${ProjectName} QtBuildHelper)
 
-if ("${EXE_TYPE}" STREQUAL  "Console")
-  set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER ConsoleApplications)
+if ("${ExecutableType}" STREQUAL  "Console")
+  set_target_properties(${ProjectName} PROPERTIES FOLDER ConsoleApplications)
 else()
-  set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER WidgetApplications)
+  set_target_properties(${ProjectName} PROPERTIES FOLDER WidgetApplications)
 endif()
 
-add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD COMMAND QtBuildHelper.exe ARGS -id ${CMAKE_CURRENT_SOURCE_DIR} -ed ${CMAKE_CURRENT_SOURCE_DIR}/Resources/Templates -od ${CMAKE_CURRENT_BINARY_DIR} -qbd ${QtBinDir} -qid ${QtIncludeDir} WORKING_DIRECTORY ${QtBuilderWorkingDir})
+add_custom_command(TARGET ${ProjectName} PRE_BUILD COMMAND QtBuildHelper.exe ARGS -id ${CMAKE_CURRENT_SOURCE_DIR} -ed ${CMAKE_CURRENT_SOURCE_DIR}/Resources/Templates -od ${CMAKE_CURRENT_BINARY_DIR} -qbd ${QtBinDir} -qid ${QtIncludeDir} WORKING_DIRECTORY ${QtBuilderWorkingDir})

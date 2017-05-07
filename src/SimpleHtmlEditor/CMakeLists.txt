@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION 3.3.2)
 
-set(PROJECT_NAME SimpleHtmlEditor)
+set(ProjectName SimpleHtmlEditor)
 
 set(RequiredLibraries
   SimpleHtmlEdit
   TreeEdit
+  SharedResources
 )
 
-include(../CMake/QtExe.cmake)
+include(../CMake/QtApplication.cmake)

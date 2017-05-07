@@ -3,7 +3,7 @@
 # Created by Ulrich Belitz in Februrary 2017
 ################################################################################
 
-project(${PROJECT_NAME})
+project(${ProjectName})
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -14,15 +14,17 @@ if(NOT EXISTS ${CMAKE_CURRENT_BINARY_DIR}/generated.cpp)
   file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/generated.cpp "/* file is generated automatically - changes will be overwritten */")
 endif()
 
-file(GLOB Sources ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
+file(GLOB_RECURSE Sources ${CMAKE_CURRENT_SOURCE_DIR}/*.cpp)
 list(APPEND Sources ${CMAKE_CURRENT_BINARY_DIR}/generated.cpp)
 source_group("Sources" FILES ${Sources})
 
 
-file(GLOB WinResources ${CMAKE_CURRENT_SOURCE_DIR}/*.rc)
+file(GLOB_RECURSE WinResources ${CMAKE_CURRENT_SOURCE_DIR}/*.rc)
+file(GLOB_RECURSE QtResources ${CMAKE_CURRENT_SOURCE_DIR}/*.qrc)
 
 set(Resources
   ${WinResources}
+  ${QtResources}
 )
 
 source_group("Resources" FILES ${Resources})
@@ -41,25 +43,28 @@ set(AllSources
   ${Information}
 )
 
-add_library(${PROJECT_NAME} SHARED ${AllSources})
+add_library(${ProjectName} SHARED ${AllSources})
 
-target_link_libraries(${PROJECT_NAME}
-  Shared
+target_link_libraries(${ProjectName}
   ${QtLinkLibraries}
   ${RequiredLibraries}
 )
 
-add_dependencies(${PROJECT_NAME} QtBuildHelper)
+add_dependencies(${ProjectName} QtBuildHelper)
 
-string(TOUPPER ${PROJECT_NAME} PROJECT_NAME_UPPERCASED)
-set_property(TARGET ${PROJECT_NAME} APPEND PROPERTY COMPILE_DEFINITIONS
-  ${PROJECT_NAME_UPPERCASED}_EXPORT
+string(TOUPPER ${ProjectName} ProjectNameUppercased)
+set_property(TARGET ${ProjectName} APPEND PROPERTY COMPILE_DEFINITIONS
+  ${ProjectNameUppercased}_EXPORT
   _USRDLL
   _WINDOWS
 )
 
-target_include_directories(${PROJECT_NAME} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/API")
+target_include_directories(${ProjectName} PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/API")
 
-set_target_properties(${PROJECT_NAME} PROPERTIES FOLDER Widgets)
+if ("${FolderName}" STREQUAL  "")
+  set(FolderName Widgets)
+endif()
 
-add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD COMMAND QtBuildHelper.exe ARGS -id ${CMAKE_CURRENT_SOURCE_DIR} -ed ${CMAKE_CURRENT_SOURCE_DIR}/Resources/Templates -od ${CMAKE_CURRENT_BINARY_DIR} -qbd ${QtBinDir} -qid ${QtIncludeDir} WORKING_DIRECTORY ${QtBuilderWorkingDir})
+set_target_properties(${ProjectName} PROPERTIES FOLDER ${FolderName})
+
+add_custom_command(TARGET ${ProjectName} PRE_BUILD COMMAND QtBuildHelper.exe ARGS -id ${CMAKE_CURRENT_SOURCE_DIR} -ed ${CMAKE_CURRENT_SOURCE_DIR}/Resources/Templates -od ${CMAKE_CURRENT_BINARY_DIR} -qbd ${QtBinDir} -qid ${QtIncludeDir} WORKING_DIRECTORY ${QtBuilderWorkingDir})
