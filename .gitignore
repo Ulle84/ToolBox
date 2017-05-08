@@ -1,7 +1,7 @@
 /build/*
 /configuration/CodeCreator/*
 /configuration/PhoneBook/entries.txt
-/configuration/SimpleHtmlEditor/*
+/configuration/SmlEditor/*
 /content/DailyNotes/*
 /debug/*
 /src/PathSelector/Resources/*.aps

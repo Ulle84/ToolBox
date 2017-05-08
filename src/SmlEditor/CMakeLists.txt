@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.3.2)
 
-set(ProjectName SimpleHtmlEditor)
+set(ProjectName SmlEditor)
 
 set(RequiredLibraries
-  SimpleHtmlEdit
+  SmlEdit
   TreeEdit
 )
 

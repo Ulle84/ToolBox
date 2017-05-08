@@ -18,19 +18,19 @@ MainWindow::MainWindow(QWidget* parent) :
   ui(new Ui::MainWindow)
 {
   ui->setupUi(this);
-  setWindowTitle("SimpleHtmlEditor");
+  setWindowTitle("SmlEditor");
   setWindowIcon(QIcon(":/images/logo.png"));
 
   connect(ui->treeEdit, &TreeEdit::idChanged, this, &MainWindow::onTreeEditIdChanged);
   connect(ui->treeEdit, &TreeEdit::itemRemoved, this, &MainWindow::onTreeEditItemRemoved);
 
-  QString fileContent = File::fileToString(Path::configurationFile("SimpleHtmlEditor", "content.json"));
+  QString fileContent = File::fileToString(Path::configurationFile("SmlEditor", "content.json"));
   QJsonObject object = Converter::toJsonObject(fileContent);
 
   setContent(object["content"].toArray());
   ui->treeEdit->setTree(object["tree"].toObject());
 
-  m_settings = new QSettings("Ulle", "SimpleHtmlEditor", this);
+  m_settings = new QSettings("Ulle", "SmlEditor", this);
 
   if (m_settings->contains("geometry"))
   {
@@ -44,7 +44,7 @@ MainWindow::MainWindow(QWidget* parent) :
 
   if (m_settings->contains("splitterSimpleHtmlEdit"))
   {
-    ui->simpleHtmlEdit->setSplitterState(m_settings->value("splitterSimpleHtmlEdit").toByteArray());
+    ui->smlEdit->setSplitterState(m_settings->value("splitterSimpleHtmlEdit").toByteArray());
   }
 }
 
@@ -52,13 +52,13 @@ MainWindow::~MainWindow()
 {
   if (m_currentId >= 0)
   {
-    m_textContent[m_currentId] = ui->simpleHtmlEdit->text();
+    m_textContent[m_currentId] = ui->smlEdit->text();
   }
 
   writeFile();
   m_settings->setValue("geometry", geometry());
   m_settings->setValue("splitter", ui->splitter->saveState());
-  m_settings->setValue("splitterSimpleHtmlEdit", ui->simpleHtmlEdit->splitterState());
+  m_settings->setValue("splitterSimpleHtmlEdit", ui->smlEdit->splitterState());
   delete ui;
 }
 
@@ -66,11 +66,11 @@ void MainWindow::onTreeEditIdChanged(int id)
 {
   if (m_currentId >= 0)
   {
-    m_textContent[m_currentId] = ui->simpleHtmlEdit->text();
+    m_textContent[m_currentId] = ui->smlEdit->text();
   }
 
   m_currentId = id;
-  ui->simpleHtmlEdit->setText(m_textContent[m_currentId]);
+  ui->smlEdit->setText(m_textContent[m_currentId]);
 }
 
 void MainWindow::onTreeEditItemRemoved(int id)
@@ -80,7 +80,7 @@ void MainWindow::onTreeEditItemRemoved(int id)
 
 void MainWindow::writeFile()
 {
-  QFile file(Path::configurationFile("SimpleHtmlEditor", "content.json"));
+  QFile file(Path::configurationFile("SmlEditor", "content.json"));
 
   if (!file.open(QIODevice::WriteOnly))
   {

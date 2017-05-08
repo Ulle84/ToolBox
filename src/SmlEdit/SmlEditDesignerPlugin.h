@@ -1,18 +1,18 @@
 // created on 2017-03-15 by Ulrich Belitz
 
-#ifndef SIMPLEHTMLEDITDESIGNERPLUGIN_H
-#define SIMPLEHTMLEDITDESIGNERPLUGIN_H
+#ifndef SMLEDITDESIGNERPLUGIN_H
+#define SMLEDITDESIGNERPLUGIN_H
 
 #include <QtUiPlugin/QDesignerCustomWidgetInterface>
 
-class SimpleHtmlEditDesignerPlugin : public QObject, public QDesignerCustomWidgetInterface
+class SmlEditDesignerPlugin : public QObject, public QDesignerCustomWidgetInterface
 {
     Q_OBJECT
-    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QDesignerCustomWidgetInterface" FILE "SimpleHtmlEditDesignerPlugin.json")
+    Q_PLUGIN_METADATA(IID "org.qt-project.Qt.QDesignerCustomWidgetInterface" FILE "SmlEditDesignerPlugin.json")
     Q_INTERFACES(QDesignerCustomWidgetInterface)
 
   public:
-    SimpleHtmlEditDesignerPlugin(QObject* parent = Q_NULLPTR);
+    SmlEditDesignerPlugin(QObject* parent = Q_NULLPTR);
 
     bool isContainer() const;
     bool isInitialized() const;

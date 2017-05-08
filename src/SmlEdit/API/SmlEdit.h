@@ -1,24 +1,24 @@
 // created on 2017-03-15 by Ulrich Belitz
 
-#ifndef SIMPLEHTMLEDIT_H
-#define SIMPLEHTMLEDIT_H
+#ifndef SMLEDIT_H
+#define SMLEDIT_H
 
 #include <QWidget>
 
-#include "SimpleHtmlEditAPI.h"
+#include "SmlEditAPI.h"
 
 namespace Ui
 {
-  class SimpleHtmlEdit;
+  class SmlEdit;
 }
 
-class SIMPLEHTMLEDIT_API SimpleHtmlEdit : public QWidget
+class SMLEDIT_API SmlEdit : public QWidget
 {
     Q_OBJECT
 
   public:
-    explicit SimpleHtmlEdit(QWidget* parent = 0);
-    ~SimpleHtmlEdit();
+    explicit SmlEdit(QWidget* parent = 0);
+    ~SmlEdit();
 
     void setText(const QString& text);
     QString text();
@@ -30,7 +30,7 @@ class SIMPLEHTMLEDIT_API SimpleHtmlEdit : public QWidget
     void on_codeEditSimpleHtml_textChanged();
 
   private:
-    Ui::SimpleHtmlEdit* ui;
+    Ui::SmlEdit* ui;
 };
 
 #endif

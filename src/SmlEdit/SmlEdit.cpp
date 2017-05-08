@@ -1,13 +1,13 @@
 // created on 2017-03-15 by Ulrich Belitz
 
-#include "SimpleHtmlEdit.h"
-#include "ui_SimpleHtmlEdit.h"
+#include "SmlEdit.h"
+#include "ui_SmlEdit.h"
 
 #include "SimpleHtmlConverter.h"
 
-SimpleHtmlEdit::SimpleHtmlEdit(QWidget* parent) :
+SmlEdit::SmlEdit(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::SimpleHtmlEdit)
+  ui(new Ui::SmlEdit)
 {
   ui->setupUi(this);
   ui->tabWidget->setTabText(0, tr("HTML code"));
@@ -16,32 +16,32 @@ SimpleHtmlEdit::SimpleHtmlEdit(QWidget* parent) :
   ui->codeEditHtml->setCodeHighlightingType(CodeEdit::CodeHighlightingType::Xml);
 }
 
-SimpleHtmlEdit::~SimpleHtmlEdit()
+SmlEdit::~SmlEdit()
 {
   delete ui;
 }
 
-void SimpleHtmlEdit::setText(const QString& text)
+void SmlEdit::setText(const QString& text)
 {
   ui->codeEditSimpleHtml->setPlainText(text);
 }
 
-QString SimpleHtmlEdit::text()
+QString SmlEdit::text()
 {
   return ui->codeEditSimpleHtml->toPlainText();
 }
 
-void SimpleHtmlEdit::setSplitterState(const QByteArray& state)
+void SmlEdit::setSplitterState(const QByteArray& state)
 {
   ui->splitter->restoreState(state);
 }
 
-QByteArray SimpleHtmlEdit::splitterState()
+QByteArray SmlEdit::splitterState()
 {
   return ui->splitter->saveState();
 }
 
-void SimpleHtmlEdit::on_codeEditSimpleHtml_textChanged()
+void SmlEdit::on_codeEditSimpleHtml_textChanged()
 {
   SimpleHtmlConverter converter;
 
