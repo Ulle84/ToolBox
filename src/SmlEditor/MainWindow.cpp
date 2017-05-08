@@ -19,7 +19,6 @@ MainWindow::MainWindow(QWidget* parent) :
 {
   ui->setupUi(this);
   setWindowTitle("SmlEditor");
-  setWindowIcon(QIcon(":/images/logo.png"));
 
   connect(ui->treeEdit, &TreeEdit::idChanged, this, &MainWindow::onTreeEditIdChanged);
   connect(ui->treeEdit, &TreeEdit::itemRemoved, this, &MainWindow::onTreeEditItemRemoved);
