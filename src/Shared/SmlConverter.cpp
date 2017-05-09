@@ -1,14 +1,14 @@
 #include <QStringList>
 #include <QDebug>
 
-#include "SimpleHtmlConverter.h"
+#include "SmlConverter.h"
 #include "SharedResources.h"
 
-SimpleHtmlConverter::SimpleHtmlConverter()
+SmlConverter::SmlConverter()
 {
 }
 
-QString SimpleHtmlConverter::toHtml(const QString& simpleHtml)
+QString SmlConverter::toHtml(const QString& simpleHtml)
 {
   QString input = removeComments(simpleHtml);
 
@@ -87,7 +87,7 @@ QString SimpleHtmlConverter::toHtml(const QString& simpleHtml)
   return string;
 }
 
-QString SimpleHtmlConverter::removeComments(const QString& simpleHtml)
+QString SmlConverter::removeComments(const QString& simpleHtml)
 {
   // TODO nested comments?
   // this part here might be easy, but what about the code-highlighting?
@@ -112,12 +112,12 @@ QString SimpleHtmlConverter::removeComments(const QString& simpleHtml)
   return string;
 }
 
-/*QString SimpleHtmlConverter::indent(int indentationLevel)
+/*QString SmlConverter::indent(int indentationLevel)
 {
   return QString(indentationLevel * m_indent, ' ');
 }*/
 
-QString SimpleHtmlConverter::parseTag(const QString& simpleHtml, int position)
+QString SmlConverter::parseTag(const QString& simpleHtml, int position)
 {
   if (position <= 0)
   {
@@ -149,7 +149,7 @@ QString SimpleHtmlConverter::parseTag(const QString& simpleHtml, int position)
   return simpleHtml.mid(position, originalPosition - position);
 }
 
-Attribute SimpleHtmlConverter::parseAttribute(const QString& simpleHtml, int& position)
+Attribute SmlConverter::parseAttribute(const QString& simpleHtml, int& position)
 {
   int originalPosition = position;
 
@@ -196,7 +196,7 @@ Attribute SimpleHtmlConverter::parseAttribute(const QString& simpleHtml, int& po
   return Attribute(name, value);
 }
 
-/*QString SimpleHtmlConverter::endTag(const QString &startTag)
+/*QString SmlConverter::endTag(const QString &startTag)
 {
   if (startTag.isEmpty())
   {

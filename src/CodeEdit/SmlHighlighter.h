@@ -1,19 +1,19 @@
 // created on 2017-02-23 by Ulrich Belitz
 
-#ifndef SIMPLEHTMLHIGHLIGHTER_H
-#define SIMPLEHTMLHIGHLIGHTER_H
+#ifndef SMLHIGHLIGHTER_H
+#define SMLHIGHLIGHTER_H
 
 #include <QSyntaxHighlighter>
 #include <QTextCharFormat>
 
 class QTextDocument;
 
-class SimpleHtmlHighlighter : public QSyntaxHighlighter
+class SmlHighlighter : public QSyntaxHighlighter
 {
     Q_OBJECT
 
   public:
-    SimpleHtmlHighlighter(QTextDocument* parent = 0);
+    SmlHighlighter(QTextDocument* parent = 0);
 
   protected:
     void highlightBlock(const QString& text) override;

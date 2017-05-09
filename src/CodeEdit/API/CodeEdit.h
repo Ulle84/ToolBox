@@ -19,7 +19,7 @@ class CODEEDIT_API CodeEdit : public QTextEdit
     enum class CodeHighlightingType
     {
       Cpp,
-      SimpleHtml,
+      Sml,
       Xml
     };
     void setCodeHighlightingType(CodeHighlightingType codeHighlightingType);

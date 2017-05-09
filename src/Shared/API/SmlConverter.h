@@ -1,15 +1,15 @@
-#ifndef SIMPLEHTMLCONVERTER_H
-#define SIMPLEHTMLCONVERTER_H
+#ifndef SMLCONVERTER_H
+#define SMLCONVERTER_H
 
 #include <QString>
 
 #include "Attribute.h"
 #include "SharedAPI.h"
 
-class SHARED_API SimpleHtmlConverter
+class SHARED_API SmlConverter
 {
   public:
-    SimpleHtmlConverter();
+    SmlConverter();
 
     QString toHtml(const QString& simpleHtml);
 

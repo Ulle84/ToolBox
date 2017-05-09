@@ -3,7 +3,7 @@
 #include "SmlEdit.h"
 #include "ui_SmlEdit.h"
 
-#include "SimpleHtmlConverter.h"
+#include "SmlConverter.h"
 
 SmlEdit::SmlEdit(QWidget* parent) :
   QWidget(parent),
@@ -12,7 +12,7 @@ SmlEdit::SmlEdit(QWidget* parent) :
   ui->setupUi(this);
   ui->tabWidget->setTabText(0, tr("HTML code"));
   ui->tabWidget->setTabText(1, tr("HTML preview"));
-  ui->codeEditSimpleHtml->setCodeHighlightingType(CodeEdit::CodeHighlightingType::SimpleHtml);
+  ui->codeEditSimpleHtml->setCodeHighlightingType(CodeEdit::CodeHighlightingType::Sml);
   ui->codeEditHtml->setCodeHighlightingType(CodeEdit::CodeHighlightingType::Xml);
 }
 
@@ -43,9 +43,9 @@ QByteArray SmlEdit::splitterState()
 
 void SmlEdit::on_codeEditSimpleHtml_textChanged()
 {
-  SimpleHtmlConverter converter;
+  SmlConverter smlConverter;
 
-  QString html = converter.toHtml(ui->codeEditSimpleHtml->toPlainText());
+  QString html = smlConverter.toHtml(ui->codeEditSimpleHtml->toPlainText());
 
   ui->codeEditHtml->setPlainText(html);
   ui->webView->setHtml(html);

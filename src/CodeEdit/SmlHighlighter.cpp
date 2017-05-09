@@ -2,16 +2,16 @@
 
 #include <QDebug>
 
-#include "SimpleHtmlHighlighter.h"
+#include "SmlHighlighter.h"
 #include "QColorEx.h"
 
-SimpleHtmlHighlighter::SimpleHtmlHighlighter(QTextDocument* parent) :
+SmlHighlighter::SmlHighlighter(QTextDocument* parent) :
   QSyntaxHighlighter(parent)
 {
   init();
 }
 
-void SimpleHtmlHighlighter::init()
+void SmlHighlighter::init()
 {
   HighlightingRule rule;
 
@@ -77,7 +77,7 @@ void SimpleHtmlHighlighter::init()
   highlightingRules.append(rule);*/
 }
 
-void SimpleHtmlHighlighter::highlightBlock(const QString& text)
+void SmlHighlighter::highlightBlock(const QString& text)
 {
   //qDebug() << "------- hightligtBlock -------";
   //qDebug() << text;

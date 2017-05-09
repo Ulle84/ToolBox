@@ -8,7 +8,7 @@
 #include "CodeEdit.h"
 
 #include "XmlHighlighter.h"
-#include "SimpleHtmlHighlighter.h"
+#include "SmlHighlighter.h"
 #include "CppHighlighter.h"
 #include "QFontEx.h"
 #include "QStringEx.h"
@@ -127,8 +127,8 @@ void CodeEdit::setCodeHighlightingType(CodeHighlightingType codeHighlightingType
       m_syntaxHighlighter = new CppHighlighter(document());
       break;
 
-    case CodeHighlightingType::SimpleHtml:
-      m_syntaxHighlighter = new SimpleHtmlHighlighter(document());
+    case CodeHighlightingType::Sml:
+      m_syntaxHighlighter = new SmlHighlighter(document());
       break;
 
     case CodeHighlightingType::Xml:

@@ -4,7 +4,7 @@
 #include "DailyNotes.h"
 #include "ui_DailyNotes.h"
 
-#include "SimpleHtmlConverter.h"
+#include "SmlConverter.h"
 #include "Path.h"
 #include "File.h"
 #include "Converter.h"
@@ -14,7 +14,7 @@ DailyNotes::DailyNotes(QWidget* parent) :
   ui(new Ui::DailyNotes)
 {
   ui->setupUi(this);
-  ui->codeEdit->setCodeHighlightingType(CodeEdit::CodeHighlightingType::SimpleHtml);
+  ui->codeEdit->setCodeHighlightingType(CodeEdit::CodeHighlightingType::Sml);
 
   ui->calendarWidget->setSelectedDate(QDate::currentDate());
   update(QDate::currentDate());
@@ -28,8 +28,8 @@ DailyNotes::~DailyNotes()
 
 void DailyNotes::on_codeEdit_textChanged()
 {
-  SimpleHtmlConverter simpleHtmlConverter;
-  ui->webView->setHtml(simpleHtmlConverter.toHtml(ui->codeEdit->toPlainText()));
+  SmlConverter smlConverter;
+  ui->webView->setHtml(smlConverter.toHtml(ui->codeEdit->toPlainText()));
 }
 
 void DailyNotes::on_calendarWidget_activated(const QDate& date)
