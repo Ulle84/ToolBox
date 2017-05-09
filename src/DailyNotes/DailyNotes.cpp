@@ -4,7 +4,7 @@
 #include "DailyNotes.h"
 #include "ui_DailyNotes.h"
 
-#include "SmlConverter.h"
+#include "Converter.h"
 #include "Path.h"
 #include "File.h"
 #include "Converter.h"
@@ -28,8 +28,7 @@ DailyNotes::~DailyNotes()
 
 void DailyNotes::on_codeEdit_textChanged()
 {
-  SmlConverter smlConverter;
-  ui->webView->setHtml(smlConverter.toHtml(ui->codeEdit->toPlainText()));
+  ui->webView->setHtml(Converter::toHtml(ui->codeEdit->toPlainText()));
 }
 
 void DailyNotes::on_calendarWidget_activated(const QDate& date)

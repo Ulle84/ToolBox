@@ -8,6 +8,7 @@
 #include "Converter.h"
 #include "File.h"
 #include "Path.h"
+#include "SmlConverter.h"
 
 namespace Converter
 {
@@ -53,13 +54,13 @@ namespace Converter
     return jsonObject;
   }
 
-  QJsonObject SHARED_API configFileToJsonObject(const QString& programName, const QString& fileName)
+  QJsonObject configFileToJsonObject(const QString& programName, const QString& fileName)
   {
     QString fileContent = File::fileToString(Path::configurationFile(programName, fileName));
     return toJsonObject(fileContent);
   }
 
-  void SHARED_API jsonObjectToConfigFile(const QJsonObject& jsonObject, const QString& programName, const QString& fileName)
+  void jsonObjectToConfigFile(const QJsonObject& jsonObject, const QString& programName, const QString& fileName)
   {
     // TODO check if directory exists...
     QFile file(Path::configurationFile(programName, fileName));
@@ -73,5 +74,11 @@ namespace Converter
 
     file.write(jsonDocument.toJson());
     file.close();
+  }
+
+  QString toHtml(const QString& sml)
+  {
+    SmlConverter smlConverter;
+    return smlConverter.toHtml(sml);
   }
 }

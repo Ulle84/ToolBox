@@ -26,6 +26,8 @@ namespace Converter
   void SHARED_API jsonObjectToConfigFile(const QJsonObject& jsonObject, const QString& programName, const QString& fileName);
 
   QString SHARED_API toPath(const QStringList& pathParts);
+
+  QString SHARED_API toHtml(const QString& sml);
 }
 
 #endif

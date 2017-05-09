@@ -8,6 +8,8 @@
 
 #include "SharedAPI.h"
 
+// TODO move to Converter and remove
+
 namespace QConverter
 {
   QString SHARED_API toString(const QStringList& stringList, const QChar& seperator = '\n');

@@ -6,7 +6,7 @@
 #include "Attribute.h"
 #include "SharedAPI.h"
 
-class SHARED_API SmlConverter
+class SmlConverter
 {
   public:
     SmlConverter();
@@ -25,4 +25,4 @@ class SHARED_API SmlConverter
     const QString m_endComment = ")))";
 };
 
-#endif // CONVERTER_H
+#endif

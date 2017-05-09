@@ -3,7 +3,7 @@
 #include "SmlEdit.h"
 #include "ui_SmlEdit.h"
 
-#include "SmlConverter.h"
+#include "Converter.h"
 
 SmlEdit::SmlEdit(QWidget* parent) :
   QWidget(parent),
@@ -43,9 +43,7 @@ QByteArray SmlEdit::splitterState()
 
 void SmlEdit::on_codeEditSimpleHtml_textChanged()
 {
-  SmlConverter smlConverter;
-
-  QString html = smlConverter.toHtml(ui->codeEditSimpleHtml->toPlainText());
+  QString html = Converter::toHtml(ui->codeEditSimpleHtml->toPlainText());
 
   ui->codeEditHtml->setPlainText(html);
   ui->webView->setHtml(html);
