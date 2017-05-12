@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 2.8.11)
 
 set(ProjectName PlainClipboard)
-set(ExecutableType Console)
+set(Type ConsoleApplication)
 
-include(../CMake/QtApplication.cmake)
+include(../CMake/ProjectTemplate.cmake)
 
 #project(${ProjectName})
 #

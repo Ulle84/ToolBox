@@ -49,9 +49,9 @@ QList<QPair<QString, QString>> GeneratorQtDialog::generatedCode()
   QString newName = ui->lineEditName->text();
 
   QStringList files;
-  files.append(":/files/Templates/QtDialog/Template.cpp");
-  files.append(":/files/Templates/QtDialog/Template.h");
-  files.append(":/files/Templates/QtDialog/Template.ui");
+  files.append(":/QtDialog/Template.cpp");
+  files.append(":/QtDialog/Template.h");
+  files.append(":/QtDialog/Template.ui");
 
   for (auto it = files.begin(); it != files.end(); it++)
   {

@@ -48,8 +48,8 @@ QList<QPair<QString, QString>> GeneratorQtConsoleApplication::generatedCode()
   QString newName = ui->lineEditName->text();
 
   QStringList files;
-  files.append(":/files/Templates/QtConsoleApplication/CMakeLists.txt");
-  files.append(":/files/Templates/QtConsoleApplication/main.cpp");
+  files.append(":/QtConsoleApplication/CMakeLists.txt");
+  files.append(":/QtConsoleApplication/main.cpp");
 
   for (auto it = files.begin(); it != files.end(); it++)
   {

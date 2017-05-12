@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.3.2)
 
 set(ProjectName QtConsoleApplication)
-set(ExecutableType Console)
+set(Type ConsoleApplication)
 
-include(../CMake/QtApplication.cmake)
+include(../CMake/ProjectTemplate.cmake)

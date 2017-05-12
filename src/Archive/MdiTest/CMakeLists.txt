@@ -2,4 +2,4 @@ cmake_minimum_required(VERSION 3.3.2)
 
 set(ProjectName MdiTest)
 
-include(../CMake/QtApplication.cmake)
+include(../CMake/ProjectTemplate.cmake)

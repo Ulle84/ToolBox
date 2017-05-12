@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 3.3.2)
 
 set(ProjectName CodeCleaner)
-set(ExecutableType Console)
+set(Type ConsoleApplication)
 
 set(RequiredLibraries
   Shared
 )
 
-include(../CMake/QtApplication.cmake)
+include(../CMake/ProjectTemplate.cmake)
 
 #cmake_minimum_required(VERSION 2.8.11)
 #

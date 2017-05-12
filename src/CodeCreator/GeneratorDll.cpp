@@ -51,13 +51,13 @@ QList<QPair<QString, QString>> GeneratorDll::generatedCode()
   QString name = ui->lineEditName->text();
 
   QStringList files;
-  files.append(":/files/Templates/Dll/CMakeLists.txt");
-  files.append(":/files/Templates/Dll/Template.cpp");
-  files.append(":/files/Templates/Dll/Template.rc");
-  files.append(":/files/Templates/Dll/API/Template.h");
-  files.append(":/files/Templates/Dll/API/TemplateAPI.h");
+  files.append(":/Dll/CMakeLists.txt");
+  files.append(":/Dll/Template.cpp");
+  files.append(":/Dll/Template.rc");
+  files.append(":/Dll/API/Template.h");
+  files.append(":/Dll/API/TemplateAPI.h");
 
-  const int fileOffset = 3;
+  const int fileOffset = 1;
 
   for (auto it = files.begin(); it != files.end(); it++)
   {

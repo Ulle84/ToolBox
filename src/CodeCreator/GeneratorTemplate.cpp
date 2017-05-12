@@ -48,11 +48,11 @@ QList<QPair<QString, QString>> GeneratorTemplate::generatedCode()
   QString generatorTemplate = "GeneratorTemplate";
 
   QStringList files;
-  files.append(":/files/Templates/Generator/GeneratorTemplate.h");
-  files.append(":/files/Templates/Generator/GeneratorTemplate.cpp");
-  files.append(":/files/Templates/Generator/GeneratorTemplate.ui");
+  files.append(":/Generator/GeneratorTemplate.h");
+  files.append(":/Generator/GeneratorTemplate.cpp");
+  files.append(":/Generator/GeneratorTemplate.ui");
 
-  const int fileOffset = 4;
+  const int fileOffset = 2;
 
   for (auto it = files.begin(); it != files.end(); it++)
   {

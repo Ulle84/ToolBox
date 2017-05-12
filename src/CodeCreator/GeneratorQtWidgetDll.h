@@ -37,7 +37,7 @@ class GeneratorQtWidgetDll : public QWidget, public GeneratorI
   private:
     Ui::GeneratorQtWidgetDll* ui;
 
-    const int m_fileOffset = 3;
+    const int m_fileOffset = 1;
     const QString m_oldName = "QtWidgetDll";
 };
 

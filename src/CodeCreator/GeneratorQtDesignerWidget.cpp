@@ -50,14 +50,14 @@ QList<QPair<QString, QString>> GeneratorQtDesignerWidget::generatedCode()
   QString newName = ui->lineEditName->text();
 
   QStringList files;
-  files.append(":/files/Templates/QtDesignerWidget/CMakeLists.txt");  
-  files.append(":/files/Templates/QtDesignerWidget/QtDesignerWidget.cpp");
-  files.append(":/files/Templates/QtDesignerWidget/API/QtDesignerWidget.h");
-  files.append(":/files/Templates/QtDesignerWidget/QtDesignerWidget.ui");
-  files.append(":/files/Templates/QtDesignerWidget/QtDesignerWidgetPlugin.cpp");
-  files.append(":/files/Templates/QtDesignerWidget/QtDesignerWidgetPlugin.h");
-  files.append(":/files/Templates/QtDesignerWidget/QtDesignerWidgetPlugin.json");
-  files.append(":/files/Templates/QtDesignerWidget/Resources/Resources.qrc");
+  files.append(":/files/../../CodeCreatorTemplates/QtDesignerWidget/CMakeLists.txt");  
+  files.append(":/files/../../CodeCreatorTemplates/QtDesignerWidget/QtDesignerWidget.cpp");
+  files.append(":/files/../../CodeCreatorTemplates/QtDesignerWidget/API/QtDesignerWidget.h");
+  files.append(":/files/../../CodeCreatorTemplates/QtDesignerWidget/QtDesignerWidget.ui");
+  files.append(":/files/../../CodeCreatorTemplates/QtDesignerWidget/QtDesignerWidgetPlugin.cpp");
+  files.append(":/files/../../CodeCreatorTemplates/QtDesignerWidget/QtDesignerWidgetPlugin.h");
+  files.append(":/files/../../CodeCreatorTemplates/QtDesignerWidget/QtDesignerWidgetPlugin.json");
+  files.append(":/files/../../CodeCreatorTemplates/QtDesignerWidget/Resources/Resources.qrc");
 
   for (auto it = files.begin(); it != files.end(); it++)
   {
@@ -103,7 +103,7 @@ QList<QPair<QString, QString>> GeneratorQtDesignerWidget::additionalResources()
   QString newName = ui->lineEditName->text();
 
   QStringList fileNameList;
-  fileNameList.append(":/files/Templates/QtDesignerWidget/Resources/logo.png");
+  fileNameList.append(":/files/../../CodeCreatorTemplates/QtDesignerWidget/Resources/logo.png");
 
   for (auto it = fileNameList.begin(); it != fileNameList.end(); it++)
   {

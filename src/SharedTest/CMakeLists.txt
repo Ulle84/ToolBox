@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.3.2)
 
 set(ProjectName SharedTest)
-set(ExecutableType Console)
+set(Type ConsoleApplication)
 set(FolderName Shared)
 
 set(RequiredLibraries
   Shared
 )
 
-include(../CMake/QtApplication.cmake)
+include(../CMake/ProjectTemplate.cmake)

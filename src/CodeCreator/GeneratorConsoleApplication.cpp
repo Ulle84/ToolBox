@@ -48,8 +48,8 @@ QList<QPair<QString, QString>> GeneratorConsoleApplication::generatedCode()
   QString name = ui->lineEditName->text();
 
   QStringList files;
-  files.append(":/files/Templates/ConsoleApplication/CMakeLists.txt");
-  files.append(":/files/Templates/ConsoleApplication/main.cpp");
+  files.append(":/ConsoleApplication/CMakeLists.txt");
+  files.append(":/ConsoleApplication/main.cpp");
 
   for (auto it = files.begin(); it != files.end(); it++)
   {
@@ -67,7 +67,10 @@ QList<QPair<QString, QString>> GeneratorConsoleApplication::generatedCode()
     fileContent.replace("ConsoleApplication", name);
 
     QStringList splitted = it->split("/");
-    QString fileName = splitted.last();
+
+    splitted.removeFirst();
+
+    QString fileName = splitted.join('/').replace("ConsoleApplication", name);
 
     code.append(qMakePair(fileName, fileContent));
   }

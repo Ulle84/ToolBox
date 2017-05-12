@@ -49,9 +49,9 @@ QList<QPair<QString, QString>> GeneratorQtWidget::generatedCode()
   QString newName = ui->lineEditName->text();
 
   QStringList files;
-  files.append(":/files/Templates/QtWidget/Form.cpp");
-  files.append(":/files/Templates/QtWidget/Form.h");
-  files.append(":/files/Templates/QtWidget/Form.ui");
+  files.append(":/QtWidget/Form.cpp");
+  files.append(":/QtWidget/Form.h");
+  files.append(":/QtWidget/Form.ui");
 
   for (auto it = files.begin(); it != files.end(); it++)
   {

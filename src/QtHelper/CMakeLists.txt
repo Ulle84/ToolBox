@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.3.2)
 
 set(ProjectName QtHelper)
+set(Type WidgetsApplication)
 
-include(../CMake/QtApplication.cmake)
+include(../CMake/ProjectTemplate.cmake)

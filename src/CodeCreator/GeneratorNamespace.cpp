@@ -48,8 +48,8 @@ QList<QPair<QString, QString>> GeneratorNamespace::generatedCode()
   QString name = ui->lineEditName->text();
 
   QStringList files;
-  files.append(":/files/Templates/Namespace/Namespace.cpp");
-  files.append(":/files/Templates/Namespace/Namespace.h");
+  files.append(":/Namespace/Namespace.cpp");
+  files.append(":/Namespace/Namespace.h");
 
   for (auto it = files.begin(); it != files.end(); it++)
   {

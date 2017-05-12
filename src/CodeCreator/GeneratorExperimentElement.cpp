@@ -56,26 +56,26 @@ QList<QPair<QString, QString>> GeneratorExperimentElement::generatedCode()
   QString catalogName = ui->comboBoxCatalog->currentText();
 
   QStringList files;
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplate/CMakeLists.txt");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplate/ExperimentElementTemplate.cpp");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplate/ExperimentElementTemplate.rc.template");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplate/ExperimentElementTemplateFactory.cpp");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplate/resource.h");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplate/Version.h.template");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplate/API/ExperimentElementTemplate.h");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplate/API/ExperimentElementTemplateAPI.h");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplate/API/ExperimentElementTemplateFactory.h");
+  files.append(":/ExperimentElement/ExperimentElementTemplate/CMakeLists.txt");
+  files.append(":/ExperimentElement/ExperimentElementTemplate/ExperimentElementTemplate.cpp");
+  files.append(":/ExperimentElement/ExperimentElementTemplate/ExperimentElementTemplate.rc.template");
+  files.append(":/ExperimentElement/ExperimentElementTemplate/ExperimentElementTemplateFactory.cpp");
+  files.append(":/ExperimentElement/ExperimentElementTemplate/resource.h");
+  files.append(":/ExperimentElement/ExperimentElementTemplate/Version.h.template");
+  files.append(":/ExperimentElement/ExperimentElementTemplate/API/ExperimentElementTemplate.h");
+  files.append(":/ExperimentElement/ExperimentElementTemplate/API/ExperimentElementTemplateAPI.h");
+  files.append(":/ExperimentElement/ExperimentElementTemplate/API/ExperimentElementTemplateFactory.h");
 
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplateGui/CMakeLists.txt");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplateGui.rc.template");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplateGuiAPI.h");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanel.cpp");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanel.h");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanel.ui");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanelFactory.cpp");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanelFactory.h");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplateGui/Version.h.template");
-  files.append(":/files/Templates/ExperimentElement/ExperimentElementTemplateGui/resource.h");
+  files.append(":/ExperimentElement/ExperimentElementTemplateGui/CMakeLists.txt");
+  files.append(":/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplateGui.rc.template");
+  files.append(":/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplateGuiAPI.h");
+  files.append(":/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanel.cpp");
+  files.append(":/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanel.h");
+  files.append(":/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanel.ui");
+  files.append(":/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanelFactory.cpp");
+  files.append(":/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanelFactory.h");
+  files.append(":/ExperimentElement/ExperimentElementTemplateGui/Version.h.template");
+  files.append(":/ExperimentElement/ExperimentElementTemplateGui/resource.h");
 
   for (auto it = files.begin(); it != files.end(); it++)
   {
@@ -98,7 +98,7 @@ QList<QPair<QString, QString>> GeneratorExperimentElement::generatedCode()
 
     QStringList splitted = it->split("/");
 
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 2; i++)
     {
       splitted.removeFirst();
     }
@@ -114,7 +114,7 @@ QList<QPair<QString, QString>> GeneratorExperimentElement::generatedCode()
 
 QString GeneratorExperimentElement::integrationInstructions()
 {
-  QFile file(":/files/Templates/ExperimentElement/IntegrationInstructionsForExperimentElementTemplate.md");
+  QFile file(":/ExperimentElement/IntegrationInstructionsForExperimentElementTemplate.md");
 
   if (!file.open(QFile::ReadOnly | QFile::Text))
   {

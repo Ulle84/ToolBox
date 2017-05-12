@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.3.2)
 
 set(ProjectName Shared)
+set(Type Library)
 
 set(FolderName Shared)
 
@@ -8,7 +9,7 @@ set(RequiredLibraries
   SharedResources
 )
 
-include(../CMake/QtLibrary.cmake)
+include(../CMake/ProjectTemplate.cmake)
 
 #string(TOUPPER ${ProjectName} ProjectName_UPPERCASED)
 #

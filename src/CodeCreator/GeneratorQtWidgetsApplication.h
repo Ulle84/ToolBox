@@ -35,7 +35,7 @@ class GeneratorQtWidgetsApplication : public QWidget, public GeneratorI
   private:
     Ui::GeneratorQtWidgetsApplication* ui;
 
-    const int m_fileOffset = 3;
+    const int m_fileOffset = 1;
     const QString m_oldName = "QtWidgetsApplication";
 };
 

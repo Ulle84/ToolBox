@@ -2,92 +2,101 @@
   <qresource prefix="/images">
     <file>logo.png</file>
   </qresource>
-
-  <qresource prefix="/files">
-    <!-- Generator -->
-    <file>Templates/Generator/GeneratorTemplate.cpp</file>
-    <file>Templates/Generator/GeneratorTemplate.h</file>
-    <file>Templates/Generator/GeneratorTemplate.ui</file>
     
-    <!-- ConsoleApplication -->
-    <file>Templates/ConsoleApplication/CMakeLists.txt</file>
-    <file>Templates/ConsoleApplication/main.cpp</file>
-    
-    <!-- Dll -->
-    <file>Templates/Dll/CMakeLists.txt</file>
-    <file>Templates/Dll/Template.cpp</file>
-    <file>Templates/Dll/Template.rc</file>
-    <file>Templates/Dll/API/Template.h</file>
-    <file>Templates/Dll/API/TemplateAPI.h</file>
-    
-    <!-- Namespace -->
-    <file>Templates/Namespace/Namespace.cpp</file>
-    <file>Templates/Namespace/Namespace.h</file>
-    
-    <!-- QtConsoleApplication -->
-    <file>Templates/QtConsoleApplication/CMakeLists.txt</file>
-    <file>Templates/QtConsoleApplication/main.cpp</file>
-    
-    <!-- QtWidget -->
-    <file>Templates/QtWidget/Form.cpp</file>
-    <file>Templates/QtWidget/Form.h</file>
-    <file>Templates/QtWidget/Form.ui</file>
-    
-    <!-- QtWidgetDll -->
-    <file>Templates/QtWidgetDll/API/QtWidgetDll.h</file>
-    <file>Templates/QtWidgetDll/API/QtWidgetDllAPI.h</file>
-    <file>Templates/QtWidgetDll/CMakeLists.txt</file>
-    <file>Templates/QtWidgetDll/QtWidgetDll.cpp</file>
-    <file>Templates/QtWidgetDll/QtWidgetDll.ui</file>
-    <file>Templates/QtWidgetDll/QtWidgetDll.rc</file>
-    <file>Templates/QtWidgetDll/QtWidgetDllDesignerPlugin.cpp</file>
-    <file>Templates/QtWidgetDll/QtWidgetDllDesignerPlugin.h</file>
-    <file>Templates/QtWidgetDll/QtWidgetDllDesignerPlugin.json</file>
-    
-    <!-- QtDialog -->
-    <file>Templates/QtDialog/Template.cpp</file>
-    <file>Templates/QtDialog/Template.h</file>
-    <file>Templates/QtDialog/Template.ui</file>
-    
-    <!-- QtWidgetsApplication -->
-    <file>Templates/QtWidgetsApplication/CMakeLists.txt</file>
-    <file>Templates/QtWidgetsApplication/main.cpp</file>
-    <file>Templates/QtWidgetsApplication/MainWindow.cpp</file>
-    <file>Templates/QtWidgetsApplication/MainWindow.h</file>
-    <file>Templates/QtWidgetsApplication/MainWindow.ui</file>
-    <file>Templates/QtWidgetsApplication/QtWidgetsApplication.cpp</file>
-    <file>Templates/QtWidgetsApplication/QtWidgetsApplication.h</file>
-    <file>Templates/QtWidgetsApplication/QtWidgetsApplication.ui</file>
-    <file>Templates/QtWidgetsApplication/Resources/Resources.qrc</file>
-    <file>Templates/QtWidgetsApplication/Resources/logo.ico</file>
-    <file>Templates/QtWidgetsApplication/Resources/Resources.rc</file>
-    
-    <!-- ExperimentElement -->
-    <file>Templates/ExperimentElement/ExperimentElementTemplate/CMakeLists.txt</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplate/ExperimentElementTemplate.cpp</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplate/ExperimentElementTemplate.rc.template</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplate/ExperimentElementTemplateFactory.cpp</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplate/Version.h.template</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplate/resource.h</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplate/API/ExperimentElementTemplate.h</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplate/API/ExperimentElementTemplateAPI.h</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplate/API/ExperimentElementTemplateFactory.h</file>
-    
-    <file>Templates/ExperimentElement/ExperimentElementTemplateGui/CMakeLists.txt</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplateGui.rc.template</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplateGuiAPI.h</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanel.cpp</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanel.h</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanelFactory.cpp</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanelFactory.h</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanel.ui</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplateGui/resource.h</file>
-    <file>Templates/ExperimentElement/ExperimentElementTemplateGui/Version.h.template</file>
-    
-    <file>Templates/ExperimentElement/IntegrationInstructionsForExperimentElementTemplate.md</file>
-    
-    <!-- Template -->
-    <file>Templates/Template/Template.cpp</file>
-    <file>Templates/Template/Template.h</file>
+  <qresource prefix="/QtWidget">
+    <file alias="Form.cpp">../../CodeCreatorTemplates/QtWidget/Form.cpp</file>
+    <file alias="Form.h">../../CodeCreatorTemplates/QtWidget/Form.h</file>
+    <file alias="Form.ui">../../CodeCreatorTemplates/QtWidget/Form.ui</file>
   </qresource>
+  
+  <qresource prefix="/Generator">
+    <file alias="GeneratorTemplate.cpp">../../CodeCreatorTemplates/Generator/GeneratorTemplate.cpp</file>
+    <file alias="GeneratorTemplate.h">../../CodeCreatorTemplates/Generator/GeneratorTemplate.h</file>
+    <file alias="GeneratorTemplate.ui">../../CodeCreatorTemplates/Generator/GeneratorTemplate.ui</file>
+  </qresource>
+  
+  <qresource prefix="/ConsoleApplication">
+    <file alias="CMakeLists.txt">../../CodeCreatorTemplates/ConsoleApplication/CMakeLists.txt</file>
+    <file alias="main.cpp">../../CodeCreatorTemplates/ConsoleApplication/main.cpp</file>
+  </qresource>
+  
+  <qresource prefix="/Dll">
+    <file alias="CMakeLists.txt">../../CodeCreatorTemplates/Dll/CMakeLists.txt</file>
+    <file alias="Template.cpp">../../CodeCreatorTemplates/Dll/Template.cpp</file>
+    <file alias="Template.rc">../../CodeCreatorTemplates/Dll/Template.rc</file>
+    <file alias="API/Template.h">../../CodeCreatorTemplates/Dll/API/Template.h</file>
+    <file alias="API/TemplateAPI.h">../../CodeCreatorTemplates/Dll/API/TemplateAPI.h</file>
+  </qresource>
+  
+  <qresource prefix="/Namespace">
+    <file alias="Namespace.cpp">../../CodeCreatorTemplates/Namespace/Namespace.cpp</file>
+    <file alias="Namespace.h">../../CodeCreatorTemplates/Namespace/Namespace.h</file>
+  </qresource>
+  
+  <qresource prefix="/QtConsoleApplication">
+    <file alias="CMakeLists.txt">../../CodeCreatorTemplates/QtConsoleApplication/CMakeLists.txt</file>
+    <file alias="main.cpp">../../CodeCreatorTemplates/QtConsoleApplication/main.cpp</file>
+  </qresource>
+  
+  <qresource prefix="/QtWidgetDll">
+    <file alias="API/QtWidgetDll.h">../../CodeCreatorTemplates/QtWidgetDll/API/QtWidgetDll.h</file>
+    <file alias="API/QtWidgetDllAPI.h">../../CodeCreatorTemplates/QtWidgetDll/API/QtWidgetDllAPI.h</file>
+    <file alias="CMakeLists.txt">../../CodeCreatorTemplates/QtWidgetDll/CMakeLists.txt</file>
+    <file alias="QtWidgetDll.cpp">../../CodeCreatorTemplates/QtWidgetDll/QtWidgetDll.cpp</file>
+    <file alias="QtWidgetDll.ui">../../CodeCreatorTemplates/QtWidgetDll/QtWidgetDll.ui</file>
+    <file alias="QtWidgetDll.rc">../../CodeCreatorTemplates/QtWidgetDll/QtWidgetDll.rc</file>
+    <file alias="QtWidgetDllDesignerPlugin.cpp">../../CodeCreatorTemplates/QtWidgetDll/QtWidgetDllDesignerPlugin.cpp</file>
+    <file alias="QtWidgetDllDesignerPlugin.h">../../CodeCreatorTemplates/QtWidgetDll/QtWidgetDllDesignerPlugin.h</file>
+    <file alias="QtWidgetDllDesignerPlugin.json">../../CodeCreatorTemplates/QtWidgetDll/QtWidgetDllDesignerPlugin.json</file>
+  </qresource>
+  
+  <qresource prefix="/QtDialog">
+    <file alias="Template.cpp">../../CodeCreatorTemplates/QtDialog/Template.cpp</file>
+    <file alias="Template.h">../../CodeCreatorTemplates/QtDialog/Template.h</file>
+    <file alias="Template.ui">../../CodeCreatorTemplates/QtDialog/Template.ui</file>
+  </qresource>
+  
+  <qresource prefix="/QtWidgetsApplication">
+    <file alias="CMakeLists.txt">../../CodeCreatorTemplates/QtWidgetsApplication/CMakeLists.txt</file>
+    <file alias="main.cpp">../../CodeCreatorTemplates/QtWidgetsApplication/main.cpp</file>
+    <file alias="MainWindow.cpp">../../CodeCreatorTemplates/QtWidgetsApplication/MainWindow.cpp</file>
+    <file alias="MainWindow.h">../../CodeCreatorTemplates/QtWidgetsApplication/MainWindow.h</file>
+    <file alias="MainWindow.ui">../../CodeCreatorTemplates/QtWidgetsApplication/MainWindow.ui</file>
+    <file alias="QtWidgetsApplication.cpp">../../CodeCreatorTemplates/QtWidgetsApplication/QtWidgetsApplication.cpp</file>
+    <file alias="QtWidgetsApplication.h">../../CodeCreatorTemplates/QtWidgetsApplication/QtWidgetsApplication.h</file>
+    <file alias="QtWidgetsApplication.ui">../../CodeCreatorTemplates/QtWidgetsApplication/QtWidgetsApplication.ui</file>
+    <file alias="Resources/Resources.qrc">../../CodeCreatorTemplates/QtWidgetsApplication/Resources/Resources.qrc</file>
+    <file alias="Resources/logo.ico">../../CodeCreatorTemplates/QtWidgetsApplication/Resources/logo.ico</file>
+    <file alias="Resources/Resources.rc">../../CodeCreatorTemplates/QtWidgetsApplication/Resources/Resources.rc</file>
+  </qresource>
+  
+  <qresource prefix="/ExperimentElement">
+    <file alias="ExperimentElementTemplate/CMakeLists.txt">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplate/CMakeLists.txt</file>
+    <file alias="ExperimentElementTemplate/ExperimentElementTemplate.cpp">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplate/ExperimentElementTemplate.cpp</file>
+    <file alias="ExperimentElementTemplate/ExperimentElementTemplate.rc.template">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplate/ExperimentElementTemplate.rc.template</file>
+    <file alias="ExperimentElementTemplate/ExperimentElementTemplateFactory.cpp">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplate/ExperimentElementTemplateFactory.cpp</file>
+    <file alias="ExperimentElementTemplate/Version.h.template">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplate/Version.h.template</file>
+    <file alias="ExperimentElementTemplate/resource.h">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplate/resource.h</file>
+    <file alias="ExperimentElementTemplate/API/ExperimentElementTemplate.h">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplate/API/ExperimentElementTemplate.h</file>
+    <file alias="ExperimentElementTemplate/API/ExperimentElementTemplateAPI.h">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplate/API/ExperimentElementTemplateAPI.h</file>
+    <file alias="ExperimentElementTemplate/API/ExperimentElementTemplateFactory.h">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplate/API/ExperimentElementTemplateFactory.h</file>
+    
+    <file alias="ExperimentElementTemplateGui/CMakeLists.txt">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplateGui/CMakeLists.txt</file>
+    <file alias="ExperimentElementTemplateGui/ExperimentElementTemplateGui.rc.template">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplateGui.rc.template</file>
+    <file alias="ExperimentElementTemplateGui/ExperimentElementTemplateGuiAPI.h">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplateGuiAPI.h</file>
+    <file alias="ExperimentElementTemplateGui/ExperimentElementTemplatePanel.cpp">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanel.cpp</file>
+    <file alias="ExperimentElementTemplateGui/ExperimentElementTemplatePanel.h">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanel.h</file>
+    <file alias="ExperimentElementTemplateGui/ExperimentElementTemplatePanelFactory.cpp">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanelFactory.cpp</file>
+    <file alias="ExperimentElementTemplateGui/ExperimentElementTemplatePanelFactory.h">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanelFactory.h</file>
+    <file alias="ExperimentElementTemplateGui/ExperimentElementTemplatePanel.ui">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplateGui/ExperimentElementTemplatePanel.ui</file>
+    <file alias="ExperimentElementTemplateGui/resource.h">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplateGui/resource.h</file>
+    <file alias="ExperimentElementTemplateGui/Version.h.template">../../CodeCreatorTemplates/ExperimentElement/ExperimentElementTemplateGui/Version.h.template</file>
+    
+    <file alias="IntegrationInstructionsForExperimentElementTemplate.md">../../CodeCreatorTemplates/ExperimentElement/IntegrationInstructionsForExperimentElementTemplate.md</file>
+  </qresource>
+  
+  <!--qresource prefix="/Template">
+    <file alias="Template.cpp">../../CodeCreatorTemplates/Template/Template.cpp</file>
+    <file alias="Template.h">../../CodeCreatorTemplates/Template/Template.h</file>
+  </qresource-->
 </RCC>

@@ -58,14 +58,14 @@ QList<QPair<QString, QString>> GeneratorQtWidgetsApplication::generatedCode()
   QString newName = ui->lineEditName->text();
 
   QStringList textFiles;
-  textFiles.append(":/files/Templates/QtWidgetsApplication/CMakeLists.txt");
-  textFiles.append(":/files/Templates/QtWidgetsApplication/main.cpp");
-  textFiles.append(":/files/Templates/QtWidgetsApplication/MainWindow.cpp");
-  textFiles.append(":/files/Templates/QtWidgetsApplication/MainWindow.h");
-  textFiles.append(":/files/Templates/QtWidgetsApplication/MainWindow.ui");
-  textFiles.append(":/files/Templates/QtWidgetsApplication/QtWidgetsApplication.cpp");
-  textFiles.append(":/files/Templates/QtWidgetsApplication/QtWidgetsApplication.h");
-  textFiles.append(":/files/Templates/QtWidgetsApplication/QtWidgetsApplication.ui");
+  textFiles.append(":/QtWidgetsApplication/CMakeLists.txt");
+  textFiles.append(":/QtWidgetsApplication/main.cpp");
+  textFiles.append(":/QtWidgetsApplication/MainWindow.cpp");
+  textFiles.append(":/QtWidgetsApplication/MainWindow.h");
+  textFiles.append(":/QtWidgetsApplication/MainWindow.ui");
+  textFiles.append(":/QtWidgetsApplication/QtWidgetsApplication.cpp");
+  textFiles.append(":/QtWidgetsApplication/QtWidgetsApplication.h");
+  textFiles.append(":/QtWidgetsApplication/QtWidgetsApplication.ui");
 
   for (auto it = textFiles.begin(); it != textFiles.end(); it++)
   {
@@ -110,9 +110,9 @@ QList<QPair<QString, QString>> GeneratorQtWidgetsApplication::additionalResource
   QString newName = ui->lineEditName->text();
 
   QStringList fileNameList;
-  fileNameList.append(":/files/Templates/QtWidgetsApplication/Resources/logo.ico");
-  fileNameList.append(":/files/Templates/QtWidgetsApplication/Resources/Resources.rc");
-  fileNameList.append(":/files/Templates/QtWidgetsApplication/Resources/Resources.qrc");
+  fileNameList.append(":/files/../../CodeCreatorTemplates/QtWidgetsApplication/Resources/logo.ico");
+  fileNameList.append(":/files/../../CodeCreatorTemplates/QtWidgetsApplication/Resources/Resources.rc");
+  fileNameList.append(":/files/../../CodeCreatorTemplates/QtWidgetsApplication/Resources/Resources.qrc");
 
   for (auto it = fileNameList.begin(); it != fileNameList.end(); it++)
   {

@@ -51,14 +51,14 @@ QList<QPair<QString, QString>> GeneratorQtWidgetDll::generatedCode()
   QString newName = ui->lineEditName->text();
 
   QStringList files;
-  files.append(":/files/Templates/QtWidgetDll/API/QtWidgetDll.h");
-  files.append(":/files/Templates/QtWidgetDll/API/QtWidgetDllAPI.h");
-  files.append(":/files/Templates/QtWidgetDll/CMakeLists.txt");
-  files.append(":/files/Templates/QtWidgetDll/QtWidgetDll.cpp");
-  files.append(":/files/Templates/QtWidgetDll/QtWidgetDll.ui");
-  files.append(":/files/Templates/QtWidgetDll/QtWidgetDllDesignerPlugin.cpp");
-  files.append(":/files/Templates/QtWidgetDll/QtWidgetDllDesignerPlugin.h");
-  files.append(":/files/Templates/QtWidgetDll/QtWidgetDllDesignerPlugin.json");
+  files.append(":/QtWidgetDll/API/QtWidgetDll.h");
+  files.append(":/QtWidgetDll/API/QtWidgetDllAPI.h");
+  files.append(":/QtWidgetDll/CMakeLists.txt");
+  files.append(":/QtWidgetDll/QtWidgetDll.cpp");
+  files.append(":/QtWidgetDll/QtWidgetDll.ui");
+  files.append(":/QtWidgetDll/QtWidgetDllDesignerPlugin.cpp");
+  files.append(":/QtWidgetDll/QtWidgetDllDesignerPlugin.h");
+  files.append(":/QtWidgetDll/QtWidgetDllDesignerPlugin.json");
 
 
   for (auto it = files.begin(); it != files.end(); it++)
@@ -106,7 +106,7 @@ QList<QPair<QString, QString>> GeneratorQtWidgetDll::additionalResources()
   QString newName = ui->lineEditName->text();
 
   QStringList fileNameList;
-  fileNameList.append(":/files/Templates/QtWidgetDll/QtWidgetDll.rc");
+  fileNameList.append(":/QtWidgetDll/QtWidgetDll.rc");
 
   for (auto it = fileNameList.begin(); it != fileNameList.end(); it++)
   {

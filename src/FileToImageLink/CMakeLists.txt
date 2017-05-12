@@ -1,10 +1,9 @@
 cmake_minimum_required(VERSION 2.8.11)
 
 set (ProjectName FileToImageLink)
+set(Type ConsoleApplication)
 
-set(ExecutableType Console)
-
-include(../CMake/QtApplication.cmake)
+include(../CMake/ProjectTemplate.cmake)
 
 #project(${ProjectName})
 #
