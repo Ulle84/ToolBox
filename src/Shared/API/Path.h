@@ -8,6 +8,8 @@
 
 #include "SharedAPI.h"
 
+// TODO create classes FilePath and DirectoryPath and use them!
+
 namespace Path
 {
   // TODO rename to applicationDirectory and configurationDirectory

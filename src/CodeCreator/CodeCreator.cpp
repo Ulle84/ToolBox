@@ -61,12 +61,14 @@ CodeCreator::CodeCreator(QWidget* parent) :
   updatePreview();
 
   QList<QLineEdit*> lineEdits = findChildren<QLineEdit*>();
+
   for (auto it = lineEdits.begin(); it != lineEdits.end(); ++it)
   {
     (*it)->setFont(QFontEx::monospace());
   }
 
   QList<QPlainTextEdit*> plainTextEdits = findChildren<QPlainTextEdit*>();
+
   for (auto it = plainTextEdits.begin(); it != plainTextEdits.end(); ++it)
   {
     (*it)->setFont(QFontEx::monospace());
@@ -191,9 +193,7 @@ bool CodeCreator::generateFiles(const QList<QPair<QString, QString>>& content, G
     {
       if (!output.open(QIODevice::WriteOnly | QIODevice::Text))
       {
-        QMessageBox mb;
-        mb.setText(tr("Cannot open output file %1!").arg(it->first));
-        mb.exec();
+        ui->logConsole->error(tr("Cannot open output file %1").arg(it->first));
         return false;
       }
 
@@ -201,6 +201,8 @@ bool CodeCreator::generateFiles(const QList<QPair<QString, QString>>& content, G
       out << it->second;
 
       output.close();
+
+      ui->logConsole->success(tr("Written file %1").arg(it->first));
     }
     else if (generationType == GenerationType::CopyFromFile)
     {
@@ -208,13 +210,12 @@ bool CodeCreator::generateFiles(const QList<QPair<QString, QString>>& content, G
 
       if (!input.exists())
       {
-        QMessageBox mb;
-        mb.setText(tr("Cannot open resource file %1!").arg(it->second));
-        mb.exec();
+        ui->logConsole->error(tr("Cannot open resource file %1").arg(it->second));
         return false;
       }
 
       input.copy(outputFileName);
+      ui->logConsole->success(tr("Written file %1").arg(it->second));
     }
   }
 
@@ -354,9 +355,7 @@ void CodeCreator::on_pushButtonGenerate_clicked()
     }
   }
 
-  QMessageBox messageBox;
-  messageBox.setText(tr("Creation finished!"));
-  messageBox.exec();
+  ui->logConsole->info(tr("Creation finished"));
 }
 
 void CodeCreator::on_pushButtonClearHistory_clicked()

@@ -12,8 +12,6 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${OutputDirDebug})
 
 set(QtBuilderWorkingDir ${OutputDirDebug})
 
-#file(INSTALL ${OutputDir}/../bin/AStyle.exe DESTINATION ${OutputDir})
-
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 include(CMake/Qt.cmake)
@@ -54,11 +52,9 @@ add_subdirectory(QtHelper)
 add_subdirectory(Shared)
 add_subdirectory(SharedResources)
 add_subdirectory(SharedTest)
-#add_subdirectory(SimpleHtmlEdit)
-#add_subdirectory(SimpleHtmlEditor)
+add_subdirectory(SitAndStandTimer)
 add_subdirectory(SmlEdit)
 add_subdirectory(SmlEditor)
-add_subdirectory(SitAndStandTimer)
 add_subdirectory(SvnUpdateFilter)
 add_subdirectory(TextConverter)
 add_subdirectory(Timer)

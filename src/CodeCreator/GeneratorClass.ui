@@ -46,6 +46,13 @@
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QCheckBox" name="checkBoxHeaderInSubdirectory">
+         <property name="text">
+          <string>create header in subdirectory API</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </item>
      <item row="4" column="0">

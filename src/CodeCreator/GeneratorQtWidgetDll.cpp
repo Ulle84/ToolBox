@@ -60,7 +60,6 @@ QList<QPair<QString, QString>> GeneratorQtWidgetDll::generatedCode()
   files.append(":/QtWidgetDll/QtWidgetDllDesignerPlugin.h");
   files.append(":/QtWidgetDll/QtWidgetDllDesignerPlugin.json");
 
-
   for (auto it = files.begin(); it != files.end(); it++)
   {
     QFile file(*it);

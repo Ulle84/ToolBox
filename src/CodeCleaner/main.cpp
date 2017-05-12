@@ -79,11 +79,11 @@ int main(int argc, char* argv[])
     }
   }
 
-  QMap<QString, QString> checkSums;
+  QStringMap checkSums;
 
   if (!options.m_checkSumsFileName.isEmpty())
   {
-    checkSums = File::fileToStringMap(options.m_checkSumsFileName);
+    checkSums = File(options.m_checkSumsFileName).toStringMap();
   }
 
   QList<int> filesToRemove;
@@ -118,7 +118,7 @@ int main(int argc, char* argv[])
     {
       if (checkSums.contains(*it))
       {
-        if (checkSums[*it] == File::checkSum(*it))
+        if (checkSums[*it] == File(*it).checkSum())
         {
           // file did not change since last run - so we can skip it!
           filesToRemove.prepend(counter);
@@ -237,10 +237,10 @@ int main(int argc, char* argv[])
   {
     for (auto it = options.m_files.begin(); it != options.m_files.end(); ++it)
     {
-      checkSums[*it] = File::checkSum(*it);
+      checkSums[*it] = File(*it).checkSum();
     }
 
-    File::stringMapToFile(checkSums, options.m_checkSumsFileName);
+    File(options.m_checkSumsFileName).write(checkSums);
   }
 
   return 0;

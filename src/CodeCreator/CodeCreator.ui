@@ -200,9 +200,26 @@
      </item>
     </layout>
    </item>
+   <item>
+    <widget class="LogConsole" name="logConsole">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>200</height>
+      </size>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>LogConsole</class>
+   <extends>QWidget</extends>
+   <header>LogConsole.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

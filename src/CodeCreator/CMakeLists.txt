@@ -5,6 +5,7 @@ set(Type WidgetsApplication)
 
 set(RequiredLibraries
   Shared
+  LogConsole
 )
 
 include(../CMake/ProjectTemplate.cmake)

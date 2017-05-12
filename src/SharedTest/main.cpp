@@ -15,6 +15,7 @@
 #include "PathTest.h"
 #include "RingBufferTest.h"
 #include "TextTest.h"
+#include "ConverterTest.h"
 
 #include "Converter.h"
 
@@ -30,6 +31,7 @@ int main(int argc, char* argv[])
   testObjects << new PathTest;
   testObjects << new RingBufferTest;
   testObjects << new TextTest;
+  testObjects << new ConverterTest;
 
   uint32 failedTests = 0;
 
@@ -49,7 +51,7 @@ int main(int argc, char* argv[])
   {
     if (failedTests == 1)
     {
-      std::string output = Converter::toString(failedTests);
+      std::string output = Converter::toStdString(failedTests);
       output.append(" test");
 
       if (failedTests != 1)
@@ -61,7 +63,6 @@ int main(int argc, char* argv[])
 
       Console::showError(output);
     }
-
   }
   else
   {

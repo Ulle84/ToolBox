@@ -53,8 +53,10 @@ void QStringExTest::positionValid()
   QVERIFY(!QStringEx::positionValid(test, -1));
 
   for (int i = 0; i < test.size(); ++i)
+  {
     QVERIFY(QStringEx::positionValid(test, i));
-  
+  }
+
   QVERIFY(!QStringEx::positionValid(test, 5));
 }
 
@@ -120,7 +122,7 @@ void QStringExTest::lowercaseFirstLetter()
 
 void QStringExTest::replace()
 {
-	QString input = "hellohello";
-	QCOMPARE(QStringEx::replace(input, "hello", "da"), QString("dada"));
-	QCOMPARE(QStringEx::replace(input, "hello", "da", 5), QString("helloda"));
+  QString input = "hellohello";
+  QCOMPARE(QStringEx::replace(input, "hello", "da"), QString("dada"));
+  QCOMPARE(QStringEx::replace(input, "hello", "da", 5), QString("helloda"));
 }

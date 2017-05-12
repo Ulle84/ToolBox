@@ -24,7 +24,7 @@ void Options::parseCommandLineArguments(int argc, char* argv[])
       if (i < argc)
       {
         QString fileName = argv[i];
-        m_arguments.append(File::fileToStringList(fileName));
+        m_arguments.append(File(fileName).toStringList());
       }
     }
 

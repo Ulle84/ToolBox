@@ -6,24 +6,22 @@
 #include "Path.h"
 #include "PathTest.h"
 
-
-
 void PathTest::directory()
 {
-	QCOMPARE(Path::directory("C:/hello/world/test.txt"), QString("C:/hello/world"));
+  QCOMPARE(Path::directory("C:/hello/world/test.txt"), QString("C:/hello/world"));
 }
 
 void PathTest::fileName()
 {
-	QCOMPARE(Path::fileName("C:/hello/world/test.txt"), QString("test.txt"));
+  QCOMPARE(Path::fileName("C:/hello/world/test.txt"), QString("test.txt"));
 }
 
 void PathTest::fileNameWithoutExtension()
 {
-	QCOMPARE(Path::fileNameWithoutExtension("C:/hello/world/test.txt"), QString("test"));
+  QCOMPARE(Path::fileNameWithoutExtension("C:/hello/world/test.txt"), QString("test"));
 }
 
 void PathTest::fileNameExtension()
 {
-	QCOMPARE(Path::fileNameExtension("C:/hello/world/test.txt"), QString("txt"));
+  QCOMPARE(Path::fileNameExtension("C:/hello/world/test.txt"), QString("txt"));
 }

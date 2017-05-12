@@ -57,7 +57,9 @@ void DailyNotes::update(const QDate& date)
 {
   saveCurrent();
 
-  ui->codeEdit->setPlainText(File::fileToString(path(date)));
+  
+
+  ui->codeEdit->setPlainText(File(path(date)).toString());
 
   m_selectedDate = date;
 }
@@ -115,7 +117,7 @@ void DailyNotes::saveCurrent()
     }
     else
     {
-      File::stringToFile(content, path(m_selectedDate));
+      File(path(m_selectedDate)).write(content);
     }
   }
 }

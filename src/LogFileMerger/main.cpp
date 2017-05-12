@@ -33,7 +33,12 @@ int main(int argc, char* argv[])
     fileNames.append(QString(argv[i]));
   }
 
-  QStringList merged = File::merge(fileNames);
+  QStringList merged;
+
+  for (auto& it : fileNames)
+  {
+    merged.append(File(it).toStringList());
+  }
 
   qStableSort(merged.begin(), merged.end(), lessThan);
 
@@ -58,7 +63,7 @@ int main(int argc, char* argv[])
 
   QString fileName = firstFileName.remove(startPosition, endPosition - startPosition);
 
-  File::stringListToFile(merged, fileName);
+  File(fileName).write(merged);
 
   QProcess::startDetached(Path::portableProgram("Notepad++"), QStringList() << fileName);
 

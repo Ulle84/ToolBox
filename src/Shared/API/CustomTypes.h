@@ -3,6 +3,8 @@
 #ifndef CUSTOMTYPES_H
 #define CUSTOMTYPES_H
 
+// TODO rename to TypeDefs?
+
 typedef unsigned char      uchar;
 typedef unsigned short     ushort;
 typedef unsigned int       uint;

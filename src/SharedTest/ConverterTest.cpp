@@ -1,32 +1,20 @@
 // created on 2017-03-30 by Ulrich Belitz
 
-#include <QString>
 #include <QtTest>
 
-#include "Path.h"
-#include "File.h"
 #include "Converter.h"
-
+#include "Test.h"
 #include "ConverterTest.h"
 
-// TODO create TestHelper
-
-void ConverterTest::toHtml01()
+void ConverterTest::toHtml()
 {
-  QString testName = "toHtml01";
+  QString testName = "toHtml";
 
-  QStringList input = File::fileToStringList(testFile(testName, "input.txt"));
-  QStringList output = File::fileToStringList(testFile(testName, "output.txt"));
+  QString input;
+  QString output;
 
-  QVERIFY(input.size() != 0);
-  QVERIFY(output.size() != 0);
+  QVERIFY(Test::loadFile(m_module, m_category, testName, "input01.txt", input));
+  QVERIFY(Test::loadFile(m_module, m_category, testName, "output01.txt", output));
 
-  QVERIFY();
-
-  QCOMPARE(input, output);
-}
-
-QString ConverterTest::testFile(const QString& testName, const QString& fileName)
-{
-  return Path::testFile("Shared", "Text", testName, fileName);
+  QCOMPARE(Converter::toHtml(input, false), output);
 }

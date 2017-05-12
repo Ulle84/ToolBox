@@ -3,6 +3,7 @@
 #ifndef CONVERTEREST_H
 #define CONVERTEREST_H
 
+#include <QString>
 #include <QObject>
 
 class ConverterTest : public QObject
@@ -10,10 +11,11 @@ class ConverterTest : public QObject
     Q_OBJECT
 
   private slots:
-    void toHtml01();
+    void toHtml();
 
-private:
-  QString testFile(const QString& testName, const QString& fileName);
+  private:
+    const QString m_module = "Shared";
+    const QString m_category = "Converter";
 };
 
 #endif

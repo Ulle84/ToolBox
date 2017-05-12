@@ -89,7 +89,7 @@ void MainWindow::update()
 
 void MainWindow::loadSignalsFromFile()
 {
-  QString fileContent = File::fileToString(":/files/Signals.txt");
+  QString fileContent = File(":/files/Signals.txt").toString();
 
   QStringList blocks = fileContent.split("\n\n");
 

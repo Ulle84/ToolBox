@@ -136,7 +136,7 @@ void MainWindow::updateInfo()
 
 void MainWindow::updateSettings()
 {
-  ui->plainTextEditSettings->setPlainText(File::fileToString(m_currentSettingsFile));
+  ui->plainTextEditSettings->setPlainText(File(m_currentSettingsFile).toString());
 }
 
 void MainWindow::showUserMessage(QString message)
@@ -170,7 +170,7 @@ void MainWindow::on_pushButtonSaveInformation_clicked()
 
 void MainWindow::on_pushButtonSaveSettings_clicked()
 {
-  File::stringToFile(ui->plainTextEditSettings->toPlainText(), m_currentSettingsFile);
+  File(m_currentSettingsFile).write(ui->plainTextEditSettings->toPlainText());
 }
 
 void MainWindow::on_pushButtonSwitch_clicked()

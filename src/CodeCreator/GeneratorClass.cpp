@@ -51,6 +51,7 @@ void GeneratorClass::setConnections()
   connect(ui->checkBoxQObjectMacro, SIGNAL(clicked(bool)), this, SIGNAL(optionsChanged()));
   connect(ui->checkBoxVirtualDesctructor, SIGNAL(clicked(bool)), this, SIGNAL(optionsChanged()));
   connect(ui->checkBoxExplicitConstructor, SIGNAL(clicked(bool)), this, SIGNAL(optionsChanged()));
+  connect(ui->checkBoxHeaderInSubdirectory, SIGNAL(clicked(bool)), this, SIGNAL(optionsChanged()));
 
   connect(ui->plainTextEditNamespaces, SIGNAL(textChanged()), this, SIGNAL(optionsChanged()));
 
@@ -119,6 +120,10 @@ void GeneratorClass::readXml(QXmlStreamReader& xml)
     {
       XmlHelper::readXml(xml, ui->checkBoxExplicitConstructor);
     }
+    else if (xml.name() == "HeaderInSubdirectory")
+    {
+      XmlHelper::readXml(xml, ui->checkBoxHeaderInSubdirectory);
+    }
     else if (xml.name() == "Namespaces")
     {
       XmlHelper::readXml(xml, ui->plainTextEditNamespaces);
@@ -159,6 +164,7 @@ void GeneratorClass::writeXml(QXmlStreamWriter& xml)
   XmlHelper::writeXml(xml, "QObjectMacro", ui->checkBoxQObjectMacro);
   XmlHelper::writeXml(xml, "VirtualDestructor", ui->checkBoxVirtualDesctructor);
   XmlHelper::writeXml(xml, "ExplicitConstructor", ui->checkBoxExplicitConstructor);
+  XmlHelper::writeXml(xml, "HeaderInSubdirectory", ui->checkBoxHeaderInSubdirectory);
   XmlHelper::writeXml(xml, "Namespaces", ui->plainTextEditNamespaces);
   XmlHelper::writeXml(xml, &m_interface);
   QList<Interface> interfaceList = ui->interfaceListEditor->interfaceList();
@@ -202,8 +208,15 @@ QList<QPair<QString, QString>> GeneratorClass::generatedCode()
   c.setInterfaces(ui->interfaceListEditor->interfaceList());
   c.setMembers(m_members);
 
+  QString subdirectory;
+
+  if (ui->checkBoxHeaderInSubdirectory->isChecked())
+  {
+    subdirectory = "API/";
+  }
+
   QList<QPair<QString, QString>> code;
-  code.append(qMakePair(className + ".h", c.declaration()));
+  code.append(qMakePair(subdirectory + className + ".h", c.declaration()));
   code.append(qMakePair(className + ".cpp", c.implementation()));
   return code;
 }

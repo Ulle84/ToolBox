@@ -23,7 +23,8 @@ MainWindow::MainWindow(QWidget* parent) :
   connect(ui->treeEdit, &TreeEdit::idChanged, this, &MainWindow::onTreeEditIdChanged);
   connect(ui->treeEdit, &TreeEdit::itemRemoved, this, &MainWindow::onTreeEditItemRemoved);
 
-  QString fileContent = File::fileToString(Path::configurationFile("SmlEditor", "content.json"));
+  
+  QString fileContent = File(Path::configurationFile("SmlEditor", "content.json")).toString();
   QJsonObject object = Converter::toJsonObject(fileContent);
 
   setContent(object["content"].toArray());

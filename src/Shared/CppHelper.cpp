@@ -198,6 +198,17 @@ void CppHelper::clean(QString& code)
       }
     }
   }
+
+  QStringList unnecessaryStuff;
+  unnecessaryStuff << "";
+
+  for (auto it = unnecessaryStuff.begin(); it != unnecessaryStuff.end(); it++)
+  {
+    while (code.contains(*it))
+    {
+      code.replace(*it, "");
+    }
+  }
 }
 
 void CppHelper::removeSvnId(QString& code)

@@ -11,10 +11,9 @@ class FileTest : public QObject
 
   private slots:
     void directory();
-    void merge();
 
-private:
-  QString testFile(const QString& testName, const QString& fileName);
+  private:
+    QString testFile(const QString& testName, const QString& fileName);
 };
 
 #endif

@@ -5,8 +5,7 @@
 #include <QVector>
 
 #include "QStringEx.h"
-#include "QConverter.h"
-#include "File.h"
+#include "Converter.h"
 
 #include "CodeCleaner.h"
 
@@ -288,7 +287,7 @@ void CodeCleaner::removeUnnecessarySpaces(QString& code)
   // * removeDoubleEmptyLines
   // * removeEmptyLinesAfterOpeningBracket
   // * removeEmptyLinesBeforeClosingBracket
-  QStringList stringList = QConverter::toStringList(code);
+  QStringList stringList = Converter::toStringList(code);
 
   for (auto& it : stringList)
   {
@@ -308,5 +307,5 @@ void CodeCleaner::removeUnnecessarySpaces(QString& code)
     }
   }
 
-  code = QConverter::toString(stringList);
+  code = Converter::toString(stringList);
 }

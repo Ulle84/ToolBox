@@ -106,7 +106,7 @@ bool TreeItem::insertChildren(int position, int count, int columns)
 
     for (int column = 0; column < columns; ++column)
     {
-      attributes.append(Converter::toQString(m_idCounter));
+      attributes.append(Converter::toString(m_idCounter));
     }
 
     QJsonObject object;

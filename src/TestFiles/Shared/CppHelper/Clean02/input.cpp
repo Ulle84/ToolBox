@@ -7,7 +7,7 @@
 #include "CppHelper.h"
 #include "CppHelperTest.h"
 #include "Path.h"
-#include "File.h"
+#include "FileOld.h"
 
 /*
 these two functions must be implemented, if required:

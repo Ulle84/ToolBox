@@ -24,4 +24,4 @@ class SHARED_API Attribute
     QString m_value;
 };
 
-#endif // ATTRIBUTE_H
+#endif

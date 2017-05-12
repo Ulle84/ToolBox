@@ -24,8 +24,8 @@ void CppHelperTest::clean01()
 {
   QString testName = "Clean01";
 
-  QString input = File::fileToString(testFile(testName, "input.cpp"));
-  QString output = File::fileToString(testFile(testName, "output.cpp"));
+  QString input = File(testFile(testName, "input.cpp")).toString();
+  QString output = File(testFile(testName, "output.cpp")).toString();
 
   QVERIFY(input.size() != 0);
   QVERIFY(output.size() != 0);
@@ -40,8 +40,8 @@ void CppHelperTest::clean02()
 {
   QString testName = "Clean02";
 
-  QString input = File::fileToString(testFile(testName, "input.cpp"));
-  QString output = File::fileToString(testFile(testName, "output.cpp"));
+  QString input = File(testFile(testName, "input.cpp")).toString();
+  QString output = File(testFile(testName, "output.cpp")).toString();
 
   QVERIFY(input.size() != 0);
   QVERIFY(output.size() != 0);
@@ -56,10 +56,10 @@ void CppHelperTest::lineComments()
 {
   QString testName = "LineComments";
 
-  QString input = File::fileToString(testFile(testName, "input.txt"));
+  QString input = File(testFile(testName, "input.cpp")).toString();
   QString original = input;
-  QString output = File::fileToString(testFile(testName, "output.txt"));
-  QStringList expectedLineComments = File::fileToStringList(testFile(testName, "lineComments.txt"));
+  QString output = File(testFile(testName, "output.cpp")).toString();
+  QStringList expectedLineComments = File(testFile(testName, "lineComments.cpp")).toStringList();
 
   CppHelper cppHelper;
   cppHelper.shrinkCommentsAndStrings(input);
@@ -151,8 +151,8 @@ void CppHelperTest::removeSvnId()
 {
   QString testName = "RemoveSvnId";
 
-  QString input = File::fileToString(testFile(testName, "input.cpp"));
-  QString output = File::fileToString(testFile(testName, "output.cpp"));
+  QString input = File(testFile(testName, "input.cpp")).toString();
+  QString output = File(testFile(testName, "output.cpp")).toString();
 
   QVERIFY(input.size() != 0);
   QVERIFY(output.size() != 0);

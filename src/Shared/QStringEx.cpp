@@ -175,12 +175,17 @@ namespace QStringEx
   QString leadingSpaces(const QString& input)
   {
     QString string;
+
     for (int i = 0; i < input.size(); ++i)
-    { 
+    {
       if (input[i] == ' ')
+      {
         string.append(' ');
+      }
       else
+      {
         break;
+      }
     }
 
     return string;
@@ -195,13 +200,20 @@ namespace QStringEx
       for (int i = 0; i < input.size(); ++i)
       {
         if (input[i] == ' ')
+        {
           copy.remove(0, 1);
+        }
         else
+        {
           break;
+        }
       }
+
       return copy.startsWith(begin);
     }
     else
+    {
       return input.startsWith(begin);
+    }
   }
 }

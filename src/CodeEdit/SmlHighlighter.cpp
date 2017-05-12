@@ -3,7 +3,7 @@
 #include <QDebug>
 
 #include "SmlHighlighter.h"
-#include "QColorEx.h"
+#include "Color.h"
 
 SmlHighlighter::SmlHighlighter(QTextDocument* parent) :
   QSyntaxHighlighter(parent)
@@ -20,7 +20,7 @@ void SmlHighlighter::init()
   rule.format = functionFormat;
   highlightingRules.append(rule);
 
-  headerFormat.setForeground(QBrush(QColorEx::orange()));
+  headerFormat.setForeground(QBrush(Color::orange()));
   rule.pattern = QRegExp("\\bh[1-6]+(?=\\()");
 
   // TODO also mark the caption itself

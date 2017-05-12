@@ -11,7 +11,7 @@ class SmlConverter
   public:
     SmlConverter();
 
-    QString toHtml(const QString& simpleHtml);
+    QString toHtml(const QString& simpleHtml, bool createInfrastructure = true);
 
   private:
     QString removeComments(const QString& simpleHtml);

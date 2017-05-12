@@ -12,7 +12,7 @@
 
 namespace Converter
 {
-  std::string toString(int number)
+  std::string toStdString(int number)
   {
     return std::to_string(number);
   }
@@ -28,9 +28,19 @@ namespace Converter
     return sd.object();
   }
 
-  QString toQString(int number)
+  QString toString(int number)
   {
     return QString::number(number);
+  }
+
+  QString toString(double number)
+  {
+    return QString::number(number);
+  }
+
+  QString toString(const QDate& date)
+  {
+    return date.toString(dateFormat);
   }
 
   QRect toRect(const QJsonObject& jsonObject)
@@ -56,7 +66,7 @@ namespace Converter
 
   QJsonObject configFileToJsonObject(const QString& programName, const QString& fileName)
   {
-    QString fileContent = File::fileToString(Path::configurationFile(programName, fileName));
+    QString fileContent = File(Path::configurationFile(programName, fileName)).toString();
     return toJsonObject(fileContent);
   }
 
@@ -76,9 +86,29 @@ namespace Converter
     file.close();
   }
 
-  QString toHtml(const QString& sml)
+  QString toHtml(const QString& sml, bool createInfrastructure)
   {
     SmlConverter smlConverter;
-    return smlConverter.toHtml(sml);
+    return smlConverter.toHtml(sml, createInfrastructure);
+  }
+
+  QString toString(const QStringList& stringList, const QChar& seperator)
+  {
+    return stringList.join(seperator);
+  }
+
+  QStringList toStringList(const QString& string, const QChar& seperator, QString::SplitBehavior splitBehaviour)
+  {
+    return string.split('\n', splitBehaviour);
+  }
+
+  QString toString(const QDateTime& dateTime)
+  {
+    return dateTime.toString(dateTimeFormat);
+  }
+
+  QDateTime toDateTime(const QString& dateTime)
+  {
+    return QDateTime::fromString(dateTime, dateTimeFormat);
   }
 }

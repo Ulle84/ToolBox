@@ -12,8 +12,8 @@ void TextTest::indentColumns1()
 {
   QString testName = "indentColumns1";
 
-  QStringList input = File::fileToStringList(testFile(testName, "input.txt"));
-  QStringList output = File::fileToStringList(testFile(testName, "output.txt"));
+  QStringList input = File(testFile(testName, "input.cpp")).toStringList();
+  QStringList output = File(testFile(testName, "output.cpp")).toStringList();
 
   QVERIFY(input.size() != 0);
   QVERIFY(output.size() != 0);
@@ -25,17 +25,17 @@ void TextTest::indentColumns1()
 
 void TextTest::indentColumns2()
 {
-	QString testName = "indentColumns2";
+  QString testName = "indentColumns2";
 
-	QStringList input = File::fileToStringList(testFile(testName, "input.txt"));
-	QStringList output = File::fileToStringList(testFile(testName, "output.txt"));
+  QStringList input = File(testFile(testName, "input.cpp")).toStringList();
+  QStringList output = File(testFile(testName, "output.cpp")).toStringList();
 
-	QVERIFY(input.size() != 0);
-	QVERIFY(output.size() != 0);
+  QVERIFY(input.size() != 0);
+  QVERIFY(output.size() != 0);
 
-	QVERIFY(Text::indentColumns(input, ">>>>"));
+  QVERIFY(Text::indentColumns(input, ">>>>"));
 
-	QCOMPARE(input, output);
+  QCOMPARE(input, output);
 }
 
 QString TextTest::testFile(const QString& testName, const QString& fileName)

@@ -3,6 +3,8 @@
 #ifndef ConsoleHelper_h
 #define ConsoleHelper_h
 
+// TODO move this to Shared DLL
+
 class ConsoleHelper
 {
   public:

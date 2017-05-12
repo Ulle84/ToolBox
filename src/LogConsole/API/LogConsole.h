@@ -20,14 +20,14 @@ class LOGCONSOLE_API LogConsole : public QWidget
     explicit LogConsole(QWidget* parent = 0);
     ~LogConsole();
 
-	void clear();
-	void warning(const QString& text);
-	void error(const QString& text);
-	void success(const QString& text);
-	void info(const QString& text);
+    void clear();
+    void warning(const QString& text);
+    void error(const QString& text);
+    void success(const QString& text);
+    void info(const QString& text);
 
   private:
-	  QString currentDateTime();
+    QString currentDateTime();
 
     Ui::LogConsole* ui;
 };

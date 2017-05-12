@@ -57,7 +57,7 @@ Qt::ItemFlags LogViewer::flags(const QModelIndex& index) const
 // TODO should be in a seperate class "LogViewerReader"
 void LogViewer::readFromFile(const QString& fileName)
 {
-  QStringList fileContent = File::fileToStringList(fileName);
+  QStringList fileContent = File(fileName).toStringList();
 
   QString dateTime;
   QString level;

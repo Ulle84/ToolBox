@@ -3,7 +3,7 @@
 #include "QStringEx.h"
 
 #include "CommentHandler.h"
-#include "QConverter.h"
+#include "Converter.h"
 
 CommentHandler::CommentHandler() :
   m_lineComment1("//*", "\n", "//#%1#", false),
@@ -124,7 +124,7 @@ void CommentHandler::removeUnnecessaryAsteriskInBlockComments()
       it.remove(it.size() - 2, 1);
     }
 
-    QStringList stringList = QConverter::toStringList(it);
+    QStringList stringList = Converter::toStringList(it);
 
     for (auto& it2 : stringList)
     {
@@ -142,7 +142,7 @@ void CommentHandler::removeUnnecessaryAsteriskInBlockComments()
       }
     }
 
-    it = QConverter::toString(stringList);
+    it = Converter::toString(stringList);
   }
 }
 

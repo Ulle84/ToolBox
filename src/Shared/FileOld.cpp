@@ -7,10 +7,10 @@
 
 #include "QStringEx.h"
 
-#include "File.h"
+#include "FileOld.h"
 #include "Path.h"
 
-namespace File
+namespace FileOld
 {
   static const QString mapSeperator = " --> ";
 

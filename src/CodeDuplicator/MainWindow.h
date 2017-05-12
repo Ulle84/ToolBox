@@ -20,13 +20,13 @@ class MainWindow : public QMainWindow
     explicit MainWindow(QWidget* parent = 0);
     ~MainWindow();
 
-	private slots:
-	void on_pushButtonDuplicate_clicked();
-	void onPathChanged(const QString& path);
+  private slots:
+    void on_pushButtonDuplicate_clicked();
+    void onPathChanged(const QString& path);
 
   private:
-	  bool process(const QString& source, const QString& destination, const QString& sourceName, const QString& destinationName, uint offsetIndex);
-	  void changeFilePath(QString& filePath, const QString& newFileName);
+    bool process(const QString& source, const QString& destination, const QString& sourceName, const QString& destinationName, uint offsetIndex);
+    void changeFilePath(QString& filePath, const QString& newFileName);
 
     Ui::MainWindow* ui;
 

@@ -64,7 +64,7 @@ bool PathSelectorDesignerPlugin::isContainer() const
 
 QString PathSelectorDesignerPlugin::domXml() const
 {
-  return File::fileToString(":/files/PathSelector.xml");
+  return File(":/files/PathSelector.xml").toString();
 }
 
 QString PathSelectorDesignerPlugin::includeFile() const

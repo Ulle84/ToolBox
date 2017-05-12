@@ -20,5 +20,3 @@ add_executable(${ProjectName} ${AllSources})
 target_link_libraries(${ProjectName} ${QtLinkLibraries})
 
 set_target_properties(${ProjectName} PROPERTIES FOLDER ConsoleApplications)
-
-#set_target_properties(${ProjectName} PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)

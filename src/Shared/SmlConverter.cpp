@@ -8,14 +8,18 @@ SmlConverter::SmlConverter()
 {
 }
 
-QString SmlConverter::toHtml(const QString& simpleHtml)
+QString SmlConverter::toHtml(const QString& simpleHtml, bool createInfrastructure)
 {
   QString input = removeComments(simpleHtml);
 
-  QString string = "<html>\n<head>\n<style>";// ";
-  //string.append("html, body{background-color: red}"); // TODO load css file content
-  string.append(SharedResources::defaultStyleSheet());
-  string.append("\n</style>\n</head>\n<body>\n");
+  QString string;
+
+  if (createInfrastructure)
+  {
+    string.append("<html>\n<head>\n<style>");
+    string.append(SharedResources::defaultStyleSheet());
+    string.append("\n</style>\n</head>\n<body>\n");
+  }
 
   QList<QString> tags;
 
@@ -82,7 +86,10 @@ QString SmlConverter::toHtml(const QString& simpleHtml)
     lastCharWasOpeningBracket = (c == '(');
   }
 
-  string.append("\n</body>\n</html>");
+  if (createInfrastructure)
+  {
+    string.append("\n</body>\n</html>");
+  }
 
   return string;
 }

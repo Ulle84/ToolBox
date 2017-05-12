@@ -3,7 +3,7 @@
 #include <QDebug>
 
 #include "XmlHighlighter.h"
-#include "QColorEx.h"
+#include "Color.h"
 #include "XmlParser.h"
 
 XmlHighlighter::XmlHighlighter(QTextDocument* parent) :

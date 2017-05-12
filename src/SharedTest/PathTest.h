@@ -10,10 +10,10 @@ class PathTest : public QObject
     Q_OBJECT
 
   private slots:
-	void directory();
-	void fileName();
-	void fileNameWithoutExtension();
-	void fileNameExtension();
+    void directory();
+    void fileName();
+    void fileNameWithoutExtension();
+    void fileNameExtension();
 };
 
 #endif

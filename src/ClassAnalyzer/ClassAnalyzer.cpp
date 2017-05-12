@@ -398,10 +398,10 @@ void ClassAnalyzer::postProcessBaseClasses()
 
               if (splittedClassName == splitted)
               {
-                for (auto it4 = splitted.rbegin(); it4 != splitted.rend(); it4++)
+                for (int i = splitted.size() - 1; i >= 0; --i)
                 {
                   fullName.prepend("::");
-                  fullName.prepend(*it4);
+                  fullName.prepend(splitted[i]);
                 }
 
                 break;
@@ -438,7 +438,9 @@ QString ClassAnalyzer::filesWithMoreThanOneClassDeclaration()
 
   QList<unsigned int> keys = m_numberOfClassesPerFile.keys();
 
-  for (auto it = keys.rbegin(); it != keys.rend(); it++)
+  //TODO rbegin/end not supported
+
+  /*for (auto it = keys.rbegin(); it != keys.rend(); it++)
   {
     if (*it > 1)
     {
@@ -449,7 +451,7 @@ QString ClassAnalyzer::filesWithMoreThanOneClassDeclaration()
         string.append(QString("%1 classes defined in %2\n").arg(*it).arg(*it2));
       }
     }
-  }
+  }*/
 
   return string;
 }

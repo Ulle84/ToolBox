@@ -1,7 +1,7 @@
 // created on 2016-10-28
 
-#ifndef FILE_H
-#define FILE_H
+#ifndef FILEOLD_H
+#define FILEOLD_H
 
 #include <QMap>
 #include <QString>
@@ -11,7 +11,7 @@
 
 // TODO move some functions to Converter
 
-namespace File
+namespace FileOld
 {
   // save
   bool SHARED_API stringMapToFile(const QMap<QString, QString>& map, const QString& filePath);

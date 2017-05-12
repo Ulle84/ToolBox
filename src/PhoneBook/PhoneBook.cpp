@@ -73,7 +73,7 @@ Qt::ItemFlags PhoneBook::flags(const QModelIndex& index) const
 // TODO should be in a seperate class "PhoneBookReader"
 void PhoneBook::readFromFile(const QString& fileName)
 {
-  QStringList fileContent = File::fileToStringList(fileName);
+  QStringList fileContent = File(fileName).toStringList();
 
   QString firstName;
   QString lastName;

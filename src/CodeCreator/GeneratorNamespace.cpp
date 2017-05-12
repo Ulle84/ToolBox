@@ -14,6 +14,7 @@ GeneratorNamespace::GeneratorNamespace(QWidget* parent) :
   ui->setupUi(this);
 
   connect(ui->lineEditName, SIGNAL(textEdited(QString)), this, SIGNAL(optionsChanged()));
+  connect(ui->checkBoxHeaderInSubdirectory, SIGNAL(clicked()), this, SIGNAL(optionsChanged()));
 }
 
 GeneratorNamespace::~GeneratorNamespace()
@@ -29,6 +30,10 @@ void GeneratorNamespace::readXml(QXmlStreamReader& xml)
     {
       XmlHelper::readXml(xml, ui->lineEditName);
     }
+    if (xml.name() == "HeaderInSubdirectory")
+    {
+      XmlHelper::readXml(xml, ui->checkBoxHeaderInSubdirectory);
+    }
     else
     {
       xml.skipCurrentElement();
@@ -39,6 +44,7 @@ void GeneratorNamespace::readXml(QXmlStreamReader& xml)
 void GeneratorNamespace::writeXml(QXmlStreamWriter& xml)
 {
   XmlHelper::writeXml(xml, "Name", ui->lineEditName);
+  XmlHelper::writeXml(xml, "HeaderInSubdirectory", ui->checkBoxHeaderInSubdirectory);
 }
 
 QList<QPair<QString, QString>> GeneratorNamespace::generatedCode()
@@ -70,6 +76,11 @@ QList<QPair<QString, QString>> GeneratorNamespace::generatedCode()
     QStringList splitted = it->split("/");
     QString fileName = splitted.last();
     fileName.replace("Namespace", name);
+
+    if (ui->checkBoxHeaderInSubdirectory->isChecked() && fileName.endsWith(".h"))
+    {
+      fileName.prepend("API/");
+    }
 
     code.append(qMakePair(fileName, fileContent));
   }
