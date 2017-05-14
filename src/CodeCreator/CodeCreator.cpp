@@ -34,7 +34,7 @@
 #include "GeneratorQtWidgetDll.h"
 #include "OptionsDialog.h"
 #include "Path.h"
-#include "QFontEx.h"
+#include "Font.h"
 
 CodeCreator::CodeCreator(QWidget* parent) :
   QWidget(parent),
@@ -64,14 +64,14 @@ CodeCreator::CodeCreator(QWidget* parent) :
 
   for (auto it = lineEdits.begin(); it != lineEdits.end(); ++it)
   {
-    (*it)->setFont(QFontEx::monospace());
+    (*it)->setFont(Font::monospace());
   }
 
   QList<QPlainTextEdit*> plainTextEdits = findChildren<QPlainTextEdit*>();
 
   for (auto it = plainTextEdits.begin(); it != plainTextEdits.end(); ++it)
   {
-    (*it)->setFont(QFontEx::monospace());
+    (*it)->setFont(Font::monospace());
   }
 }
 

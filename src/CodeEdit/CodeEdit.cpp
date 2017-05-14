@@ -10,13 +10,13 @@
 #include "XmlHighlighter.h"
 #include "SmlHighlighter.h"
 #include "CppHighlighter.h"
-#include "QFontEx.h"
+#include "Font.h"
 #include "QStringEx.h"
 
 CodeEdit::CodeEdit(QWidget* parent) :
   QTextEdit(parent)
 {
-  setFont(QFontEx::monospace());
+  setFont(Font::monospace());
   connect(this, &CodeEdit::cursorPositionChanged, this, &CodeEdit::onCursorPositionChanged);
 }
 

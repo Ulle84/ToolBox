@@ -1,0 +1,4 @@
+h1((style=background-color:red)test)
+h1((style =background-color:red)test)
+h1((style= background-color:red)test)
+h1((style = background-color:red)test)

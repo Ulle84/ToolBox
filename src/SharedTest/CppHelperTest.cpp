@@ -56,10 +56,10 @@ void CppHelperTest::lineComments()
 {
   QString testName = "LineComments";
 
-  QString input = File(testFile(testName, "input.cpp")).toString();
+  QString input = File(testFile(testName, "input.txt")).toString();
   QString original = input;
-  QString output = File(testFile(testName, "output.cpp")).toString();
-  QStringList expectedLineComments = File(testFile(testName, "lineComments.cpp")).toStringList();
+  QString output = File(testFile(testName, "output.txt")).toString();
+  QStringList expectedLineComments = File(testFile(testName, "lineComments.txt")).toStringList();
 
   CppHelper cppHelper;
   cppHelper.shrinkCommentsAndStrings(input);

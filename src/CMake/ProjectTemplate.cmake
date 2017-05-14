@@ -58,7 +58,7 @@ if ("${Type}" STREQUAL  "ConsoleApplication")
   add_executable(${ProjectName} ${AllSources})
 elseif("${Type}" STREQUAL  "WidgetsApplication")
   add_executable(${ProjectName} WIN32 ${AllSources})
-elseif("${Type}" STREQUAL  "Library")
+elseif("${Type}" STREQUAL  "Library" OR "${Type}" STREQUAL  "Widget")
   add_library(${ProjectName} SHARED ${AllSources})
 endif()
 
@@ -67,11 +67,10 @@ target_link_libraries(${ProjectName}
   ${RequiredLibraries}
 )
 
-
 ################################################################################
 # declare library interface
 ################################################################################
-if ("${Type}" STREQUAL  "Library")
+if ("${Type}" STREQUAL  "Library" OR "${Type}" STREQUAL  "Widget")
   string(TOUPPER ${ProjectName} ProjectNameUppercased)
   set_property(TARGET ${ProjectName} APPEND PROPERTY COMPILE_DEFINITIONS
     ${ProjectNameUppercased}_EXPORT
@@ -90,8 +89,10 @@ if ("${FolderName}" STREQUAL  "")
     set(FolderName ConsoleApplications)
   elseif("${Type}" STREQUAL  "WidgetsApplication")    
     set(FolderName WidgetsApplications)
-  elseif("${Type}" STREQUAL  "Library")
+  elseif("${Type}" STREQUAL  "Widget")
     set(FolderName Widgets)
+  elseif("${Type}" STREQUAL  "Library")
+    set(FolderName Libraries)
   endif()
 endif()
 
@@ -108,3 +109,12 @@ add_custom_command(TARGET ${ProjectName} PRE_BUILD COMMAND QtBuildHelper.exe ARG
   -qid ${QtIncludeDir}
   WORKING_DIRECTORY ${QtBuilderWorkingDir}
 )
+
+################################################################################
+# copy to plugins directory, if designer widget
+################################################################################
+#if ("${Type}" STREQUAL  "Widget")
+#  add_custom_command(TARGET ${ProjectName} POST_BUILD
+#    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_BINARY_DIR}/${ProjectName}.dll ${CMAKE_CURRENT_BINARY_DIR}/../plugins/designer/${ProjectName}.dll
+#  )
+#endif()

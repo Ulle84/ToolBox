@@ -3,28 +3,36 @@
 
 #include "SmlConverter.h"
 #include "SharedResources.h"
+#include "QStringEx.h"
+#include "Converter.h"
 
 SmlConverter::SmlConverter()
 {
 }
 
-QString SmlConverter::toHtml(const QString& simpleHtml, bool createInfrastructure)
+QString SmlConverter::toHtml(const QString& sml, bool createInfrastructure)
 {
-  QString input = removeComments(simpleHtml);
+  QString input = removeComments(sml);
 
-  QString string;
+  processLists(input);
+
+  // TODO post processing for lists & tables
+
+  QString result;
 
   if (createInfrastructure)
   {
-    string.append("<html>\n<head>\n<style>");
-    string.append(SharedResources::defaultStyleSheet());
-    string.append("\n</style>\n</head>\n<body>\n");
+    result.append("<html>\n<head>\n<style>");
+    result.append(SharedResources::defaultStyleSheet());
+    result.append("\n</style>\n</head>\n<body>\n");
   }
 
   QList<QString> tags;
 
   QChar c;
   bool lastCharWasOpeningBracket = false;
+  //bool insideSol = false;
+  //int startIndexSol = 0;
 
   for (int i = 0; i < input.size(); ++i)
   {
@@ -38,7 +46,7 @@ QString SmlConverter::toHtml(const QString& simpleHtml, bool createInfrastructur
 
         if (attribute.isValid())
         {
-          string.insert(string.length() - 1, QString(" %1=\"%2\"").arg(attribute.name()).arg(attribute.value()));
+          result.insert(result.length() - 1, QString(" %1=\"%2\"").arg(attribute.name()).arg(attribute.value()));
         }
         else
         {
@@ -53,8 +61,18 @@ QString SmlConverter::toHtml(const QString& simpleHtml, bool createInfrastructur
 
         if (!tag.isEmpty())
         {
-          string.remove(string.length() - tag.length(), tag.length());
-          string.append(QString("<%1>").arg(tag));
+          result.remove(result.length() - tag.length(), tag.length());
+
+          //if (tag == "sol")
+          //{
+          //  startIndexSol = i + 1;
+          //  insideSol = true;
+          //  //result.append("<ol>");
+          //}
+          //else
+          {
+            result.append(QString("<%1>").arg(tag));
+          }
         }
       }
     }
@@ -69,18 +87,30 @@ QString SmlConverter::toHtml(const QString& simpleHtml, bool createInfrastructur
         {
           if (lastCharWasOpeningBracket)
           {
-            string.insert(string.length() - 1, '/');
+            result.insert(result.length() - 1, '/');
           }
           else
           {
-            string.append(QString("</%1>").arg(tag));
+            //if (tag == "sol")
+            //{
+            //  insideSol = false;
+            //  result.append(sol(input, startIndexSol, i - startIndexSol));
+            //  //result.append("</ol>");
+            //}
+            //else
+            {
+              result.append(QString("</%1>").arg(tag));
+            }
           }
         }
       }
     }
     else
     {
-      string.append(c);
+      //if (!insideSol)
+      {
+        result.append(c);
+      }
     }
 
     lastCharWasOpeningBracket = (c == '(');
@@ -88,10 +118,10 @@ QString SmlConverter::toHtml(const QString& simpleHtml, bool createInfrastructur
 
   if (createInfrastructure)
   {
-    string.append("\n</body>\n</html>");
+    result.append("\n</body>\n</html>");
   }
 
-  return string;
+  return result;
 }
 
 QString SmlConverter::removeComments(const QString& simpleHtml)
@@ -201,6 +231,155 @@ Attribute SmlConverter::parseAttribute(const QString& simpleHtml, int& position)
   }
 
   return Attribute(name, value);
+}
+
+QString SmlConverter::sol(const QString& input, int startPosition, int length)
+{
+  // TODO first spacds
+
+  QString result;
+
+  QStringList stringList = Converter::toStringList(input.mid(startPosition, length));
+
+  int lastLeadingSpaces = 0;
+
+  for (auto it = stringList.begin(); it != stringList.end(); ++it)
+  {
+    QString line = *it;
+
+    int nLeadingSpaces = QStringEx::nLeadingSpaces(line);
+
+    if (nLeadingSpaces > lastLeadingSpaces)
+    {
+      result.append(QString(nLeadingSpaces, ' '));
+      result.append("<ol>\n");
+    }
+
+    if (!line.isEmpty())
+    {
+      line.insert(nLeadingSpaces, "<li>");
+      line.append("</li>\n");
+
+      result.append(line);
+    }
+
+    if (nLeadingSpaces < lastLeadingSpaces)
+    {
+      result.append(QString(nLeadingSpaces, ' '));
+      result.append("</ol>\n");
+    }
+
+    lastLeadingSpaces = nLeadingSpaces;
+  }
+
+  // TODO
+  return result;
+}
+
+int SmlConverter::indexOfMatchingClosingParenthesis(const QString& sml, int startIndex)
+{
+  int nOpenedParenthesis = 1;
+
+  for (int i = startIndex; i < sml.length(); ++i)
+  {
+    if (sml[i] == '(')
+    {
+      ++nOpenedParenthesis;
+    }
+    else if (sml[i] == ')')
+    {
+      --nOpenedParenthesis;
+    }
+
+    if (nOpenedParenthesis == 0)
+    {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+void SmlConverter::processLists(QString& sml)
+{
+  QStringList searchStrings;
+  searchStrings << "sol(\n";
+  searchStrings << "sul(\n";
+
+  for (auto it = searchStrings.begin(); it != searchStrings.end(); ++it)
+  {
+    int startIndex = sml.indexOf(*it);
+    int endIndex = -1;
+
+    while (startIndex > -1)
+    {
+      endIndex = indexOfMatchingClosingParenthesis(sml, startIndex + it->length());
+
+      if (endIndex > -1)
+      {
+        sml.replace(startIndex, endIndex - startIndex + 1, processList(Converter::toStringList(sml.mid(startIndex, endIndex - startIndex + 1))));
+      }
+
+      startIndex = sml.indexOf(*it);
+    }
+  }  
+}
+
+QString SmlConverter::processList(const QStringList& list)
+{
+  QString result;
+
+  int lastLeadingSpaces = -1;
+
+  for (auto it = list.begin(); it != list.end(); ++it)
+  {
+    if (it == list.begin())
+    {
+      result.append(it->mid(1)); // cut off first character 's'
+    }
+    else
+    {
+      result.append('\n');
+
+      QString line = *it;
+      if (line.trimmed() == ")")
+      {
+        result.append(line);
+        continue;
+      }
+
+
+      
+
+      
+
+      int nLeadingSpaces = QStringEx::nLeadingSpaces(line);
+
+      if (lastLeadingSpaces > 0)
+      {
+        if (nLeadingSpaces > lastLeadingSpaces)
+        {
+          result.append(QString("%1ol(\n").arg(QString(nLeadingSpaces - 2, ' ')));
+        }
+        else if (nLeadingSpaces < lastLeadingSpaces)
+        {
+          result.append(QString("%1)\n").arg(QString(nLeadingSpaces, ' ')));
+        }
+      }
+
+      
+      
+        line.insert(nLeadingSpaces, "li(");
+        line.append(")");
+
+        result.append(line);
+           
+
+      lastLeadingSpaces = nLeadingSpaces;
+    }
+  }
+
+  return result;
 }
 
 /*QString SmlConverter::endTag(const QString &startTag)

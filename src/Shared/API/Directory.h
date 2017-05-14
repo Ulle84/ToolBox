@@ -8,6 +8,8 @@
 #include "SharedAPI.h"
 #include "CustomTypes.h"
 
+// TODO create class with member m_path analogue to File?
+
 namespace Directory
 {
   // save

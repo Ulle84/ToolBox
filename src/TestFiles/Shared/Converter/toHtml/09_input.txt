@@ -1,0 +1,9 @@
+sol(
+  one
+  two
+)
+
+sol(
+  one
+  two
+)

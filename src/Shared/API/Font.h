@@ -1,13 +1,13 @@
 // created on 2017-02-23 by Ulrich Belitz
 
-#ifndef QFONTEX_H
-#define QFONTEX_H
+#ifndef FONT_H
+#define FONT_H
 
 #include "SharedAPI.h"
 
 #include <QFont>
 
-namespace QFontEx
+namespace Font
 {
   QFont SHARED_API monospace();
 }

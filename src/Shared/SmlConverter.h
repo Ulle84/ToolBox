@@ -11,7 +11,7 @@ class SmlConverter
   public:
     SmlConverter();
 
-    QString toHtml(const QString& simpleHtml, bool createInfrastructure = true);
+    QString toHtml(const QString& sml, bool createInfrastructure = true);
 
   private:
     QString removeComments(const QString& simpleHtml);
@@ -19,6 +19,12 @@ class SmlConverter
     QString parseTag(const QString& simpleHtml, int position);
     Attribute parseAttribute(const QString& simpleHtml, int& position);
     //QString endTag(const QString& startTag);
+    QString sol(const QString& input, int startPosition, int length);
+
+    int indexOfMatchingClosingParenthesis(const QString& sml, int startIndex);
+
+    void processLists(QString& sml);
+    QString processList(const QStringList& list);
 
     const int m_indent = 2;
     const QString m_beginComment = "(((";

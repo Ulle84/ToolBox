@@ -191,6 +191,25 @@ namespace QStringEx
     return string;
   }
 
+  int nLeadingSpaces(const QString& input)
+  {
+    int result = 0;
+
+    for (int i = 0; i < input.size(); ++i)
+    {
+      if (input[i] == ' ')
+      {
+        ++result;
+      }
+      else
+      {
+        break;
+      }
+    }
+
+    return result;
+  }
+
   bool startsWith(const QString& input, const QString& begin, bool ignoreWhitespacesAtBegin)
   {
     QString copy = input;

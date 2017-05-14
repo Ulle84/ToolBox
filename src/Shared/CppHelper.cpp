@@ -199,7 +199,8 @@ void CppHelper::clean(QString& code)
     }
   }
 
-  QStringList unnecessaryStuff;
+  // TODO QtNamespace blub - after hiding comments and strings
+  /*QStringList unnecessaryStuff;
   unnecessaryStuff << "";
 
   for (auto it = unnecessaryStuff.begin(); it != unnecessaryStuff.end(); it++)
@@ -208,7 +209,7 @@ void CppHelper::clean(QString& code)
     {
       code.replace(*it, "");
     }
-  }
+  }*/
 }
 
 void CppHelper::removeSvnId(QString& code)

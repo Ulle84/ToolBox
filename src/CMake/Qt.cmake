@@ -50,20 +50,21 @@ set(QtDesignerPluginsDir "${QtDir}/plugins/designer/")
 set(QtPackages
   Qt5Core
   Qt5Gui
-  Qt5UiTools
-  Qt5Widgets
-  Qt5Test
-  Qt5WebKitWidgets
-  Qt5Sensors
-  Qt5Positioning
-  Qt5Quick
-  Qt5Qml
-  Qt5Network
   Qt5Multimedia
   Qt5MultimediaWidgets
-  Qt5WebChannel
-  Qt5Sql
+  Qt5Network
+  Qt5Positioning
   Qt5PrintSupport
+  Qt5Qml
+  Qt5Quick
+  Qt5Sensors
+  Qt5Sql
+  Qt5Test
+  Qt5UiTools
+  Qt5WebChannel
+  Qt5WebKitWidgets
+  Qt5Widgets
+  Qt5Xml
 )
 
 foreach(QtPackage ${QtPackages})
@@ -76,20 +77,21 @@ endforeach()
 set(QtLinkLibraries
   Qt5::Core
   Qt5::Gui
-  Qt5::UiTools
-  Qt5::Widgets
-  Qt5::Test
-  Qt5::WebKitWidgets
-  Qt5::Sensors
-  Qt5::Positioning
-  Qt5::Quick
-  Qt5::Qml
-  Qt5::Network
   Qt5::Multimedia
   Qt5::MultimediaWidgets
-  Qt5::WebChannel
-  Qt5::Sql
+  Qt5::Network
+  Qt5::Positioning
   Qt5::PrintSupport
+  Qt5::Qml
+  Qt5::Quick
+  Qt5::Sensors
+  Qt5::Sql
+  Qt5::Test
+  Qt5::UiTools
+  Qt5::WebChannel
+  Qt5::WebKitWidgets
+  Qt5::Widgets
+  Qt5::Xml
 )
 
 ################################################################################
@@ -121,6 +123,18 @@ foreach(AdditionalDll ${AdditionalDlls})
   file(INSTALL ${QtBinDir}${AdditionalDll}.dll DESTINATION ${OutputDirRelease})  
   file(INSTALL ${QtBinDir}${AdditionalDll}.dll DESTINATION ${OutputDirDebug})
 endforeach()
+
+################################################################################
+# Install tools
+################################################################################
+set(Tools
+  designer
+)
+
+foreach(Tool ${Tools})
+  file(INSTALL ${QtBinDir}${Tool}.exe DESTINATION ${OutputDirRelease})
+endforeach()
+
 
 ################################################################################
 # Install plugins

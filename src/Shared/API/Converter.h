@@ -16,7 +16,7 @@ namespace Converter
   QString SHARED_API toString(const QStringList& stringList, const QChar& seperator = '\n');
   QString SHARED_API toString(const QDateTime& dateTime);
   QString SHARED_API toString(const QDate& date);
-  
+
   QDateTime SHARED_API toDateTime(const QString& dateTime);
 
   QStringList SHARED_API toStringList(const QString& string, const QChar& seperator = '\n', QString::SplitBehavior splitBehaviour = QString::KeepEmptyParts);
