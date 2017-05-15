@@ -48,7 +48,7 @@ QString DailyNotes::path(const QDate& date)
   stringList << Path::content();
   stringList << "DailyNotes";
   stringList << QString::number(date.year());
-  stringList << QString("%1.shtml").arg(date.toString("yyyy-MM-dd"));
+  stringList << QString("%1.sml").arg(date.toString("yyyy-MM-dd"));
 
   return Converter::toPath(stringList);
 }

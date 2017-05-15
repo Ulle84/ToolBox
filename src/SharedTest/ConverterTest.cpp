@@ -14,8 +14,10 @@ void ConverterTest::toHtml()
   QString input;
   QString output;
 
-  for (int i = 1; i <= 10; ++i)
+  for (int i = 1; i <= 11; ++i)
   {
+    qDebug() << "#" << i;
+
     QString number = UInt(i).toString(2);
 
     QVERIFY(Test::loadFile(m_module, m_category, testName, QString("%1_input.txt").arg(number), input));

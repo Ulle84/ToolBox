@@ -38,6 +38,8 @@ namespace QStringEx
   int SHARED_API nLeadingSpaces(const QString& input);
 
   bool SHARED_API startsWith(const QString& input, const QString& begin, bool ignoreWhitespacesAtBegin);
+
+  bool SHARED_API isInsideLeadingSpace(const QString& input, int index);
 }
 
 #endif

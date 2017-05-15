@@ -322,12 +322,14 @@ void SmlConverter::processLists(QString& sml)
 
       startIndex = sml.indexOf(*it);
     }
-  }  
+  }
 }
 
 QString SmlConverter::processList(const QStringList& list)
 {
   QString result;
+
+  QString listType;
 
   int lastLeadingSpaces = -1;
 
@@ -335,23 +337,12 @@ QString SmlConverter::processList(const QStringList& list)
   {
     if (it == list.begin())
     {
+      listType = it->mid(1, 2);
       result.append(it->mid(1)); // cut off first character 's'
     }
     else
     {
-      result.append('\n');
-
       QString line = *it;
-      if (line.trimmed() == ")")
-      {
-        result.append(line);
-        continue;
-      }
-
-
-      
-
-      
 
       int nLeadingSpaces = QStringEx::nLeadingSpaces(line);
 
@@ -359,21 +350,33 @@ QString SmlConverter::processList(const QStringList& list)
       {
         if (nLeadingSpaces > lastLeadingSpaces)
         {
-          result.append(QString("%1ol(\n").arg(QString(nLeadingSpaces - 2, ' ')));
+          int nTagsToOpen = (nLeadingSpaces - lastLeadingSpaces) / 2;
+
+          for (int i = 0; i < nTagsToOpen; ++i)
+          {
+            result.append(QString("\n%1%2(").arg(QString(lastLeadingSpaces + 2 * i, ' ')).arg(listType));
+          }
         }
         else if (nLeadingSpaces < lastLeadingSpaces)
         {
-          result.append(QString("%1)\n").arg(QString(nLeadingSpaces, ' ')));
+          int nTagsToClose = (lastLeadingSpaces - nLeadingSpaces) / 2;
+
+          for (int i = 1; i <= nTagsToClose; ++i)
+          {
+            result.append(QString("\n%1)").arg(QString(lastLeadingSpaces - 2 * i, ' ')));
+          }
         }
       }
 
-      
-      
+      if (line.trimmed() != ")")
+      {
+        result.append('\n');
+
         line.insert(nLeadingSpaces, "li(");
         line.append(")");
 
         result.append(line);
-           
+      }
 
       lastLeadingSpaces = nLeadingSpaces;
     }

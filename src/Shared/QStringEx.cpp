@@ -235,4 +235,10 @@ namespace QStringEx
       return input.startsWith(begin);
     }
   }
+
+  bool isInsideLeadingSpace(const QString& input, int index)
+  {
+    return index <= nLeadingSpaces(input);
+  }
+
 }

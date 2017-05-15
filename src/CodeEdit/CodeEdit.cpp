@@ -22,46 +22,50 @@ CodeEdit::CodeEdit(QWidget* parent) :
 
 void CodeEdit::keyPressEvent(QKeyEvent* e)
 {
-  // TOOD refactor: split this method!
+  if (e->key() != Qt::Key_Tab
+      && e->key() != Qt::Key_Backtab
+      && e->key() != Qt::Key_Return)
+  {
+    QTextEdit::keyPressEvent(e);
+  }
 
-  // Ctrl Combinations
+  QTextCursor cursor = textCursor();
+
   if (e->modifiers() & Qt::ControlModifier)
   {
     if (e->key() == Qt::Key_D)
     {
-      QTextCursor cursor = textCursor();
-
       QString currentLine = cursor.block().text();
 
       cursor.insertText("\n");
       cursor.insertText(currentLine);
-
-      setTextCursor(cursor);
-      return;
     }
     else if (e->key() == Qt::Key_R)
     {
-      QTextCursor cursor = textCursor();
-
       cursor.select(QTextCursor::BlockUnderCursor);
       cursor.removeSelectedText();
-
-      setTextCursor(cursor);
     }
   }
 
   if (e->key() == Qt::Key_Tab)
   {
-    QTextCursor cursor = textCursor();
-    cursor.insertText("  ");
-    setTextCursor(cursor);
-    return;
+    cursor.insertText(QString(2 - cursor.columnNumber() % 2, ' '));    
   }
-
-  if (e->key() == Qt::Key_Return)
+  else if (e->key() == Qt::Key_Backtab)
   {
-    QTextCursor cursor = textCursor();
-
+    if (QStringEx::isInsideLeadingSpace(cursor.block().text(), cursor.columnNumber()))
+    {
+      cursor.deletePreviousChar();
+      if (cursor.columnNumber() % 2 == 1)
+        cursor.deletePreviousChar();
+    }
+    else
+    {
+      cursor.movePosition(QTextCursor::PreviousCharacter, QTextCursor::MoveAnchor, 2 - cursor.columnNumber() % 2);
+    }
+  }
+  else if (e->key() == Qt::Key_Return)
+  {
     QString currentLine = cursor.block().text();
     QString leadingSpaces = QStringEx::leadingSpaces(currentLine);
 
@@ -73,45 +77,34 @@ void CodeEdit::keyPressEvent(QKeyEvent* e)
       cursor.insertText("li()");
       cursor.movePosition(QTextCursor::PreviousCharacter);
     }
-
-    setTextCursor(cursor);
-    return;
   }
-
-  QString string;
-
-  if (e->key() == Qt::Key_Apostrophe)
+  else if (e->key() == Qt::Key_Apostrophe)
   {
-    string = "\'\'";
+    cursor.insertText("\'");
+    cursor.movePosition(QTextCursor::PreviousCharacter);
   }
   else if (e->key() == Qt::Key_QuoteDbl)
   {
-    string = "\"\"";
+    cursor.insertText("\"");
+    cursor.movePosition(QTextCursor::PreviousCharacter);
   }
   else if (e->key() == Qt::Key_ParenLeft)
   {
-    string = "()";
+    cursor.insertText(")");
+    cursor.movePosition(QTextCursor::PreviousCharacter);
   }
   else if (e->key() == Qt::Key_BracketLeft)
   {
-    string = "[]";
+    cursor.insertText("]");
+    cursor.movePosition(QTextCursor::PreviousCharacter);
   }
   else if (e->key() == Qt::Key_BraceLeft)
   {
-    string = "{}";
+    cursor.insertText("}");
+    cursor.movePosition(QTextCursor::PreviousCharacter);
   }
 
-  if (string.isEmpty())
-  {
-    QTextEdit::keyPressEvent(e);
-  }
-  else
-  {
-    QTextCursor cursor = textCursor();
-    cursor.insertText(string);
-    cursor.movePosition(QTextCursor::PreviousCharacter);
-    setTextCursor(cursor);
-  }
+  setTextCursor(cursor);
 }
 
 void CodeEdit::setCodeHighlightingType(CodeHighlightingType codeHighlightingType)
