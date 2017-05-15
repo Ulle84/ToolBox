@@ -49,15 +49,18 @@ void CodeEdit::keyPressEvent(QKeyEvent* e)
 
   if (e->key() == Qt::Key_Tab)
   {
-    cursor.insertText(QString(2 - cursor.columnNumber() % 2, ' '));    
+    cursor.insertText(QString(2 - cursor.columnNumber() % 2, ' '));
   }
   else if (e->key() == Qt::Key_Backtab)
   {
     if (QStringEx::isInsideLeadingSpace(cursor.block().text(), cursor.columnNumber()))
     {
       cursor.deletePreviousChar();
+
       if (cursor.columnNumber() % 2 == 1)
+      {
         cursor.deletePreviousChar();
+      }
     }
     else
     {
@@ -71,6 +74,16 @@ void CodeEdit::keyPressEvent(QKeyEvent* e)
 
     cursor.insertText("\n");
     cursor.insertText(leadingSpaces);
+
+    // TODO do this always if ( is before cursor and ) is after cursor
+    if (currentLine.endsWith("sul()"))
+    {
+      int n = QStringEx::nLeadingSpaces(currentLine);
+      cursor.insertText(QString(n + 2, ' '));
+      cursor.insertText("\n");
+      cursor.movePosition(QTextCursor::PreviousCharacter);
+    }
+      //qDebug() << "dköfjas";
 
     if (QStringEx::startsWith(currentLine, "li(", true))
     {
