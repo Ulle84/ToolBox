@@ -210,12 +210,12 @@ bool CodeCreator::generateFiles(const QList<QPair<QString, QString>>& content, G
 
       if (!input.exists())
       {
-        ui->logConsole->error(tr("Cannot open resource file %1").arg(it->second));
+        ui->logConsole->error(tr("Cannot open resource file %1").arg(it->first));
         return false;
       }
 
       input.copy(outputFileName);
-      ui->logConsole->success(tr("Written file %1").arg(it->second));
+      ui->logConsole->success(tr("Written file %1").arg(it->first));
     }
   }
 

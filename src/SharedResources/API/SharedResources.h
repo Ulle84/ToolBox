@@ -9,6 +9,7 @@ namespace SharedResources
 {
   QString SHAREDRESOURCES_API toString(const QString& resource);
   QString SHAREDRESOURCES_API defaultStyleSheet();
+  QString SHAREDRESOURCES_API testSmlCode();
 }
 
 #endif

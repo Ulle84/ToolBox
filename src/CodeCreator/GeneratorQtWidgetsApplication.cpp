@@ -110,9 +110,9 @@ QList<QPair<QString, QString>> GeneratorQtWidgetsApplication::additionalResource
   QString newName = ui->lineEditName->text();
 
   QStringList fileNameList;
-  fileNameList.append(":/files/../../CodeCreatorTemplates/QtWidgetsApplication/Resources/logo.ico");
-  fileNameList.append(":/files/../../CodeCreatorTemplates/QtWidgetsApplication/Resources/Resources.rc");
-  fileNameList.append(":/files/../../CodeCreatorTemplates/QtWidgetsApplication/Resources/Resources.qrc");
+  fileNameList.append(":/QtWidgetsApplication/Resources/logo.ico");
+  fileNameList.append(":/QtWidgetsApplication/Resources/Resources.rc");
+  fileNameList.append(":/QtWidgetsApplication/Resources/Resources.qrc");
 
   for (auto it = fileNameList.begin(); it != fileNameList.end(); it++)
   {

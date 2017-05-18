@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/files">
     <file>style.css</file>
+    <file>test.sml</file>
   </qresource>
 </RCC>

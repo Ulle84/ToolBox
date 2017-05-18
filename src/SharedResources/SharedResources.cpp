@@ -29,4 +29,9 @@ namespace SharedResources
   {
     return toString(":/files/style.css");
   }
+
+  QString testSmlCode()
+  {
+    return toString(":/files/test.sml");
+  }
 }

@@ -29,7 +29,7 @@ void CodeEdit::keyPressEvent(QKeyEvent* e)
     QTextEdit::keyPressEvent(e);
   }
 
-  QTextCursor cursor = textCursor();
+  QTextCursor cursor = textCursor();  
 
   if (e->modifiers() & Qt::ControlModifier)
   {
@@ -69,27 +69,54 @@ void CodeEdit::keyPressEvent(QKeyEvent* e)
   }
   else if (e->key() == Qt::Key_Return)
   {
+    //qDebug() << "column" << cursor.columnNumber();
+
     QString currentLine = cursor.block().text();
-    QString leadingSpaces = QStringEx::leadingSpaces(currentLine);
+    int leadingSpaces = QStringEx::nLeadingSpaces(currentLine);
+
+    bool beginNewBlock = false;
+
+    int column = cursor.columnNumber();
+    if (column > 0 && currentLine[column - 1] == '(' && currentLine[column] == ')')
+    {
+      beginNewBlock = true;      
+    }
 
     cursor.insertText("\n");
-    cursor.insertText(leadingSpaces);
+    cursor.insertText(QString(leadingSpaces + (beginNewBlock ? 2 : 0), ' '));
 
-    // TODO do this always if ( is before cursor and ) is after cursor
-    if (currentLine.endsWith("sul()"))
+    if (beginNewBlock)
     {
-      int n = QStringEx::nLeadingSpaces(currentLine);
-      cursor.insertText(QString(n + 2, ' '));
       cursor.insertText("\n");
-      cursor.movePosition(QTextCursor::PreviousCharacter);
+      cursor.insertText(QString(leadingSpaces, ' '));
+      cursor.movePosition(QTextCursor::PreviousCharacter, QTextCursor::MoveAnchor, leadingSpaces + 1);
     }
-      //qDebug() << "dköfjas";
 
-    if (QStringEx::startsWith(currentLine, "li(", true))
-    {
-      cursor.insertText("li()");
-      cursor.movePosition(QTextCursor::PreviousCharacter);
-    }
+    //qDebug() << currentLine[cursor.columnNumber() - 1];
+    //qDebug() << currentLine[cursor.columnNumber()];
+
+    
+
+    
+
+    //cursor.insertText("\n");
+    //cursor.insertText(leadingSpaces);
+    //
+    //// TODO do this always if ( is before cursor and ) is after cursor
+    //if (currentLine.endsWith("sul()"))
+    //{
+    //  int n = QStringEx::nLeadingSpaces(currentLine);
+    //  cursor.insertText(QString(n + 2, ' '));
+    //  cursor.insertText("\n");
+    //  cursor.movePosition(QTextCursor::PreviousCharacter);
+    //}
+    //  //qDebug() << "dköfjas";
+    //
+    //if (QStringEx::startsWith(currentLine, "li(", true))
+    //{
+    //  cursor.insertText("li()");
+    //  cursor.movePosition(QTextCursor::PreviousCharacter);
+    //}
   }
   else if (e->key() == Qt::Key_Apostrophe)
   {
