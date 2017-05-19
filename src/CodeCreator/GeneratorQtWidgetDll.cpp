@@ -59,6 +59,8 @@ QList<QPair<QString, QString>> GeneratorQtWidgetDll::generatedCode()
   files.append(":/QtWidgetDll/QtWidgetDllDesignerPlugin.cpp");
   files.append(":/QtWidgetDll/QtWidgetDllDesignerPlugin.h");
   files.append(":/QtWidgetDll/QtWidgetDllDesignerPlugin.json");
+  files.append(":/QtWidgetDll/Resources/QtWidgetDll.xml");
+  files.append(":/QtWidgetDll/Resources/Resources.qrc");
 
   for (auto it = files.begin(); it != files.end(); it++)
   {
@@ -105,7 +107,8 @@ QList<QPair<QString, QString>> GeneratorQtWidgetDll::additionalResources()
   QString newName = ui->lineEditName->text();
 
   QStringList fileNameList;
-  fileNameList.append(":/QtWidgetDll/QtWidgetDll.rc");
+  fileNameList.append(":/QtWidgetDll/Resources/QtWidgetDll.rc");
+  fileNameList.append(":/QtWidgetDll/Resources/logo.png");
 
   for (auto it = fileNameList.begin(); it != fileNameList.end(); it++)
   {

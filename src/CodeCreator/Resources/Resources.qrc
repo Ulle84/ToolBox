@@ -44,10 +44,13 @@
     <file alias="CMakeLists.txt">../../CodeCreatorTemplates/QtWidgetDll/CMakeLists.txt</file>
     <file alias="QtWidgetDll.cpp">../../CodeCreatorTemplates/QtWidgetDll/QtWidgetDll.cpp</file>
     <file alias="QtWidgetDll.ui">../../CodeCreatorTemplates/QtWidgetDll/QtWidgetDll.ui</file>
-    <file alias="QtWidgetDll.rc">../../CodeCreatorTemplates/QtWidgetDll/QtWidgetDll.rc</file>
     <file alias="QtWidgetDllDesignerPlugin.cpp">../../CodeCreatorTemplates/QtWidgetDll/QtWidgetDllDesignerPlugin.cpp</file>
     <file alias="QtWidgetDllDesignerPlugin.h">../../CodeCreatorTemplates/QtWidgetDll/QtWidgetDllDesignerPlugin.h</file>
     <file alias="QtWidgetDllDesignerPlugin.json">../../CodeCreatorTemplates/QtWidgetDll/QtWidgetDllDesignerPlugin.json</file>
+    <file alias="Resources/QtWidgetDll.rc">../../CodeCreatorTemplates/QtWidgetDll/Resources/QtWidgetDll.rc</file>
+    <file alias="Resources/QtWidgetDll.xml">../../CodeCreatorTemplates/QtWidgetDll/Resources/QtWidgetDll.xml</file>
+    <file alias="Resources/Resources.qrc">../../CodeCreatorTemplates/QtWidgetDll/Resources/Resources.qrc</file>
+    <file alias="Resources/logo.png">../../CodeCreatorTemplates/QtWidgetDll/Resources/logo.png</file>
   </qresource>
   
   <qresource prefix="/QtDialog">

@@ -1,7 +1,8 @@
+#include <QtCore/QtPlugin>
+
+#include "File.h"
 #include "QtWidgetDll.h"
 #include "QtWidgetDllDesignerPlugin.h"
-
-#include <QtCore/QtPlugin>
 
 QtWidgetDllDesignerPlugin::QtWidgetDllDesignerPlugin(QObject* parent) :
   QObject(parent)
@@ -61,16 +62,7 @@ bool QtWidgetDllDesignerPlugin::isContainer() const
 
 QString QtWidgetDllDesignerPlugin::domXml() const
 {
-  return "<widget class=\"QtWidgetDll\" name=\"qtWidgetDll\">\n"
-         " <property name=\"geometry\">\n"
-         "  <rect>\n"
-         "   <x>0</x>\n"
-         "   <y>0</y>\n"
-         "   <width>100</width>\n"
-         "   <height>100</height>\n"
-         "  </rect>\n"
-         " </property>\n"
-         "</widget>\n";
+ return File(":/files/QtWidgetDll.xml").toString();
 }
 
 QString QtWidgetDllDesignerPlugin::includeFile() const
