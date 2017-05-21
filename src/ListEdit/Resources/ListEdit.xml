@@ -1,0 +1,26 @@
+<!-- Documentation: http://doc.qt.io/qt-5/designer-creating-custom-widgets.html -->
+<ui language="c++">
+  <widget class="ListEdit" name="listEdit">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>280</width>
+        <height>24</height>
+      </rect>
+    </property>
+  </widget>
+  <customwidgets>
+    <customwidget>
+      <class>ListEdit</class>
+      <propertyspecifications>
+        <!-- type: richtext | multiline | singleline | stylesheet | objectname | url -->
+        <!--
+        <stringpropertyspecification name="path" notr="true" type="singleline"/>
+        <stringpropertyspecification name="labelText" type="singleline"/>
+        <stringpropertyspecification name="buttonText" type="singleline"/>
+        -->
+      </propertyspecifications>
+    </customwidget>
+  </customwidgets>
+</ui>
