@@ -5,3 +5,4 @@
 /content/DailyNotes/*
 /debug/*
 /src/PathSelector/Resources/*.aps
+*.user
