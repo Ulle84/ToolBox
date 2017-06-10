@@ -27,12 +27,14 @@ SOURCES += \
         main.cpp \
         MainWindow.cpp \
     JsonModel.cpp \
-    JsonModelEdit.cpp
+    JsonModelEdit.cpp \
+    ProxyModel.cpp
 
 HEADERS += \
         MainWindow.h \
     JsonModel.h \
-    JsonModelEdit.h
+    JsonModelEdit.h \
+    ProxyModel.h
 
 FORMS += \
         MainWindow.ui \

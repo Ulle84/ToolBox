@@ -23,13 +23,13 @@ MainWindow::MainWindow(QWidget *parent) :
   jsonModel2->setContent(content);
 
   ui->listView->setModel(jsonModel);
-  ui->listView_2->setModel(jsonModel2);
+  //ui->listView_2->setModel(jsonModel2);
 
   ui->tableView->setModel(jsonModel);
-  ui->tableView_2->setModel(jsonModel2);
+  //ui->tableView_2->setModel(jsonModel2);
 
   ui->treeView->setModel(jsonModel);
-  ui->treeView_2->setModel(jsonModel2);
+  //ui->treeView_2->setModel(jsonModel2);
 
   ui->widget->setViewType(JsonModelEdit::ViewType::Tree);
   ui->widget->setModel(jsonModel);
