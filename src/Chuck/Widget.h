@@ -17,13 +17,13 @@ class Widget : public QWidget
     ~Widget();
 
   public slots:
-  void setNewParameter(const QString& name, const QString& value);
-  void setNewGeneratedNumber(int newNumber);
+    void setNewParameter(const QString& name, const QString& value);
+    void setNewGeneratedNumber(int newNumber);
 
   signals:
     void parameterChanged(const QString& name, const QString& value);
 
-    private slots:
+  private slots:
     void on_pushButton_clicked();
 
   private:

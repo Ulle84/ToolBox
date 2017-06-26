@@ -10,21 +10,20 @@ class QJSonObject;
 
 class InstanceManager
 {
+  public:
+    InstanceManager();
+    ~InstanceManager();
 
-public:
-  InstanceManager();
-  ~InstanceManager();
+    void setup(const QString& fileName);
+    void setup(const QJsonObject& configuration, QMdiArea* mdiArea);
 
-  void setup(const QString& fileName);
-  void setup(const QJsonObject& configuration, QMdiArea* mdiArea);
+    QObject* object(const QString& id);
+    QObject* createObject(const QString& className, const QString& id);
 
-  QObject* object(const QString& id);
-  QObject* createObject(const QString& className, const QString& id);
+  private:
+    void connect(const QString& source, const QString& destination);
 
-private:
-  void connect(const QString& source, const QString& destination);
-
-  QMap<QString, QObject*> m_objects;
+    QMap<QString, QObject*> m_objects;
 };
 
 #endif

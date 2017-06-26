@@ -2,12 +2,10 @@
 
 RandomNumberGenerator::RandomNumberGenerator()
 {
-
 }
 
 RandomNumberGenerator::~RandomNumberGenerator()
 {
-
 }
 
 void RandomNumberGenerator::run()
@@ -21,15 +19,13 @@ void RandomNumberGenerator::run()
     int newNumber = rand() % range;
     newNumber += m_minimum;
 
-    newNumberGenerated(newNumber);
+    emit newNumberGenerated(newNumber);
 
-    msleep(1000);
+    msleep(1);
   }
 }
 
 void RandomNumberGenerator::stop()
 {
   m_running = false;
-
-
 }

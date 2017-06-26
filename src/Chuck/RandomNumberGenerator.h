@@ -5,23 +5,23 @@
 
 class RandomNumberGenerator : public QThread
 {
-  Q_OBJECT
+    Q_OBJECT
 
-public:
-  RandomNumberGenerator();
-  ~RandomNumberGenerator();
+  public:
+    RandomNumberGenerator();
+    ~RandomNumberGenerator();
 
-  void run();
-  void stop();
+    void run();
+    void stop();
 
-signals:
-  void newNumberGenerated(int newNumber);
+  signals:
+    void newNumberGenerated(int newNumber);
 
-private:
-  volatile bool m_running = false;
+  private:
+    volatile bool m_running = false;
 
-  int m_minimum = 0;
-  int m_maximum = 9;
+    int m_minimum = 0;
+    int m_maximum = 9;
 };
 
 #endif

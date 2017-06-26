@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/images">
+    <file>logo.png</file>
+  </qresource>
+  <qresource prefix="/files">
+    <file>NumberEdit.xml</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,22 @@
+<!-- Documentation: http://doc.qt.io/qt-5/designer-creating-custom-widgets.html -->
+<ui language="c++">
+  <widget class="NumberEdit" name="numberEdit">
+    <property name="geometry">
+      <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>280</width>
+        <height>24</height>
+      </rect>
+    </property>
+  </widget>
+  <customwidgets>
+    <customwidget>
+      <class>NumberEdit</class>
+      <propertyspecifications>
+        <stringpropertyspecification name="path" type="singleline"/>
+        <stringpropertyspecification name="unit" notr="true" type="singleline"/>
+      </propertyspecifications>
+    </customwidget>
+  </customwidgets>
+</ui>

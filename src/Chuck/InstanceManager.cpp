@@ -8,17 +8,14 @@
 
 #include "RandomNumberGenerator.h"
 #include "Widget.h"
-
-
+#include "NumberDisplay.h"
 
 InstanceManager::InstanceManager()
 {
-
 }
 
 InstanceManager::~InstanceManager()
 {
-
 }
 
 QObject* InstanceManager::object(const QString& id)
@@ -48,8 +45,9 @@ void InstanceManager::setup(const QJsonObject& configuration, QMdiArea* mdiArea)
     QObject* object = createObject(className, id);
 
     if (QWidget* widget = dynamic_cast<QWidget*>(object))
+    {
       mdiArea->addSubWindow(widget);
-
+    }
   }
 
   for (auto it = connections.begin(); it != connections.end(); ++it)
@@ -61,8 +59,6 @@ void InstanceManager::setup(const QJsonObject& configuration, QMdiArea* mdiArea)
 
     connect(source, destination);
   }
-
-
 
   //RandomNumberGenerator* randomNumberGenerator = new RandomNumberGenerator();
   //randomNumberGenerator->start();
@@ -111,23 +107,31 @@ void InstanceManager::connect(const QString& source, const QString& destination)
 
   // TODO source/destination vs. sender/receiver -> see how this is described in qt documentation!
   if (!m_objects.contains(sourceInformation[0]))
+  {
     throw std::exception("sender does not exist");
+  }
 
   if (!m_objects.contains(destinationInformation[0]))
+  {
     throw std::exception("receiver does not exist");
+  }
 
   int sourceIndex = m_objects[sourceInformation[0]]->metaObject()->indexOfMethod(sourceInformation[1].toStdString().c_str());
 
   if (sourceIndex < 0)
+  {
     throw std::exception("signal does not exist");
+  }
 
   int destinationIndex = m_objects[destinationInformation[0]]->metaObject()->indexOfMethod(destinationInformation[1].toStdString().c_str());
 
   if (sourceIndex < 0)
+  {
     throw std::exception("slot does not exist");
+  }
 
-  bool success = QObject::connect(m_objects[sourceInformation[0]], m_objects[sourceInformation[0]]->metaObject()->method(sourceIndex), 
-    m_objects[destinationInformation[0]], m_objects[destinationInformation[0]]->metaObject()->method(destinationIndex));
+  bool success = QObject::connect(m_objects[sourceInformation[0]], m_objects[sourceInformation[0]]->metaObject()->method(sourceIndex),
+                                  m_objects[destinationInformation[0]], m_objects[destinationInformation[0]]->metaObject()->method(destinationIndex));
   bool stopHere = true;
 }
 
@@ -147,7 +151,11 @@ QObject* InstanceManager::createObject(const QString& className, const QString& 
   }
   else if (className == "Widget")
   {
-    object = new Widget();    
+    object = new Widget();
+  }
+  else if (className == "NumberDisplay")
+  {
+    object = new NumberDisplay();
   }
 
   if (!object)
@@ -157,7 +165,9 @@ QObject* InstanceManager::createObject(const QString& className, const QString& 
   }
 
   if (QThread* thread = dynamic_cast<QThread*>(object))
+  {
     thread->start();
+  }
 
   m_objects[id] = object;
 
