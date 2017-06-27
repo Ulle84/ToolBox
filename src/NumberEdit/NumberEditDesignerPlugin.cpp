@@ -62,7 +62,7 @@ bool NumberEditDesignerPlugin::isContainer() const
 
 QString NumberEditDesignerPlugin::domXml() const
 {
- return File(":/files/NumberEdit.xml").toString();
+  return File(":/files/NumberEdit.xml").toString();
 }
 
 QString NumberEditDesignerPlugin::includeFile() const

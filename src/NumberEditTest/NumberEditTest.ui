@@ -6,46 +6,208 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>321</width>
-    <height>256</height>
+    <width>781</width>
+    <height>238</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>NumberEditTest</string>
+   <string>Form</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="NumberEdit" name="numberEdit">
-     <property name="label">
-      <string>short</string>
-     </property>
-     <property name="unit">
-      <string>dkjfaösfas</string>
-     </property>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QGroupBox" name="groupBox_4">
+       <property name="title">
+        <string>grid layouted</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="NumberEdit" name="numberEdit_3">
+          <property name="gridLayouted">
+           <bool>true</bool>
+          </property>
+          <property name="label">
+           <string/>
+          </property>
+          <property name="unit">
+           <string notr="true"/>
+          </property>
+          <property name="unitWidth">
+           <number>50</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="NumberEdit" name="numberEdit">
+          <property name="gridLayouted">
+           <bool>true</bool>
+          </property>
+          <property name="label">
+           <string>loooooooooooooooooong</string>
+          </property>
+          <property name="unit">
+           <string notr="true"/>
+          </property>
+          <property name="unitWidth">
+           <number>50</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="NumberEdit" name="numberEdit_2">
+          <property name="gridLayouted">
+           <bool>true</bool>
+          </property>
+          <property name="label">
+           <string/>
+          </property>
+          <property name="unit">
+           <string notr="true">V</string>
+          </property>
+          <property name="unitWidth">
+           <number>50</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="NumberEdit" name="numberEdit_14">
+          <property name="gridLayouted">
+           <bool>true</bool>
+          </property>
+          <property name="label">
+           <string>short</string>
+          </property>
+          <property name="unit">
+           <string notr="true">Hz</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_5">
+       <property name="title">
+        <string>not grid layouted</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <item>
+         <widget class="NumberEdit" name="numberEdit_4"/>
+        </item>
+        <item>
+         <widget class="NumberEdit" name="numberEdit_5">
+          <property name="label">
+           <string>label</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="NumberEdit" name="numberEdit_6">
+          <property name="unit">
+           <string notr="true">m</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="NumberEdit" name="numberEdit_7">
+          <property name="label">
+           <string>label</string>
+          </property>
+          <property name="unit">
+           <string notr="true">m</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
-    <widget class="NumberEdit" name="numberEdit_2">
-     <property name="label">
-      <string>loooooooooooooooooong</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="NumberEdit" name="numberEdit_3"/>
-   </item>
-   <item>
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>103</height>
-      </size>
-     </property>
-    </spacer>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QGroupBox" name="groupBox">
+       <property name="title">
+        <string>gridlayouted only labels</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_6">
+        <item>
+         <widget class="NumberEdit" name="numberEdit_8">
+          <property name="gridLayouted">
+           <bool>true</bool>
+          </property>
+          <property name="label">
+           <string>blub</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="NumberEdit" name="numberEdit_9">
+          <property name="gridLayouted">
+           <bool>true</bool>
+          </property>
+          <property name="label">
+           <string>blub</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_2">
+       <property name="title">
+        <string>grid layouted only units</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <item>
+         <widget class="NumberEdit" name="numberEdit_10">
+          <property name="gridLayouted">
+           <bool>true</bool>
+          </property>
+          <property name="unit">
+           <string notr="true">m</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="NumberEdit" name="numberEdit_11">
+          <property name="gridLayouted">
+           <bool>true</bool>
+          </property>
+          <property name="unit">
+           <string notr="true">m</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBox_3">
+       <property name="title">
+        <string>grid layouted no units, no labels</string>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="NumberEdit" name="numberEdit_12">
+          <property name="gridLayouted">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="NumberEdit" name="numberEdit_13">
+          <property name="gridLayouted">
+           <bool>true</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
@@ -54,6 +216,7 @@
    <class>NumberEdit</class>
    <extends>QWidget</extends>
    <header>NumberEdit.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources/>

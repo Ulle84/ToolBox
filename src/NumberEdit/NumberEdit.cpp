@@ -1,40 +1,47 @@
+// created on 2017-06-20 by Ulrich Belitz
+
+#include <cmath>
+
+#include <QDebug>
+
 #include "NumberEdit.h"
 #include "ui_NumberEdit.h"
 
 NumberEdit::NumberEdit(QWidget* parent) :
-  Gridable(parent),
+  GridLayoutable(parent),
   ui(new Ui::NumberEdit)
 {
+  m_supportedMin = -std::numeric_limits<double>::max() / std::pow(10, m_maxExponent);
+  m_supportedMax = std::numeric_limits<double>::max() / std::pow(10, m_maxExponent);
+
+  m_minimum = m_supportedMin;
+  m_maximum = m_supportedMax;
+
   ui->setupUi(this);
+
   ui->label->setVisible(false);
   ui->comboBox->setVisible(false);
-
-  if (parent)
-  {
-    if (!(parent->property("gridableEventFilterInstalled").isValid() && parent->property("gridableEventFilterInstalled").toBool()))
-    {
-      gridableEventFilterInstalledByThisInstance = true;
-      parent->installEventFilter(this);
-      parent->setProperty("gridableEventFilterInstalled", true);
-    }    
-  }
 }
 
 NumberEdit::~NumberEdit()
 {
-  if (parent() && gridableEventFilterInstalledByThisInstance)
-  {
-    // TODO who takes the responsibilty of gridding if there are other instances of gridables?
-    parent()->setProperty("gridableEventFilterInstalled", false);
-  }
-
   delete ui;
 }
 
 void NumberEdit::setLabel(const QString& label)
 {
-  ui->label->setVisible(!label.isEmpty());
+  ui->label->setMinimumWidth(0);
   ui->label->setText(label);
+  m_labelWidth = label.isEmpty() ? 0 : ui->label->minimumSizeHint().width();
+
+  if (isGridLayouted())
+  {
+    updateWidths();
+  }
+  else
+  {
+    updateLabelDisplay(m_labelWidth);
+  }
 }
 
 QString NumberEdit::label()
@@ -44,82 +51,281 @@ QString NumberEdit::label()
 
 void NumberEdit::setUnit(const QString& unit)
 {
-  ui->comboBox->setVisible(!unit.isEmpty());
-  ui->comboBox->clear();
-  ui->comboBox->addItem(unit);
+  m_unit = unit;
+  setupUnitSelector();
+  updateControl();
+
+  if(isGridLayouted())
+  {
+    updateWidths();
+  }
+  else
+  {
+    updateUnitDisplay(m_unitWidth);
+  }
 }
 
 QString NumberEdit::unit()
 {
-  return ui->comboBox->currentText();
+  return m_unit;
+}
+
+void NumberEdit::setValue(double value)
+{
+  m_value = value;
+  updateControl();
+}
+
+double NumberEdit::value()
+{
+  return m_value;
+}
+
+int NumberEdit::toInt()
+{
+  return m_value > 0 ? m_value + 0.5 : m_value - 0.5;
+}
+
+double NumberEdit::toDouble()
+{
+  return m_value;
+}
+
+void NumberEdit::setMinimum(double minimum)
+{
+  if (minimum < m_supportedMin)
+  {
+    m_minimum = m_supportedMin;
+  }
+  else
+  {
+    m_minimum = minimum;
+  }
+
+  updateControl();
+}
+
+double NumberEdit::minimum()
+{
+  return m_minimum;
+}
+
+void NumberEdit::setMaximum(double maximum)
+{
+  if (maximum > m_supportedMax)
+  {
+    m_maximum = m_supportedMax;
+  }
+  else
+  {
+    m_maximum = maximum;
+  }
+
+  updateControl();
+}
+
+double NumberEdit::maximum()
+{
+  return m_maximum;
+}
+
+void NumberEdit::setDecimals(int decimals)
+{
+  ui->doubleSpinBox->setDecimals(decimals);
+}
+
+int NumberEdit::decimals()
+{
+  return ui->doubleSpinBox->decimals();
+}
+
+void NumberEdit::setWarningFactor(double warningFactor)
+{
+  m_warningFactor = warningFactor;
+  updateControl();
+}
+
+double NumberEdit::warningFactor()
+{
+  return m_warningFactor;
+}
+
+void NumberEdit::setUnitWidth(int unitWidth)
+{
+  m_unitWidth = unitWidth;
+
+  if (isGridLayouted())
+  {
+    updateWidths();
+  }
+  else
+  {
+    updateUnitDisplay(m_unitWidth);
+  }  
+}
+
+int NumberEdit::unitWidth()
+{
+  return m_unitWidth;
 }
 
 QVector<int> NumberEdit::minimumWidths()
 {
   QVector<int> list;
 
-  list.append(ui->gridLayout->cellRect(0, 0).width());
+  list.append(m_labelWidth);
   list.append(0);
-  list.append(ui->gridLayout->cellRect(0, 2).width());
+  list.append(m_unit.isEmpty() ? 0 : m_unitWidth);
 
   return list;
 }
 
-void NumberEdit::setMinimumWidths(const QVector<int>& minimumWidths)
+void NumberEdit::setMinimumWidths(const QVector<int>& widths)
 {
-  for (int i = 0; i < minimumWidths.length(); ++i)
+  if (widths.length() < 3)
   {
-    if (i < ui->gridLayout->count())
-      ui->gridLayout->setColumnMinimumWidth(i, minimumWidths[i]);
+    return;
   }
+
+  updateLabelDisplay(widths[0]);
+  updateUnitDisplay(widths[2]);
 }
 
-void NumberEdit::resetMinimumWidths()
+void NumberEdit::resetMinumumWidths()
 {
-  for (int i = 0; i < ui->gridLayout->count(); ++i)
-  {
-    ui->gridLayout->setColumnMinimumWidth(i, 0);
-  }
+  ui->label->setMinimumWidth(0);
+  ui->comboBox->setMinimumWidth(m_unitWidth);
 }
 
-bool NumberEdit::eventFilter(QObject * watched, QEvent * event)
+void NumberEdit::on_doubleSpinBox_valueChanged(double value)
 {
-  // TODO find all event types, which are relevant
-  if (event->type() == QEvent::Resize)// || event->type() == QEvent::ChildAdded || event->type() == QEvent::ChildRemoved)
-  {
-    //QList<QWidget *> widgets = watched.findChildren<QWidget *>("widgetname");
-    QList<Gridable*> gridables = watched->findChildren<Gridable*>(QString(), Qt::FindDirectChildrenOnly);
+  int exponent = ui->comboBox->itemData(ui->comboBox->currentIndex()).toInt();
+  m_value = value * std::pow(10, exponent);
+  applyWarningFactor();
+}
 
-    for (auto it = gridables.begin(); it != gridables.end(); ++it)
+void NumberEdit::on_comboBox_currentIndexChanged(int index)
+{
+  updateControl();
+}
+
+void NumberEdit::setupUnitSelector()
+{
+  disconnect(ui->comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(on_comboBox_currentIndexChanged(int)));
+
+  ui->comboBox->setUnit(m_unit);
+
+  ui->comboBox->clear();
+
+  if (!m_unit.isEmpty())
+  {
+    // Attention: m_maxExponent needs to be updated if range is expanded!
+
+    ui->comboBox->addItem("p" + m_unit, -12);
+    ui->comboBox->addItem("n" + m_unit, -9);
+    ui->comboBox->addItem(QChar(0x03BC) + m_unit, -6);
+    ui->comboBox->addItem("m" + m_unit, -3);
+    ui->comboBox->addItem(m_unit, 0);
+    ui->comboBox->addItem("k" + m_unit, 3);
+    ui->comboBox->addItem("M" + m_unit, 6);
+    ui->comboBox->addItem("G" + m_unit, 9);
+
+    ui->comboBox->setCurrentIndex(4); // select base unit with potency 0
+  }
+
+  connect(ui->comboBox, SIGNAL(currentIndexChanged(int)), this, SLOT(on_comboBox_currentIndexChanged(int)));
+}
+
+void NumberEdit::updateControl()
+{
+  int exponent = m_unit.isEmpty() ? 0 : ui->comboBox->itemData(ui->comboBox->currentIndex()).toInt();
+
+  disconnect(ui->doubleSpinBox, SIGNAL(valueChanged(double)), this, SLOT(on_doubleSpinBox_valueChanged(double)));
+  ui->doubleSpinBox->setRange(m_minimum / std::pow(10, exponent), m_maximum / std::pow(10, exponent));
+  ui->doubleSpinBox->setValue(m_value / std::pow(10, exponent));
+  connect(ui->doubleSpinBox, SIGNAL(valueChanged(double)), this, SLOT(on_doubleSpinBox_valueChanged(double)));
+
+  applyWarningFactor();
+}
+
+void NumberEdit::setRange(double minimum, double maximum)
+{
+  setMinimum(minimum);
+  setMaximum(maximum);
+}
+
+void NumberEdit::applyWarningFactor()
+{
+  bool showWarning = false;
+
+  if (m_warningFactor != 0.0)
+  {
+    double range = m_maximum - m_minimum;
+    double offset = range * (1.0 - m_warningFactor) / 2;
+    double warnLower = m_minimum + offset;
+    double warnUpper = m_maximum - offset;
+
+    if (m_value < warnLower)
     {
-      (*it)->resetMinimumWidths();
+      showWarning = true;
     }
-
-    bool result = watched->event(event);
-
-    QVector<int> minimumWidths;
-
-    for (auto it = gridables.begin(); it != gridables.end(); ++it)
+    else if (m_value > warnUpper)
     {
-      QVector<int> vec = (*it)->minimumWidths();
+      showWarning = true;
+    }
+  }
 
-      for (int i = 0; i < vec.length(); ++i)
+  ui->doubleSpinBox->setStyleSheet(QString("background-color: %1").arg(showWarning ? "rgba(255, 255, 0, 0.4)" : "rgba(255, 255, 255, 1.0)"));
+}
+
+void NumberEdit::updateLabelDisplay(int width)
+{
+  bool visible = true;
+
+  if (ui->label->text().isEmpty())
+  {
+    if (!isGridLayouted())
+    {
+      visible = false;
+    }
+    else
+    {
+      if (width == 0)
       {
-        if (i >= minimumWidths.length())
-          minimumWidths.resize(i + 1);
-
-        if (vec[i] > minimumWidths[i])
-          minimumWidths[i] = vec[i];
+        visible = false;
       }
     }
-
-    for (auto it = gridables.begin(); it != gridables.end(); ++it)
-    {
-      (*it)->setMinimumWidths(minimumWidths);
-    }
-
-    return result;
   }
 
-  return Gridable::eventFilter(watched, event);
+  ui->label->setMinimumWidth(width);
+  ui->label->setVisible(visible);
+}
+
+void NumberEdit::updateUnitDisplay(int width)
+{
+  bool visible = true;
+
+  if (m_unit.isEmpty())
+  {
+    if (!isGridLayouted())
+    {
+      visible = false;
+    }
+    else
+    {
+      if (width == 0)
+      {
+        visible = false;
+      }
+    }
+  }
+
+  //if (m_unit.isEmpty() && width != 0)
+  //{
+  //  int test = rand();
+  //}
+
+  ui->comboBox->setMinimumWidth(visible ? width : 0);
+  ui->comboBox->setMaximumWidth(visible ? width : 0);
+  ui->comboBox->setVisible(visible);
 }

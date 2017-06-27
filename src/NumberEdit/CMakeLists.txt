@@ -5,6 +5,7 @@ set(Type Widget)
 
 set(RequiredLibraries
   Shared
+  GridLayoutable
 )
 
 include(../CMake/ProjectTemplate.cmake)
