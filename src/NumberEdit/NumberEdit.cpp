@@ -17,6 +17,9 @@ NumberEdit::NumberEdit(QWidget* parent) :
   m_minimum = m_supportedMin;
   m_maximum = m_supportedMax;
 
+  m_lowerLimit = m_supportedMin;
+  m_upperLimit = m_supportedMax;
+
   ui->setupUi(this);
 
   ui->label->setVisible(false);
@@ -139,16 +142,38 @@ int NumberEdit::decimals()
   return ui->doubleSpinBox->decimals();
 }
 
-void NumberEdit::setWarningFactor(double warningFactor)
+void NumberEdit::setLowerLimit(double lowerLimit)
 {
-  m_warningFactor = warningFactor;
+  m_lowerLimit = lowerLimit;
   updateControl();
 }
 
-double NumberEdit::warningFactor()
+double NumberEdit::lowerLimit()
 {
-  return m_warningFactor;
+  return m_lowerLimit;
 }
+
+void NumberEdit::setUpperLimit(double upperLimit)
+{
+  m_upperLimit = upperLimit;
+  updateControl();
+}
+
+double NumberEdit::upperLimit()
+{
+  return m_upperLimit;
+}
+
+//void NumberEdit::setWarningFactor(double warningFactor)
+//{
+//  m_warningFactor = warningFactor;
+//  updateControl();
+//}
+//
+//double NumberEdit::warningFactor()
+//{
+//  return m_warningFactor;
+//}
 
 void NumberEdit::setUnitWidth(int unitWidth)
 {
@@ -201,7 +226,7 @@ void NumberEdit::on_doubleSpinBox_valueChanged(double value)
 {
   int exponent = ui->comboBox->itemData(ui->comboBox->currentIndex()).toInt();
   m_value = value * std::pow(10, exponent);
-  applyWarningFactor();
+  applyLimits();
 }
 
 void NumberEdit::on_comboBox_currentIndexChanged(int index)
@@ -245,7 +270,7 @@ void NumberEdit::updateControl()
   ui->doubleSpinBox->setValue(m_value / std::pow(10, exponent));
   connect(ui->doubleSpinBox, SIGNAL(valueChanged(double)), this, SLOT(on_doubleSpinBox_valueChanged(double)));
 
-  applyWarningFactor();
+  applyLimits();
 }
 
 void NumberEdit::setRange(double minimum, double maximum)
@@ -254,26 +279,35 @@ void NumberEdit::setRange(double minimum, double maximum)
   setMaximum(maximum);
 }
 
-void NumberEdit::applyWarningFactor()
+void NumberEdit::applyLimits()
 {
   bool showWarning = false;
 
-  if (m_warningFactor != 0.0)
+  if (m_value < m_lowerLimit)
   {
-    double range = m_maximum - m_minimum;
-    double offset = range * (1.0 - m_warningFactor) / 2;
-    double warnLower = m_minimum + offset;
-    double warnUpper = m_maximum - offset;
-
-    if (m_value < warnLower)
-    {
-      showWarning = true;
-    }
-    else if (m_value > warnUpper)
-    {
-      showWarning = true;
-    }
+    showWarning = true;
   }
+  else if (m_value > m_upperLimit)
+  {
+    showWarning = true;
+  }
+
+  //if (m_warningFactor != 0.0)
+  //{
+  //  double range = m_maximum - m_minimum;
+  //  double offset = range * (1.0 - m_warningFactor) / 2;
+  //  double warnLower = m_minimum + offset;
+  //  double warnUpper = m_maximum - offset;
+  //
+  //  if (m_value < warnLower)
+  //  {
+  //    showWarning = true;
+  //  }
+  //  else if (m_value > warnUpper)
+  //  {
+  //    showWarning = true;
+  //  }
+  //}
 
   ui->doubleSpinBox->setStyleSheet(QString("background-color: %1").arg(showWarning ? "rgba(255, 255, 0, 0.4)" : "rgba(255, 255, 255, 1.0)"));
 }

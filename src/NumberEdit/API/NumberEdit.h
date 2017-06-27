@@ -23,9 +23,10 @@ class NUMBEREDIT_API NumberEdit : public GridLayoutable
     Q_PROPERTY(double value READ value WRITE setValue)
     Q_PROPERTY(double minimum READ minimum WRITE setMinimum)
     Q_PROPERTY(double maximum READ maximum WRITE setMaximum)
-    Q_PROPERTY(int decimals READ decimals WRITE setDecimals)
-    Q_PROPERTY(double warningFactor READ warningFactor WRITE setWarningFactor)
+    Q_PROPERTY(int decimals READ decimals WRITE setDecimals)    
     Q_PROPERTY(int unitWidth READ unitWidth WRITE setUnitWidth)
+    Q_PROPERTY(double lowerLimit READ lowerLimit WRITE setLowerLimit)
+    Q_PROPERTY(double upperLimit READ upperLimit WRITE setUpperLimit)
 
   public:
     explicit NumberEdit(QWidget* parent = 0);
@@ -54,8 +55,14 @@ class NUMBEREDIT_API NumberEdit : public GridLayoutable
     void setDecimals(int decimals);
     int decimals();
 
-    void setWarningFactor(double warningFactor);
-    double warningFactor();
+    //void setWarningFactor(double warningFactor);
+    //double warningFactor();
+
+    void setLowerLimit(double lowerLimit);
+    double lowerLimit();
+
+    void setUpperLimit(double upperLimit);
+    double upperLimit();
 
     void setUnitWidth(int unitWidth);
     int unitWidth();
@@ -72,7 +79,7 @@ class NUMBEREDIT_API NumberEdit : public GridLayoutable
   private:
     void setupUnitSelector();
     void updateControl();
-    void applyWarningFactor();
+    void applyLimits();
 
     void updateLabelDisplay(int width);
     void updateUnitDisplay(int width);
@@ -84,7 +91,7 @@ class NUMBEREDIT_API NumberEdit : public GridLayoutable
     double m_minimum;
     double m_maximum;
 
-    double m_warningFactor = 0.0;
+    //double m_warningFactor = 0.0;
 
     const int m_maxExponent = 13; // the highest used potency + 1
 
@@ -93,6 +100,9 @@ class NUMBEREDIT_API NumberEdit : public GridLayoutable
 
     int m_labelWidth = 0;
     int m_unitWidth = 50;
+
+    double m_lowerLimit;
+    double m_upperLimit;
 };
 
 #endif
