@@ -1,0 +1,9 @@
+#include <QtCore>
+
+#include "SimpleSwitchAPI.h"
+
+class SimpleSwitch
+{
+    PROP(bool currState=false);
+    SLOT(void server_slot(bool clientState));
+};

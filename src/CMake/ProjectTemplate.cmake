@@ -41,6 +41,9 @@ source_group("Configuration" FILES ${Configuration})
 file(GLOB_RECURSE StyleSheets ${CMAKE_CURRENT_SOURCE_DIR}/*.css)
 source_group("StyleSheets" FILES ${StyleSheets})
 
+file(GLOB_RECURSE Replicas ${CMAKE_CURRENT_SOURCE_DIR}/*.rep)
+source_group("Replicas" FILES ${Replicas})
+
 set(AllSources
   ${Headers}
   ${Sources}
@@ -48,6 +51,7 @@ set(AllSources
   ${Forms}
   ${Configuration}
   ${StyleSheets}
+  ${Replicas}
 )
 
 ################################################################################
