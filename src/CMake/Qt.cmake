@@ -17,14 +17,14 @@ endif()
 ################################################################################
 # Setting Qt Version
 ################################################################################
-set(QtVersion 5.5.1)
+set(QtVersion 5.9.0)
 message(STATUS "using Qt version: ${QtVersion}")
 
 ################################################################################
 # Test if Qt5Core can be found - raise fatal error if not found
 ################################################################################
 string(SUBSTRING ${QtVersion} 0 3 QtVersionShort)
-set(QtDir "C:/Qt/Qt${QtVersion}/${QtVersionShort}/msvc2013")
+set(QtDir "C:/Qt/${QtVersion}/${QtVersionShort}/msvc2013")
 
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
   set(QtDir "${QtDir}_64")
@@ -62,9 +62,10 @@ set(QtPackages
   Qt5Test
   Qt5UiTools
   Qt5WebChannel
-  Qt5WebKitWidgets
+  #Qt5WebKitWidgets
   Qt5Widgets
   Qt5Xml
+  Qt5RemoteObjects
 )
 
 foreach(QtPackage ${QtPackages})
@@ -89,9 +90,10 @@ set(QtLinkLibraries
   Qt5::Test
   Qt5::UiTools
   Qt5::WebChannel
-  Qt5::WebKitWidgets
+  #Qt5::WebKitWidgets
   Qt5::Widgets
   Qt5::Xml
+  Qt5::RemoteObjects
 )
 
 ################################################################################
@@ -103,7 +105,7 @@ set(QtDlls
   ${QtPackages}
   Qt5Designer
   Qt5DesignerComponents
-  Qt5WebKit
+  #Qt5WebKit
   Qt5OpenGl
 )
 
@@ -113,16 +115,16 @@ foreach(QtDll ${QtDlls})
   file(INSTALL ${QtBinDir}${QtDll}d.pdb DESTINATION ${OutputDirDebug})  
 endforeach()
 
-set(AdditionalDlls
-  icudt54
-  icuin54
-  icuuc54
-)
+#set(AdditionalDlls
+#  icudt54
+#  icuin54
+#  icuuc54
+#)
 
-foreach(AdditionalDll ${AdditionalDlls})
-  file(INSTALL ${QtBinDir}${AdditionalDll}.dll DESTINATION ${OutputDirRelease})  
-  file(INSTALL ${QtBinDir}${AdditionalDll}.dll DESTINATION ${OutputDirDebug})
-endforeach()
+#foreach(AdditionalDll ${AdditionalDlls})
+#  file(INSTALL ${QtBinDir}${AdditionalDll}.dll DESTINATION ${OutputDirRelease})  
+#  file(INSTALL ${QtBinDir}${AdditionalDll}.dll DESTINATION ${OutputDirDebug})
+#endforeach()
 
 ################################################################################
 # Install tools

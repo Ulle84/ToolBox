@@ -29,9 +29,10 @@ int main(int argc, char* argv[])
   QMap<QString, QString> timeStampsSrc = Helper::fileToStringMap(timeStampSrcPath);
 
   QList<Tool> tools;  
+  tools.append(Tool("repc", ".rep", ".h", "rep_"));
   tools.append(Tool("rcc", ".qrc", ".cpp", "qrc_"));
   tools.append(Tool("moc", ".h", ".cpp", "moc_"));
-  tools.append(Tool("uic", ".ui", ".h", "ui_"));
+  tools.append(Tool("uic", ".ui", ".h", "ui_"));  
 
   Helper::removeExcludedTools(tools, excludedTools);
 
@@ -49,6 +50,8 @@ int main(int argc, char* argv[])
       while (dirIterator.hasNext())
       {
         QString input = dirIterator.next();
+        int startPosition = input.lastIndexOf('/') + 1; // TODO what about \ seperator?
+        QString className = input.mid(startPosition, input.lastIndexOf('.') - startPosition);
 
         bool processFile = true;
         for (auto it : excludedDirectories)
@@ -83,21 +86,61 @@ int main(int argc, char* argv[])
           QString output =  Helper::fileName(input).replace(it.m_inputFileExtension, it.m_outputFileExtension).prepend(it.m_outputFilePrefix);
 
           output.prepend(QDir::separator());
-          output.prepend(outputDirectory);
+
+          if (it.m_toolName == "repc")
+          {
+            output.prepend("API");
+            output.prepend(QDir::separator());
+            output.prepend(inputDirectory);
+          }
+          else
+          {
+            output.prepend(outputDirectory);
+          }
+
+          
 
           Helper::showMessage(QString("QtBuildHelper: %1'ing %2").arg(it.m_toolName).arg(input).toStdString());
 
-          QStringList parameters;
-          parameters << "-o" << output;
+          // repc.exe -i rep -o merged D:\ube\Qt\directconnectserver\simpleswitch.rep D:\ube\Qt\directconnectserver\repcTest.h
 
-          if (it.m_toolName == "moc")
+          QStringList parameters;
+
+          if (it.m_toolName == "repc")
           {
-            parameters << "-I" << qtIncludeDirectory;
+            parameters << "-i" << "rep" << "-o" << "merged" << input << output;
+          }
+          else
+          {
+            parameters << "-o" << output;
+
+            if (it.m_toolName == "moc")
+            {
+              parameters << "-I" << qtIncludeDirectory;
+            }
+
+            parameters << input;
           }
 
-          parameters << input;
+          
 
-          QProcess::execute(toolPath, parameters);          
+          int result = QProcess::execute(toolPath, parameters);
+
+          if (it.m_toolName == "repc" && result == 0)
+          {
+            QString fileContent = Helper::fileToString(output);
+
+            QString searchFor = QString("class %1").arg(className);
+            QString repleaceBy = QString("class %1 %2").arg(QString("%1_API").arg(className.toUpper())).arg(className);
+
+            fileContent.replace(searchFor, repleaceBy);
+
+            Helper::stringToFile(fileContent, output);
+            
+
+            
+
+          }
         }
       }
     }
