@@ -1,5 +1,5 @@
 #include "SelectorDPointerType.h"
-#include "ui_SelectorDPointerType.h"
+#include "SelectorDPointerTypeUi.h"
 
 SelectorDPointerType::SelectorDPointerType(QWidget* parent) :
   QWidget(parent),

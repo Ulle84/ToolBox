@@ -8,7 +8,7 @@
 #include <QDebug>
 
 #include "MainWindow.h"
-#include "ui_MainWindow.h"
+#include "MainWindowUi.h"
 
 #include "InstanceManager.h"
 #include "Converter.h"

@@ -1,5 +1,5 @@
 ﻿#include "PrizeCorrection.h"
-#include "ui_PrizeCorrection.h"
+#include "PrizeCorrectionUi.h"
 
 #include <QMessageBox>
 

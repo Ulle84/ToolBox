@@ -2,7 +2,7 @@
 #include <QMessageBox>
 
 #include "GeneratorInterface.h"
-#include "ui_GeneratorInterface.h"
+#include "GeneratorInterfaceUi.h"
 #include "XmlHelper.h"
 #include "Class.h"
 #include "Interface.h"

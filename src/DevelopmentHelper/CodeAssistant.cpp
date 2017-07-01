@@ -3,7 +3,7 @@
 #include "EnumHelper.h"
 
 #include "CodeAssistant.h"
-#include "ui_CodeAssistant.h"
+#include "CodeAssistantUi.h"
 
 CodeAssistant::CodeAssistant(QWidget* parent) :
   QWidget(parent),

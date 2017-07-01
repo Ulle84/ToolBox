@@ -1,5 +1,5 @@
 #include "NumberConverter.h"
-#include "ui_NumberConverter.h"
+#include "NumberConverterUi.h"
 
 NumberConverter::NumberConverter(QWidget* parent) :
   QWidget(parent),

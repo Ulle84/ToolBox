@@ -1,7 +1,7 @@
 #include <QFile>
 #include <QTextStream>
 
-#include "ui_GeneratorTemplate.h"
+#include "GeneratorTemplateUi.h"
 
 #include "Class.h"
 #include "GeneratorTemplate.h"

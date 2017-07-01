@@ -1,5 +1,5 @@
 #include "SelectorDeclarationType.h"
-#include "ui_SelectorDeclarationType.h"
+#include "SelectorDeclarationTypeUi.h"
 
 SelectorDeclarationType::SelectorDeclarationType(QWidget* parent) :
   QWidget(parent),

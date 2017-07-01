@@ -1,7 +1,7 @@
 #include <QDebug>
 
 #include "InterfaceGui.h"
-#include "ui_InterfaceGui.h"
+#include "InterfaceGuiUi.h"
 #include "WidgetListEditor.h"
 #include "Method.h"
 #include "MethodGui.h"

@@ -3,7 +3,7 @@
 #include <QJsonObject>
 
 #include "MainWindow.h"
-#include "ui_MainWindow.h"
+#include "MainWindowUi.h"
 #include "Converter.h"
 #include "WidgetGeometry.h"
 

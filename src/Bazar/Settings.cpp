@@ -1,5 +1,5 @@
 ﻿#include "Settings.h"
-#include "ui_Settings.h"
+#include "SettingsUi.h"
 
 #include <QMessageBox>
 #include <QXmlStreamWriter>

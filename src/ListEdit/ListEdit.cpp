@@ -2,7 +2,7 @@
 #include <QInputDialog>
 
 #include "ListEdit.h"
-#include "ui_ListEdit.h"
+#include "ListEditUi.h"
 
 ListEdit::ListEdit(QWidget* parent) :
   QWidget(parent),

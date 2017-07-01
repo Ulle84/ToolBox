@@ -14,7 +14,7 @@
 #include <QFileDialog>
 
 #include "EvaluationView.h"
-#include "ui_EvaluationView.h"
+#include "EvaluationViewUi.h"
 #include "DateTimeHelper.h"
 
 EvaluationView::EvaluationView(const QString& name, QWidget *parent) :

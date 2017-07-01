@@ -4,7 +4,7 @@
 #include <QDir>
 
 #include "PathList.h"
-#include "ui_PathList.h"
+#include "PathListUi.h"
 
 PathList::PathList(QWidget* parent) :
   QWidget(parent),

@@ -5,7 +5,7 @@
 #include <QDebug>
 
 #include "NumberEdit.h"
-#include "ui_NumberEdit.h"
+#include "NumberEditUi.h"
 
 NumberEdit::NumberEdit(QWidget* parent) :
   GridLayoutable(parent),

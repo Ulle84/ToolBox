@@ -6,7 +6,7 @@
 #include "MainWindow.h"
 #include "LogViewer.h"
 #include "ProxyModel.h"
-#include "ui_MainWindow.h"
+#include "MainWindowUi.h"
 
 #include <QMap>
 #include <QIcon>

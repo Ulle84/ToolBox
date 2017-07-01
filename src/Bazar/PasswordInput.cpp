@@ -1,5 +1,5 @@
 #include "PasswordInput.h"
-#include "ui_PasswordInput.h"
+#include "PasswordInputUi.h"
 
 PasswordInput::PasswordInput(QWidget *parent) :
     QDialog(parent),

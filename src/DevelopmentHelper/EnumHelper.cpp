@@ -2,7 +2,7 @@
 #include <QClipboard>
 
 #include "EnumHelper.h"
-#include "ui_EnumHelper.h"
+#include "EnumHelperUi.h"
 
 EnumHelper::EnumHelper(QWidget* parent) :
   QWidget(parent),

@@ -1,4 +1,4 @@
-#include "ui_GeneratorObserver.h"
+#include "GeneratorObserverUi.h"
 
 #include "Class.h"
 #include "CodeHelper.h"

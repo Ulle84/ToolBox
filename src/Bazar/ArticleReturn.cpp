@@ -2,7 +2,7 @@
 #include <QRegExp>
 
 #include "ArticleReturn.h"
-#include "ui_ArticleReturn.h"
+#include "ArticleReturnUi.h"
 
 ArticleReturn::ArticleReturn(QWidget *parent) :
   QDialog(parent),

@@ -6,7 +6,7 @@
 #include <QMetaObject>
 #include <QMetaMethod>
 
-#include "ui_GeneratorQtWidgetsApplication.h"
+#include "GeneratorQtWidgetsApplicationUi.h"
 
 #include "Class.h"
 #include "GeneratorQtWidgetsApplication.h"

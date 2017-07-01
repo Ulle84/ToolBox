@@ -1,6 +1,6 @@
 #include <QDebug>
 
-#include "ui_GeneratorDecorator.h"
+#include "GeneratorDecoratorUi.h"
 
 #include "Class.h"
 #include "GeneratorDecorator.h"

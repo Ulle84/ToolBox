@@ -2,7 +2,7 @@
 #include <QCryptographicHash>
 
 #include "CryptoHelper.h"
-#include "ui_CryptoHelper.h"
+#include "CryptoHelperUi.h"
 
 CryptoHelper::CryptoHelper(QWidget* parent) :
   QWidget(parent),

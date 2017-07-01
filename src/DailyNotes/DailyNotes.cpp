@@ -2,7 +2,7 @@
 #include <QFile>
 
 #include "DailyNotes.h"
-#include "ui_DailyNotes.h"
+#include "DailyNotesUi.h"
 
 #include "Converter.h"
 #include "Path.h"

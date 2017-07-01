@@ -1,5 +1,5 @@
 #include "QtWidgetsApplication.h"
-#include "ui_QtWidgetsApplication.h"
+#include "QtWidgetsApplicationUi.h"
 
 QtWidgetsApplication::QtWidgetsApplication(QWidget* parent) :
   QWidget(parent),

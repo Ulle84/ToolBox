@@ -2,7 +2,7 @@
 #include <QByteArray>
 
 #include "ConverterBase64.h"
-#include "ui_ConverterBase64.h"
+#include "ConverterBase64Ui.h"
 
 ConverterBase64::ConverterBase64(QWidget* parent) :
   QWidget(parent),

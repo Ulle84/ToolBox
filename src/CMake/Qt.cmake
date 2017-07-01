@@ -24,7 +24,7 @@ message(STATUS "using Qt version: ${QtVersion}")
 # Test if Qt5Core can be found - raise fatal error if not found
 ################################################################################
 string(SUBSTRING ${QtVersion} 0 3 QtVersionShort)
-set(QtDir "C:/Qt/${QtVersion}/${QtVersionShort}/msvc2013")
+set(QtDir "C:/Qt/${QtVersion}/${QtVersionShort}/msvc2017")
 
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
   set(QtDir "${QtDir}_64")
@@ -66,6 +66,8 @@ set(QtPackages
   Qt5Widgets
   Qt5Xml
   Qt5RemoteObjects
+  Qt5WebEngine
+  Qt5WebEngineWidgets
 )
 
 foreach(QtPackage ${QtPackages})
@@ -94,6 +96,8 @@ set(QtLinkLibraries
   Qt5::Widgets
   Qt5::Xml
   Qt5::RemoteObjects
+  Qt5::WebEngine
+  Qt5::WebEngineWidgets
 )
 
 ################################################################################

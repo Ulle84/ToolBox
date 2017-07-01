@@ -1,5 +1,5 @@
 #include "QtDesignerWidget.h"
-#include "ui_QtDesignerWidget.h"
+#include "QtDesignerWidgetUi.h"
 
 QtDesignerWidget::QtDesignerWidget(QWidget* parent) :
   QWidget(parent),

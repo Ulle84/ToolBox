@@ -1,7 +1,7 @@
 #include <QFile>
 #include <QTextStream>
 
-#include "ui_GeneratorConsoleApplication.h"
+#include "GeneratorConsoleApplicationUi.h"
 
 #include "Class.h"
 #include "GeneratorConsoleApplication.h"

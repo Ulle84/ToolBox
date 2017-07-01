@@ -1,5 +1,5 @@
 #include "NumberEditTest.h"
-#include "ui_NumberEditTest.h"
+#include "NumberEditTestUi.h"
 
 NumberEditTest::NumberEditTest(QWidget* parent) :
   QWidget(parent),

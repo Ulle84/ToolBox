@@ -1,7 +1,7 @@
 #include <QClipboard>
 
 #include "ForLoopCreator.h"
-#include "ui_ForLoopCreator.h"
+#include "ForLoopCreatorUi.h"
 
 ForLoopCreator::ForLoopCreator(QWidget* parent) :
   QWidget(parent),

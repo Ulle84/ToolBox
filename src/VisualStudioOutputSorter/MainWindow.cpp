@@ -2,7 +2,7 @@
 #include <QSettings>
 
 #include "MainWindow.h"
-#include "ui_MainWindow.h"
+#include "MainWindowUi.h"
 
 bool compareOutputStrings(const QString& s1, const QString& s2)
 {

@@ -1,7 +1,7 @@
 // created on 2017-03-15 by Ulrich Belitz
 
 #include "SmlEdit.h"
-#include "ui_SmlEdit.h"
+#include "SmlEditUi.h"
 
 #include "Converter.h"
 

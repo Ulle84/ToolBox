@@ -1,5 +1,5 @@
 #include "DateTimeAdder.h"
-#include "ui_DateTimeAdder.h"
+#include "DateTimeAdderUi.h"
 
 DateTimeAdder::DateTimeAdder(QWidget* parent) :
   QWidget(parent),

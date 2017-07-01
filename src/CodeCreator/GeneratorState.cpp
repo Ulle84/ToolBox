@@ -1,4 +1,4 @@
-#include "ui_GeneratorState.h"
+#include "GeneratorStateUi.h"
 
 #include "Class.h"
 #include "GeneratorState.h"

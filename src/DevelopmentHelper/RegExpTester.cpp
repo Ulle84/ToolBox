@@ -2,7 +2,7 @@
 #include <QSettings>
 
 #include "RegExpTester.h"
-#include "ui_RegExpTester.h"
+#include "RegExpTesterUi.h"
 
 RegExpTester::RegExpTester(QWidget* parent) :
   QWidget(parent),

@@ -4,7 +4,7 @@
 #include <QStringList>
 
 #include "QtMetaMethod.h"
-#include "ui_QtMetaMethod.h"
+#include "QtMetaMethodUi.h"
 
 QtMetaMethod::QtMetaMethod(QWidget* parent) :
   QWidget(parent),

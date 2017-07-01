@@ -2,7 +2,7 @@
 
 #include "WidgetListEditor.h"
 #include "InterfaceListEditor.h"
-#include "ui_InterfaceListEditor.h"
+#include "InterfaceListEditorUi.h"
 #include "InterfaceGui.h"
 
 InterfaceListEditor::InterfaceListEditor(QWidget* parent) :

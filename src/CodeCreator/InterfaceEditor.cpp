@@ -1,4 +1,4 @@
-#include "ui_InterfaceEditor.h"
+#include "InterfaceEditorUi.h"
 
 #include "InterfaceEditor.h"
 #include "MethodGui.h"

@@ -48,7 +48,7 @@
 **
 ****************************************************************************/
 
-#include "simpleswitch.h"
+#include "SimpleSwitch.h"
 
 // constructor
 SimpleSwitch::SimpleSwitch(QObject *parent) : SimpleSwitchSimpleSource(parent)

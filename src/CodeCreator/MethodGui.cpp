@@ -2,7 +2,7 @@
 
 #include "Method.h"
 #include "MethodGui.h"
-#include "ui_MethodGui.h"
+#include "MethodGuiUi.h"
 #include "WidgetListEditor.h"
 #include "ParameterGui.h"
 

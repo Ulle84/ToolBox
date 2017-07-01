@@ -5,7 +5,7 @@
 #include <QSettings>
 
 #include "PackageHelper.h"
-#include "ui_PackageHelper.h"
+#include "PackageHelperUi.h"
 
 PackageHelper::PackageHelper(QWidget* parent) :
   QWidget(parent),

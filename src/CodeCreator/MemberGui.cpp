@@ -1,5 +1,5 @@
 #include "MemberGui.h"
-#include "ui_MemberGui.h"
+#include "MemberGuiUi.h"
 
 MemberGui::MemberGui(QWidget* parent) :
   QWidget(parent),

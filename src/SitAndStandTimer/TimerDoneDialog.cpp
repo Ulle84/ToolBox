@@ -1,7 +1,7 @@
 #include <QSettings>
 
 #include "TimerDoneDialog.h"
-#include "ui_TimerDoneDialog.h"
+#include "TimerDoneDialogUi.h"
 
 TimerDoneDialog::TimerDoneDialog(QWidget* parent) :
   QDialog(parent),

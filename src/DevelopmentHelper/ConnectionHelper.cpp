@@ -2,7 +2,7 @@
 #include <QString>
 
 #include "ConnectionHelper.h"
-#include "ui_ConnectionHelper.h"
+#include "ConnectionHelperUi.h"
 
 ConnectionHelper::ConnectionHelper(QWidget* parent) :
   QWidget(parent),

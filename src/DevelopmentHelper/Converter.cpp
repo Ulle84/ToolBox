@@ -1,5 +1,5 @@
 #include "Converter.h"
-#include "ui_Converter.h"
+#include "ConverterUi.h"
 
 Converter::Converter(QWidget* parent) :
   QWidget(parent),

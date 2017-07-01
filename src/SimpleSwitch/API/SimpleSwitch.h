@@ -51,7 +51,7 @@
 #ifndef SIMPLESWITCH_H
 #define SIMPLESWITCH_H
 
-#include "rep_simpleswitch.h"
+#include "SimpleSwitchSource.h"
 #include "SimpleSwitchAPI.h"
 
 class SIMPLESWITCH_API SimpleSwitch : public SimpleSwitchSimpleSource

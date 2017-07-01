@@ -1,5 +1,5 @@
 #include "TimeCalculator.h"
-#include "ui_TimeCalculator.h"
+#include "TimeCalculatorUi.h"
 
 TimeCalculator::TimeCalculator(QWidget* parent) :
   QWidget(parent),

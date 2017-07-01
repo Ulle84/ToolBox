@@ -1,7 +1,7 @@
 #include <QClipboard>
 
 #include "FindInContainer.h"
-#include "ui_FindInContainer.h"
+#include "FindInContainerUi.h"
 
 FindInContainer::FindInContainer(QWidget* parent) :
   QWidget(parent),

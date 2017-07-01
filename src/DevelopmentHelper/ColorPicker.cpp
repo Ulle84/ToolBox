@@ -1,5 +1,5 @@
 #include "ColorPicker.h"
-#include "ui_ColorPicker.h"
+#include "ColorPickerUi.h"
 
 #include <QClipboard>
 

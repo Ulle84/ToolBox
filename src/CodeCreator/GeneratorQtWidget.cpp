@@ -1,7 +1,7 @@
 #include <QFile>
 #include <QTextStream>
 
-#include "ui_GeneratorQtWidget.h"
+#include "GeneratorQtWidgetUi.h"
 
 #include "Class.h"
 #include "GeneratorQtWidget.h"

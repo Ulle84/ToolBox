@@ -1,7 +1,7 @@
 #include <QClipboard>
 
 #include "HtmlTableGenerator.h"
-#include "ui_HtmlTableGenerator.h"
+#include "HtmlTableGeneratorUi.h"
 
 HtmlTableGenerator::HtmlTableGenerator(QWidget* parent) :
   QWidget(parent),

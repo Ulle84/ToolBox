@@ -1,7 +1,7 @@
 #include <QSettings>
 
 #include "OptionsDialog.h"
-#include "ui_OptionsDialog.h"
+#include "OptionsDialogUi.h"
 
 OptionsDialog::OptionsDialog(QSettings* settings, QWidget* parent) :
   m_settings(settings),

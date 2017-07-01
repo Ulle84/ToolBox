@@ -1,5 +1,5 @@
 #include "WorkHoursCalculator.h"
-#include "ui_WorkHoursCalculator.h"
+#include "WorkHoursCalculatorUi.h"
 
 WorkHoursCalculator::WorkHoursCalculator(QWidget* parent) :
   QWidget(parent),

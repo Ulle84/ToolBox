@@ -111,6 +111,7 @@ add_custom_command(TARGET ${ProjectName} PRE_BUILD COMMAND QtBuildHelper.exe ARG
   -od ${CMAKE_CURRENT_BINARY_DIR}
   -qbd ${QtBinDir}
   -qid ${QtIncludeDir}
+  -ad ${ProjectNameUppercased}_API
   WORKING_DIRECTORY ${QtBuilderWorkingDir}
 )
 

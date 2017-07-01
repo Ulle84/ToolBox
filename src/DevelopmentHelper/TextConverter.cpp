@@ -1,7 +1,7 @@
 #include "SlashConverter.h"
 
 #include "TextConverter.h"
-#include "ui_TextConverter.h"
+#include "TextConverterUi.h"
 
 TextConverter::TextConverter(QWidget* parent) :
   QWidget(parent),

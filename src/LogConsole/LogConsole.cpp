@@ -2,7 +2,7 @@
 
 #include "Converter.h"
 #include "LogConsole.h"
-#include "ui_LogConsole.h"
+#include "LogConsoleUi.h"
 
 LogConsole::LogConsole(QWidget* parent) :
   QWidget(parent),

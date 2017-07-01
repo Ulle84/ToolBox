@@ -2,7 +2,7 @@
 
 #include "WidgetListItem.h"
 #include "WidgetListEditor.h"
-#include "ui_WidgetListEditor.h"
+#include "WidgetListEditorUi.h"
 
 WidgetListEditor::WidgetListEditor(QWidget* parent) :
   QDialog(parent),

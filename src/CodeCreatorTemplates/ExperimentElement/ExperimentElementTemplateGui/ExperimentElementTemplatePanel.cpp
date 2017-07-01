@@ -1,5 +1,5 @@
 #include "ExperimentElementTemplatePanel.h"
-#include "ui_ExperimentElementTemplatePanel.h"
+#include "ExperimentElementTemplatePanelUi.h"
 
 namespace Catalog
 {

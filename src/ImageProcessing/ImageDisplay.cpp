@@ -13,7 +13,7 @@
 #include "GeometryCodeGenerator.h"
 
 #include "ImageDisplay.h"
-#include "ui_ImageDisplay.h"
+#include "ImageDisplayUi.h"
 
 #include "TeachableLine.h"
 #include "TeachableRectangle.h"

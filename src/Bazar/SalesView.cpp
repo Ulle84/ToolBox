@@ -1,5 +1,5 @@
 #include "SalesView.h"
-#include "ui_SalesView.h"
+#include "SalesViewUi.h"
 #include "Article.h"
 #include "CssHelper.h"
 #include "Converter.h"

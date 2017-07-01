@@ -13,7 +13,7 @@
 #include "ProxyModel.h"
 
 #include "JsonModelEdit.h"
-#include "ui_JsonModelEdit.h"
+#include "JsonModelEditUi.h"
 
 JsonModelEdit::JsonModelEdit(QWidget *parent) :
   QWidget(parent),

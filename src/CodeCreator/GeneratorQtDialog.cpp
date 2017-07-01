@@ -1,7 +1,7 @@
 #include <QFile>
 #include <QTextStream>
 
-#include "ui_GeneratorQtDialog.h"
+#include "GeneratorQtDialogUi.h"
 
 #include "Class.h"
 #include "GeneratorQtDialog.h"

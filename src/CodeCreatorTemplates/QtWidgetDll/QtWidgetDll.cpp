@@ -1,5 +1,5 @@
 #include "QtWidgetDll.h"
-#include "ui_QtWidgetDll.h"
+#include "QtWidgetDllUi.h"
 
 QtWidgetDll::QtWidgetDll(QWidget* parent) :
   QWidget(parent),

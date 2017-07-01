@@ -1,7 +1,7 @@
 #include <QFile>
 #include <QTextStream>
 
-#include "ui_GeneratorNamespace.h"
+#include "GeneratorNamespaceUi.h"
 
 #include "Class.h"
 #include "GeneratorNamespace.h"

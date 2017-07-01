@@ -5,7 +5,7 @@
 #include <QDateTime>
 
 #include "DateTimeHelper.h"
-#include "ui_DateTimeHelper.h"
+#include "DateTimeHelperUi.h"
 #include "TimeCalculator.h"
 #include "DateTimeAdder.h"
 

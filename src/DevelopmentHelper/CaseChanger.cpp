@@ -3,7 +3,7 @@
 #include <QClipboard>
 
 #include "CaseChanger.h"
-#include "ui_CaseChanger.h"
+#include "CaseChangerUi.h"
 
 CaseChanger::CaseChanger(QWidget* parent) :
   QWidget(parent),

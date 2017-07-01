@@ -54,7 +54,7 @@
 #include <QObject>
 #include <QSharedPointer>
 
-#include "rep_simpleswitch.h"
+#include "SimpleSwitchReplica.h"
 
 class Client : public QObject
 {

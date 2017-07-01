@@ -3,7 +3,7 @@
 #include <QCompleter>
 
 #include "GeneratorClass.h"
-#include "ui_GeneratorClass.h"
+#include "GeneratorClassUi.h"
 #include "XmlHelper.h"
 #include "Class.h"
 #include "Interface.h"

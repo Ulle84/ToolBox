@@ -1,5 +1,5 @@
 #include "ChunkConverter.h"
-#include "ui_ChunkConverter.h"
+#include "ChunkConverterUi.h"
 
 ChunkConverter::ChunkConverter(QWidget* parent) :
   QWidget(parent),

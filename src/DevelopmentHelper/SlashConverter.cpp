@@ -1,7 +1,7 @@
 #include <QClipboard>
 
 #include "SlashConverter.h"
-#include "ui_SlashConverter.h"
+#include "SlashConverterUi.h"
 
 SlashConverter::SlashConverter(QWidget* parent) :
   QWidget(parent),

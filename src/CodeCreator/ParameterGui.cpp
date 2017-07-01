@@ -1,5 +1,5 @@
 #include "ParameterGui.h"
-#include "ui_ParameterGui.h"
+#include "ParameterGuiUi.h"
 
 ParameterGui::ParameterGui(QWidget* parent) :
   QWidget(parent),

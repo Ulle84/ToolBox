@@ -116,22 +116,4 @@ namespace Helper
 
     return stringList.isEmpty() ? QString() : stringList.last();
   }
-
-  void removeExcludedTools(QList<Tool>& tools, const QStringList& excludedTools)
-  {
-    if (!excludedTools.isEmpty())
-    {
-      for (auto& excludedTool : excludedTools)
-      {
-        for (int i = 0; i < tools.length(); ++i)
-        {
-          if (tools[i].m_toolName.toLower() == excludedTool.toLower())
-          {
-            tools.removeAt(i);
-            break;
-          }
-        }
-      }
-    }
-  }
 }

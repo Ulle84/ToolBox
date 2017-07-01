@@ -1,6 +1,6 @@
 #include <QDebug>
 
-#include "ui_GeneratorAbstractFactory.h"
+#include "GeneratorAbstractFactoryUi.h"
 
 #include "Class.h"
 #include "CodeHelper.h"

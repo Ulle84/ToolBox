@@ -12,7 +12,7 @@
 #include <QLineEdit>
 #include <QPlainTextEdit>
 
-#include "ui_CodeCreator.h"
+#include "CodeCreatorUi.h"
 
 #include "CodeCreator.h"
 #include "GeneratorAbstractFactory.h"

@@ -1,7 +1,7 @@
 #include <QTimer>
 
 #include "NumberDisplay.h"
-#include "ui_NumberDisplay.h"
+#include "NumberDisplayUi.h"
 
 NumberDisplay::NumberDisplay(QWidget* parent) :
   QWidget(parent),

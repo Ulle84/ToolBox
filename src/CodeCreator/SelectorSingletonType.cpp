@@ -1,5 +1,5 @@
 #include "SelectorSingletonType.h"
-#include "ui_SelectorSingletonType.h"
+#include "SelectorSingletonTypeUi.h"
 
 SelectorSingletonType::SelectorSingletonType(QWidget* parent) :
   QWidget(parent),

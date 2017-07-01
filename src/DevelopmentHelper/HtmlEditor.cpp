@@ -1,7 +1,7 @@
 #include <QString>
 
 #include "HtmlEditor.h"
-#include "ui_HtmlEditor.h"
+#include "HtmlEditorUi.h"
 
 HtmlEditor::HtmlEditor(QWidget* parent) :
   QWidget(parent),

@@ -1,7 +1,7 @@
 #include <QClipboard>
 
 #include "IterateOverContainer.h"
-#include "ui_IterateOverContainer.h"
+#include "IterateOverContainerUi.h"
 
 IterateOverContainer::IterateOverContainer(QWidget* parent) :
   QWidget(parent),

@@ -15,7 +15,7 @@
 #endif
 
 #include "TuKiBasar.h"
-#include "ui_TuKiBasar.h"
+#include "TuKiBasarUi.h"
 
 #include "Article.h"
 #include "ArticleManager.h"

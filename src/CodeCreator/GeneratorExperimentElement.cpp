@@ -2,7 +2,7 @@
 #include <QTextStream>
 #include <QDebug>
 
-#include "ui_GeneratorExperimentElement.h"
+#include "GeneratorExperimentElementUi.h"
 
 #include "Class.h"
 #include "GeneratorExperimentElement.h"

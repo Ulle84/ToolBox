@@ -7,12 +7,9 @@
 #include <QList>
 #include <QMap>
 
-#include "Tool.h"
-
 namespace Helper
 {
   QString fileName(const QString& filePath);
-  void removeExcludedTools(QList<Tool>& tools, const QStringList& excludedTools);
 
   void showMessage(const std::string& message);
   void showError(const std::string& error);

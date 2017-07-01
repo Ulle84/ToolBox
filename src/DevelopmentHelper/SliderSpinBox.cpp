@@ -1,7 +1,7 @@
 #include <QDebug>
 
 #include "SliderSpinBox.h"
-#include "ui_SliderSpinBox.h"
+#include "SliderSpinBoxUi.h"
 
 SliderSpinBox::SliderSpinBox(QWidget* parent) :
   QWidget(parent),

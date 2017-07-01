@@ -8,7 +8,7 @@
 
 #include "TimerDoneDialog.h"
 #include "MainWindow.h"
-#include "ui_MainWindow.h"
+#include "MainWindowUi.h"
 
 MainWindow::MainWindow(QWidget* parent) :
   QMainWindow(parent),

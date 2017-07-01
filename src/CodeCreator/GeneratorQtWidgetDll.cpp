@@ -3,7 +3,7 @@
 #include <QFile>
 #include <QTextStream>
 
-#include "ui_GeneratorQtWidgetDll.h"
+#include "GeneratorQtWidgetDllUi.h"
 
 #include "Class.h"
 #include "GeneratorQtWidgetDll.h"

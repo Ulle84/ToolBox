@@ -1,5 +1,5 @@
 #include "Template.h"
-#include "ui_Template.h"
+#include "TemplateUi.h"
 
 Template::Template(QWidget* parent) :
   QDialog(parent),

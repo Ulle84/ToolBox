@@ -3,11 +3,11 @@
 #include <QFileDialog>
 
 #include "PathSelector.h"
-#include "ui_PathSelector.h"
+#include "PathSelectorUi.h"
 
 PathSelector::PathSelector(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::PathSelector)
+  ui(new PathSelectorUi)
 {
   ui->setupUi(this);
 }

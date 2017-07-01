@@ -10,7 +10,7 @@
 #include "File.h"
 
 #include "MainWindow.h"
-#include "ui_MainWindow.h"
+#include "MainWindowUi.h"
 #include "InfoFile.h"
 
 MainWindow::MainWindow(QWidget* parent) :

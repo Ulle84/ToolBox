@@ -2,7 +2,7 @@
 #include <QMessageBox>
 
 #include "ExcelExport.h"
-#include "ui_ExcelExport.h"
+#include "ExcelExportUi.h"
 
 #include "ArticleManager.h"
 #include "Settings.h"

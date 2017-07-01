@@ -1,5 +1,5 @@
 #include "ListEditTest.h"
-#include "ui_ListEditTest.h"
+#include "ListEditTestUi.h"
 
 ListEditTest::ListEditTest(QWidget* parent) :
   QWidget(parent),

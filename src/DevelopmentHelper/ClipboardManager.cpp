@@ -5,7 +5,7 @@
 #include <QStringListModel>
 
 #include "ClipboardManager.h"
-#include "ui_ClipboardManager.h"
+#include "ClipboardManagerUi.h"
 
 ClipboardManager::ClipboardManager(QWidget* parent) :
   QWidget(parent),

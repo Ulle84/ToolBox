@@ -23,10 +23,7 @@
 
 #include "PathSelectorAPI.h"
 
-namespace Ui
-{
-  class PathSelector;
-}
+class PathSelectorUi;
 
 class PATHSELECTOR_API PathSelector : public QWidget
 {
@@ -70,7 +67,7 @@ class PATHSELECTOR_API PathSelector : public QWidget
     void on_comboBox_currentIndexChanged(const QString& text);
 
   private:
-    Ui::PathSelector* ui;
+    PathSelectorUi* ui;
     PathType m_pathType = PathType::Directory;
 };
 

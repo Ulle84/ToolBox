@@ -3,7 +3,7 @@
 #include "PercentageCalculator.h"
 
 #include "EvaluationByCategory.h"
-#include "ui_EvaluationByCategory.h"
+#include "EvaluationByCategoryUi.h"
 
 EvaluationByCategory::EvaluationByCategory(ArticleManager *articleManager, QWidget *parent) :
   QWidget(parent),

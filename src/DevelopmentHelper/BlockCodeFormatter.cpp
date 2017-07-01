@@ -2,7 +2,7 @@
 #include <QDebug>
 
 #include "BlockCodeFormatter.h"
-#include "ui_BlockCodeFormatter.h"
+#include "BlockCodeFormatterUi.h"
 
 // TODO detect block comment /* ... */
 // TODO do not simplify string literals in "..."

@@ -2,7 +2,7 @@
 #include <QIcon>
 
 #include "DevelopmentHelper.h"
-#include "ui_DevelopmentHelper.h"
+#include "DevelopmentHelperUi.h"
 
 #include "CodeAssistant.h"
 #include "ConverterBase64.h"

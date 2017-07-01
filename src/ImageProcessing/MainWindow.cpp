@@ -7,7 +7,7 @@
 #include <QSettings>
 
 #include "MainWindow.h"
-#include "ui_MainWindow.h"
+#include "MainWindowUi.h"
 
 #include "ImageDisplay.h"
 #include "Matrix.h"

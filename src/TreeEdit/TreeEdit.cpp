@@ -11,7 +11,7 @@
 #include "TreeItem.h"
 
 #include "TreeEdit.h"
-#include "ui_TreeEdit.h"
+#include "TreeEditUi.h"
 
 TreeEdit::TreeEdit(QWidget* parent) :
   QWidget(parent),

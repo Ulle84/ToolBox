@@ -1,5 +1,5 @@
 #include "WidgetListItem.h"
-#include "ui_WidgetListItem.h"
+#include "WidgetListItemUi.h"
 
 WidgetListItem::WidgetListItem(QWidget* parent) :
   QWidget(parent),
