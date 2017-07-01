@@ -5,7 +5,7 @@
 
 ColorPicker::ColorPicker(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::ColorPicker)
+  ui(new ColorPickerUi)
 {
   ui->setupUi(this);
 

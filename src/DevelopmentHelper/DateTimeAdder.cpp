@@ -3,7 +3,7 @@
 
 DateTimeAdder::DateTimeAdder(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::DateTimeAdder),
+  ui(new DateTimeAdderUi),
   m_seconds(0)
 {
   ui->setupUi(this);

@@ -25,7 +25,7 @@ class MainWindow : public QMainWindow
   private:
     void updateOutput();
 
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
 
     QSettings* m_settings;
 };

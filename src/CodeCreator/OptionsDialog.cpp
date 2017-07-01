@@ -6,7 +6,7 @@
 OptionsDialog::OptionsDialog(QSettings* settings, QWidget* parent) :
   m_settings(settings),
   QDialog(parent),
-  ui(new Ui::OptionsDialog)
+  ui(new OptionsDialogUi)
 {
   ui->setupUi(this);
 

@@ -20,7 +20,7 @@ private slots:
   void on_pushButtonCancel_clicked();
 
 private:
-  Ui::PrizeCorrection *ui;
+  PrizeCorrection Ui*ui;
 };
 
 #endif // PRIZECORRECTION_H

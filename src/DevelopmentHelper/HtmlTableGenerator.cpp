@@ -5,7 +5,7 @@
 
 HtmlTableGenerator::HtmlTableGenerator(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::HtmlTableGenerator)
+  ui(new HtmlTableGeneratorUi)
 {
   ui->setupUi(this);
 }

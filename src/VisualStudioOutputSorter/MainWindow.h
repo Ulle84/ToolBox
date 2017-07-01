@@ -25,7 +25,7 @@ class MainWindow : public QMainWindow
 
     QStringList m_textLines;
 
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
 
     QSettings* m_settings;
 };

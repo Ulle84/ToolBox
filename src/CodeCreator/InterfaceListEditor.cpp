@@ -7,7 +7,7 @@
 
 InterfaceListEditor::InterfaceListEditor(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::InterfaceListEditor),
+  ui(new InterfaceListEditorUi),
   m_widgetListEditor(NULL),
   m_toImplementAvailable(true),
   m_dialogTitle(tr("interface editor")),

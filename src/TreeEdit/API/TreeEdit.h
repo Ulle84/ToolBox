@@ -83,7 +83,7 @@ class TREEEDIT_API TreeEdit : public QWidget
     QAction* m_actionMoveLeft;
     QAction* m_actionMoveRight;
 
-    Ui::TreeEdit* ui;
+    TreeEditUi* ui;
 
     TreeModel* m_treeModel;
     ProxyModel* m_proxyModel;

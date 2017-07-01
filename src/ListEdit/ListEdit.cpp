@@ -6,7 +6,7 @@
 
 ListEdit::ListEdit(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::ListEdit)
+  ui(new ListEditUi)
 {
   ui->setupUi(this);
 

@@ -22,7 +22,7 @@ class MainWindow : public QMainWindow
     void on_pushButtonSearch_clicked();
 
   private:
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
     CMakeHelper m_cMakeHelper;
     QSettings* m_settings;
 };

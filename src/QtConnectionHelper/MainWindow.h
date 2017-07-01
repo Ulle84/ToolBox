@@ -28,7 +28,7 @@ class MainWindow : public QMainWindow
     void update();
     void loadSignalsFromFile();
 
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
 
     QSettings* m_settings;
 };

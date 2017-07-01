@@ -6,7 +6,7 @@
 
 CryptoHelper::CryptoHelper(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::CryptoHelper)
+  ui(new CryptoHelperUi)
 {
   ui->setupUi(this);
 }

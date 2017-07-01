@@ -20,7 +20,7 @@ class WorkHoursCalculator : public QWidget
     int timeStringToMinutes(const QString& timeString);
     QString minutesToTimeString(int minutes);
 
-    Ui::WorkHoursCalculator* ui;
+    WorkHoursCalculatorUi* ui;
 };
 
 #endif // WORKHOURSCALCULATOR_H

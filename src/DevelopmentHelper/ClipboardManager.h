@@ -27,7 +27,7 @@ class ClipboardManager : public QWidget
   private:
     void update();
 
-    Ui::ClipboardManager* ui;
+    ClipboardManagerUi* ui;
 
     QString m_currentClipbardData;
     QString m_lastClipbardData;

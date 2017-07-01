@@ -10,7 +10,7 @@
 
 GeneratorExperimentElement::GeneratorExperimentElement(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::GeneratorExperimentElement)
+  ui(new GeneratorExperimentElementUi)
 {
   ui->setupUi(this);
 

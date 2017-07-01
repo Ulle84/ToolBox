@@ -22,7 +22,7 @@ class MainWindow : public QMainWindow
 	void on_pathSelector_pathChanged(const QString& path);
 
   private:
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
 
     LogViewer* m_logViewer = nullptr;
     ProxyModel* m_proxyModel = nullptr;

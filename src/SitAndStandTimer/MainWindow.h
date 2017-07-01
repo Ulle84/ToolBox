@@ -39,7 +39,7 @@ class MainWindow : public QMainWindow
 
     QString timeToString(int minutes, int seconds);
 
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
     QSettings* m_settings;
     QTimer* m_timer;
 

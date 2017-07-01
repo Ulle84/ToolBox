@@ -9,7 +9,7 @@ namespace Catalog
     QWidget(pParent),
     Panel(name, pElement),
     Gui::ParameterListener(pElement, parameterList, array_size(parameterList)),
-    ui(new Ui::ExperimentElementTemplatePanel)
+    ui(new ExperimentElementTemplatePanelUi)
   {
     ui->setupUi(this);
   }

@@ -3,7 +3,7 @@
 
 SelectorDeclarationType::SelectorDeclarationType(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::SelectorDeclarationType)
+  ui(new SelectorDeclarationTypeUi)
 {
   ui->setupUi(this);
 

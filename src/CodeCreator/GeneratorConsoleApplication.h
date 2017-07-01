@@ -30,7 +30,7 @@ class GeneratorConsoleApplication : public QWidget, public GeneratorI
     void optionsChanged();
 
   private:
-    Ui::GeneratorConsoleApplication* ui;
+    GeneratorConsoleApplicationUi* ui;
 };
 
 #endif

@@ -32,7 +32,7 @@ class GeneratorDecorator : public QWidget, public GeneratorI
     void optionsChanged();
 
   private:
-    Ui::GeneratorDecorator* ui;
+    GeneratorDecoratorUi* ui;
 };
 
 #endif // GeneratorDecorator_H

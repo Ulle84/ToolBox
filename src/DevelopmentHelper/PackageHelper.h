@@ -24,7 +24,7 @@ class PackageHelper : public QWidget
     void on_pushButtonOpenInExplorer_clicked();
 
   private:
-    Ui::PackageHelper* ui;
+    PackageHelperUi* ui;
     QMap<QString, QString> m_packageDirectories;
     QSettings* m_settings;
 };

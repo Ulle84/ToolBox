@@ -14,7 +14,7 @@ class ListEditTest : public QWidget
     ~ListEditTest();
 
   private:
-    Ui::ListEditTest* ui;
+    ListEditTestUi* ui;
 };
 
 #endif

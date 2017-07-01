@@ -14,7 +14,7 @@ bool compareOutputStrings(const QString& s1, const QString& s2)
 
 MainWindow::MainWindow(QWidget* parent) :
   QMainWindow(parent),
-  ui(new Ui::MainWindow)
+  ui(new MainWindowUi)
 {
   ui->setupUi(this);
 

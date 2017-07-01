@@ -14,7 +14,7 @@ class CodeAssistant : public QWidget
     ~CodeAssistant();
 
   private:
-    Ui::CodeAssistant* ui;
+    CodeAssistantUi* ui;
 };
 
 #endif // CODEASSISTANT_H

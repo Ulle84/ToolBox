@@ -8,7 +8,7 @@
 EvaluationByCategory::EvaluationByCategory(ArticleManager *articleManager, QWidget *parent) :
   QWidget(parent),
   m_articleManager(articleManager),
-  ui(new Ui::EvaluationByCategory)
+  ui(new EvaluationByCategoryUi)
 {
   ui->setupUi(this);
 }

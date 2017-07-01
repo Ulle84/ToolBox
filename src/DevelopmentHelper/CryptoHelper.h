@@ -18,7 +18,7 @@ class CryptoHelper : public QWidget
     void on_pushButton_clicked();
 
   private:
-    Ui::CryptoHelper* ui;
+    CryptoHelperUi* ui;
 };
 
 #endif // CRYPTOHELPER_H

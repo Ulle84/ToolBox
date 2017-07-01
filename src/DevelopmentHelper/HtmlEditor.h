@@ -17,7 +17,7 @@ class HtmlEditor : public QWidget
     void on_pushButton_clicked();
 
   private:
-    Ui::HtmlEditor* ui;
+    HtmlEditorUi* ui;
 };
 
 #endif // HTMLEDITOR_H

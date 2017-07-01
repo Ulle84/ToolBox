@@ -27,7 +27,7 @@ class SMLEDIT_API SmlEdit : public QWidget
     void on_codeEditSimpleHtml_textChanged();
 
   private:
-    Ui::SmlEdit* ui;
+    SmlEditUi* ui;
 };
 
 #endif

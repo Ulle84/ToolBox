@@ -9,7 +9,7 @@
 
 GeneratorQtDialog::GeneratorQtDialog(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::GeneratorQtDialog)
+  ui(new GeneratorQtDialogUi)
 {
   ui->setupUi(this);
 

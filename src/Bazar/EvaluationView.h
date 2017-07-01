@@ -23,7 +23,7 @@ private slots:
   void on_pushButton_clicked();
 
 private:
-  Ui::EvaluationView *ui;
+  EvaluationView Ui*ui;
   QString m_name;
 };
 

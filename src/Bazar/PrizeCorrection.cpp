@@ -5,7 +5,7 @@
 
 PrizeCorrection::PrizeCorrection(QWidget *parent) :
   QDialog(parent),
-  ui(new Ui::PrizeCorrection)
+  ui(new PrizeCorrectionUi)
 {
   ui->setupUi(this);
 }

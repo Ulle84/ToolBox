@@ -21,7 +21,7 @@ class MainWindow : public QMainWindow
     void on_pushButtonCleanCallStack_clicked();
 
   private:
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
 
     QSettings* m_settings;
     const int m_messageShowTimeMilliSeconds = 2000;

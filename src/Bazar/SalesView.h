@@ -29,7 +29,7 @@ private:
     void update();
     void setContent(int index);
 
-    Ui::SalesView *ui;
+    SalesView Ui*ui;
     int m_index;
     QMap<QString, QList<Article*> > m_transactions;
 };

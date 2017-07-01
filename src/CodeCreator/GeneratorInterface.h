@@ -28,7 +28,7 @@ class GeneratorInterface : public QWidget, public GeneratorI
     void optionsChanged();
 
   private:
-    Ui::GeneratorInterface* ui;
+    GeneratorInterfaceUi* ui;
 };
 
 #endif // GENERATORINTERFACE_H

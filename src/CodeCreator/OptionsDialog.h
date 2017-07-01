@@ -16,7 +16,7 @@ class OptionsDialog : public QDialog
     ~OptionsDialog();
 
   private:
-    Ui::OptionsDialog* ui;
+    OptionsDialogUi* ui;
     QSettings* m_settings;
 };
 

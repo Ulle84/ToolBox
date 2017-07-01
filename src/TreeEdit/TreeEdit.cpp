@@ -15,7 +15,7 @@
 
 TreeEdit::TreeEdit(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::TreeEdit)
+  ui(new TreeEditUi)
 {
   setupActions();
 

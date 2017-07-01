@@ -5,7 +5,7 @@
 
 SlashConverter::SlashConverter(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::SlashConverter)
+  ui(new SlashConverterUi)
 {
   ui->setupUi(this);
 }

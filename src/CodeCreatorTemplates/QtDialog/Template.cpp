@@ -3,7 +3,7 @@
 
 Template::Template(QWidget* parent) :
   QDialog(parent),
-  ui(new Ui::Template)
+  ui(new TemplateUi)
 {
   ui->setupUi(this);
 }

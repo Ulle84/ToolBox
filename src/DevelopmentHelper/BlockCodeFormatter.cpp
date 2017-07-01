@@ -25,7 +25,7 @@ myspecialtype test = "horst";
 
 BlockCodeFormatter::BlockCodeFormatter(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::BlockCodeFormatter)
+  ui(new BlockCodeFormatterUi)
 {
   m_startTag = "//#";
   m_seperator = "#";

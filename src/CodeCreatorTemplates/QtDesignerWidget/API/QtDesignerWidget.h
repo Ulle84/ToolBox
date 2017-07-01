@@ -14,7 +14,7 @@ class QtDesignerWidget : public QWidget
     ~QtDesignerWidget();
 
   private:
-    Ui::QtDesignerWidget* ui;
+    QtDesignerWidgetUi* ui;
 };
 
 #endif

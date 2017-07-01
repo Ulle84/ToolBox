@@ -20,7 +20,7 @@ class IterateOverContainer : public QWidget
   private:
     void createCode();
 
-    Ui::IterateOverContainer* ui;
+    IterateOverContainerUi* ui;
 };
 
 #endif // ITERATEOVERCONTAINER_H

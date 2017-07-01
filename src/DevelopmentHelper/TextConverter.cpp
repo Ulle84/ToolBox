@@ -5,7 +5,7 @@
 
 TextConverter::TextConverter(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::TextConverter)
+  ui(new TextConverterUi)
 {
   ui->setupUi(this);
 

@@ -24,7 +24,7 @@ class ParameterGui : public QWidget
     void on_lineEditDefaultValue_textEdited(const QString& defaultValue);
 
   private:
-    Ui::ParameterGui* ui;
+    ParameterGuiUi* ui;
 
     Parameter m_parameter;
 };

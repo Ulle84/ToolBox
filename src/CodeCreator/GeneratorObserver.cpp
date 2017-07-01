@@ -7,7 +7,7 @@
 
 GeneratorObserver::GeneratorObserver(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::GeneratorObserver)
+  ui(new GeneratorObserverUi)
 {
   ui->setupUi(this);
 

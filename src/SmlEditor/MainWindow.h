@@ -32,7 +32,7 @@ class MainWindow : public QMainWindow
     int m_currentId = -1;
     QMap<int, QString> m_textContent;
 
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
 
     QSettings* m_settings;
 };

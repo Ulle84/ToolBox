@@ -30,7 +30,7 @@ class GeneratorExperimentElement : public QWidget, public GeneratorI
     void optionsChanged();
 
   private:
-    Ui::GeneratorExperimentElement* ui;
+    GeneratorExperimentElementUi* ui;
 };
 
 #endif

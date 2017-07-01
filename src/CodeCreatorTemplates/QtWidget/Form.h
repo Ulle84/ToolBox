@@ -14,7 +14,7 @@ class Form : public QWidget
     ~Form();
 
   private:
-    Ui::Form* ui;
+    FormUi* ui;
 };
 
 #endif

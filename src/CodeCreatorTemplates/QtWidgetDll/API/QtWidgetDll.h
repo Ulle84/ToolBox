@@ -16,7 +16,7 @@ class QTWIDGETDLL_API QtWidgetDll : public QWidget
     ~QtWidgetDll();
 
   private:
-    Ui::QtWidgetDll* ui;
+    QtWidgetDllUi* ui;
 };
 
 #endif

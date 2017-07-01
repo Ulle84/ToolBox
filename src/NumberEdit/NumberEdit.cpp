@@ -9,7 +9,7 @@
 
 NumberEdit::NumberEdit(QWidget* parent) :
   GridLayoutable(parent),
-  ui(new Ui::NumberEdit)
+  ui(new NumberEditUi)
 {
   m_supportedMin = -std::numeric_limits<double>::max() / std::pow(10, m_maxExponent);
   m_supportedMax = std::numeric_limits<double>::max() / std::pow(10, m_maxExponent);

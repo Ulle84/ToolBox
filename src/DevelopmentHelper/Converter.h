@@ -14,7 +14,7 @@ class Converter : public QWidget
     ~Converter();
 
   private:
-    Ui::Converter* ui;
+    ConverterUi* ui;
 };
 
 #endif // CONVERTER_H

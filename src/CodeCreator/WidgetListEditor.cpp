@@ -6,7 +6,7 @@
 
 WidgetListEditor::WidgetListEditor(QWidget* parent) :
   QDialog(parent),
-  ui(new Ui::WidgetListEditor)
+  ui(new WidgetListEditorUi)
 {
   ui->setupUi(this);
   ui->pushButtonAdd->setText("test");

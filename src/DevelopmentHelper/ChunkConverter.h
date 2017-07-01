@@ -23,7 +23,7 @@ class ChunkConverter : public QWidget
     void setUpCharacterForCodeMap();
     void setUpCodeForCharacterMap();
 
-    Ui::ChunkConverter* ui;
+    ChunkConverterUi* ui;
 
     QMap<QString, QString> m_characterForCode;
     QMap<QString, QString> m_codeForCharacter;

@@ -11,7 +11,7 @@
 
 GeneratorDll::GeneratorDll(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::GeneratorDll)
+  ui(new GeneratorDllUi)
 {
   ui->setupUi(this);
 

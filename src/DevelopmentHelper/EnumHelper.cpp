@@ -6,7 +6,7 @@
 
 EnumHelper::EnumHelper(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::EnumHelper)
+  ui(new EnumHelperUi)
 {
   ui->setupUi(this);
 }

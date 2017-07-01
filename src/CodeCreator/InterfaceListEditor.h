@@ -36,7 +36,7 @@ class InterfaceListEditor : public QWidget
   private:
     void fillInterfaceList();
 
-    Ui::InterfaceListEditor* ui;
+    InterfaceListEditorUi* ui;
 
     WidgetListEditor* m_widgetListEditor;
     QList<Interface> m_interfaceList;

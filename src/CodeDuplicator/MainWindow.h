@@ -25,7 +25,7 @@ class MainWindow : public QMainWindow
     bool process(const QString& source, const QString& destination, const QString& sourceName, const QString& destinationName, uint offsetIndex);
     void changeFilePath(QString& filePath, const QString& newFileName);
 
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
 
     QSettings* m_settings;
 };

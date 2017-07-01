@@ -6,7 +6,7 @@
 
 LogConsole::LogConsole(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::LogConsole)
+  ui(new LogConsoleUi)
 {
   ui->setupUi(this);
 }

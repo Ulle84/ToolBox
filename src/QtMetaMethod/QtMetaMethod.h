@@ -24,7 +24,7 @@ class QtMetaMethod : public QWidget
     void aPrivateSlot_Int_String(int i, const QString& string);
 
   private:
-    Ui::QtMetaMethod* ui;
+    QtMetaMethodUi* ui;
 };
 
 #endif

@@ -8,7 +8,7 @@
 
 GeneratorState::GeneratorState(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::GeneratorState)
+  ui(new GeneratorStateUi)
 {
   ui->setupUi(this);
 

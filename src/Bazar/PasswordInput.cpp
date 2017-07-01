@@ -3,7 +3,7 @@
 
 PasswordInput::PasswordInput(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::PasswordInput)
+    ui(new PasswordInputUi)
 {
     ui->setupUi(this);
 }

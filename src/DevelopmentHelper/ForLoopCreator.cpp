@@ -5,7 +5,7 @@
 
 ForLoopCreator::ForLoopCreator(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::ForLoopCreator)
+  ui(new ForLoopCreatorUi)
 {
   ui->setupUi(this);
 }

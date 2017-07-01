@@ -20,7 +20,7 @@ class MemberGui : public QWidget
     void setMember(const Member& member);
 
   private:
-    Ui::MemberGui* ui;
+    MemberGuiUi* ui;
 };
 
 #endif // MEMBERGUI_H

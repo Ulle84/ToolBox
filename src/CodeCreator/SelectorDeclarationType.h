@@ -27,7 +27,7 @@ class SelectorDeclarationType : public QWidget
     void on_comboBox_currentIndexChanged(int index);
 
   private:
-    Ui::SelectorDeclarationType* ui;
+    SelectorDeclarationTypeUi* ui;
 };
 
 #endif // SELECTORDECLARATIONTYPE_H

@@ -5,7 +5,7 @@
 
 NumberDisplay::NumberDisplay(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::NumberDisplay)
+  ui(new NumberDisplayUi)
 {
   m_timer = new QTimer(this);
   bool success = connect(m_timer, &QTimer::timeout, this, &NumberDisplay::update);

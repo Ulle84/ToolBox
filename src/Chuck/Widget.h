@@ -24,7 +24,7 @@ class Widget : public QWidget
     void on_pushButton_clicked();
 
   private:
-    Ui::Widget* ui;
+    WidgetUi* ui;
 };
 
 #endif

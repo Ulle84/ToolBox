@@ -3,7 +3,7 @@
 
 ListEditTest::ListEditTest(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::ListEditTest)
+  ui(new ListEditTestUi)
 {
   ui->setupUi(this);
 }

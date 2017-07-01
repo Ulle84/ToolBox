@@ -3,7 +3,7 @@
 
 MemberGui::MemberGui(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::MemberGui)
+  ui(new MemberGuiUi)
 {
   ui->setupUi(this);
 

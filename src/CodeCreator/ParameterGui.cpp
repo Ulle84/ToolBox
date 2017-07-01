@@ -3,7 +3,7 @@
 
 ParameterGui::ParameterGui(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::ParameterGui)
+  ui(new ParameterGuiUi)
 {
   ui->setupUi(this);
 }

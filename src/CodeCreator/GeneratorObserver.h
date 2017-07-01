@@ -35,7 +35,7 @@ class GeneratorObserver : public QWidget, public GeneratorI
     QString notifyObserversCode();
     QString testCode();
 
-    Ui::GeneratorObserver* ui;
+    GeneratorObserverUi* ui;
 };
 
 #endif // GeneratorObserver_H

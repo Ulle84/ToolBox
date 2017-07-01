@@ -25,7 +25,7 @@ private slots:
 private:
   void updateResult();
 
-  Ui::MainWindow *ui;
+  MainWindow Ui*ui;
 
   ClassAnalyzer m_classAnalyzer;
   QSettings* m_settings;

@@ -44,7 +44,7 @@ private slots:
 private:
   void resetControls();
 
-  Ui::ImageDisplay *ui;
+  ImageDisplayUi *ui;
   QGraphicsScene* m_scene;
   bool m_ctrlButtonIsPressed;
   Image* m_image;

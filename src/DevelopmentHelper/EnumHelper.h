@@ -21,7 +21,7 @@ class EnumHelper : public QWidget
   private:
     void updateValues();
 
-    Ui::EnumHelper* ui;
+    EnumHelperUi* ui;
     QStringList m_values;
 };
 

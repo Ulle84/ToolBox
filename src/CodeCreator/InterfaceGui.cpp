@@ -10,7 +10,7 @@
 InterfaceGui::InterfaceGui(QWidget* parent) :
   QDialog(parent),
   m_widgetListEditor(NULL),
-  ui(new Ui::InterfaceGui)
+  ui(new InterfaceGuiUi)
 {
   ui->setupUi(this);
 }

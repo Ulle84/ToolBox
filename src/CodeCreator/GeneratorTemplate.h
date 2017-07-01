@@ -30,7 +30,7 @@ class GeneratorTemplate : public QWidget, public GeneratorI
     void optionsChanged();
 
   private:
-    Ui::GeneratorTemplate* ui;
+    GeneratorTemplateUi* ui;
 };
 
 #endif // GeneratorTemplate_H

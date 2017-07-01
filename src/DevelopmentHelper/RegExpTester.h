@@ -22,7 +22,7 @@ class RegExpTester : public QWidget
   private:
     void evaluate();
 
-    Ui::RegExpTester* ui;
+    RegExpTesterUi* ui;
     QSettings* m_settings;
 };
 

@@ -38,7 +38,7 @@ private:
   void showLena();
   void openAndShowImage(const QString& fileName, bool provideFeedback = false);
 
-  Ui::MainWindow* ui;
+  MainWindowUi* ui;
   Image* m_image;
   ImageDisplay* m_imageDisplay;
 

@@ -15,7 +15,7 @@ public:
     QString getPassword();
 
 private:
-    Ui::PasswordInput *ui;
+    PasswordInput Ui*ui;
 };
 
 #endif // PASSWORDINPUT_H

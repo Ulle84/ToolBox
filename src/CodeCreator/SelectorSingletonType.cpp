@@ -3,7 +3,7 @@
 
 SelectorSingletonType::SelectorSingletonType(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::SelectorSingletonType)
+  ui(new SelectorSingletonTypeUi)
 {
   ui->setupUi(this);
 

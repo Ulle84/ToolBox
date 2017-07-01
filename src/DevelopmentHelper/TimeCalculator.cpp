@@ -3,7 +3,7 @@
 
 TimeCalculator::TimeCalculator(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::TimeCalculator)
+  ui(new TimeCalculatorUi)
 {
   ui->setupUi(this);
 }

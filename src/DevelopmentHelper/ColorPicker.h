@@ -29,7 +29,7 @@ class ColorPicker : public QWidget
     void updateHEXCode();
     void updateRGBCode();
 
-    Ui::ColorPicker* ui;
+    ColorPickerUi* ui;
     SliderSpinBox* sliderSpinBoxRed;
     SliderSpinBox* sliderSpinBoxGreen;
     SliderSpinBox* sliderSpinBoxBlue;

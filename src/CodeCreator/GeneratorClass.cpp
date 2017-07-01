@@ -14,7 +14,7 @@
 
 GeneratorClass::GeneratorClass(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::GeneratorClass),
+  ui(new GeneratorClassUi),
   m_widgetListEditorMethods(NULL),
   m_widgetListEditorMembers(NULL)
 {

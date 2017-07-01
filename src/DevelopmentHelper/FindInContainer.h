@@ -22,7 +22,7 @@ class FindInContainer : public QWidget
   private:
     void createCode();
 
-    Ui::FindInContainer* ui;
+    FindInContainerUi* ui;
 };
 
 #endif // FINDINCONTAINER_H

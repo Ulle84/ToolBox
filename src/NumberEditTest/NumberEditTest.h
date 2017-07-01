@@ -17,7 +17,7 @@ class NumberEditTest : public QWidget
     void on_pushButton_clicked();
 
   private:
-    Ui::NumberEditTest* ui;
+    NumberEditTestUi* ui;
 };
 
 #endif

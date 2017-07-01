@@ -5,7 +5,7 @@
 
 TimerDoneDialog::TimerDoneDialog(QWidget* parent) :
   QDialog(parent),
-  ui(new Ui::TimerDoneDialog),
+  ui(new TimerDoneDialogUi),
   m_nextPosition(Undefined)
 {
   ui->setupUi(this);

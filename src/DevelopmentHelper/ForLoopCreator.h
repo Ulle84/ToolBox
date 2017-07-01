@@ -20,7 +20,7 @@ class ForLoopCreator : public QWidget
   private:
     void createCode();
 
-    Ui::ForLoopCreator* ui;
+    ForLoopCreatorUi* ui;
 };
 
 #endif // FORLOOPCREATOR_H

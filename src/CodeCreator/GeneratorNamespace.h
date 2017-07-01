@@ -30,7 +30,7 @@ class GeneratorNamespace : public QWidget, public GeneratorI
     void optionsChanged();
 
   private:
-    Ui::GeneratorNamespace* ui;
+    GeneratorNamespaceUi* ui;
 };
 
 #endif

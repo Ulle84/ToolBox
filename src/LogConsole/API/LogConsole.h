@@ -26,7 +26,7 @@ class LOGCONSOLE_API LogConsole : public QWidget
   private:
     QString currentDateTime();
 
-    Ui::LogConsole* ui;
+    LogConsoleUi* ui;
 };
 
 #endif

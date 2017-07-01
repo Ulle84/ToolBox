@@ -5,7 +5,7 @@
 
 SliderSpinBox::SliderSpinBox(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::SliderSpinBox)
+  ui(new SliderSpinBoxUi)
 {
   ui->setupUi(this);
 

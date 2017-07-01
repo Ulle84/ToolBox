@@ -33,7 +33,7 @@ class WidgetListEditor : public QDialog
     void on_buttonBox_rejected();
 
   private:
-    Ui::WidgetListEditor* ui;
+    WidgetListEditorUi* ui;
 };
 
 #endif // WIDGETLISTEDITOR_H

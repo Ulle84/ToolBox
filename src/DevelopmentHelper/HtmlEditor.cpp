@@ -5,7 +5,7 @@
 
 HtmlEditor::HtmlEditor(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::HtmlEditor)
+  ui(new HtmlEditorUi)
 {
   ui->setupUi(this);
 }

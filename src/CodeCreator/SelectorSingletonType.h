@@ -27,7 +27,7 @@ class SelectorSingletonType : public QWidget
     void on_comboBox_currentIndexChanged(int index);
 
   private:
-    Ui::SelectorSingletonType* ui;
+    SelectorSingletonTypeUi* ui;
 };
 
 #endif // SELECTORSINGLETONTYPE_H

@@ -9,7 +9,7 @@
 
 GeneratorInterface::GeneratorInterface(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::GeneratorInterface)
+  ui(new GeneratorInterfaceUi)
 {
   ui->setupUi(this);
 

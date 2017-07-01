@@ -25,7 +25,7 @@ class SliderSpinBox : public QWidget
     void valueChanged(int newValue);
 
   private:
-    Ui::SliderSpinBox* ui;
+    SliderSpinBoxUi* ui;
     int minimum;
     int maximum;
 };

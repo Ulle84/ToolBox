@@ -8,7 +8,7 @@
 
 GeneratorTemplate::GeneratorTemplate(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::GeneratorTemplate)
+  ui(new GeneratorTemplateUi)
 {
   ui->setupUi(this);
 

@@ -6,7 +6,7 @@
 
 ConverterBase64::ConverterBase64(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::ConverterBase64)
+  ui(new ConverterBase64Ui)
 {
   ui->setupUi(this);
 }

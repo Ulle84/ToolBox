@@ -31,7 +31,7 @@ private:
 
   void appendSoldArticleHeader(QString& html, bool columnDiscrepancyNeeded);
 
-  Ui::Evaluation *ui;
+  Evaluation Ui*ui;
   ArticleManager* m_articleManager;
   SellerManager* m_sellerManager;
   Settings* m_settings;

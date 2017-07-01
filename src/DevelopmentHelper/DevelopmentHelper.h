@@ -23,7 +23,7 @@ class DevelopmentHelper : public QMainWindow
   private:
     void setWidgetVisible(int index);
 
-    Ui::DevelopmentHelper* ui;
+    DevelopmentHelperUi* ui;
     QSettings* m_settings;
 
     QMap<QString, QWidget*> m_widgets;

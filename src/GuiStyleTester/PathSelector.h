@@ -22,7 +22,7 @@ class PathSelector : public QWidget
     void on_pushButton_clicked();
 
   private:
-    Ui::PathSelector* ui;
+    PathSelectorUi* ui;
 };
 
 #endif

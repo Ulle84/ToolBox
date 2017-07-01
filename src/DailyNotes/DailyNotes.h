@@ -33,7 +33,7 @@ class DailyNotes : public QWidget
     void saveCurrent();
     void setDate(const QDate& date);
 
-    Ui::DailyNotes* ui;
+    DailyNotesUi* ui;
     QDate m_selectedDate;
 };
 

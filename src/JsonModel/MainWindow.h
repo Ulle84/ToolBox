@@ -17,7 +17,7 @@ public:
 private:
   void setTestContent(JsonModel* model);
 
-  Ui::MainWindow *ui;
+  MainWindow Ui*ui;
 };
 
 #endif // MAINWINDOW_H

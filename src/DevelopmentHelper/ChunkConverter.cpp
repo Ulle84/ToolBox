@@ -3,7 +3,7 @@
 
 ChunkConverter::ChunkConverter(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::ChunkConverter)
+  ui(new ChunkConverterUi)
 {
   setUpCharacterForCodeMap();
   setUpCodeForCharacterMap();

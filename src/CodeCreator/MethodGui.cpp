@@ -9,7 +9,7 @@
 MethodGui::MethodGui(QWidget* parent) :
   QWidget(parent),
   m_widgetListEditor(NULL),
-  ui(new Ui::MethodGui)
+  ui(new MethodGuiUi)
 {
   ui->setupUi(this);
 

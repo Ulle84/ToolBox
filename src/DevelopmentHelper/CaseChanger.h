@@ -20,7 +20,7 @@ class CaseChanger : public QWidget
     void on_pushButtonLowercase_clicked();
 
   private:
-    Ui::CaseChanger* ui;
+    CaseChangerUi* ui;
 };
 
 #endif

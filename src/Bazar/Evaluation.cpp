@@ -35,7 +35,7 @@
 
 Evaluation::Evaluation(ArticleManager* articleManager, Settings *settings, SellerManager *sellerManager, QWidget *parent) :
   QDialog(parent),
-  ui(new Ui::Evaluation),
+  ui(new EvaluationUi),
   m_articleManager(articleManager),
   m_settings(settings),
   m_sellerManager(sellerManager)

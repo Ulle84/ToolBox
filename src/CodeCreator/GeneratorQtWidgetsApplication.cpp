@@ -14,7 +14,7 @@
 
 GeneratorQtWidgetsApplication::GeneratorQtWidgetsApplication(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::GeneratorQtWidgetsApplication)
+  ui(new GeneratorQtWidgetsApplicationUi)
 {
   ui->setupUi(this);
 

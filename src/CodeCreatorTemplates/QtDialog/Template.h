@@ -14,7 +14,7 @@ class Template : public QDialog
     ~Template();
 
   private:
-    Ui::Template* ui;
+    TemplateUi* ui;
 };
 
 #endif

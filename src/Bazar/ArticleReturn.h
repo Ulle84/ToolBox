@@ -20,7 +20,7 @@ private slots:
   void on_buttonBox_accepted();
 
 private:
-    Ui::ArticleReturn *ui;
+    ArticleReturn Ui*ui;
 
     int m_sellerNumber;
     int m_articleNumber;

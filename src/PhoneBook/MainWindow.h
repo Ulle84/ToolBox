@@ -21,7 +21,7 @@ class MainWindow : public QMainWindow
     void on_lineEdit_textChanged(const QString& text);
 
   private:
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
 
     PhoneBook* m_phoneBook;
     ProxyModel* m_proxyModel;

@@ -32,7 +32,7 @@ class InterfaceEditor : public QWidget
   private:
     void fillMethodList();
 
-    Ui::InterfaceEditor* ui;
+    InterfaceEditorUi* ui;
 
     WidgetListEditor* m_widgetListEditor;
     Interface m_interface;

@@ -7,7 +7,7 @@
 
 CaseChanger::CaseChanger(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::CaseChanger)
+  ui(new CaseChangerUi)
 {
   ui->setupUi(this);
 }

@@ -11,7 +11,7 @@
 
 DailyNotes::DailyNotes(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::DailyNotes)
+  ui(new DailyNotesUi)
 {
   ui->setupUi(this);
   ui->codeEdit->setCodeHighlightingType(CodeEdit::CodeHighlightingType::Sml);

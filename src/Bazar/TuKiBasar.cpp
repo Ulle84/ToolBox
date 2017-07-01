@@ -31,7 +31,7 @@
 
 TuKiBasar::TuKiBasar(QWidget *parent) :
   QMainWindow(parent),
-  ui(new Ui::TuKiBasar)
+  ui(new TuKiBasarUi)
 {
   ui->setupUi(this);
 

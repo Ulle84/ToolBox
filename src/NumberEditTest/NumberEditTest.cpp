@@ -3,7 +3,7 @@
 
 NumberEditTest::NumberEditTest(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::NumberEditTest)
+  ui(new NumberEditTestUi)
 {
   ui->setupUi(this);
 }

@@ -7,7 +7,7 @@
 
 CodeAssistant::CodeAssistant(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::CodeAssistant)
+  ui(new CodeAssistantUi)
 {
   ui->setupUi(this);
 

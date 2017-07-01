@@ -9,7 +9,7 @@
 
 GeneratorConsoleApplication::GeneratorConsoleApplication(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::GeneratorConsoleApplication)
+  ui(new GeneratorConsoleApplicationUi)
 {
   ui->setupUi(this);
 

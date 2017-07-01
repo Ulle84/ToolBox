@@ -34,7 +34,7 @@ private slots:
   void on_pushButtonOk_clicked();
 
 private:
-  Ui::Settings *ui;
+  Settings Ui*ui;
   QString m_fileName;
 };
 

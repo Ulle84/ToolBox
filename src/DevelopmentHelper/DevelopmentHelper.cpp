@@ -21,7 +21,7 @@
 
 DevelopmentHelper::DevelopmentHelper(QWidget* parent) :
   QMainWindow(parent),
-  ui(new Ui::DevelopmentHelper),
+  ui(new DevelopmentHelperUi),
   m_currentIndex(-1)
 {
   ui->setupUi(this);

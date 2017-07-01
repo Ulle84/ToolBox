@@ -8,7 +8,7 @@
 
 QtMetaMethod::QtMetaMethod(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::QtMetaMethod)
+  ui(new QtMetaMethodUi)
 {
   ui->setupUi(this);
 

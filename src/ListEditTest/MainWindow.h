@@ -16,7 +16,7 @@ class MainWindow : public QMainWindow
     ~MainWindow();
 
   private:
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
 
     QSettings* m_settings;
 };

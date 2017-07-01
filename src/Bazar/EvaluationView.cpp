@@ -20,7 +20,7 @@
 EvaluationView::EvaluationView(const QString& name, QWidget *parent) :
   QWidget(parent),
   m_name(name),
-  ui(new Ui::EvaluationView)
+  ui(new EvaluationViewUi)
 {
   ui->setupUi(this);
 }

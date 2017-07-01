@@ -24,7 +24,7 @@ class ConnectionHelper : public QWidget
   private:
     void createCode();
 
-    Ui::ConnectionHelper* ui;
+    ConnectionHelperUi* ui;
 };
 
 #endif // CONNECTIONHELPER_H

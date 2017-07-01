@@ -44,7 +44,7 @@ class CodeCreator : public QWidget
 
     bool generateFiles(const QList<QPair<QString, QString>>& content, GenerationType generationType);
 
-    Ui::CodeCreator* ui;
+    CodeCreatorUi* ui;
     QMap<QString, QWidget*> m_generators;
     QWidget* m_currentGenerator;
     QStringList m_directories;

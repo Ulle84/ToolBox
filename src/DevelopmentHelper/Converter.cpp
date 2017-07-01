@@ -3,7 +3,7 @@
 
 Converter::Converter(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::Converter)
+  ui(new ConverterUi)
 {
   ui->setupUi(this);
 }

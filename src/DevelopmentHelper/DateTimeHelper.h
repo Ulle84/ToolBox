@@ -28,7 +28,7 @@ class DateTimeHelper : public QWidget
   private:
     void copyDateToClipboard();
 
-    Ui::DateTimeHelper* ui;
+    DateTimeHelperUi* ui;
 
     QString m_outputFormat;
     const QString m_outputFormatDefault;

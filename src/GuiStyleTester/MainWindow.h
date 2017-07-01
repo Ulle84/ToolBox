@@ -27,7 +27,7 @@ class MainWindow : public QMainWindow
   private:
     void applyCss();
 
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
     QSettings* m_settings;
 
     QWidget* m_lastLoadedWidget = nullptr;

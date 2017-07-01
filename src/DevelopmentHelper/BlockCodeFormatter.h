@@ -20,7 +20,7 @@ class BlockCodeFormatter : public QWidget
   private:
     void convertText(QStringList& text, QList<int> lines, QStringList symbols, const QString& leadingWhitespace);
 
-    Ui::BlockCodeFormatter* ui;
+    BlockCodeFormatterUi* ui;
 
     QString m_startTag;
     QString m_seperator;

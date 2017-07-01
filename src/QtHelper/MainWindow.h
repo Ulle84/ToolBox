@@ -24,7 +24,7 @@ class MainWindow : public QMainWindow
     void on_pushButtonResourceCompiler_clicked();
 
   private:
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
     QSettings* m_settings;
 };
 

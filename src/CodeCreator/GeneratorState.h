@@ -32,7 +32,7 @@ class GeneratorState : public QWidget, public GeneratorI
     void optionsChanged();
 
   private:
-    Ui::GeneratorState* ui;
+    GeneratorStateUi* ui;
 };
 
 #endif // GeneratorState_H

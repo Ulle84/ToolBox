@@ -11,7 +11,7 @@
 
 DateTimeHelper::DateTimeHelper(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::DateTimeHelper),
+  ui(new DateTimeHelperUi),
   m_outputFormatDefault("ddd, dd.MM.yyyy")
 {
   ui->setupUi(this);

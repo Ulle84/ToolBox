@@ -30,7 +30,7 @@ class GeneratorQtConsoleApplication : public QWidget, public GeneratorI
     void optionsChanged();
 
   private:
-    Ui::GeneratorQtConsoleApplication* ui;
+    GeneratorQtConsoleApplicationUi* ui;
 
     const int m_fileOffset = 1;
     const QString m_oldName = "QtConsoleApplication";

@@ -24,7 +24,7 @@ class LISTEDIT_API ListEdit : public QWidget
   private:
     void refreshContent();
 
-    Ui::ListEdit* ui;
+    ListEditUi* ui;
 
     QStringList m_content;
     QStringListModel* m_model;

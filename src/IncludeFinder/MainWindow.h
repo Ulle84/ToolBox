@@ -22,7 +22,7 @@ class MainWindow : public QMainWindow
     void on_pushButtonSearch_clicked();
 
   private:
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
     IncludeFinder m_includeFinder;
     QSettings* m_settings;
 };

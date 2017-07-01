@@ -20,7 +20,7 @@ namespace Catalog
       virtual void parameterChanged(const Gui::ParameterEvent& ev);
 
     private:
-      Ui::ExperimentElementTemplatePanel* ui;
+      ExperimentElementTemplatePanelUi* ui;
 
       static Base::String parameterList[];
   };

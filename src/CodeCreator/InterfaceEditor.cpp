@@ -6,7 +6,7 @@
 
 InterfaceEditor::InterfaceEditor(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::InterfaceEditor),
+  ui(new InterfaceEditorUi),
   m_widgetListEditor(NULL)
 {
   ui->setupUi(this);

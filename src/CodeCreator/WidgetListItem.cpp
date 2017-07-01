@@ -3,7 +3,7 @@
 
 WidgetListItem::WidgetListItem(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::WidgetListItem)
+  ui(new WidgetListItemUi)
 {
   ui->setupUi(this);
 }

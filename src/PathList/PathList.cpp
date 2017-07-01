@@ -8,7 +8,7 @@
 
 PathList::PathList(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::PathList)
+  ui(new PathListUi)
 {
   ui->setupUi(this);
 }

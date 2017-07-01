@@ -9,7 +9,7 @@
 
 GeneratorAbstractFactory::GeneratorAbstractFactory(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::GeneratorAbstractFactory)
+  ui(new GeneratorAbstractFactoryUi)
 {
   ui->setupUi(this);
 

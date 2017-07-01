@@ -29,7 +29,7 @@ class HtmlTableGenerator : public QWidget
     void on_spinBoxTabCount_valueChanged(int newValue);
 
   private:
-    Ui::HtmlTableGenerator* ui;
+    HtmlTableGeneratorUi* ui;
 };
 
 #endif // HTMLTABLEGENERATOR_H

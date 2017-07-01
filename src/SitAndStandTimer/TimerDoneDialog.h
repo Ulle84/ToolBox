@@ -30,7 +30,7 @@ class TimerDoneDialog : public QDialog
     void on_pushButtonClose_clicked();
 
   private:
-    Ui::TimerDoneDialog* ui;
+    TimerDoneDialogUi* ui;
     NextPosition m_nextPosition;
     QSettings* m_settings;
 };

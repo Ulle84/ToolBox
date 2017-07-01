@@ -27,7 +27,7 @@ class WidgetListItem : public QWidget
     void on_pushButtonDown_clicked();
 
   private:
-    Ui::WidgetListItem* ui;
+    WidgetListItemUi* ui;
 };
 
 #endif // WIDGETLISTITEM_H

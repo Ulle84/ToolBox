@@ -7,7 +7,7 @@
 
 SmlEdit::SmlEdit(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::SmlEdit)
+  ui(new SmlEditUi)
 {
   ui->setupUi(this);
   ui->tabWidget->setTabText(0, tr("HTML code"));

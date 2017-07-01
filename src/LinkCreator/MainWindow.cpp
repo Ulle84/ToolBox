@@ -8,7 +8,7 @@
 
 MainWindow::MainWindow(const QString& input, QWidget* parent) :
   QMainWindow(parent),
-  ui(new Ui::MainWindow),
+  ui(new MainWindowUi),
   m_input(input)
 {
   ui->setupUi(this);

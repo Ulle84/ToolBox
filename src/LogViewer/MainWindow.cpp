@@ -13,7 +13,7 @@
 
 MainWindow::MainWindow(QWidget* parent) :
   QMainWindow(parent),
-  ui(new Ui::MainWindow)
+  ui(new MainWindowUi)
 {
   ui->setupUi(this);
   ui->pathSelector->setLabelText(tr("log file"));

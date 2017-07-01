@@ -21,7 +21,7 @@ private slots:
     void on_pushButtonExportSalesPerSeller_clicked();
 
 private:
-    Ui::ExcelExport *ui;
+    ExcelExport Ui*ui;
     ArticleManager* m_articleManager;
     SellerManager* m_sellerManager;
     Settings* m_settings;

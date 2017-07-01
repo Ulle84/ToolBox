@@ -58,7 +58,7 @@ private:
   void setupActions();
   int indentation(const QModelIndex& modelIndex);
 
-  Ui::JsonModelEdit *ui;
+  JsonModelEdit Ui*ui;
   JsonModel* m_model = nullptr;
   QAbstractItemView* view = nullptr;
   QLayout* m_layout = nullptr;

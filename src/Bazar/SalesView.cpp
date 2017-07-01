@@ -6,7 +6,7 @@
 
 SalesView::SalesView(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::SalesView),
+    ui(new SalesViewUi),
     m_index(0)
 {
     ui->setupUi(this);

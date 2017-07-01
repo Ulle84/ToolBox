@@ -38,7 +38,7 @@
 
 CodeCreator::CodeCreator(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::CodeCreator),
+  ui(new CodeCreatorUi),
   m_fileName(Path::configurationFile("CodeCreator", "Settings.xml"))
 {
   ui->setupUi(this);

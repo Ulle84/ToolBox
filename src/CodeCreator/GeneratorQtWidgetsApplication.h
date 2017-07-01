@@ -30,7 +30,7 @@ class GeneratorQtWidgetsApplication : public QWidget, public GeneratorI
     void optionsChanged();
 
   private:
-    Ui::GeneratorQtWidgetsApplication* ui;
+    GeneratorQtWidgetsApplicationUi* ui;
 
     const int m_fileOffset = 1;
     const QString m_oldName = "QtWidgetsApplication";

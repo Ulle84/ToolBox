@@ -17,7 +17,7 @@
 
 JsonModelEdit::JsonModelEdit(QWidget *parent) :
   QWidget(parent),
-  ui(new Ui::JsonModelEdit),
+  ui(new JsonModelEditUi),
   m_proxyModel(new ProxyModel(this))
 {
   setupActions();

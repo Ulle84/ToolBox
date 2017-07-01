@@ -46,7 +46,7 @@ class GeneratorClass : public QWidget, public GeneratorI
     void fillMethodList();
     void fillMemberList();
 
-    Ui::GeneratorClass* ui;
+    GeneratorClassUi* ui;
 
     QCompleter* m_completer;
     Interface m_interface;

@@ -32,7 +32,7 @@ class GeneratorQtDesignerWidget : public QWidget, public GeneratorI
     void optionsChanged();
 
   private:
-    Ui::GeneratorQtDesignerWidget* ui;
+    GeneratorQtDesignerWidgetUi* ui;
 
     const QString m_oldName = "QtDesignerWidget";
     const int m_fileOffset = 3;

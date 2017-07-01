@@ -5,7 +5,7 @@
 
 IterateOverContainer::IterateOverContainer(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::IterateOverContainer)
+  ui(new IterateOverContainerUi)
 {
   ui->setupUi(this);
 }

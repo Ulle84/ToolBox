@@ -6,7 +6,7 @@
 
 RegExpTester::RegExpTester(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::RegExpTester)
+  ui(new RegExpTesterUi)
 {
   ui->setupUi(this);
 

@@ -5,7 +5,7 @@
 
 FindInContainer::FindInContainer(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::FindInContainer)
+  ui(new FindInContainerUi)
 {
   ui->setupUi(this);
 }

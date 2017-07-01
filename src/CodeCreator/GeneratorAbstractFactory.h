@@ -30,7 +30,7 @@ class GeneratorAbstractFactory : public QWidget, public GeneratorI
     void optionsChanged();
 
   private:
-    Ui::GeneratorAbstractFactory* ui;
+    GeneratorAbstractFactoryUi* ui;
 };
 
 #endif

@@ -9,7 +9,7 @@
 
 PackageHelper::PackageHelper(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::PackageHelper)
+  ui(new PackageHelperUi)
 {
   ui->setupUi(this);
 

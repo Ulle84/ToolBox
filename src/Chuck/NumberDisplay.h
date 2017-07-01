@@ -22,7 +22,7 @@ class NumberDisplay : public QWidget
     void update();
 
   private:
-    Ui::NumberDisplay* ui;
+    NumberDisplayUi* ui;
 
     QTimer* m_timer;
     int m_currentNumber;

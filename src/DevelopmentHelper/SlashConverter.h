@@ -22,7 +22,7 @@ class SlashConverter : public QWidget
   private:
     void updateText(const QString& text);
 
-    Ui::SlashConverter* ui;
+    SlashConverterUi* ui;
 };
 
 #endif // SLASHCONVERTER_H

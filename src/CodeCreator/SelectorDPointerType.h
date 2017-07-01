@@ -27,7 +27,7 @@ class SelectorDPointerType : public QWidget
     void on_comboBox_currentIndexChanged(int index);
 
   private:
-    Ui::SelectorDPointerType* ui;
+    SelectorDPointerTypeUi* ui;
 };
 
 #endif // SELECTORDPOINTERTYPE_H

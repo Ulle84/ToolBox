@@ -32,7 +32,7 @@ class MainWindow : public QMainWindow
     void updateSettings();
     void showUserMessage(QString message);
 
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
     QSettings* m_settings;
     QString m_currentInfoFile;
     QString m_currentSettingsFile;

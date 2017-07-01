@@ -13,7 +13,7 @@
 
 GeneratorDecorator::GeneratorDecorator(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::GeneratorDecorator)
+  ui(new GeneratorDecoratorUi)
 {
   ui->setupUi(this);
 

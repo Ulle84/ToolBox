@@ -9,7 +9,7 @@
 
 ClipboardManager::ClipboardManager(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::ClipboardManager)
+  ui(new ClipboardManagerUi)
 {
   ui->setupUi(this);
 

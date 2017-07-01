@@ -3,7 +3,7 @@
 
 QtWidgetsApplication::QtWidgetsApplication(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::QtWidgetsApplication)
+  ui(new QtWidgetsApplicationUi)
 {
   ui->setupUi(this);
 }

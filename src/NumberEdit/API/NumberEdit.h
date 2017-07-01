@@ -81,7 +81,7 @@ class NUMBEREDIT_API NumberEdit : public GridLayoutable
     void updateLabelDisplay(int width);
     void updateUnitDisplay(int width);
 
-    Ui::NumberEdit* ui;
+    NumberEditUi* ui;
     QString m_unit;
     double m_value = 0.0;
 

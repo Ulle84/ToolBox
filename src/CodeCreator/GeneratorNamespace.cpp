@@ -9,7 +9,7 @@
 
 GeneratorNamespace::GeneratorNamespace(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::GeneratorNamespace)
+  ui(new GeneratorNamespaceUi)
 {
   ui->setupUi(this);
 

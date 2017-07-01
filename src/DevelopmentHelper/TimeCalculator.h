@@ -35,7 +35,7 @@ class TimeCalculator : public QWidget
 
 
   private:
-    Ui::TimeCalculator* ui;
+    TimeCalculatorUi* ui;
     double timeInNanoseconds;
 };
 

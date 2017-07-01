@@ -14,7 +14,7 @@ class TextConverter : public QWidget
     ~TextConverter();
 
   private:
-    Ui::TextConverter* ui;
+    TextConverterUi* ui;
 };
 
 #endif // TEXTCONVERTER_H

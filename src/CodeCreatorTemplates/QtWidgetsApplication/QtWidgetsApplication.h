@@ -14,7 +14,7 @@ class QtWidgetsApplication : public QWidget
     ~QtWidgetsApplication();
 
   private:
-    Ui::QtWidgetsApplication* ui;
+    QtWidgetsApplicationUi* ui;
 };
 
 #endif

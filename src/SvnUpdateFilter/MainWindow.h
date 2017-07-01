@@ -19,7 +19,7 @@ class MainWindow : public QMainWindow
     void on_plainTextEditInput_textChanged();
 
   private:
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
     QSettings* m_settings;
 };
 

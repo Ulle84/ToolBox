@@ -9,7 +9,7 @@
 
 Settings::Settings(QWidget *parent) :
   QDialog(parent),
-  ui(new Ui::Settings)
+  ui(new SettingsUi)
 {
   m_fileName = "Settings.xml";
   ui->setupUi(this);

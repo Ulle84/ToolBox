@@ -6,7 +6,7 @@
 
 ConnectionHelper::ConnectionHelper(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::ConnectionHelper)
+  ui(new ConnectionHelperUi)
 {
   ui->setupUi(this);
 }

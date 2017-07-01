@@ -18,7 +18,7 @@ class ConverterBase64 : public QWidget
     void on_lineEditBase64EncodedText_editingFinished();
 
   private:
-    Ui::ConverterBase64* ui;
+    ConverterBase64Ui* ui;
 };
 
 #endif // CONVERTERBASE64_H

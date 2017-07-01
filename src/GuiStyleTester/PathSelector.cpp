@@ -5,7 +5,7 @@
 
 PathSelector::PathSelector(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::PathSelector)
+  ui(new PathSelectorUi)
 {
   ui->setupUi(this);
 }

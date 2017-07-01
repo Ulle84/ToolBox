@@ -30,7 +30,7 @@ class GeneratorQtDialog : public QWidget, public GeneratorI
     void optionsChanged();
 
   private:
-    Ui::GeneratorQtDialog* ui;
+    GeneratorQtDialogUi* ui;
 };
 
 #endif

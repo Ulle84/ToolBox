@@ -9,7 +9,7 @@
 
 GeneratorQtWidget::GeneratorQtWidget(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::GeneratorQtWidget)
+  ui(new GeneratorQtWidgetUi)
 {
   ui->setupUi(this);
 

@@ -23,7 +23,7 @@ private slots:
 private:
   void doEvaluation();
 
-  Ui::EvaluationByCategory *ui;
+  EvaluationByCategory Ui*ui;
 
   ArticleManager* m_articleManager;
 };

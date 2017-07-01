@@ -3,7 +3,7 @@
 
 SelectorDPointerType::SelectorDPointerType(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::SelectorDPointerType)
+  ui(new SelectorDPointerTypeUi)
 {
   ui->setupUi(this);
 

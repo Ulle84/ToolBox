@@ -31,7 +31,7 @@ class InterfaceGui : public QDialog
   private:
     void fillMethodList();
 
-    Ui::InterfaceGui* ui;
+    InterfaceGuiUi* ui;
     Interface m_interface;
     WidgetListEditor* m_widgetListEditor;
 };

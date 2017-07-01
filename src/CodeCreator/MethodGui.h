@@ -34,7 +34,7 @@ class MethodGui : public QWidget
   private:
     void fillParameterList();
 
-    Ui::MethodGui* ui;
+    MethodGuiUi* ui;
     Method m_method;
     WidgetListEditor* m_widgetListEditor;
 };

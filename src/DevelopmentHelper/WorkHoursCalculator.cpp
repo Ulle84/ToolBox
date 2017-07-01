@@ -3,7 +3,7 @@
 
 WorkHoursCalculator::WorkHoursCalculator(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::WorkHoursCalculator)
+  ui(new WorkHoursCalculatorUi)
 {
   ui->setupUi(this);
 }

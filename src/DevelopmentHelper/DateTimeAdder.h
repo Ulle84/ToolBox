@@ -21,7 +21,7 @@ class DateTimeAdder : public QWidget
   private:
     void calculate();
 
-    Ui::DateTimeAdder* ui;
+    DateTimeAdderUi* ui;
     QDateTime m_dateTime;
     int m_seconds;
 

@@ -53,7 +53,7 @@ private:
   void updateInformation();
   void setPasswordProtectedActionsVisible(bool visible);
 
-  Ui::TuKiBasar *ui;
+  TuKiBasar Ui*ui;
   Settings* m_settings;
   Evaluation* m_evaluation;
   ArticleManager* m_articleManager;

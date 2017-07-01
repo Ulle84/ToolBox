@@ -6,7 +6,7 @@
 
 ArticleReturn::ArticleReturn(QWidget *parent) :
   QDialog(parent),
-  ui(new Ui::ArticleReturn),
+  ui(new ArticleReturnUi),
   m_sellerNumber(0),
   m_articleNumber(0)
 {

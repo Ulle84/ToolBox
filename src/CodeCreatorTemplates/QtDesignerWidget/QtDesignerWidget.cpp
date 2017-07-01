@@ -3,7 +3,7 @@
 
 QtDesignerWidget::QtDesignerWidget(QWidget* parent) :
   QWidget(parent),
-  ui(new Ui::QtDesignerWidget)
+  ui(new QtDesignerWidgetUi)
 {
   ui->setupUi(this);
 }

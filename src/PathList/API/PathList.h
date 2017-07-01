@@ -27,7 +27,7 @@ class PATHLIST_API PathList : public QWidget
 	void on_pushButtonClearList_clicked();
 
   private:
-    Ui::PathList* ui;
+    PathListUi* ui;
 
 	QString m_lastSelectedPath;
 };

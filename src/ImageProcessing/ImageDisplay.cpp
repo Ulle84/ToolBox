@@ -23,7 +23,7 @@
 
 ImageDisplay::ImageDisplay(QWidget *parent) :
   QWidget(parent),
-  ui(new Ui::ImageDisplay),
+  ui(new ImageDisplayUi),
   m_ctrlButtonIsPressed(false),
   m_image(0),
   m_penOutlines(QPen(QColor(255, 0, 0))),

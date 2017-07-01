@@ -23,7 +23,7 @@ class NumberConverter : public QWidget
     void on_lineEditBin_returnPressed();
 
   private:
-    Ui::NumberConverter* ui;
+    NumberConverterUi* ui;
     void updateWidgets(QLineEdit* source, int base);
 };
 

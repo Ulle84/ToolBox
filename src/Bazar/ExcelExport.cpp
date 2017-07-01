@@ -11,7 +11,7 @@
 
 ExcelExport::ExcelExport(ArticleManager* articleManager, Settings* settings, SellerManager* sellerManager, QWidget *parent) :
     QWidget(parent),
-    ui(new Ui::ExcelExport),
+    ui(new ExcelExportUi),
     m_articleManager(articleManager),
     m_sellerManager(sellerManager),
     m_settings(settings)

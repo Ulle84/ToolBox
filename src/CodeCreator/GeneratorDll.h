@@ -32,7 +32,7 @@ class GeneratorDll : public QWidget, public GeneratorI
     void optionsChanged();
 
   private:
-    Ui::GeneratorDll* ui;
+    GeneratorDllUi* ui;
 };
 
 #endif

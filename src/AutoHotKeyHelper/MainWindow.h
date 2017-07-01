@@ -24,7 +24,7 @@ class MainWindow : public QMainWindow
     void on_lineEditKey_textChanged(const QString& text);
 
   private:
-    Ui::MainWindow* ui;
+    MainWindowUi* ui;
     QSettings* m_settings;
     AutoHotKeyHelper m_autoHotKeyHelper;
 };
