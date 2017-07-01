@@ -5,10 +5,7 @@
 
 #include "SliderSpinBox.h"
 
-namespace Ui
-{
-  class ColorPicker;
-}
+class ColorPickerUi;
 
 class ColorPicker : public QWidget
 {

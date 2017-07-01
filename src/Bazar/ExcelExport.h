@@ -7,9 +7,7 @@ class ArticleManager;
 class Settings;
 class SellerManager;
 
-namespace Ui {
-class ExcelExport;
-}
+class ExcelExportUi;
 
 class ExcelExport : public QWidget
 {

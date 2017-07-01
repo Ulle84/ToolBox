@@ -5,10 +5,7 @@
 
 #include "Class.h"
 
-namespace Ui
-{
-  class SelectorDPointerType;
-}
+class SelectorDPointerTypeUi;
 
 class SelectorDPointerType : public QWidget
 {

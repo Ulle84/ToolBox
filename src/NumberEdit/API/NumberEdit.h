@@ -9,10 +9,7 @@
 #include "GridLayoutable.h"
 #include "NumberEditAPI.h"
 
-namespace Ui
-{
-  class NumberEdit;
-}
+class NumberEditUi;
 
 class NUMBEREDIT_API NumberEdit : public GridLayoutable
 {

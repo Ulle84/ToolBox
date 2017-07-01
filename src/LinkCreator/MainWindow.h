@@ -8,10 +8,7 @@
 
 class QSettings;
 
-namespace Ui
-{
-  class MainWindow;
-}
+class MainWindowUi;
 
 class MainWindow : public QMainWindow
 {

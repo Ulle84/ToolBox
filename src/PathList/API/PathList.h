@@ -7,10 +7,7 @@
 
 #include "PathListAPI.h"
 
-namespace Ui
-{
-  class PathList;
-}
+class PathListUi;
 
 class PATHLIST_API PathList : public QWidget
 {

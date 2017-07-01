@@ -10,10 +10,7 @@
 
 #include "GeneratorI.h"
 
-namespace Ui
-{
-  class GeneratorQtDesignerWidget;
-}
+class GeneratorQtDesignerWidgetUi;
 
 class GeneratorQtDesignerWidget : public QWidget, public GeneratorI
 {

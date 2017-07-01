@@ -8,10 +8,7 @@
 
 class QStringListModel;
 
-namespace Ui
-{
-  class ListEdit;
-}
+class ListEditUi;
 
 class LISTEDIT_API ListEdit : public QWidget
 {

@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class HtmlTableGenerator;
-}
+class HtmlTableGeneratorUi;
 
 class HtmlTableGenerator : public QWidget
 {

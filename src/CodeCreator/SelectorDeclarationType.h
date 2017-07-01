@@ -5,10 +5,7 @@
 
 #include "Class.h"
 
-namespace Ui
-{
-  class SelectorDeclarationType;
-}
+class SelectorDeclarationTypeUi;
 
 class SelectorDeclarationType : public QWidget
 {

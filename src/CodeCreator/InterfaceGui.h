@@ -7,10 +7,7 @@
 
 class WidgetListEditor;
 
-namespace Ui
-{
-  class InterfaceGui;
-}
+class InterfaceGuiUi;
 
 class InterfaceGui : public QDialog
 {

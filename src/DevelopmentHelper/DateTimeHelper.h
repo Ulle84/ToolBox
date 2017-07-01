@@ -7,10 +7,7 @@
 
 class QSettings;
 
-namespace Ui
-{
-  class DateTimeHelper;
-}
+class DateTimeHelperUi;
 
 class DateTimeHelper : public QWidget
 {

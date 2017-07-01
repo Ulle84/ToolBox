@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class QtWidgetsApplication;
-}
+class QtWidgetsApplicationUi;
 
 class QtWidgetsApplication : public QWidget
 {

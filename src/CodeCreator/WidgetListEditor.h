@@ -3,10 +3,7 @@
 
 #include <QDialog>
 
-namespace Ui
-{
-  class WidgetListEditor;
-}
+class WidgetListEditorUi;
 
 class WidgetListEditor : public QDialog
 {

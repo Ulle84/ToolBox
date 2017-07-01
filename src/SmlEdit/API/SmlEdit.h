@@ -7,10 +7,7 @@
 
 #include "SmlEditAPI.h"
 
-namespace Ui
-{
-  class SmlEdit;
-}
+class SmlEditUi;
 
 class SMLEDIT_API SmlEdit : public QWidget
 {

@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class ConnectionHelper;
-}
+class ConnectionHelperUi;
 
 class ConnectionHelper : public QWidget
 {

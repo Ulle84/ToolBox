@@ -13,10 +13,7 @@ class QTimer;
 class QSystemTrayIcon;
 class QMenu;
 
-namespace Ui
-{
-  class MainWindow;
-}
+class MainWindowUi;
 
 class MainWindow : public QMainWindow
 {

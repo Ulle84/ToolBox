@@ -10,10 +10,7 @@
 
 #include "GeneratorI.h"
 
-namespace Ui
-{
-  class GeneratorDll;
-}
+class GeneratorDllUi;
 
 class GeneratorDll : public QWidget, public GeneratorI
 {

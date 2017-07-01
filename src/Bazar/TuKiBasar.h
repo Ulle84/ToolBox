@@ -11,9 +11,7 @@ class Evaluation;
 class Settings;
 class SellerManager;
 
-namespace Ui {
-class TuKiBasar;
-}
+class TuKiBasarUi;
 
 class TuKiBasar : public QMainWindow
 {

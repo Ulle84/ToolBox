@@ -7,10 +7,7 @@
 
 class WidgetListEditor;
 
-namespace Ui
-{
-  class MethodGui;
-}
+class MethodGuiUi;
 
 class MethodGui : public QWidget
 {

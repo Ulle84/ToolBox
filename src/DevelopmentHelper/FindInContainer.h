@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class FindInContainer;
-}
+class FindInContainerUi;
 
 class FindInContainer : public QWidget
 {

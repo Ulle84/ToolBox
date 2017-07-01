@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class SliderSpinBox;
-}
+class SliderSpinBoxUi;
 
 class SliderSpinBox : public QWidget
 {

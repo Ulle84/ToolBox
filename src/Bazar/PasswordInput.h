@@ -3,9 +3,7 @@
 
 #include <QDialog>
 
-namespace Ui {
-class PasswordInput;
-}
+class PasswordInputUi;
 
 class PasswordInput : public QDialog
 {

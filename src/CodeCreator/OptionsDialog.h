@@ -5,10 +5,7 @@
 
 class QSettings;
 
-namespace Ui
-{
-  class OptionsDialog;
-}
+class OptionsDialogUi;
 
 class OptionsDialog : public QDialog
 {

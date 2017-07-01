@@ -8,10 +8,7 @@
 
 #include "GeneratorI.h"
 
-namespace Ui
-{
-  class GeneratorAbstractFactory;
-}
+class GeneratorAbstractFactoryUi;
 
 class GeneratorAbstractFactory : public QWidget, public GeneratorI
 {

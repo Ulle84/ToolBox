@@ -5,10 +5,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class ParameterGui;
-}
+class ParameterGuiUi;
 
 class ParameterGui : public QWidget
 {

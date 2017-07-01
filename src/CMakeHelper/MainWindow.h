@@ -8,10 +8,7 @@ class QSettings;
 
 #include "CMakeHelper.h"
 
-namespace Ui
-{
-  class MainWindow;
-}
+class MainWindowUi;
 
 class MainWindow : public QMainWindow
 {

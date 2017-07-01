@@ -5,10 +5,7 @@
 #include <QMap>
 #include <QString>
 
-namespace Ui
-{
-  class DevelopmentHelper;
-}
+class DevelopmentHelperUi;
 
 class QSettings;
 

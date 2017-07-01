@@ -8,10 +8,7 @@
 
 class Options;
 
-namespace Ui
-{
-  class CodeCreator;
-}
+class CodeCreatorUi;
 
 class CodeCreator : public QWidget
 {

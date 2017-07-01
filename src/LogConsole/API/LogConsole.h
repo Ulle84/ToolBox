@@ -7,10 +7,7 @@
 
 #include "LogConsoleAPI.h"
 
-namespace Ui
-{
-  class LogConsole;
-}
+class LogConsoleUi;
 
 class LOGCONSOLE_API LogConsole : public QWidget
 {

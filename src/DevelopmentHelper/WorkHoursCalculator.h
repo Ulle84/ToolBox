@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class WorkHoursCalculator;
-}
+class WorkHoursCalculatorUi;
 
 class WorkHoursCalculator : public QWidget
 {

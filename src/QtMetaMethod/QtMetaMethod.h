@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class QtMetaMethod;
-}
+class QtMetaMethodUi;
 
 class QtMetaMethod : public QWidget
 {

@@ -8,9 +8,7 @@ class QSettings;
 class Image;
 class ImageDisplay;
 
-namespace Ui {
-class MainWindow;
-}
+class MainWindowUi;
 
 class MainWindow : public QMainWindow
 {

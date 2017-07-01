@@ -5,10 +5,7 @@
 #include <QString>
 #include <QWidget>
 
-namespace Ui
-{
-  class ChunkConverter;
-}
+class ChunkConverterUi;
 
 class ChunkConverter : public QWidget
 {

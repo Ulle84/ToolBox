@@ -3,9 +3,7 @@
 
 #include <QDialog>
 
-namespace Ui {
-class Settings;
-}
+class SettingsUi;
 
 class Settings : public QDialog
 {

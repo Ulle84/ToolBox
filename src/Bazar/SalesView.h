@@ -8,9 +8,7 @@
 
 class Article;
 
-namespace Ui {
-class SalesView;
-}
+class SalesViewUi;
 
 class SalesView : public QDialog
 {

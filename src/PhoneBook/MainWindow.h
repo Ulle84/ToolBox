@@ -7,10 +7,7 @@ class QSettings;
 class PhoneBook;
 class ProxyModel;
 
-namespace Ui
-{
-  class MainWindow;
-}
+class MainWindowUi;
 
 class MainWindow : public QMainWindow
 {

@@ -14,9 +14,7 @@
 class Image;
 class Teachable;
 
-namespace Ui {
-class ImageDisplay;
-}
+class ImageDisplayUi;
 
 class ImageDisplay : public QWidget
 {

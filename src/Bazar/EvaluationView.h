@@ -5,9 +5,7 @@
 
 class QByteArray;
 
-namespace Ui {
-class EvaluationView;
-}
+class EvaluationViewUi;
 
 class EvaluationView : public QWidget
 {

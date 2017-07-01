@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class NumberDisplay;
-}
+class NumberDisplayUi;
 
 class QTimer;
 

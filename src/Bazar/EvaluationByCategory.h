@@ -5,9 +5,7 @@
 
 class ArticleManager;
 
-namespace Ui {
-class EvaluationByCategory;
-}
+class EvaluationByCategoryUi;
 
 class EvaluationByCategory : public QWidget
 {

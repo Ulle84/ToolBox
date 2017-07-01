@@ -4,9 +4,7 @@
 #include <QMainWindow>
 #include "JsonModel.h"
 
-namespace Ui {
-class MainWindow;
-}
+class MainWindowUi;
 
 class MainWindow : public QMainWindow
 {

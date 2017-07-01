@@ -6,10 +6,7 @@
 #include <QPair>
 #include <QLineEdit>
 
-namespace Ui
-{
-  class NumberConverter;
-}
+class NumberConverterUi;
 
 class NumberConverter : public QWidget
 {

@@ -3,9 +3,7 @@
 
 #include <QDialog>
 
-namespace Ui {
-class ArticleReturn;
-}
+class ArticleReturnUi;
 
 class ArticleReturn : public QDialog
 {

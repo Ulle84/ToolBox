@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class CodeAssistant;
-}
+class CodeAssistantUi;
 
 class CodeAssistant : public QWidget
 {

@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class TimeCalculator;
-}
+class TimeCalculatorUi;
 
 class TimeCalculator : public QWidget
 {

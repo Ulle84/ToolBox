@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class QtDesignerWidget;
-}
+class QtDesignerWidgetUi;
 
 class QtDesignerWidget : public QWidget
 {

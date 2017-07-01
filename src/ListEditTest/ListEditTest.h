@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class ListEditTest;
-}
+class ListEditTestUi;
 
 class ListEditTest : public QWidget
 {

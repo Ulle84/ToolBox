@@ -5,10 +5,7 @@
 
 #include "Class.h"
 
-namespace Ui
-{
-  class SelectorSingletonType;
-}
+class SelectorSingletonTypeUi;
 
 class SelectorSingletonType : public QWidget
 {

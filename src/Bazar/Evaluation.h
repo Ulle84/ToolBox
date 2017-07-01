@@ -11,9 +11,7 @@ class SellerManager;
 class ExcelExport;
 class EvaluationByCategory;
 
-namespace Ui {
-class Evaluation;
-}
+class EvaluationUi;
 
 class Evaluation : public QDialog
 {

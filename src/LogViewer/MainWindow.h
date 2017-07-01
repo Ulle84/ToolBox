@@ -7,10 +7,7 @@ class QSettings;
 class LogViewer;
 class ProxyModel;
 
-namespace Ui
-{
-  class MainWindow;
-}
+class MainWindowUi;
 
 class MainWindow : public QMainWindow
 {

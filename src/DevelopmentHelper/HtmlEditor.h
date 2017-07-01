@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class HtmlEditor;
-}
+class HtmlEditorUi;
 
 class HtmlEditor : public QWidget
 {

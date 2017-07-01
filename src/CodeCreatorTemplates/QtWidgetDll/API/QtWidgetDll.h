@@ -5,10 +5,7 @@
 
 #include "QtWidgetDllAPI.h"
 
-namespace Ui
-{
-  class QtWidgetDll;
-}
+class QtWidgetDllUi;
 
 class QTWIDGETDLL_API QtWidgetDll : public QWidget
 {

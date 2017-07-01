@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class IterateOverContainer;
-}
+class IterateOverContainerUi;
 
 class IterateOverContainer : public QWidget
 {

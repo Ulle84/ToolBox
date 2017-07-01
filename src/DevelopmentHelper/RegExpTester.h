@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class RegExpTester;
-}
+class RegExpTesterUi;
 
 class QSettings;
 

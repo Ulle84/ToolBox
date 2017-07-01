@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class ForLoopCreator;
-}
+class ForLoopCreatorUi;
 
 class ForLoopCreator : public QWidget
 {

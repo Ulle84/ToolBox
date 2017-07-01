@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class TextConverter;
-}
+class TextConverterUi;
 
 class TextConverter : public QWidget
 {

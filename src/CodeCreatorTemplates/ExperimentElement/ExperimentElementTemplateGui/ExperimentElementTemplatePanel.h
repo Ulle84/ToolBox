@@ -4,10 +4,7 @@
 #include "CatalogManager.h"
 #include "Gui_Collection.h"
 
-namespace Ui
-{
-  class ExperimentElementTemplatePanel;
-}
+class ExperimentElementTemplatePanelUi;
 
 namespace Catalog
 {

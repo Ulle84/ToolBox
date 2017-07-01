@@ -5,10 +5,7 @@
 
 class QSettings;
 
-namespace Ui
-{
-  class TimerDoneDialog;
-}
+class TimerDoneDialogUi;
 
 class TimerDoneDialog : public QDialog
 {

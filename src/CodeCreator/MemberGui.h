@@ -6,10 +6,7 @@
 
 #include "Member.h"
 
-namespace Ui
-{
-  class MemberGui;
-}
+class MemberGuiUi;
 
 class MemberGui : public QWidget
 {

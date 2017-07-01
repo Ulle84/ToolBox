@@ -12,10 +12,7 @@ class QCompleter;
 class CodeGenerator;
 class WidgetListEditor;
 
-namespace Ui
-{
-  class GeneratorClass;
-}
+class GeneratorClassUi;
 
 class GeneratorClass : public QWidget, public GeneratorI
 {

@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class NumberEditTest;
-}
+class NumberEditTestUi;
 
 class NumberEditTest : public QWidget
 {

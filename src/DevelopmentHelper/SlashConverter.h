@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class SlashConverter;
-}
+class SlashConverterUi;
 
 class SlashConverter : public QWidget
 {

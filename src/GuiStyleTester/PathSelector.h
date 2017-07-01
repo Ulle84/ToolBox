@@ -4,10 +4,7 @@
 #include <QWidget>
 #include <QString>
 
-namespace Ui
-{
-  class PathSelector;
-}
+class PathSelectorUi;
 
 class PathSelector : public QWidget
 {

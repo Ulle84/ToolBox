@@ -6,10 +6,7 @@
 #include "GeneratorI.h"
 #include "Interface.h"
 
-namespace Ui
-{
-  class GeneratorInterface;
-}
+class GeneratorInterfaceUi;
 
 class GeneratorInterface : public QWidget, public GeneratorI
 {

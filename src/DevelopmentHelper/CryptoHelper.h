@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class CryptoHelper;
-}
+class CryptoHelperUi;
 
 class CryptoHelper : public QWidget
 {

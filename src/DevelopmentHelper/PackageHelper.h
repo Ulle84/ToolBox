@@ -7,10 +7,7 @@
 
 class QSettings;
 
-namespace Ui
-{
-  class PackageHelper;
-}
+class PackageHelperUi;
 
 class PackageHelper : public QWidget
 {

@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class BlockCodeFormatter;
-}
+class BlockCodeFormatterUi;
 
 class BlockCodeFormatter : public QWidget
 {

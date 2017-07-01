@@ -5,10 +5,7 @@
 #include <QStringList>
 #include <QWidget>
 
-namespace Ui
-{
-  class ClipboardManager;
-}
+class ClipboardManagerUi;
 
 class QStringListModel;
 

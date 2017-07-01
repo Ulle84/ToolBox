@@ -18,10 +18,7 @@ class QAction;
 class TreeModel;
 class ProxyModel;
 
-namespace Ui
-{
-  class TreeEdit;
-}
+class TreeEditUi;
 
 class TREEEDIT_API TreeEdit : public QWidget
 {

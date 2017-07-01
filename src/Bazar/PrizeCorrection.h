@@ -3,9 +3,7 @@
 
 #include <QDialog>
 
-namespace Ui {
-class PrizeCorrection;
-}
+class PrizeCorrectionUi;
 
 class PrizeCorrection : public QDialog
 {

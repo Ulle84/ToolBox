@@ -4,10 +4,7 @@
 #include <QWidget>
 #include <QStringList>
 
-namespace Ui
-{
-  class EnumHelper;
-}
+class EnumHelperUi;
 
 class EnumHelper : public QWidget
 {

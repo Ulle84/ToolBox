@@ -4,10 +4,7 @@
 #include <QWidget>
 #include <QDate>
 
-namespace Ui
-{
-  class DailyNotes;
-}
+class DailyNotesUi;
 
 class DailyNotes : public QWidget
 {

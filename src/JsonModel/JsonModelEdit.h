@@ -8,9 +8,7 @@ class QAbstractItemView;
 class QAction;
 class ProxyModel;
 
-namespace Ui {
-class JsonModelEdit;
-}
+class JsonModelEditUi;
 
 class JsonModelEdit : public QWidget
 {

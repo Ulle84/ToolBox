@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class ConverterBase64;
-}
+class ConverterBase64Ui;
 
 class ConverterBase64 : public QWidget
 {

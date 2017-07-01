@@ -8,10 +8,7 @@
 
 class WidgetListEditor;
 
-namespace Ui
-{
-  class InterfaceListEditor;
-}
+class InterfaceListEditorUi;
 
 class InterfaceListEditor : public QWidget
 {

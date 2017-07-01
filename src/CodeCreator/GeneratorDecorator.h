@@ -10,10 +10,7 @@
 
 class WidgetListEditor;
 
-namespace Ui
-{
-  class GeneratorDecorator;
-}
+class GeneratorDecoratorUi;
 
 class GeneratorDecorator : public QWidget, public GeneratorI
 {

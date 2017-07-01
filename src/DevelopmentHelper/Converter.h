@@ -3,10 +3,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class Converter;
-}
+class ConverterUi;
 
 class Converter : public QWidget
 {

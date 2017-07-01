@@ -3,10 +3,7 @@
 
 #include <QDialog>
 
-namespace Ui
-{
-  class Template;
-}
+class TemplateUi;
 
 class Template : public QDialog
 {

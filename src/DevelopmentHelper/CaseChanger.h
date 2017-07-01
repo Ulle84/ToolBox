@@ -5,10 +5,7 @@
 
 #include <QWidget>
 
-namespace Ui
-{
-  class CaseChanger;
-}
+class CaseChangerUi;
 
 class CaseChanger : public QWidget
 {

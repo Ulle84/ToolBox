@@ -4,10 +4,7 @@
 #include <QWidget>
 #include <QDateTime>
 
-namespace Ui
-{
-  class DateTimeAdder;
-}
+class DateTimeAdderUi;
 
 class DateTimeAdder : public QWidget
 {
