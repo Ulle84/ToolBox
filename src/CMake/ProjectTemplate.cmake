@@ -88,14 +88,14 @@ endif()
 ################################################################################
 # group projects
 ################################################################################
-if ("${FolderName}" STREQUAL  "")
-  if ("${Type}" STREQUAL  "ConsoleApplication")    
+if ("${FolderName}" STREQUAL "")
+  if ("${Type}" STREQUAL "ConsoleApplication")    
     set(FolderName ConsoleApplications)
-  elseif("${Type}" STREQUAL  "WidgetsApplication")    
+  elseif("${Type}" STREQUAL "WidgetsApplication")    
     set(FolderName WidgetsApplications)
-  elseif("${Type}" STREQUAL  "Widget")
+  elseif("${Type}" STREQUAL "Widget")
     set(FolderName Widgets)
-  elseif("${Type}" STREQUAL  "Library")
+  elseif("${Type}" STREQUAL "Library")
     set(FolderName Libraries)
   endif()
 endif()
@@ -103,23 +103,26 @@ endif()
 set_target_properties(${ProjectName} PROPERTIES FOLDER ${FolderName})
 
 ################################################################################
-# QtBuildHelper
+# pre build: QtBuildHelper
 ################################################################################
 add_dependencies(${ProjectName} QtBuildHelper)
-add_custom_command(TARGET ${ProjectName} PRE_BUILD COMMAND QtBuildHelper.exe ARGS
+add_custom_command(TARGET ${ProjectName} PRE_BUILD COMMAND $<TARGET_FILE:QtBuildHelper> ARGS
   -id ${CMAKE_CURRENT_SOURCE_DIR}
   -od ${CMAKE_CURRENT_BINARY_DIR}
   -qbd ${QtBinDir}
   -qid ${QtIncludeDir}
   -ad ${ProjectNameUppercased}_API
+  -bt ${CMAKE_BUILD_TYPE}
   WORKING_DIRECTORY ${QtBuilderWorkingDir}
 )
 
 ################################################################################
-# copy to plugins directory, if designer widget
+# post build: copy to designer widgets to plugin directory
 ################################################################################
-#if ("${Type}" STREQUAL  "Widget")
-#  add_custom_command(TARGET ${ProjectName} POST_BUILD
-#    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_CURRENT_BINARY_DIR}/${ProjectName}.dll ${CMAKE_CURRENT_BINARY_DIR}/../plugins/designer/${ProjectName}.dll
-#  )
-#endif()
+if ("${Type}" STREQUAL  "Widget")
+  add_custom_command(TARGET ${ProjectName} POST_BUILD 
+    COMMAND "${CMAKE_COMMAND}" -E copy 
+    "$<TARGET_FILE:${ProjectName}>"
+    "${CMAKE_CURRENT_BINARY_DIR}/../../plugins/designer/$<TARGET_FILE_NAME:${ProjectName}>" 
+  COMMENT "Copying designer widget...")
+endif()

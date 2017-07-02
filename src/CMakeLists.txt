@@ -14,6 +14,10 @@ set(QtBuilderWorkingDir ${OutputDirDebug})
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
+if(NOT CMAKE_DEBUG_POSTFIX)
+  set(CMAKE_DEBUG_POSTFIX d)
+endif()
+
 include(CMake/Qt.cmake)
 
 add_subdirectory(ArgumentPrinter)

@@ -21,10 +21,22 @@ set(QtVersion 5.9.0)
 message(STATUS "using Qt version: ${QtVersion}")
 
 ################################################################################
+# find out Visual Studio suffix
+################################################################################
+string(SUBSTRING ${CMAKE_GENERATOR} 0 21 GeneratorShort)
+if ("${GeneratorShort}" STREQUAL  "Visual Studio 15 2017")
+  set(VisualStudioSuffix "msvc2017")
+elseif("${GeneratorShort}" STREQUAL  "Visual Studio 14 2015")
+  set(VisualStudioSuffix "msvc2015")
+elseif("${GeneratorShort}" STREQUAL  "Visual Studio 12 2013")
+  set(VisualStudioSuffix "msvc2013")
+endif()
+
+################################################################################
 # Test if Qt5Core can be found - raise fatal error if not found
 ################################################################################
 string(SUBSTRING ${QtVersion} 0 3 QtVersionShort)
-set(QtDir "C:/Qt/${QtVersion}/${QtVersionShort}/msvc2017")
+set(QtDir "C:/Qt/${QtVersion}/${QtVersionShort}/${VisualStudioSuffix}")
 
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
   set(QtDir "${QtDir}_64")
